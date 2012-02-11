@@ -4,6 +4,7 @@ html
     title Matéria Brasil
 
     = stylesheet_link_tag :application
+    = favicon_link_tag asset_path('favicon.png'), :type => "image/png"
     = csrf_meta_tags
 
   - ctrl = controller.controller_name
