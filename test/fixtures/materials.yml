@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  resume: MyText
+  manufacturer_id: 1
+  technical_observation: MyText
+  density: MyString
+  dimensions: MyString
+  packing: MyString
+  middle_price: MyString
+
+two:
+  resume: MyText
+  manufacturer_id: 1
+  technical_observation: MyText
+  density: MyString
+  dimensions: MyString
+  packing: MyString
+  middle_price: MyString
