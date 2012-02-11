@@ -16,3 +16,7 @@
 
 # Ignoring sass cache
 /.sass-cache
+
+# ignoring vim files
+/*.swp
+/*.swo
