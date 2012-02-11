@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Matéria Brasil
+
+    = stylesheet_link_tag :application
+    = csrf_meta_tags
+
+  - ctrl = controller.controller_name
+  - page = controller.action_name
+
+  body(id=ctrl class=page)
+    #wrapper
+      header.head
+        h2
+          = link_to image_tag("logo.png", :alt => "Matéria Brasil", :title => "Matéria Brasil", :size => "180x36"), root_url
+      section.content
+        = yield
+
+    footer.foot
+      section
+        ol.partners
+          li= image_tag("logo_fibra.gif", :alt => "Fibra Design", :title => "Fibra Design", :size => "150x65")
+          li= image_tag("logo_design.gif", :alt => "Sistema Assessor e Ambiental", :title => "Sistema Assessor e Ambiental", :size => "150x65")
+
+    // Something from facebook
+    #fb-root
+    = javascript_include_tag :application

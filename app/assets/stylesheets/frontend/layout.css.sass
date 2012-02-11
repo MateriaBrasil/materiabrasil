@@ -1,0 +1,82 @@
+$ninesixty-columns: 12
+
+body
+  background: url(asset_path('bg_body.png', 'image')) repeat-x
+
+#wrapper
+  +grid-container
+
+
+
+// Pages
+#pages
+  .head, .content
+    +grid(12)
+
+  header.head
+    height: 85px
+    text-align: center
+
+  section.presentation
+    background: #249EB1
+    color: #fff
+    height: 360px
+    header
+      +grid(4)
+      +alpha
+      padding: 20px
+      p.about
+        margin-top: 20px
+    article
+      background: #fff
+      +grid(7)
+      +omega
+
+  section.details
+    margin-top: 50px
+    .articles
+      +grid(4)
+      +alpha
+      h2
+        margin: 20px 0
+        border-bottom: 1px solid #dedede
+      article
+        margin-bottom: 30px
+        font-size: 0.9em
+        p
+          color: #333
+    .images
+      +grid(8)
+      +omega
+      .image
+        margin: 20px 0
+        img
+          &:hover
+            +box-shadow(0 1px 8px #009FAE)
+
+  section.network
+    margin: 20px 0
+    header
+      height: 40px
+      padding: 20px 10px
+      background: #EA6740 url(asset_path('bg_network.gif', 'image')) no-repeat 20px center
+      color: #fff
+      text-indent: 160px
+      margin: 20px 0
+      clear: both
+    section
+      +grid(12)
+      margin: 20px 0
+      overflow: hidden
+      .net
+        +grid(4)
+        +alpha
+        height: 290px
+
+  footer.foot
+    background: #F0F1F4
+    border-top: 1px solid #E2E3E7
+    clear: both
+    section
+      +grid-container
+//Materials
