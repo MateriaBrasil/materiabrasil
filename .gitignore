@@ -18,5 +18,5 @@
 /.sass-cache
 
 # ignoring vim files
-/*.swp
-/*.swo
+*.swp
+*.swo

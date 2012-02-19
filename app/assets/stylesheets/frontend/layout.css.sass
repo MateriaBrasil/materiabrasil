@@ -6,8 +6,6 @@ body
 #wrapper
   +grid-container
 
-
-
 // Pages
 #pages
   .head, .content
@@ -16,7 +14,8 @@ body
   header.head
     height: 85px
     text-align: center
-
+    h2
+      margin-top: 14px
   section.presentation
     background: #249EB1
     color: #fff
@@ -24,12 +23,17 @@ body
     header
       +grid(4)
       +alpha
-      padding: 20px
+      h1
+        padding-top: 30px
+      h1, p.about
+        padding-left: 20px
       p.about
         margin-top: 20px
+        color: #fffff9
+        text-shadow: 0 1px 1px #999
     article
       background: #fff
-      +grid(7)
+      +grid(8)
       +omega
 
   section.details
