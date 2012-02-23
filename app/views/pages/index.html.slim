@@ -60,3 +60,14 @@ section.network
     .net.twitter
 
     .net.newsletter
+      h4 Receba novidades por email
+      form(action="http://materiabrasil.mailee.me/go/add_contact_form" method="post")
+        input name="key" type="hidden" value="8b53e0"
+        input name="url_ok" type="hidden" value="http://www.fibradesign.net"
+        input name="url_error" type="hidden" value="http://www.multidao.art.br"
+        input name="list[]" type="hidden" value="29706"
+        input class="text" name="email" type="text"
+        input type="submit" value="Assinar"
+
+      h4 Entre em contato conosco:
+      = mail_to "contato@materiabrasil.net", nil, :encode => :hex
