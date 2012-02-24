@@ -3,46 +3,54 @@ section.presentation
     h1
       |Entre em contato com&nbsp;
       |um universo de
-      |&nbsp;produtos e serviços orientados a sustentabilidade
+      |&nbsp;produtos e serviços orientados para a sustentabilidade.
     p.about
       |A&nbsp;
       strong MateriaBrasil
       |&nbsp;é um centro de referência em modelos
        de produção e consumo conscientes. Nossos consultores
-       estão prontos para encontrar as soluções mais coerentes com o seu negócio.
+       estão prontos para encontrar as soluções mais coerentes com o seu negócio rumo à sustentabilidade.
   article.video
     iframe(src="http://player.vimeo.com/video/36976384?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0")
 
 section.details
   .articles
-    article.what
-      h2 O que
+
+    article.who
+      h2 Quem
       p
-        | Nós conectamos pessoas. A missão da MateriaBrasil é fornecer
-          informação qualificada sobre materiais e fornecedores responsáveis.
-          Temos o maior acervo de materiais de baixo impacto do Brasil,
-          todos ao seu alcance.
+        | A MateriaBrasil é fruto da união entre a Sistema Ambiental e a Fibra Design.
+          Aliando conhecimento e técnica, o projeto nasceu do sonho coletivo de empreendedores
+          que acreditam que é possível fazer negócios e impactar positivamente a sociedade.
+      p
+        | Reunimos o maior acervo de materiais de baixo impacto ambiental e alta contribuição
+          social do Brasil, com o objetivo de fornecer informação qualificada sobre materiais e
+          seus fornecedores e fomentar projetos com pegadas mais leves.
     article.how
       h2 Como
       p
-        | Nós conectamos pessoas. A missão da MateriaBrasil é fornecer
-          informação qualificada sobre materiais e fornecedores responsáveis.
-          Temos o maior acervo de materiais de baixo impacto do Brasil,
-          todos ao seu alcance.
+        | Usamos o conceito de Life Cycle Thinking para analisar materiais e produtos
+          e dar opções resposáveis para que arquitetos, designers, cenógrafos, engenheiros
+          e outros profissionais possam inovar em seus projetos.
+      p
+        | Prestamos consultorias, ministramos workshops e realizamos pesquisas para ajudar você
+          a encontrar os materiais e tecnologias ideais para seus negócios.
     article.why
       h2 Por quê
       p
-        | Nós conectamos pessoas. A missão da MateriaBrasil é fornecer
-          informação qualificada sobre materiais e fornecedores responsáveis.
-          Temos o maior acervo de materiais de baixo impacto do Brasil,
-          todos ao seu alcance.
+        | Vemos na troca e disseminação do conhecimento uma forma de estimular e acelerar
+          a inovação e a transformação da cultura de produção e consumo.
+      p
+        | Através do uso responsável dos recursos naturais, com respeito a Biodiversidade,
+          queremos que os profissionais tenham conhecimento e boas opções para escolher e comprar.
     article.where
       h2 Onde
       p
-        | Nós conectamos pessoas. A missão da MateriaBrasil é fornecer
-          informação qualificada sobre materiais e fornecedores responsáveis.
-          Temos o maior acervo de materiais de baixo impacto do Brasil,
-          todos ao seu alcance.
+        | Em breve nosso acervo estará disponível na internet.
+      p
+        | Nossa biblioteca de materiais está disponível para visitação em São Paulo,
+          no escritório da Sistema Ambiental, e na sede da Fibra Design, no centro do Rio de Janeiro.
+
   ul.images
     li.image= image_tag "home_01.jpg", :alt => "", :title =>  "", :size => "620x240"
     li.image= image_tag "home_02.jpg", :alt => "", :title =>  "", :size => "620x395"
@@ -52,7 +60,7 @@ section.details
 section.network
   header
     h2
-      | Conecte-se em nossas redes e fique por dentro de um universo de materiais
+      | Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil.
 
   section.networks
     .net.facebook
@@ -61,14 +69,14 @@ section.network
       blockquote
 
 
-      = link_to "Siga @fibra_design", "https://twitter.com/fibra_design", :data => {:"show-count" => false, :lang => "pt"}, :class => "twitter-follow-button"
+      = link_to "Siga @materiabrasil", "https://twitter.com/materiabrasil", :data => {:"show-count" => false, :lang => "pt"}, :class => "twitter-follow-button"
     .net.newsletter
       h4 Receba novidades por email
-      form(action="http://fibradesign.mailee.me/go/add_contact_form" method="post")
-        input name="key" type="hidden" value="8b53e0"
-        input name="url_ok" type="hidden" value="http://www.fibradesign.net"
-        input name="url_error" type="hidden" value="http://www.multidao.art.br"
-        input name="list[]" type="hidden" value="29706"
+      form(action="http://materiabrasil.mailee.me/go/add_contact_form" id="mailee-form" method="post")
+        input name="key" type="hidden" value="25e3e8"
+        input name="url_ok" type="hidden" value="URL_OK"
+        input name="url_error" type="hidden" value="URL_ERROR"
+        input name="list[]" type="hidden" value="261585"
         input class="text" name="email" type="text" size="41" placeholder="Digite seu e-mail" class="text_input"
         input type="submit" value="Assinar" class="submit_button"
 
