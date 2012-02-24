@@ -68,7 +68,7 @@ body
       text-indent: 160px
       margin: 20px 0
       clear: both
-    section
+    section.networks
       +grid(12)
       margin: 20px 0
       overflow: hidden
@@ -83,16 +83,37 @@ body
         background-position: -310px 0
         border-left: 1px solid #e2e3e7
         border-right: 1px solid #e2e3e7
+        blockquote
+          width: 80%
+          font-style: italic
+          font-size: 16px
+          color: #333
+          margin: 0 auto
+        .twitter-follow-button
+          display: block
+          margin: 8% 0 0 10%
 
       .newsletter
         background-position: -650px 0
-
-
-
+        h4, form, a
+          margin-left: 14px
+        form
+          margin-bottom: 30px
   footer.foot
     background: #F0F1F4
     border-top: 1px solid #E2E3E7
     clear: both
     section
       +grid-container
+      overflow: hidden
+      padding: 20px 0
+      .partners
+        +grid(6)
+        +grid-prefix(4)
+      .fibra
+        +grid(2)
+        +alpha
+      .sistema
+        +omega
+        +grid(2)
 //Materials

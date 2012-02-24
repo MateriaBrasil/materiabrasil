@@ -21,24 +21,41 @@ h3
   font-size: 16px
 
 a
+  color: #009FAE
+  text-decoration: none
   &:active, &:visited
-    color: #009FAE
-    text-decoration: none
     transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
     -moz-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
     -o-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
     -webkit-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
   &:hover
     color: #EA6740
+    opacity: 0.8
 
 input
   background: #F0F1F4
   border: 1px solid #E2E3E7
-  +box-shadow(inset 1px 1px 3px #999)
   color: #333
+  padding: 6px 0 6px 0
+  margin: 0
+  outline: none
+  font-weight: bold
+  color: #EA6740
+  &:focus
+    background: #fff
+    border: 1px solid #EA6740
 
 input[type=submit]
   background: #009FAF
   color: #fff
   border: none
-  padding: 2px
+
+.submit_button
+  margin-left: -10px
+  text-transform: uppercase
+  padding: 7px
+  &:hover
+    cursor: pointer
+    background: #EA6740
+.text_input
+  text-indent: 2px

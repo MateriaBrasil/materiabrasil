@@ -54,20 +54,23 @@ section.network
     h2
       | Conecte-se em nossas redes e fique por dentro de um universo de materiais
 
-  section
+  section.networks
     .net.facebook
       .fb-like-box[data-href="https://www.facebook.com/pages/MateriaBrasil/121794051233596" data-width="292" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"]
     .net.twitter
+      blockquote
 
+
+      = link_to "Siga @fibra_design", "https://twitter.com/fibra_design", :data => {:"show-count" => false, :lang => "pt"}, :class => "twitter-follow-button"
     .net.newsletter
       h4 Receba novidades por email
-      form(action="http://materiabrasil.mailee.me/go/add_contact_form" method="post")
+      form(action="http://fibradesign.mailee.me/go/add_contact_form" method="post")
         input name="key" type="hidden" value="8b53e0"
         input name="url_ok" type="hidden" value="http://www.fibradesign.net"
         input name="url_error" type="hidden" value="http://www.multidao.art.br"
         input name="list[]" type="hidden" value="29706"
-        input class="text" name="email" type="text"
-        input type="submit" value="Assinar"
+        input class="text" name="email" type="text" size="41" placeholder="Digite seu e-mail" class="text_input"
+        input type="submit" value="Assinar" class="submit_button"
 
       h4 Entre em contato conosco:
       = mail_to "contato@materiabrasil.net", nil, :encode => :hex
