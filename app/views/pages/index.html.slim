@@ -19,7 +19,7 @@ section.details
     article.who
       h2 Quem
       p
-        | A MateriaBrasil é fruto da união entre a Sistema Ambiental e a Fibra Design.
+        | A MateriaBrasil é fruto da união entre a #{link_to "Sistema Ambiental", "http://", :class => "view_more"} e a Fibra Design.
           Aliando conhecimento e técnica, o projeto nasceu do sonho coletivo de empreendedores
           que acreditam que é possível fazer negócios e impactar positivamente a sociedade.
       p
@@ -72,8 +72,8 @@ section.network
       h4 Receba novidades por email
       form(action="http://materiabrasil.mailee.me/go/add_contact_form" id="mailee-form" method="post")
         input name="key" type="hidden" value="25e3e8"
-        input name="url_ok" type="hidden" value=""
-        input name="url_error" type="hidden" value=""
+        input name="url_ok" type="hidden" value="http://materiabrasil.com"
+        input name="url_error" type="hidden" value="http://materiabrasil.com"
         input name="list[]" type="hidden" value="261585"
         input class="text" name="email" type="text" placeholder="Digite seu e-mail" class="text_input"
         input type="submit" value="Assinar" class="submit_button"
