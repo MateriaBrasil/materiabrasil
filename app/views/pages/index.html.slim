@@ -19,17 +19,19 @@ section.details
     article.who
       h2 Quem
       p
-        | A MateriaBrasil é fruto da união entre a #{link_to "Sistema Ambiental", "http://", :class => "view_more"} e a Fibra Design.
-          Aliando conhecimento e técnica, o projeto nasceu do sonho coletivo de empreendedores
-          que acreditam que é possível fazer negócios e impactar positivamente a sociedade.
+        | A MateriaBrasil é fruto da união entre a #{link_to "Sistema Ambiental", "http://", :class => "view_more"}
+          e a #{link_to "Fibra Design", "http://fibradesign.net"}. Aliando conhecimento e técnica, o projeto
+          nasceu do sonho coletivo de empreendedores que acreditam que é possível fazer negócios e
+          impactar positivamente a sociedade.
       p
         | Reunimos o maior acervo de materiais de baixo impacto ambiental e alta contribuição
           social do Brasil, com o objetivo de fornecer informação qualificada sobre materiais e
           seus fornecedores e fomentar projetos com pegadas mais leves.
     article.how
       h2 Como
+      - link = "http://books.google.com.br/books?id=uAOf-Hj9dzQC&pg=PA315&lpg=PA315&dq=life+cycle+thinking&source=bl&ots=KKXhabyO4R&sig=fHOzUiUr0a7UFr2Z74MY-R8LIjs&hl=pt-BR&sa=X&ei=FwRST5XVF6nA0AGPvbi0DQ&ved=0CGIQ6AEwBw#v=onepage&q=life%20cycle%20thinking&f=false"
       p
-        | Usamos o conceito de Life Cycle Thinking para analisar materiais e produtos
+        | Usamos o conceito de #{link_to "Life Cycle Thinking", link} para analisar materiais e produtos
           e dar opções resposáveis para que arquitetos, designers, cenógrafos, engenheiros
           e outros profissionais possam inovar em seus projetos.
       p
@@ -38,18 +40,20 @@ section.details
     article.why
       h2 Por quê
       p
-        | Vemos na troca e disseminação do conhecimento uma forma de estimular e acelerar
+        | Vemos na <strong>troca</strong> e <strong>disseminação do conhecimento</strong> uma forma de estimular e acelerar
           a inovação e a transformação da cultura de produção e consumo.
       p
         | Através do uso responsável dos recursos naturais, com respeito a Biodiversidade,
           queremos que os profissionais tenham conhecimento e boas opções para escolher e comprar.
     article.where
+      - fibra = "http://www.google.com/maps/place?q=Fibra+Design+Sustent%C3%A1vel+-+Rua+Senador+Pompeu,+Rio+de+Janeiro,+Brasil&hl=en&ie=UTF8&cid=15868738364720974112"
+      - sistema = "http://www.google.com/maps/place?q=Av.+Paulista+1159,+Conjunto+1315&hl=en&ftid=0x94ce59c7d9da70ef:0x57a0828859b4136f"
       h2 Onde
       p
         | Em breve nosso acervo estará disponível na internet.
       p
-        | Nossa biblioteca de materiais está disponível para visitação em São Paulo,
-          no escritório da Sistema Ambiental, e na sede da Fibra Design, no centro do Rio de Janeiro.
+        | Nossa <strong>biblioteca de materiais</strong> está disponível para visitação em São Paulo,
+          no #{link_to "escritório da Sistema Ambiental", sistema} e na sede da Fibra Design, no #{link_to "centro do Rio de Janeiro", fibra}.
 
   ul.images
     li.image= image_tag "home_01.jpg", :alt => "", :title =>  "", :size => "620x240"
