@@ -19,11 +19,6 @@ ActiveAdmin.register Material do
       f.input :packing, :label => "Embalagem"
       f.input :average_price, :label => "Preço Médio"
     end
-
-    f.inputs "Fabricante" do
-      f.input :manufacturer, :label => "Fabricante"
-    end
     f.buttons
   end
-
 end
