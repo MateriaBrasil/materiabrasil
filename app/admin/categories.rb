@@ -1,4 +1,5 @@
 ActiveAdmin.register Category do
+  menu :label => "Categorias"
 
   #### TODO: refactoring of the LOOP (I'll use __recursion__ ) children PLEASE #######
   index :as => :block do |category|

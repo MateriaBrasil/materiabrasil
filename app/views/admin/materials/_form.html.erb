@@ -1,0 +1,62 @@
+<%= semantic_form_for [:admin, @material] do |f|%>
+
+
+  <%= f.inputs "Fabricante" do %>
+    <%= f.input :manufacturer, :label => false, :input_html => {:"data-placeholder" => "Clique e selecione uma opção"} %>
+  <% end %>
+
+  <fieldset class="inputs">
+
+    <% Category.where(:parent_id => nil).each do |c| %>
+
+      <% if c.parent.nil? %>
+        <div class="category index_category parent_category">
+          <h4><%= c.name %></h4>
+          <div class="material_category">
+            <ul class="categories">
+              <% # First children%>
+              <% c.children.each do |child| %>
+                <li>
+                  <label>
+                    <input name="material[category_ids][]" type="checkbox" value="<%= child.id %>"/>  <strong><%= child.name %></strong>
+                </label>
+                <ul>
+                  <% child.children.each do |second_child| %>
+                    <li>
+                      <label><input name="material[category_ids][]" type="checkbox" value="<%= second_child.id %>"/>  <%= second_child.name %></label>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+
+</fieldset>
+
+
+<%= f.inputs "Sobre o material" do %>
+  <%= f.input :resume, :label => "Resumo"%>
+<% end %>
+
+<%= f.inputs "Informações técnicas" do %>
+  <%= f.input :technical_observation, :label => "Observações Técnicas" %>
+<% end %>
+
+
+<%= f.inputs "Detalhes técnicos" do %>
+  <%= f.input :density, :label => "Densidade" %>
+  <%= f.input :dimensions, :label => "Dimensões" %>
+  <%= f.input :packing, :label => "Embalagem" %>
+  <%= f.input :average_price, :label => "Preço Médio" %>
+<% end %>
+
+<%= f.actions %>
+
+
+<% end %>
+
