@@ -1,8 +1,10 @@
 ActiveAdmin.register Category do
   menu :label => "Categorias"
 
+  config.paginate = false
+
   #### TODO: refactoring of the LOOP (I'll use __recursion__ ) children PLEASE #######
-  index :as => :block do |category|
+  index :paginate => false, :as => :block do |category|
     unless category.parent
       div :id => :wrap do
         div :for => category, :class => "category index_category parent_category" do
