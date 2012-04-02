@@ -1,4 +1,4 @@
-<%= semantic_form_for [:admin, @material] do |f|%>
+<%= active_admin_form_for [:admin, Material.new] do |f|%>
 
 
   <%= f.inputs "Fabricante" do %>
@@ -19,43 +19,52 @@
                 <li>
                   <label>
                     <input name="material[category_ids][]" type="checkbox" value="<%= child.id %>"/>  <strong><%= child.name %></strong>
-                </label>
-                <ul>
-                  <% child.children.each do |second_child| %>
-                    <li>
-                      <label><input name="material[category_ids][]" type="checkbox" value="<%= second_child.id %>"/>  <%= second_child.name %></label>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
+                  </label>
+                  <ul>
+                    <% child.children.each do |second_child| %>
+                      <li>
+                        <label><input name="material[category_ids][]" type="checkbox" value="<%= second_child.id %>"/>  <%= second_child.name %></label>
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-      </div>
+      <% end %>
+
     <% end %>
 
+  </fieldset>
+
+
+  <%= f.inputs "Sobre o material" do %>
+    <%= f.input :resume, :label => "Resumo"%>
   <% end %>
 
-</fieldset>
+  <%= f.inputs "Informações técnicas" do %>
+    <%= f.input :technical_observation, :label => "Observações Técnicas" %>
+  <% end %>
 
 
-<%= f.inputs "Sobre o material" do %>
-  <%= f.input :resume, :label => "Resumo"%>
-<% end %>
+  <%= f.inputs "Detalhes técnicos" do %>
+    <%= f.input :density, :label => "Densidade" %>
+    <%= f.input :dimensions, :label => "Dimensões" %>
+    <%= f.input :packing, :label => "Embalagem" %>
+    <%= f.input :average_price, :label => "Preço Médio" %>
+  <% end %>
 
-<%= f.inputs "Informações técnicas" do %>
-  <%= f.input :technical_observation, :label => "Observações Técnicas" %>
-<% end %>
-
-
-<%= f.inputs "Detalhes técnicos" do %>
-  <%= f.input :density, :label => "Densidade" %>
-  <%= f.input :dimensions, :label => "Dimensões" %>
-  <%= f.input :packing, :label => "Embalagem" %>
-  <%= f.input :average_price, :label => "Preço Médio" %>
-<% end %>
-
-<%= f.actions %>
+  <%= f.inputs "Imagens" do %>
+    <%= f.has_many :images do |img| %>
+      <%= img.input :title %>
+      <%= img.input :description %>
+      <%= img.input :featured %>
+      <%= img.input :use_case %>
+      <%= img.input :image, :as => :file %>
+    <% end %>
+  <% end %>
+  <%= f.buttons %>
 
 
 <% end %>

@@ -1,3 +1,10 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :definition, :email, :manufacturer_id, :name, :phone_first, :phone_second
+  validates_presence_of :definition
+  validates_presence_of :manufacturer_id
+  validates_presence_of :name
+  validates_presence_of :email
+  validates_presence_of :phone_first
+
+  belongs_to :manufacturer
+
 end

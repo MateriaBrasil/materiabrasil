@@ -1,6 +1,5 @@
 require 'machinist/active_record'
 
-
 AdminUser.blueprint do
   username { "user#{sn}@email.com" }
   password { "fake_password" }
