@@ -1,8 +1,9 @@
 doctype html
 html
   head
-    title Matéria Brasil
+    title MateriaBrasil
     meta name="description" content="A MateriaBrasil é um centro de referência em modelos de produção e consumo conscientes. Encontramos as soluções mais coerentes para o seu negócio rumo à sustentabilidade."
+    meta name="keywords" content="materia brasil, materiabrasil, sustentabilidade, ambiental, consciencia, solucoes"
     = stylesheet_link_tag :application
     = favicon_link_tag asset_path('favicon.png'), :type => "image/png"
     = csrf_meta_tags
@@ -14,7 +15,7 @@ html
     #wrapper
       header.head
         h2
-          = link_to image_tag("logo.png", :alt => "Matéria Brasil", :title => "Matéria Brasil", :size => "207x38"), root_url
+          = link_to image_tag("logo.png", :alt => "MateriaBrasil", :title => "MateriaBrasil", :size => "207x38"), root_url
       section.content
         = yield
 
