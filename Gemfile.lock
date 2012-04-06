@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/watson/active_admin.git
+  remote: git@github.com:MateriaBrasil/active_admin.git
   revision: d41b06359ab1f77801f85196e27d95dfb4e7d548
   branch: dsl_form_builder
   specs:

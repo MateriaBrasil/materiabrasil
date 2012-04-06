@@ -24,7 +24,7 @@ gem "rmagick", :require => 'RMagick'
 # Utilities
 gem 'simple_form'
 #gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
-gem 'activeadmin', :git => "https://github.com/watson/active_admin.git", :branch => "dsl_form_builder"
+gem 'activeadmin', :git => "git@github.com:MateriaBrasil/active_admin.git", :branch => "dsl_form_builder"
 gem 'devise', '1.5.3'
 gem 'compass-rails'
 gem 'compass-960-plugin'

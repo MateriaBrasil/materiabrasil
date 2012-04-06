@@ -1,7 +1,7 @@
 require 'machinist/active_record'
 
 AdminUser.blueprint do
-  username { "user#{sn}@email.com" }
+  email { "user#{sn}@email.com" }
   password { "fake_password" }
 end
 
@@ -9,12 +9,12 @@ end
 Category.blueprint do
   name { "Name #{sn}" }
   code_reference { 1 }
-  parent
 end
 
 Manufacturer.blueprint do
   name { "Manufaturer #{sn}" }
   site { "http://mysite#{sn}.com" }
+  email { "manu#{sn}@manufacturer.com" }
 end
 
 Material.blueprint do

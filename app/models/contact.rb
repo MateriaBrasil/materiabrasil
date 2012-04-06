@@ -1,6 +1,5 @@
 class Contact < ActiveRecord::Base
   validates_presence_of :definition
-  validates_presence_of :manufacturer_id
   validates_presence_of :name
   validates_presence_of :email
   validates_presence_of :phone_first

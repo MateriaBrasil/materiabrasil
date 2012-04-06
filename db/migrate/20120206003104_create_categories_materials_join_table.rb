@@ -3,7 +3,6 @@ class CreateCategoriesMaterialsJoinTable < ActiveRecord::Migration
     create_table :categories_materials, :id => false do |t|
       t.integer :category_id, :null => false
       t.integer :material_id, :null => false
-      t.timestamps
     end
   end
 
