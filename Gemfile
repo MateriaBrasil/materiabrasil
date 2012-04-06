@@ -19,7 +19,7 @@ gem 'heroku'
 # File updloadin
 gem 'carrierwave'
 gem 'fog'
-gem "rmagick", :require => 'RMagick'
+gem "mini_magick"
 
 # Utilities
 gem 'simple_form'
