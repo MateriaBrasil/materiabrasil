@@ -1,17 +1,20 @@
 <%= active_admin_form_for [:admin, @material] do |f|%>
 
+  <%= f.inputs "Nome do material" do %>
+    <%= f.input :name, :label => false %>
+  <% end %>
 
   <%= f.inputs "Fabricante" do %>
     <%= f.input :manufacturer, :label => false, :input_html => {:"data-placeholder" => "Clique e selecione uma opção"} %>
   <% end %>
 
   <%= f.inputs "Categorias" do %>
-    <% Category.where(:parent_id => nil).each do |c| %>
+    <% Category.where(:parent_id => nil).each do |category| %>
       <div class="category index_category parent_category">
-        <h4><%= c.name %></h4>
+        <h4><%= category.name %></h4>
         <div class="material_category">
           <ul class="categories">
-            <%= render :partial => "categories", :locals => { :children => c.children } %>
+            <%= render :partial => "categories", :locals => { :children => category.children } %>
           </ul>
         </div>
       </div>
