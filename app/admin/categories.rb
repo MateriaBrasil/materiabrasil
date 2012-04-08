@@ -2,9 +2,6 @@
 ActiveAdmin.register Category do
   menu :label => "Categorias"
 
-  #config.paginate = false
-
-  #### TODO: refactoring of the LOOP (I'll use __recursion__ ) children PLEASE #######
   index :paginate => false, :as => :block do |category|
     unless category.parent
       div :id => :wrap do
@@ -12,26 +9,8 @@ ActiveAdmin.register Category do
           h4 auto_link(category.name)
           div do
             ul :class => :categories do
-              category.children.each do |s|
-                li a("[#{s.code_reference}] - #{s.name}", :href => admin_category_path(s)) do
-                  ul do
-                    s.children.each do |g|
-                      li a("[#{s.code_reference}] #{g.name}", :href => admin_category_path(g)) do
-                        ul do
-                          g.children.each do |p|
-                            li a("[#{s.code_reference}] #{p.name}", :href => admin_category_path(p)) do
-                              ul do
-                                p.children.each do |r|
-                                  li a("[#{s.code_reference}] #{r.name}", :href => admin_category_path(r))
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
+              if category.children.present?
+                render :partial => "children", :locals => { :children => category.children }
               end
             end
           end
@@ -39,7 +18,8 @@ ActiveAdmin.register Category do
       end
     end
   end
-  ############## END INDEX (sorry for the END END END L O L) ###############
+
+
   form do |f|
     f.inputs "Categoria-pai?" do
       f.input :parent, :label => false

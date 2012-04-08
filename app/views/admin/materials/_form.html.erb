@@ -1,14 +1,12 @@
-<%= active_admin_form_for [:admin, Material.new] do |f|%>
+<%= active_admin_form_for [:admin, @material] do |f|%>
 
 
   <%= f.inputs "Fabricante" do %>
     <%= f.input :manufacturer, :label => false, :input_html => {:"data-placeholder" => "Clique e selecione uma opção"} %>
   <% end %>
 
-  <fieldset class="inputs" name="Categoria">
-    <legend><span>Categorias</span></legend>
+  <%= f.inputs "Categorias" do %>
     <% Category.where(:parent_id => nil).each do |c| %>
-
       <% if c.parent.nil? %>
         <div class="category index_category parent_category">
           <h4><%= c.name %></h4>
@@ -18,12 +16,26 @@
               <% c.children.each do |child| %>
                 <li>
                   <label class="strong" >
-                    <input name="material[category_ids][]" type="checkbox" value="<%= child.id %>"/>&nbsp;<%= child.name %>
+                    <%= f.input :categories, :as => :check_boxes, :label => child.name, :value => child.id %>
                   </label>
                   <ul>
                     <% child.children.each do |second_child| %>
                       <li>
-                        <label><input name="material[category_ids][]" type="checkbox" value="<%= second_child.id %>"/>  <%= second_child.name %></label>
+                        <label>
+                          <input name="material[category_ids][]" class="parent child" type="checkbox" value="<%= second_child.id %>"/>
+                          &nbsp;<%= second_child.name %>
+                        </label>
+
+                        <ul>
+                          <% second_child.children.each do |third_child| %>
+                          <li>
+                            <label>
+                              <input name="material[category_ids][]" class="sec_child" type="checkbox" value="<%= third_child.id %>"/>
+                              &nbsp;<%= third_child.name %>
+                            </label>
+                          </li>
+                          <% end %>
+                        </ul>
                       </li>
                     <% end %>
                   </ul>
@@ -36,8 +48,7 @@
 
     <% end %>
 
-  </fieldset>
-
+  <% end %>
 
   <%= f.inputs "Sobre o material" do %>
     <%= f.input :resume, :label => "Resumo"%>
