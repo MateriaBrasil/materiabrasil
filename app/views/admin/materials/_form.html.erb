@@ -7,47 +7,15 @@
 
   <%= f.inputs "Categorias" do %>
     <% Category.where(:parent_id => nil).each do |c| %>
-      <% if c.parent.nil? %>
-        <div class="category index_category parent_category">
-          <h4><%= c.name %></h4>
-          <div class="material_category">
-            <ul class="categories">
-              <% # First children%>
-              <% c.children.each do |child| %>
-                <li>
-                  <label class="strong" >
-                    <%= f.input :categories, :as => :check_boxes, :label => child.name, :value => child.id %>
-                  </label>
-                  <ul>
-                    <% child.children.each do |second_child| %>
-                      <li>
-                        <label>
-                          <input name="material[category_ids][]" class="parent child" type="checkbox" value="<%= second_child.id %>"/>
-                          &nbsp;<%= second_child.name %>
-                        </label>
-
-                        <ul>
-                          <% second_child.children.each do |third_child| %>
-                          <li>
-                            <label>
-                              <input name="material[category_ids][]" class="sec_child" type="checkbox" value="<%= third_child.id %>"/>
-                              &nbsp;<%= third_child.name %>
-                            </label>
-                          </li>
-                          <% end %>
-                        </ul>
-                      </li>
-                    <% end %>
-                  </ul>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+      <div class="category index_category parent_category">
+        <h4><%= c.name %></h4>
+        <div class="material_category">
+          <ul class="categories">
+            <%= render :partial => "categories", :locals => { :children => c.children } %>
+          </ul>
         </div>
-      <% end %>
-
+      </div>
     <% end %>
-
   <% end %>
 
   <%= f.inputs "Sobre o material" do %>

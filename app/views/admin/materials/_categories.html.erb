@@ -1,0 +1,14 @@
+<% children.each do |child| %>
+  <li>
+    <label>
+      <% checked = @material.categories.map(&:id).include?(child.id) ? 'checked="checked"' : nil %>
+      <input type="checkbox" name="material[category_ids][]" class="parent child sec_child" value="<%= child.id %>" <%= checked %>/>
+      <%= child.name %></label>
+  </li>
+  <% if child.children.present? %>
+    <ul>
+      <%= render :partial => "categories", :locals => { :children => child.children } %>
+    </ul>
+  <% end %>
+<% end %>
+
