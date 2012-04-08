@@ -23,4 +23,30 @@ ActiveAdmin.register Manufacturer do
     f.buttons
   end
 
+
+  show :title => :name do |m|
+    attributes_table do
+      row :id
+      row :name
+      row :email
+      row :address
+    end
+
+    h3 "Contatos"
+    div do
+      ol :id => "contacts_list" do
+        m.contacts.each do |c|
+          li do
+            div do
+              span "(#{c.definition}) - "
+              strong "#{c.name} -"
+              span "[#{c.email}] #{c.phone_first}"
+            end
+          end
+        end
+      end
+    end
+    active_admin_comments
+  end
+
 end

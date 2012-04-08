@@ -17,8 +17,8 @@
               <% # First children%>
               <% c.children.each do |child| %>
                 <li>
-                  <label>
-                    <input name="material[category_ids][]" type="checkbox" class="strong" value="<%= child.id %>"/><%= child.name %>
+                  <label class="strong" >
+                    <input name="material[category_ids][]" type="checkbox" value="<%= child.id %>"/>&nbsp;<%= child.name %>
                   </label>
                   <ul>
                     <% child.children.each do |second_child| %>

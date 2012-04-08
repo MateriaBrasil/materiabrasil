@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120402023531) do
     t.integer  "parent_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.text     "code_reference"
+    t.string   "code_reference"
   end
 
   create_table "categories_materials", :id => false, :force => true do |t|

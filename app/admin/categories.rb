@@ -1,3 +1,4 @@
+#coding: utf-8
 ActiveAdmin.register Category do
   menu :label => "Categorias"
 
@@ -12,16 +13,16 @@ ActiveAdmin.register Category do
           div do
             ul :class => :categories do
               category.children.each do |s|
-                li a("[#{sprintf('%.03d', s.code_reference)}] - #{s.name}", :href => admin_category_path(s)) do
+                li a("[#{s.code_reference}] - #{s.name}", :href => admin_category_path(s)) do
                   ul do
                     s.children.each do |g|
-                      li a("[#{sprintf('%.03d', g.code_reference)}] - #{g.name}", :href => admin_category_path(g)) do
+                      li a("[#{s.code_reference}] #{g.name}", :href => admin_category_path(g)) do
                         ul do
                           g.children.each do |p|
-                            li a("[#{sprintf('%.03d', p.code_reference)}] - #{p.name}", :href => admin_category_path(p)) do
+                            li a("[#{s.code_reference}] #{p.name}", :href => admin_category_path(p)) do
                               ul do
                                 p.children.each do |r|
-                                  li a("[#{sprintf('%.03d', r.code_reference)}] - #{r.name}", :href => admin_category_path(r))
+                                  li a("[#{s.code_reference}] #{r.name}", :href => admin_category_path(r))
                                 end
                               end
                             end
@@ -39,5 +40,20 @@ ActiveAdmin.register Category do
     end
   end
   ############## END INDEX (sorry for the END END END L O L) ###############
+  form do |f|
+    f.inputs "Categoria-pai?" do
+      f.input :parent, :label => false
+    end
+
+    f.inputs "Nome da categoria" do
+      f.input :name, :label => false
+    end
+
+    f.inputs "Código de referência (será utilizado como código nos materiais)" do
+      f.input :code_reference, :label => false
+    end
+    f.buttons
+  end
+
 end
 
