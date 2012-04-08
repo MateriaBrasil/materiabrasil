@@ -1,7 +1,11 @@
+<% # mount categories outside of the loop code %>
+<% categories = @material.categories.map(&:id) %>
+
+
 <% children.each do |child| %>
   <li>
     <label>
-      <% checked = @material.categories.map(&:id).include?(child.id) ? 'checked="checked"' : nil %>
+      <% checked = categories.include?(child.id) ? 'checked="checked"' : nil %>
       <input type="checkbox" name="material[category_ids][]" class="parent child sec_child" value="<%= child.id %>" <%= checked %>/>
       <%= child.name %></label>
   </li>
