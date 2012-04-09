@@ -32,6 +32,7 @@ ActiveAdmin.register Category do
     f.inputs "Código de referência (será utilizado como código nos materiais)" do
       f.input :code_reference, :label => false
     end
+
     f.buttons
   end
 

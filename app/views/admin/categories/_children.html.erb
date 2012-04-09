@@ -1,6 +1,6 @@
 <% children.each do |child| %>
   <% code = !child.code_reference.present? ? nil : "[#{child.code_reference}]"  %>
-  <li><%= link_to "#{code} #{child.name}", edit_admin_category_path(child) %></li>
+  <li><%= link_to "#{code} #{child.name}", admin_category_path(child) %></li>
   <% if child.children.present? %>
     <ul>
       <%= render :partial => "children", :locals => { :children => child.children } %>
