@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
-  caches_action :index if Rails.env == :production
+  caches_action :splash if Rails.env.production?
 
-  def index
+  def splash
+    render :layout => "splashpage"
   end
+
+  def index; end
 end

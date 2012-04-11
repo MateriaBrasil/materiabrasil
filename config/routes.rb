@@ -3,9 +3,11 @@ MateriaBrasil::Application.routes.draw do
   devise_for :users
 
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+
+
+  root :to => "pages#splash"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -63,5 +65,4 @@ MateriaBrasil::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   #
-  root :to => "pages#index"
 end

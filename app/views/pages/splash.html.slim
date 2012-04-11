@@ -1,0 +1,84 @@
+section.presentation
+  header
+    h1
+      | Descubra um universo de produtos e serviços orientados para a sustentabilidade.
+    p.about
+      |A&nbsp;
+      strong MateriaBrasil
+      |&nbsp;é um centro de referência em modelos
+       de produção e consumo conscientes. Nossos consultores
+       estão prontos para encontrar as soluções mais coerentes com o seu negócio rumo à sustentabilidade.
+  article.video
+    iframe(src="http://player.vimeo.com/video/36976384?title=0&amp;byline=0&amp;portrait=0" width="640" height="360")
+
+section.details
+  .articles
+
+    article.who
+      h2 Quem
+      p
+        | A MateriaBrasil é fruto da união entre a #{link_to "Sistema Ambiental", "http://www.sistemambiental.com.br/", :class => "view_more"}
+          e a #{link_to "Fibra Design", "http://fibradesign.net"}. Aliando conhecimento e técnica, o projeto
+          nasceu do sonho coletivo de empreendedores que acreditam que é possível fazer negócios e
+          impactar positivamente a sociedade.
+      p
+        | Reunimos o maior acervo de materiais de baixo impacto ambiental e alta contribuição
+          social do Brasil, com o objetivo de fornecer informação qualificada sobre materiais e
+          seus fornecedores e fomentar projetos com pegadas mais leves.
+    article.how
+      h2 Como
+      - link = "http://books.google.com.br/books?id=uAOf-Hj9dzQC&pg=PA315&lpg=PA315&dq=life+cycle+thinking&source=bl&ots=KKXhabyO4R&sig=fHOzUiUr0a7UFr2Z74MY-R8LIjs&hl=pt-BR&sa=X&ei=FwRST5XVF6nA0AGPvbi0DQ&ved=0CGIQ6AEwBw#v=onepage&q=life%20cycle%20thinking&f=false"
+      p
+        | Usamos o conceito de #{link_to "Life Cycle Thinking", link} para analisar materiais e produtos
+          e dar opções resposáveis para que arquitetos, designers, cenógrafos, engenheiros
+          e outros profissionais possam inovar em seus projetos.
+      p
+        | Prestamos consultorias, ministramos workshops e realizamos pesquisas para ajudar você
+          a encontrar os materiais e tecnologias ideais para seus negócios.
+    article.why
+      h2 Por quê
+      p
+        | Vemos na <strong>troca</strong> e <strong>disseminação do conhecimento</strong> uma forma de estimular e acelerar
+          a inovação e a transformação da cultura de produção e consumo.
+      p
+        | Através do uso responsável dos recursos naturais, com respeito a Biodiversidade,
+          queremos que os profissionais tenham conhecimento e boas opções para escolher e comprar.
+    article.where
+      - fibra = "http://www.google.com/maps/place?q=Fibra+Design+Sustent%C3%A1vel+-+Rua+Senador+Pompeu,+Rio+de+Janeiro,+Brasil&hl=en&ie=UTF8&cid=15868738364720974112"
+      - sistema = "http://www.google.com/maps/place?q=Av.+Paulista+1159,+Conjunto+1315&hl=en&ftid=0x94ce59c7d9da70ef:0x57a0828859b4136f"
+      h2 Onde
+      p
+        | Em breve nosso acervo estará disponível na internet.
+      p
+        | Nossa <strong>biblioteca de materiais</strong> está disponível para visitação em São Paulo,
+          no #{link_to "escritório da Sistema Ambiental", sistema} e na sede da Fibra Design, no #{link_to "centro do Rio de Janeiro", fibra}.
+
+  ul.images
+    li.image= image_tag "home_01.jpg", :alt => "", :title =>  "", :size => "620x240"
+    li.image= image_tag "home_02.jpg", :alt => "", :title =>  "", :size => "620x395"
+    li.image= image_tag "home_03.jpg", :alt => "", :title =>  "", :size => "620x250"
+    li.image= image_tag "home_04.jpg", :alt => "", :title =>  "", :size => "620x410"
+
+section.network
+  header
+    h2
+      | Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil.
+
+  section.networks
+    .net.facebook
+      .fb-like-box[data-href="https://www.facebook.com/pages/MateriaBrasil/121794051233596" data-width="292" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"]
+    .net.twitter
+      blockquote
+      = link_to "Siga @materiabrasil", "https://twitter.com/materiabrasil", :data => {:"show-count" => false, :lang => "pt"}, :class => "twitter-follow-button"
+    .net.newsletter
+      h4 Receba novidades por email
+      form(action="http://materiabrasil.mailee.me/go/add_contact_form" id="mailee-form" method="post")
+        input name="key" type="hidden" value="25e3e8"
+        input name="url_ok" type="hidden" value="http://materiabrasil.com"
+        input name="url_error" type="hidden" value="http://materiabrasil.com"
+        input name="list[]" type="hidden" value="261585"
+        input class="text" name="email" type="text" placeholder="Digite seu e-mail" class="text_input"
+        input type="submit" value="Assinar" class="submit_button"
+
+      h4 Entre em contato conosco:
+      = mail_to "contato@materiabrasil.net", nil, :encode => :hex
