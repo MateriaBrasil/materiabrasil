@@ -5,4 +5,5 @@ class Category < ActiveRecord::Base
 
   acts_as_tree :order => "code_reference"
 
+  scope :parent, where(parent_id: nil)
 end

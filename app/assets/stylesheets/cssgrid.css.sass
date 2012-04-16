@@ -1,0 +1,86 @@
+$columns: 12
+$margin: 1.8%
+
+@function column-width($column)
+  @return ($column * ((100% / $columns) - $margin)) + (($column - 1) * $margin)
+
+.container
+  padding-left: 20px
+  padding-right: 20px
+
+.row
+  width: 100%
+  max-width: 1140px
+  min-width: 755px
+  margin: 0 auto
+  overflow: hidden
+
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol
+  margin-right: $margin
+  float: left
+  min-height: 1px
+
+.row
+  .onecol
+    width: column-width(1) 
+  .twocol
+    width: column-width(2)
+  .threecol
+    width: column-width(3)
+  .fourcol
+    width: column-width(4)
+  .fivecol
+    width: column-width(5)
+  .sixcol
+    width: column-width(6)
+  .sevencol
+    width: column-width(7)
+  .eightcol
+    width: column-width(8)
+  .ninecol
+    width: column-width(9)
+  .tencol
+    width: column-width(10)
+  .elevencol
+    width: column-width(11)
+  .twelvecol
+    width: column-width(12)
+    float: left
+
+.last
+  margin-right: 0px
+
+img, object, embed
+  max-width: 100%
+
+img
+  height: auto
+
+/* Smaller screens
+
+@media only screen and (max-width: 1023px)
+  body
+    font-size: 0.8em
+    line-height: 1.5em
+
+/* Mobile
+
+@media handheld, only screen and (max-width: 767px)
+  body
+    font-size: 16px
+    -webkit-text-size-adjust: none
+  .row, body, .container
+    width: 100%
+    min-width: 0
+    margin-left: 0px
+    margin-right: 0px
+    padding-left: 0px
+    padding-right: 0px
+  .row
+    .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol
+      width: auto
+      float: none
+      margin-left: 0px
+      margin-right: 0px
+      padding-left: 20px
+      padding-right: 20px

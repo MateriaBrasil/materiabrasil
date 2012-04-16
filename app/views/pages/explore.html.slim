@@ -1,0 +1,6 @@
+section.details.explore
+  ol.is_parent
+    - @categories.each do |cat|
+      li.parent
+        span.head= cat.name
+        = render partial: "partials/category_children", locals: { children: cat.children }

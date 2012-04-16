@@ -44,3 +44,10 @@ var App = window.App = {
 };
 
 App.init();
+
+$(document).ready(function(){
+  $('.parent .head').click(function(){
+    var self = $(this);
+    self.siblings('ol.is_children').slideToggle();
+  })
+});

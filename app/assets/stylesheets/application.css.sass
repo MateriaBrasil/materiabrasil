@@ -1,10 +1,55 @@
 @import compass/reset
 @import compass/utilities
 @import compass/css3
-@import 960/grid
+
+@import cssgrid
+@import "http://fonts.googleapis.com/css?family=Open+Sans:300,600,400)"
+
+$cyan: #239EB1
+$orange: #ea6740
+
+.debug
+  border: 1px solid red
 
 
-// General Rules for every page
-@import frontend/fonts
-@import frontend/layout
-@import frontend/general
+a
+  color: $cyan
+  text-decoration: none
+  &:hover
+    color: $orange
+    border-bottom: 1px solid $orange
+    
+
+
+body
+  background: white image-url("site/bg_body.png") repeat-x
+  font-family: "Open Sans"
+  font-weight: 300
+  font-size: 1em
+  line-height: 1.6em
+
+.header
+  margin-bottom: 2.5%
+  *
+    line-height: 2em
+  h2
+    background: image-url("site/bg_header_h2.png") no-repeat 0 50%
+    font-size: 1.8em
+    letter-spacing: -0.1em
+    font-weight: 600
+    text-indent: 30px
+  .child
+    a
+      margin-right: 20px
+    margin-top: 15px
+  .search
+    input
+      +border-radius(14px)
+      +box-shadow(inset 0 1px 2px #666)
+      background: image-url("site/bg_search_input.gif") no-repeat 8px 6px
+      border: 1px solid #eee
+      text-indent: 25px
+      color: #666
+      font-size: .8em
+      outline: none
+      width: 100%

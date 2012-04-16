@@ -1,4 +1,7 @@
 pt-BR:
+  breadcrumb:
+    index:
+      head_html: "Explore <span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"
   social:
     connect_to_our_network: "Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil."
   pages:
