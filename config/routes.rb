@@ -7,10 +7,13 @@ MateriaBrasil::Application.routes.draw do
 
   unless Rails.env.production?
 
-    get 'explore/', to: "materials#index", as: :explore
+    get 'explore/', to: "materials#index", as: :explore    
     get 'search', to: "pages#search", as: :search
-    root to: "pages#index"
+    match 'material/:id', to: "materials#show", as: :material
+    match ':category/explore', to: "materials#index", as: :category
 
+    root to: "pages#index"
+    
   else
     root :to => "pages#splash"
   end

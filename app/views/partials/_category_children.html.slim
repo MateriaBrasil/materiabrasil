@@ -1,6 +1,0 @@
-- if children.present?
-  ol.is_children
-    - children.each do |child|
-      li.children
-        span.head= child.name
-        = render partial: "partials/category_children", locals: { children: child.children }

@@ -1,6 +1,11 @@
-section.details.explore
-  ol.categories.twelvecol
-    - @categories.each do |cat|
-      li.is_parent
-        span.parent= cat.name
-        /= render partial: "partials/category_children", locals: { children: cat.children }
+section.details.explore.row
+  = render partial: "partials/categories"
+- if @category.present?
+  - @category.materials.each_slice(3) do |material|
+    ol.materials.row
+      = render partial: "material", collection: material
+- else
+  - Category.parent.each do |parent|
+    - parent.materials.each_slice(3) do |material|
+      ol.materials.row
+        = render partial: "material", collection: material

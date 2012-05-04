@@ -1,10 +1,10 @@
 .row.header
   .threecol
-    h2 MateriaBrasil
+    h2= link_to "MateriaBrasil", root_path
   nav
     .sixcol.child
       = link_to "Explore", explore_path
       = link_to "Sobre", ""
   .threecol.child.last
     form.search
-      input type="text" name="q" value="" placeholder="Pesquisar..."
+      input type="text" name="q" value="" placeholder=""

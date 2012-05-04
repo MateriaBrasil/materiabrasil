@@ -1,0 +1,39 @@
+section.material.row
+  .twelvecol
+    h1= @material.name
+  .eightcol
+    .image
+      = image_tag @material.images.first.image.main.url, alt: @material.name
+    .about
+      ul
+        li
+          | Caracteristicas
+          ul
+            li
+              .form
+                table
+        li
+          | Propriedades
+  .fourcol.last
+    .resume
+      = @material.resume
+    .indicators
+      h3 Direcionadores de sustentabilidade
+      ol
+        li.indicator 
+          | Renovável
+          ul
+            li Alta durabilidade
+            li Biodegradável
+            li Cadeia produtiva regional
+            li Manejo sustentável
+        li.indicator
+          | Maleabilidade
+    .comercial_information
+      h4 Informações comerciais
+      h5
+        | Fabricante
+        = @material.manufacturer.name
+      h5
+        | Site
+        = @material.manufacturer.site

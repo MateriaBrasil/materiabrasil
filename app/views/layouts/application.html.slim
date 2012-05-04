@@ -4,6 +4,7 @@ html
     title MateriaBrasil
     meta name="description" content="A MateriaBrasil é um centro de referência em modelos de produção e consumo conscientes. Encontramos as soluções mais coerentes para o seu negócio rumo à sustentabilidade."
     meta name="keywords" content="materia brasil, materiabrasil, sustentabilidade, ambiental, consciencia, solucoes"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     = stylesheet_link_tag :application
 
     = favicon_link_tag asset_path('favicon.png'), :type => "image/png"
@@ -15,15 +16,8 @@ html
   body(id=ctrl class=page)
     .container
       = render partial: "partials/header"
-      section.content.row
+      section.content
         = yield
 
-    footer.foot
-      section
-        ol.partners
-          li.fibra= link_to image_tag("logo_fibra.gif", :alt => "Fibra Design", :title => "Fibra Design", :size => "150x65"), "http://fibradesign.net"
-          li.sistema= link_to image_tag("logo_design.gif", :alt => "Sistema Assessoria Ambiental", :title => "Sistema Assessoria Ambiental", :size => "150x65"), "http://www.sistemambiental.com.br/"
 
-    // Something from facebook
-    #fb-root
     = javascript_include_tag :application

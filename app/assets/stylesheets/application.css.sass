@@ -15,32 +15,47 @@ $orange: #ea6740
 a
   color: $cyan
   text-decoration: none
+  transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out 
+  -moz-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
+  -o-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
+  -webkit-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
   &:hover
     color: $orange
-    border-bottom: 1px solid $orange
+    text-shadow: 0px 0px 2px $orange 
     
-
+h1
+  font-size: 2.4em
+  line-height: 1.8em
+  letter-spacing: -1px
+h2
+  font-size: 1.8em
+  font-weight: 600
+  letter-spacing: -0.1em
+h3
+  font-size: 1.4em
 
 body
   background: white image-url("site/bg_body.png") repeat-x
   font-family: "Open Sans"
   font-weight: 300
-  font-size: 1em
-  line-height: 1.6em
-
+  font-size: 0.9em
+.number
+  color: $cyan
 .header
   margin-bottom: 2.5%
   *
-    line-height: 2em
+    line-height: 2.1em
   h2
-    background: image-url("site/bg_header_h2.png") no-repeat 0 50%
-    font-size: 1.8em
-    letter-spacing: -0.1em
-    font-weight: 600
+    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
     text-indent: 30px
+    a
+      color: black
+      &:hover
+        color: $orange
   .child
     a
       margin-right: 20px
+      font-weight: 400
     margin-top: 15px
   .search
     input
@@ -53,3 +68,66 @@ body
       font-size: .8em
       outline: none
       width: 100%
+
+.breadcrumb
+
+.presentation
+  height: 400px
+  .join, .video
+    height: 100%
+  .join
+    background: $cyan
+    color: white
+    padding-right: 1.8%
+    margin-right: 0
+
+
+ol.materials
+  a:hover
+    opacity: .9
+  margin-bottom: 22px
+  padding-bottom: 0
+  li
+    position: relative
+    +box-shadow(0 1px 3px #333)
+  .material, img
+    +border-radius(4px)
+  .name
+    background: rgba(0,0,0,0.6)
+    width: 100%
+    bottom: 0
+    padding: 10px 0
+    text-indent: 8px
+    a
+      color: white
+      font-size: 1.2em
+      padding-left: 4px
+      margin: 0
+
+.explore
+  margin-top: 10px
+
+  ol.category
+    &:last-child
+      margin-bottom: 20px
+    border-bottom: 1px solid #dedede
+    li
+      a
+        color: #333
+        &:hover
+          border-bottom: none
+          color: $orange
+      display: inline-block
+      padding: 6px  
+      margin-right: 6px
+      &.parents, &.children
+      &.parents
+        font-size: 1.3em
+      &.children
+        font-size: 1em
+      &.active
+        a
+          +border-radius(14px)
+          background: $cyan
+          color: white
+          padding: 3px

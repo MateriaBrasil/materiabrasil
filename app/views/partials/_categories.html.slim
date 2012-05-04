@@ -1,0 +1,20 @@
+- if @category.present?
+
+  - @category.parents.each do |parent|
+    ol.twelvecol.category
+      - parent.siblings.each do |c|
+        li[class="#{c.parents.size.zero? ? 'parents' : 'children'} #{c == parent ? 'active' : ''}"]= link_to c.name, category_path(c)
+
+  ol.twelvecol.category
+    - @category.siblings.each do |brother|
+      li[class="#{brother.parents.size.zero? ? 'parents' : 'children'} #{brother == @category ? 'active' : ''}"]= link_to brother.name, category_path(brother)
+
+  ol.twelvecol.last.category
+    - @category.children.each do |child|
+      li.children= link_to child.name, category_path(child)
+
+- else 
+  ol.twelvecol.category
+    - Category.parent.each do |s|
+      li[class=(s.parents.size.zero? ? 'parents' : 'children')]= link_to s.name, category_path(s)
+
