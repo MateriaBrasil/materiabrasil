@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(:version => 20120408211656) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "parent_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "code_reference"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.string   "code_reference", :limit => 3
   end
 
   create_table "categories_materials", :id => false, :force => true do |t|

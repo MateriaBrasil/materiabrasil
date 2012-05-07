@@ -10,7 +10,9 @@ $orange: #ea6740
 
 .debug
   border: 1px solid red
-
+img
+  width: 100%
+  height: auto
 
 a
   color: $cyan
@@ -35,34 +37,35 @@ h3
   font-size: 1.4em
 
 body
-  background: white image-url("site/bg_body.png") repeat-x
+  background: #f4f4f4 image-url("site/bg_body.png") repeat-x
   font-family: "Open Sans"
   font-weight: 300
   font-size: 0.9em
 .number
   color: $cyan
 .header
+  a
+    color: white 
+    &:hover
+      color: $cyan
   margin-bottom: 2.5%
   *
     line-height: 2.1em
   h2
     background: image-url("site/bg_header_h2.png") no-repeat 0 45%
-    text-indent: 30px
-    a
-      color: black
-      &:hover
-        color: $orange
+    text-indent: 38px
+
   .child
     a
       margin-right: 20px
-      font-weight: 400
+      font-weight: 300
     margin-top: 15px
   .search
     input
       +border-radius(14px)
       +box-shadow(inset 0 1px 2px #666)
-      background: image-url("site/bg_search_input.gif") no-repeat 8px 6px
-      border: 1px solid #eee
+      background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
+      border: none 
       text-indent: 25px
       color: #666
       font-size: .8em
@@ -81,37 +84,40 @@ body
     padding-right: 1.8%
     margin-right: 0
 
-
+// Listing materials
 ol.materials
+  padding: 5px
   a:hover
     opacity: .9
   margin-bottom: 22px
-  padding-bottom: 0
   li
-    position: relative
-    +box-shadow(0 1px 3px #333)
-  .material, img
-    +border-radius(4px)
+    +box-shadow(0 1px 1px #bebebe)
+
+  .material
+    +border-radius(8px)
   .name
-    background: rgba(0,0,0,0.6)
+    background: white 
     width: 100%
-    bottom: 0
     padding: 10px 0
     text-indent: 8px
+    +box-shadow(0 1px 1px #bebebe)
+    +border-radius(0 0 4px 4px)
     a
-      color: white
-      font-size: 1.2em
+      color: black
+      font-size: .9em
       padding-left: 4px
-      margin: 0
 
-.explore
+
+// The Explore Page
+section.explore
   margin-top: 10px
-
+  margin-bottom: 10px
   ol.category
     &:last-child
       margin-bottom: 20px
     border-bottom: 1px solid #dedede
     li
+      margin: 5px 0
       a
         color: #333
         &:hover
@@ -123,6 +129,7 @@ ol.materials
       &.parents, &.children
       &.parents
         font-size: 1.3em
+        font-weight: 300
       &.children
         font-size: 1em
       &.active
@@ -130,4 +137,66 @@ ol.materials
           +border-radius(14px)
           background: $cyan
           color: white
-          padding: 3px
+          padding: 2px
+
+// Seeing a material
+section.material
+  .name, .resume, .indicators, .image
+    background: white
+    +border-radius(4px)
+    +box-shadow(0 1px 2px #bebebe)
+  .resume, .indicators
+    width: 94%
+    padding: 20px
+  .image
+    width: 100% 
+  .name 
+    width: 97%
+    margin: 1px 1px 15px 1px
+    padding: 15px
+    h1
+      font-size: 1.8em
+      color: #333
+  .resume, .indicators
+    line-height: 1.6em
+    font-weight: 400
+    font-size: 1em
+    color: #333
+  .indicators
+    margin: 10px 0
+    background: $cyan
+    color: white
+    h3
+      font-size: 1.3em
+    .indicator
+      width: 15%
+      height: 35%
+      text-indent: -9999px
+      background: image-url("site/bg_indicators_sprite.png") no-repeat -9px -5px
+      display: inline-block
+      padding: 14px 1px
+      margin: 2px 0 
+    .cycle
+      &:hover
+        background-position: -9px -65px
+    .safety
+      background-position: -66px -5px
+      &:hover
+        background-position: -66px -65px
+    .energy
+      background-position: -180px -5px
+      &:hover
+        background-position: -180px -65px
+    .water
+      background-position: -240px -5px
+      &:hover
+        background-position: -240px -65px
+    .management
+      background-position: -300px -2px
+      &:hover
+        background-position: -300px -62px
+    .human
+      background-position: -122px -5px
+      &:hover
+        background-position: -122px -65px
+

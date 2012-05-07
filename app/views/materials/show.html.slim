@@ -1,5 +1,5 @@
 section.material.row
-  .twelvecol
+  .twelvecol.name
     h1= @material.name
   .eightcol
     .image
@@ -16,19 +16,24 @@ section.material.row
           | Propriedades
   .fourcol.last
     .resume
-      = @material.resume
+      p= @material.resume
     .indicators
-      h3 Direcionadores de sustentabilidade
+      h3
+        | Direcionadores de sustentabilidade
       ol
-        li.indicator 
-          | Renovável
-          ul
-            li Alta durabilidade
-            li Biodegradável
-            li Cadeia produtiva regional
-            li Manejo sustentável
-        li.indicator
-          | Maleabilidade
+        li.indicator.cycle[title="Ciclo"]
+          | Ciclo
+        li.indicator.safety[title="Segurança"] 
+          | Segurança
+        li.indicator.human[title="Social"]
+          | Social
+        li.indicator.energy[title="Energia"]
+          | Energia
+        li.indicator.water[title="Água"]
+          | Água
+        li.indicator.management[title="Gestão"]
+          | Gestão
+
     .comercial_information
       h4 Informações comerciais
       h5

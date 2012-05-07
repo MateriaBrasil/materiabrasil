@@ -3,7 +3,13 @@ ActiveAdmin.register Material do
   menu :label => "Materiais"
 
   form :partial => "form"
-
+  
+  index do
+    column :id
+    column :name, sortable: true
+    column :manufacturer
+    default_actions
+  end
 
   show :title => :name do |material|
     attributes_table do
