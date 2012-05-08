@@ -3,5 +3,5 @@ section.details.explore.row
   span.twelvecol.materials_count
     | #{@resource.size} materiais encontrados
 - @resource.each_slice(3) do |material|
-  ol.materials.row
+  ol.row.materials
     = render partial: "material", collection: material

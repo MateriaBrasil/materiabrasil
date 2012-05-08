@@ -92,7 +92,8 @@ ol.materials
   margin-bottom: 22px
   li
     +box-shadow(0 1px 1px #bebebe)
-
+    &:last-child
+      margin-right: 0px !important
   .material
     +border-radius(8px)
   .name
@@ -128,11 +129,6 @@ section.explore
     border-bottom: 1px solid #dedede
     li
       margin: 5px 0
-      a
-        color: #333
-        &:hover
-          border-bottom: none
-          color: $orange
       display: inline-block
       padding: 6px  
       margin-right: 6px
@@ -141,11 +137,16 @@ section.explore
         font-size: 1.3em
         font-weight: 300
       &.children
-        font-size: 1em
+        font-size: .9em
+      a
+        color: #333
+      &.active, a:hover
+        color: $orange
+        text-shadow: none
       &.active
+        border-bottom: 2px solid $orange
         a
-          border-bottom: 2px solid $cyan
-          color: $cyan 
+          color: $orange
           padding: 2px
   ol.last
     border: none
@@ -157,12 +158,11 @@ section.material
     +border-radius(4px)
     +box-shadow(0 1px 2px #bebebe)
   .resume, .indicators
-    width: 94%
-    padding: 20px
-  .image
-    width: 100% 
+    width: 83%
+    margin: 0 auto
+    padding: 20px 30px
   .name 
-    width: 97%
+    width: 97.2%
     margin: 1px 1px 15px 1px
     padding: 15px
     h1

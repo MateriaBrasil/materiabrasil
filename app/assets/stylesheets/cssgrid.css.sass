@@ -2,7 +2,7 @@ $columns: 12
 $margin: 1.8%
 
 @function column-width($column)
-  @return ($column * ((100% / $columns) - $margin)) + (($column - 1) * $margin)
+  @return ($column * ((101.8% / $columns) - $margin)) + (($column - 1) * $margin)
 
 .container
   padding-left: 20px
@@ -44,7 +44,7 @@ $margin: 1.8%
   .elevencol
     width: column-width(11)
   .twelvecol
-    width: column-width(12)
+    width: 100% 
     float: left
 
 .last
