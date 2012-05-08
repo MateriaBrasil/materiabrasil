@@ -7,6 +7,8 @@
 
 $cyan: #239EB1
 $orange: #ea6740
+$red: #CB323E
+$yellow: #EACC4F
 
 .debug
   border: 1px solid red
@@ -89,13 +91,18 @@ ol.materials
   padding: 5px
   a:hover
     opacity: .9
-  margin-bottom: 22px
+  margin-bottom: 10px
   li
-    +box-shadow(0 1px 1px #bebebe)
+    margin-bottom: 8px
     &:last-child
       margin-right: 0px !important
+    &:hover
+      +box-shadow(0 1px 8px lighten($red, 30%))
   .material
     +border-radius(8px)
+  .image
+    img
+      +border-radius(4px 4px 0 0)
   .name
     background: white 
     width: 100%
@@ -158,9 +165,9 @@ section.material
     +border-radius(4px)
     +box-shadow(0 1px 2px #bebebe)
   .resume, .indicators
-    width: 83%
+    width: 89%
     margin: 0 auto
-    padding: 20px 30px
+    padding: 19px
   .name 
     width: 97.2%
     margin: 1px 1px 15px 1px
