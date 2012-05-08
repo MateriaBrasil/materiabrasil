@@ -1,6 +1,11 @@
 class MaterialsController < ApplicationController
   def index
-    @category = Category.find(params[:category]) if params[:category] 
+    if params[:category]
+      @category = Category.find(params[:category])
+      @resource = @category.materials
+    else
+      @resource = Material.all
+    end
   end
 
   def show

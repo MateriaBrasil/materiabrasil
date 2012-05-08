@@ -1,11 +1,5 @@
 section.details.explore.row
   = render partial: "partials/categories"
-- if @category.present?
-  - @category.materials.each_slice(3) do |material|
-    ol.materials.row
-      = render partial: "material", collection: material
-- else
-  - Category.parent.each do |parent|
-    - parent.materials.each_slice(3) do |material|
-      ol.materials.row
-        = render partial: "material", collection: material
+- @resource.each_slice(3) do |material|
+  ol.materials.row
+    = render partial: "material", collection: material
