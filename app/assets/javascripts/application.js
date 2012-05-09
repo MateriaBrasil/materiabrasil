@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ie
+//= require_tree .
 //= require_tree ./frontend

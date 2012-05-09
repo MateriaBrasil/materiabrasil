@@ -8,17 +8,6 @@
 
 (function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs"));
 
-document.getElementById('mailee-form').onsubmit = function(){
-  re = /^[a-z0-9\._-]+@([a-z0-9][a-z0-9-_]*[a-z0-9-_]\.)+([a-z-_]+\.)?([a-z-_]+)$/
-    if(!this.email.value.match(re)) {
-      alert("Por favor, preencha corretamente o email");
-      this.email.focus();
-      return false;
-    }
-  return true;
-};
-
-
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-29468390-1']);
 _gaq.push(['_trackPageview']);
@@ -34,8 +23,9 @@ var App = window.App = {
 
   init: function(){
     this.getTwitterStatus();
+    jQuery("select").chosen();
   },
-
+  
   getTwitterStatus: function(){
     $.getJSON("https://twitter.com/statuses/user_timeline/materiabrasil.json?callback=?", function(data){
       $(".networks .twitter blockquote").html(data[0].text);
@@ -45,9 +35,3 @@ var App = window.App = {
 
 App.init();
 
-$(document).ready(function(){
-  $('.parent .head').click(function(){
-    var self = $(this);
-    self.siblings('ol.is_children').slideToggle();
-  })
-});

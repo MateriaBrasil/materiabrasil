@@ -35,11 +35,14 @@ section.material.row
         li.indicator.management[title="Gestão"]
           | Gestão
 
-    .comercial_information
-      h4 Informações comerciais
-      h5
-        | Fabricante
-        = @material.manufacturer.name
-      h5
-        | Site
-        = @material.manufacturer.site
+    .manufacturer
+      h3 Informações comerciais
+      table
+        tr 
+          td.title Fabricante
+          td= @material.manufacturer.name
+        tr
+          td.title Site
+          td= link_to @material.manufacturer.site
+      = simple_form_for "/contact/get/1", remote: true, format: :json do |f|
+        = f.input :contact , collection: @material.manufacturer.contacts, label: false, prompt: "Selecione um representante"

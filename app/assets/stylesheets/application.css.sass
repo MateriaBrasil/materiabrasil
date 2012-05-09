@@ -3,6 +3,7 @@
 @import compass/css3
 
 @import cssgrid
+@import chosen
 @import "http://fonts.googleapis.com/css?family=Open+Sans:300,600,400)"
 
 $cyan: #239EB1
@@ -160,14 +161,6 @@ section.explore
 
 // Seeing a material
 section.material
-  .name, .resume, .indicators, .image
-    background: white
-    +border-radius(4px)
-    +box-shadow(0 1px 2px #bebebe)
-  .resume, .indicators
-    width: 89%
-    margin: 0 auto
-    padding: 19px
   .name 
     width: 97.2%
     margin: 1px 1px 15px 1px
@@ -175,24 +168,46 @@ section.material
     h1
       font-size: 1.8em
       color: #333
-  .resume, .indicators
+  .name, .resume, .indicators, .image, .manufacturer 
+    background: white
+    +border-radius(4px)
+    +box-shadow(0 1px 2px #bebebe)
+  .resume, .indicators, .manufacturer
+    width: 89%
+    margin: 0 auto
+    padding: 19px
     line-height: 1.6em
     font-weight: 400
     font-size: 1em
     color: #333
+    margin-bottom: 20px
+  .indicators, .manufacturer
+    h3
+      margin-bottom: 20px
+  .manufacturer
+    td 
+      padding: 2px 8px 2px 0px
+      width: 80%
+    td.title
+      color: gray
+      width: 20%
+      padding-right: 15px
+    h3
+      color: $cyan
+    select
+      width: 100%
+    .chzn-container
+      padding: 5px 0
   .indicators
-    margin: 10px 0
     background: $cyan
     color: white
-    h3
-      font-size: 1.3em
     .indicator
       width: 15%
       height: 35%
       text-indent: -9999px
       background: image-url("site/bg_indicators_sprite.png") no-repeat -9px -5px
       display: inline-block
-      padding: 14px 1px
+      padding: 14px 0px
       margin: 2px 0 
     .cycle
       &:hover

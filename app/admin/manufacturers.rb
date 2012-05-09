@@ -7,6 +7,7 @@ ActiveAdmin.register Manufacturer do
     f.inputs "Dados sobre o fabricante" do
       f.input :name, :label => "Nome"
       f.input :email
+      f.input :site
       f.input :address, :label => "Endereço"
     end
 
