@@ -11,6 +11,27 @@ section.material.row
         li= link_to "Quantidades"
         li= link_to "Usos"
         li= link_to "Anexos"
+      section.data
+        table
+          tr 
+            td.title Forma 
+            td
+              div Bobinas
+              div Tecido
+          tr
+            td.title Tato
+            td
+              div Liso
+              div Macio
+          tr
+            td.title Acabamento
+            td Sem acabamento
+          tr
+            td.title Cores
+            td
+              div Diversas cores
+              div Multicolor
+
   .fourcol.last
     .resume
       p= @material.resume
@@ -42,4 +63,4 @@ section.material.row
           td.title Site
           td= link_to @material.manufacturer.site
       = simple_form_for "/contact/get/1", remote: true, format: :json do |f|
-        = f.input :contact , collection: @material.manufacturer.contacts, label: false, prompt: "Selecione um representante"
+        = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"

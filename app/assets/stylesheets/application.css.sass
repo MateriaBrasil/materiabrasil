@@ -185,11 +185,13 @@ section.material
     z-index: 2
     position: relative
   .about
+    padding: 10px 0
     z-index: 1
-    .options
+    .options, .data
       width: 90%
-      padding: 20px
+      padding: 5px 20px
       font-weight: 400
+    .options
       li
         display: inline-block
         padding: 8px 15px
@@ -199,9 +201,20 @@ section.material
           background: $cyan
           +border-radius(6px)
           a
-            color: white
+            color: white    
+    .data 
+      font-weight: 300
+      background: #F4F4F4
+      margin: 10px auto
+      table
+        width: 100%
+        tr
+          border-bottom: 1px solid #dedede
+        td.title
+          width: 20%
+          color: lighten(#333, 50%)
+          padding: 20px 0
 
-      
   .indicators, .manufacturer
     h3
       margin-bottom: 20px
