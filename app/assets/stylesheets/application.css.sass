@@ -57,6 +57,9 @@ body
   h2
     background: image-url("site/bg_header_h2.png") no-repeat 0 45%
     text-indent: 38px
+    a:hover
+      color: white
+      text-shadow: 0 0 15px $cyan 
 
   .child
     a
@@ -186,6 +189,7 @@ section.material
     position: relative
   .about
     padding: 10px 0
+    margin-bottom: 40px
     z-index: 1
     .options, .data
       width: 90%
@@ -208,8 +212,11 @@ section.material
       margin: 10px auto
       table
         width: 100%
+        line-height: 1.4em
         tr
           border-bottom: 1px solid #dedede
+          &:last-child
+            border: none
         td.title
           width: 20%
           color: lighten(#333, 50%)
