@@ -23,7 +23,7 @@ var App = window.App = {
 
   init: function(){
     this.getTwitterStatus();
-    jQuery("select").chosen();
+    jQuery("select").chosen({no_results_text: "Nenhum resultado encontrado para"});
   },
   
   getTwitterStatus: function(){

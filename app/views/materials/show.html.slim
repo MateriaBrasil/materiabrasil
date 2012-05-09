@@ -5,15 +5,12 @@ section.material.row
     .image
       = image_tag @material.images.first.image.main.url, alt: @material.name
     .about
-      ul
-        li
-          | Caracteristicas
-          ul
-            li
-              .form
-                table
-        li
-          | Propriedades
+      ul.options
+        li.active= link_to "Caracteristicas"
+        li= link_to "Propriedades"
+        li= link_to "Quantidades"
+        li= link_to "Usos"
+        li= link_to "Anexos"
   .fourcol.last
     .resume
       p= @material.resume
