@@ -30,7 +30,7 @@ ActiveAdmin.register Material do
         ol :id => "images_list" do
           material.images.each do |img|
             li do
-              image_tag img.image.thumbnail.url
+              image_tag img.image.flat.url
             end
           end
         end

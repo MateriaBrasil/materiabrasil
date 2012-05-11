@@ -14,6 +14,9 @@ group :production do
   gem 'pg'
 end
 
+# Tools
+gem 'inherited_resources'
+gem 'has_scope'
 gem 'heroku'
 
 # File updloadin

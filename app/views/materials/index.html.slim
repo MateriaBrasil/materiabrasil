@@ -1,7 +1,45 @@
-section.details.explore.row
-  = render partial: "partials/categories"
-  span.twelvecol.materials_count
-    | #{@resource.size} materiais encontrados
-- @resource.each_slice(3) do |material|
-  ol.row.materials
-    = render partial: "material", collection: material
+section.breadcrumb.row
+  header.twelvecol
+    h1= t "breadcrumb.index.head_html", material_count: Material.all.size, manufacturer_count: Manufacturer.all.size
+section.presentation.row
+  section.fourcol.join
+    h3 
+      |Junte-se à matéria brasil 
+  iframe.eightcol.video.last src="http://player.vimeo.com/video/36976384?title=0&amp;byline=0&amp;portrait=0" allowFullScreen
+
+section.recent.row
+  h2 Content
+section.list.row
+  - tall = image_tag Material.first.images.first.image.tall.url
+  - flat = image_tag Material.first.images.first.image.flat.url
+  - longflat = image_tag Material.first.images.first.image.longflat.url
+  - main = image_tag Material.first.images.first.image.main.url
+  ol.materials.block_1
+    li.material.threecol.tall= tall
+    li.material.threecol.flat= flat 
+    li.material.sixcol.last.flat= longflat
+    li.material.sixcol.flat= longflat
+    li.material.threecol.flat.last= flat 
+
+  ol.materials.block_2
+    li.material.fivecol.tall= main 
+    li.material.sevencol.tall.last= main 
+    li.material.threecol.tall= tall
+    li.material.threecol.tall= tall    
+    li.material.sixcol.last.flat= longflat
+
+  ol.materials.block_3
+    li.material.threecol.flat= flat
+    li.material.threecol.flat.last= flat
+    li.material.sixcol.tall= main
+    li.material.sixcol.last.tall= main
+
+  ol.materials.block_4
+   li.material.threecol.flat= flat
+   li.material.sixcol.flat= longflat
+   li.material.threecol.tall.last.special= tall
+   li.material.threecol.flat= flat
+   li.material.sixcol.flat= longflat
+
+section.network.row
+

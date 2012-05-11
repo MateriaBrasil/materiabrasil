@@ -263,7 +263,9 @@ DEPENDENCIES
   database_cleaner
   devise (= 1.5.3)
   fog
+  has_scope
   heroku
+  inherited_resources
   jquery-rails
   machinist (>= 2.0.0.beta2)
   meta_search (>= 1.1.0.pre)

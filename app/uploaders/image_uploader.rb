@@ -17,17 +17,17 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   process :resize_to_fill => [800, 600]
-
-  version :thumb_secondary, :from => :thumb do
-    process :resize_to_fill => [140,96]
+ 
+  version :longflat, from: :main do 
+    process :resize_to_fill => [580, 240]
   end
 
-  version :thumbnail, :from => :main do
-    process :resize_to_fill => [220,150]
+  version :flat, from: :main do
+    process :resize_to_fill => [280, 240]
   end
 
-  version :medium, from: :main do
-    process :resize_to_fill => [400,250]
+  version :tall, from: :main do
+    process :resize_to_fill => [280, 480]
   end
 
   version :main do
