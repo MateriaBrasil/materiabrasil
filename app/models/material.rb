@@ -1,4 +1,6 @@
 class Material < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   validates_presence_of :manufacturer
   belongs_to :manufacturer
@@ -6,7 +8,5 @@ class Material < ActiveRecord::Base
   has_and_belongs_to_many :categories
   accepts_nested_attributes_for :images
 
-  def to_param
-    "#{id}-#{name.parameterize}"
-  end
+  default_scope order('created_at DESC')
 end

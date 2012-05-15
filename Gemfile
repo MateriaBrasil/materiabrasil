@@ -18,6 +18,7 @@ end
 gem 'inherited_resources'
 gem 'has_scope'
 gem 'heroku'
+gem "friendly_id", "~> 4.0.1"
 
 # File updloadin
 gem 'carrierwave'

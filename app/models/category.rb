@@ -1,4 +1,7 @@
 class Category < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   validates_presence_of :name
   has_many :subcategories, :class_name => :Category, :foreign_key => :parent_id
   has_and_belongs_to_many :materials
@@ -7,12 +10,6 @@ class Category < ActiveRecord::Base
   acts_as_tree
 
   scope :parent, where(parent_id: nil)
-
-
-  def to_param
-    "#{self.id}-#{self.name.parameterize}"
-  end
-
 
   def siblings
     Category.where(parent_id: self.parent_id)

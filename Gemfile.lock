@@ -106,6 +106,7 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    friendly_id (4.0.4)
     fssm (0.2.8.1)
     gherkin (2.9.3)
       json (>= 1.4.6)
@@ -263,6 +264,7 @@ DEPENDENCIES
   database_cleaner
   devise (= 1.5.3)
   fog
+  friendly_id (~> 4.0.1)
   has_scope
   heroku
   inherited_resources
