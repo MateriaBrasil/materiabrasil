@@ -39,7 +39,6 @@ gem 'meta_search',    '>= 1.1.0.pre'
 # Database
 gem 'acts_as_tree_rails3'
 
-
 # Cache
 gem 'dalli'
 

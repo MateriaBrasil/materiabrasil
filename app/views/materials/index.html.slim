@@ -10,36 +10,7 @@ section.presentation.row
 section.recent.row
   h2 Content
 section.list.row
-  - tall = image_tag Material.first.images.first.image.tall.url
-  - flat = image_tag Material.first.images.first.image.flat.url
-  - longflat = image_tag Material.first.images.first.image.longflat.url
-  - main = image_tag Material.first.images.first.image.main.url
-  ol.materials.block_1
-    li.material.threecol.tall= tall
-    li.material.threecol.flat= flat 
-    li.material.sixcol.last.flat= longflat
-    li.material.sixcol.flat= longflat
-    li.material.threecol.flat.last= flat 
-
-  ol.materials.block_2
-    li.material.fivecol.tall= main 
-    li.material.sevencol.tall.last= main 
-    li.material.threecol.tall= tall
-    li.material.threecol.tall= tall    
-    li.material.sixcol.last.flat= longflat
-
-  ol.materials.block_3
-    li.material.threecol.flat= flat
-    li.material.threecol.flat.last= flat
-    li.material.sixcol.tall= main
-    li.material.sixcol.last.tall= main
-
-  ol.materials.block_4
-   li.material.threecol.flat= flat
-   li.material.sixcol.flat= longflat
-   li.material.threecol.tall.last.special= tall
-   li.material.threecol.flat= flat
-   li.material.sixcol.flat= longflat
+  = load_block materials: @materials
 
 section.network.row
 
