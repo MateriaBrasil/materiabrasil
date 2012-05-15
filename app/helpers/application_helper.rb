@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def load_block(options = {})
-    block = options[:block] || rand(1..5)
+    block = options[:block] || rand(1..6).to_i
     material = options[:materials]
     blocks = {
       1 => [ 
@@ -38,7 +38,7 @@ module ApplicationHelper
     content_tag :ol, class: "materials block_#{block}" do
       counter = 0
       content = ""
-      blocks[block.to_i].each do |k, v|
+      blocks[block].each do |k, v|
         break if material[counter].nil? 
         content += content_tag :li, class: "material #{v}" do
           content_tag(:div, class: "image") do
