@@ -18,4 +18,8 @@ class Category < ActiveRecord::Base
   def parents
     self.parent ? [].concat(self.parent.parents << self.parent) : []
   end
+  
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end

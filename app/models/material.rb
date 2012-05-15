@@ -9,4 +9,12 @@ class Material < ActiveRecord::Base
   accepts_nested_attributes_for :images
 
   default_scope order('created_at DESC')
+
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
+
+
+

@@ -5,7 +5,7 @@ MateriaBrasil::Application.routes.draw do
   devise_for :users
 
   get 'material/:id',       to: "materials#show",     as: :material
-  get ':category/explore',  to: "materials#explore",  as: :category
+  get 'explore/:category',  to: "materials#explore",  as: :category
   get 'explore/',           to: "materials#explore",  as: :explore    
   root                      to: "materials#index"
 end
