@@ -38,7 +38,7 @@ module ApplicationHelper
     content_tag :ol, class: "materials block_#{block}" do
       counter = 0
       content = ""
-      blocks[block].each do |k, v|
+      blocks[block.to_i].each do |k, v|
         break if material[counter].nil? 
         content += content_tag :li, class: "material #{v}" do
           content_tag(:div, class: "image") do
