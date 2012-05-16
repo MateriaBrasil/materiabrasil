@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def load_block(options = {})
-    block = options[:block] || rand(1..6).to_i
+    block = options[:block] || rand(1..5) + 1
     material = options[:materials]
     blocks = {
       1 => [ 
