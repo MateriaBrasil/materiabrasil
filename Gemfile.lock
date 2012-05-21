@@ -1,7 +1,6 @@
 GIT
   remote: git@github.com:MateriaBrasil/active_admin.git
   revision: ed346e99c78a5816ce3219e7f2194fd5b62f6b34
-  branch: original
   specs:
     activeadmin (0.4.4)
       bourbon (>= 1.0.0)
