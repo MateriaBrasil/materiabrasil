@@ -3,6 +3,7 @@ ActiveAdmin.register Manufacturer do
   menu :label => "Fabricantes"
   
   index do 
+    selectable_column
     column :name
     column :email
     default_actions

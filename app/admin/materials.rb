@@ -5,6 +5,7 @@ ActiveAdmin.register Material do
   form :partial => "form"
   
   index do
+    selectable_column
     column :id
     column :name, sortable: true
     column :manufacturer
