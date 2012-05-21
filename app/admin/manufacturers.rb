@@ -1,14 +1,28 @@
 #coding: utf-8
 ActiveAdmin.register Manufacturer do
   menu :label => "Fabricantes"
-
+  
+  index do 
+    column :name
+    column :email
+    default_actions
+  end
 
   form do |f|
     f.inputs "Dados sobre o fabricante" do
       f.input :name, :label => "Nome"
-      f.input :email
-      f.input :site
+      f.input :razao_social
+      f.input :cnpj
+      f.input :insc_estadual
+      f.input :insc_municipal
       f.input :address, :label => "Endereço"
+      f.input :city,  :label => "Cidade"
+      f.input :state, :label => "Estado"
+      f.input :cep,   :label => "CEP"
+      f.input :country, :label => "País", :as => :string
+      f.input :mail_address, :label => "Endereço para correspondência" 
+      f.input :site
+      f.input :certifications, :label => "Normas e certificações"
     end
 
     f.inputs "Contact" do
@@ -18,6 +32,7 @@ ActiveAdmin.register Manufacturer do
         contact.input :email
         contact.input :phone_first, :label => "Telefone Principal"
         contact.input :phone_second, :label => "Telefone Secundário"
+        contact.input :address, :label => "Endereço"
       end
     end
 

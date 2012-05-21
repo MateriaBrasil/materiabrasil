@@ -30,11 +30,16 @@
 }
 
 .categories {
+  padding-left: 15px;
   display: none;
 
+  ol, ul {
+    margin-left: 10px !important;
+    padding-left: 15px;
+  }
   li {
-    margin-left: 10px;
-    list-style-type: square;
+    margin-left: 10px !important;
+    list-style-type: disc;
     font: normal 14px/24px "Arial";
   }
 }
@@ -54,7 +59,7 @@
 
 .material_category {
   .categories {
-    margin-left: 0px;
+    margin-left: 2px;
   }
 
   ul {

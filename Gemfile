@@ -28,7 +28,7 @@ gem "mini_magick"
 # Utilities
 gem 'simple_form'
 #gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
-gem 'activeadmin', :git => "git@github.com:MateriaBrasil/active_admin.git", :branch => "dsl_form_builder"
+gem 'activeadmin', :git => "git@github.com:MateriaBrasil/active_admin.git"
 gem 'devise', '1.5.3'
 gem 'compass-rails'
 gem 'compass-960-plugin'
@@ -56,6 +56,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails'
 end
 
 gem 'jquery-rails'

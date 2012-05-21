@@ -1,4 +1,4 @@
-<%= active_admin_form_for [:admin, @material] do |f|%>
+<%= semantic_form_for [:admin, @material], builder: ActiveAdmin::FormBuilder do |f|%>
 
   <%= f.inputs "Nome do material" do %>
     <%= f.input :name, :label => false %>
@@ -46,7 +46,7 @@
       <%= img.input :image, :as => :file %>
     <% end %>
   <% end %>
-  <%= f.buttons %>
+  <%= f.actions %>
 
 
 <% end %>
