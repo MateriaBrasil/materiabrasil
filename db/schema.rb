@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519192453) do
+ActiveRecord::Schema.define(:version => 20120524003422) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer   "resource_id",   :null => false
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20120519192453) do
     t.boolean   "use_case"
     t.timestamp "created_at",  :null => false
     t.timestamp "updated_at",  :null => false
+    t.boolean   "render"
   end
 
   create_table "manufacturers", :force => true do |t|
@@ -114,6 +115,9 @@ ActiveRecord::Schema.define(:version => 20120519192453) do
     t.timestamp "updated_at",            :null => false
     t.string    "name"
     t.string    "slug"
+    t.string    "ncm"
+    t.string    "certifications"
+    t.string    "awards"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true

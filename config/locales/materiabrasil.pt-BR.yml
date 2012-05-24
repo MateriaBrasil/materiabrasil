@@ -21,4 +21,73 @@ pt-BR:
 
         where_text_1_html: "Em breve nosso acervo estará disponível na internet."
         where_text_2_html: "Nossa <strong>biblioteca de materiais</strong> está disponível para visitação em São Paulo, no %{link_map_sistema} e na sede da Fibra Design, no %{link_map_fibra}."
+  activerecord: 
+    models:
+      image: 
+        one: "Imagem"
+        other: "Imagens"
+      manufacturer: 
+        one: "Fornecedor"
+        other: "Fornecedores"
+      contact: 
+        one: "Contato"
+        other: "Contatos"
+      category: 
+        one: "Categoria"
+        other: "Categorias"
+      material:
+        one: "Material"
+        other: "Materiais"
+
+    attributes:
+      admin_user:
+        email: "E-mail"
+        password: "Senha"
+      category:
+        name: "Nome"
+        code_reference: "Código de referência"
+        slug: "Url"
+        parent: "Categoria-pai"
+      material:
+        name: "Nome"
+        manufacturer: "Fornecedor"
+        categories: "Categorias"
+        resume: "Resumo"
+        technical_observation: "Observações técnicas"
+        density: "Densidade/Gramatura"
+        dimensions: "Dimensões"
+        packing: "Embalagem"
+        average_price: "Preço médio"
+        ncm: "NCM (código de class. fiscal)"
+        certifications: "Normas e Certificações"
+        awards: "Prêmios"
+      manufacturer:
+        name: "Nome"
+        razao_social: "Razão Social"
+        cnpj: "CNPJ"
+        insc_estadual: "Insc. Estadual"
+        insc_municipal: "Insc. Municipal"
+        address: "Endereço"
+        city: "Cidade"
+        state: "Estado"
+        cep: "CEP"
+        country: "País"
+        mail_address: "Endereço para correspondência"
+        site: "Website"
+        certifications: "Normas e certificações"
+      contact:
+        definition: "Setor/outro"
+        name: "Nome"
+        email: "E-mail"
+        phone_first: "Telefone principal"
+        phone_second: "Telefone secundário"
+        address: "Endereço"
+      image:
+        title: "Título"
+        description: "Descrição"
+        featured: "Destaque?"
+        use_case: "Aplicação?"
+        image: "Imagem"
+        render: "Render?"
+
 

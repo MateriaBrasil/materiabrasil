@@ -1,7 +1,6 @@
 #coding: utf-8
 ActiveAdmin.register Category do
   config.paginate = false
-  menu :label => "Categorias"
 
   index :paginate => false, :as => :block do |category|
     unless category.parent
