@@ -22,19 +22,25 @@
   <% end %>
 
   <%= f.inputs "Sobre o material" do %>
-    <%= f.input :resume, :label => "Resumo"%>
+    <%= f.input :resume %>
   <% end %>
 
   <%= f.inputs "Informações técnicas" do %>
-    <%= f.input :technical_observation, :label => "Observações Técnicas" %>
+    <%= f.input :technical_observation %>
   <% end %>
 
 
   <%= f.inputs "Detalhes técnicos" do %>
-    <%= f.input :density, :label => "Densidade" %>
-    <%= f.input :dimensions, :label => "Dimensões" %>
-    <%= f.input :packing, :label => "Embalagem" %>
-    <%= f.input :average_price, :label => "Preço Médio" %>
+    <%= f.input :density %>
+    <%= f.input :dimensions %>
+    <%= f.input :packing %>
+    <%= f.input :average_price %>
+  <% end %>
+
+  <%= f.inputs "Dados adicionais" do %>
+    <%= f.input :ncm %>
+    <%= f.input :certifications %>
+    <%= f.input :awards %>
   <% end %>
 
   <%= f.inputs "Imagens" do %>
@@ -43,7 +49,8 @@
       <%= img.input :description %>
       <%= img.input :featured %>
       <%= img.input :use_case %>
-      <%= img.input :image, :as => :file %>
+      <%= img.input :render %>
+      <%= img.input :image, as: :file, hint: f.template.image_tag(img.object.image.flat.url, size: "120x100")  %>
     <% end %>
   <% end %>
   <%= f.actions %>
