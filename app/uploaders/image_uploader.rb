@@ -57,8 +57,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  if original_filename 
-    @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
-    "#{@name}.#{file.extension}"
+  def filename
+    if original_filename 
+      @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+      "#{@name}.#{file.extension}"
+    end
   end
 end
