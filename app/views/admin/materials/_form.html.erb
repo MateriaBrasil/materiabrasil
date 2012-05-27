@@ -53,6 +53,13 @@
       <%= img.input :image, as: :file, hint: f.template.image_tag(img.object.image.flat.url, size: "120x100")  %>
     <% end %>
   <% end %>
+
+  <%= f.inputs "Anexos" do %>
+    <%= f.has_many :attachments do |file| %>
+      <%= file.input :name %>
+      <%= file.input :file, as: :file %>
+    <% end %>
+  <% end %>
   <%= f.actions %>
 
 

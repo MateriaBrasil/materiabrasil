@@ -23,6 +23,9 @@ pt-BR:
         where_text_2_html: "Nossa <strong>biblioteca de materiais</strong> está disponível para visitação em São Paulo, no %{link_map_sistema} e na sede da Fibra Design, no %{link_map_fibra}."
   activerecord: 
     models:
+      attachment:
+        one: "Anexo"
+        other: "Anexos"
       image: 
         one: "Imagem"
         other: "Imagens"
@@ -40,6 +43,9 @@ pt-BR:
         other: "Materiais"
 
     attributes:
+      attachment:
+        name: "Nome"
+        file: "Arquivo"
       admin_user:
         email: "E-mail"
         password: "Senha"
