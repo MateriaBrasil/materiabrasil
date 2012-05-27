@@ -2,8 +2,8 @@ Given /^I'm an admin and I'm logged In$/ do
   visit '/admin/login'
 
   AdminUser.make!(:email => "test@test.com", :password => "test123")
-  fill_in "Email", :with => "test@test.com"
-  fill_in "Password", :with => "test123"
+  fill_in "E-mail", :with => "test@test.com"
+  fill_in "Senha", :with => "test123"
   click_button "Login"
 end
 
