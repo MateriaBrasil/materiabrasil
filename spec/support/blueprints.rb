@@ -27,6 +27,7 @@ Material.blueprint do
   packing     { sn }
   average_price { sn }
   images(3)
+  categories(1)
 end
 
 Image.blueprint do

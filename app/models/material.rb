@@ -19,7 +19,12 @@ class Material < ActiveRecord::Base
   end
 
   def check_tree
-    nil
+    tree = []
+    self.categories.map do |cat|
+      tree << cat.parents
+    end
+
+    self.categories << tree
   end
 end
 
