@@ -29,13 +29,24 @@ ActiveAdmin.register Material do
         ol :id => "images_list" do
           material.images.each do |img|
             li do
-              image_tag img.image.flat.url
+              link_to image_tag(img.image.flat.url, size: "100x80"), img.image.main.url, target: "_blank"
             end
           end
         end
       end
     end
 
+    h3 "Anexos" do
+      div do
+        ol :id => "attachments_list" do
+          material.attachments.each do |f|
+            li do
+              link_to f.name, f.file.url, target: "_blank"
+            end
+          end
+        end
+      end
+    end
     active_admin_comments
   end
 end
