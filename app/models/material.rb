@@ -8,14 +8,19 @@ class Material < ActiveRecord::Base
   has_and_belongs_to_many :categories, before_add: :validates_category
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments
-  validates_presence_of :manufacturer
+  validates :manufacturer, :name, :resume, :technical_observation, :density, :packing, :average_price, presence: true
 
   default_scope order('created_at DESC')
   
   after_save :check_tree
-
+  before_save :set_material_code
+    
   def should_generate_new_friendly_id?
     new_record?
+  end
+
+  def sku
+    "#{self.code}#{self.id.to_s.rjust(5,'0')}"
   end
 
   private 
@@ -30,6 +35,19 @@ class Material < ActiveRecord::Base
     def validates_category(category)
        self.categories.delete(category) if self.categories.include? category
     end
+
+    def set_material_code
+      uses = Category.find_by_name("Usos")
+      classes = Category.find_by_name("Classes")
+      cats = self.categories.select { |s| s.code_reference != "" and s.parents.include?(uses) or s.parents.include?(classes) }
+
+      c = cats.select { |s| s.parents.include?(classes) and !s.parents.include?(uses) }.last
+      u = cats.select { |s| s.parents.include?(uses) and !s.parents.include?(classes) }.last
+
+      self.code = "#{c.code_reference}#{u.code_reference}"
+    end
+
+
 end
 
 

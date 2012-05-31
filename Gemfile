@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.3'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :development, :test do
   gem 'taps'
   gem 'sqlite3'
@@ -41,9 +38,11 @@ gem 'acts_as_tree_rails3'
 # Cache
 gem 'dalli'
 
+group :test, :development do
+  gem 'rspec-rails'
+end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'shoulda-matchers'

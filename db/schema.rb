@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528034544) do
+ActiveRecord::Schema.define(:version => 20120528172644) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer   "resource_id",   :null => false
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20120528034544) do
     t.string    "ncm"
     t.string    "certifications"
     t.string    "awards"
+    t.string    "code"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
