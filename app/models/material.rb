@@ -20,7 +20,7 @@ class Material < ActiveRecord::Base
   end
 
   def sku
-    "#{self.code}#{self.id.to_s.rjust(5,'0')}"
+    "#{self.code.upcase}-#{self.id.to_s.rjust(5,'0')}"
   end
 
   private 
@@ -37,17 +37,17 @@ class Material < ActiveRecord::Base
     end
 
     def set_material_code
-      uses = Category.find_by_name("Usos")
-      classes = Category.find_by_name("Classes")
-      cats = self.categories.select { |s| s.code_reference != "" and s.parents.include?(uses) or s.parents.include?(classes) }
-
-      c = cats.select { |s| s.parents.include?(classes) and !s.parents.include?(uses) }.last
-      u = cats.select { |s| s.parents.include?(uses) and !s.parents.include?(classes) }.last
-
-      self.code = "#{c.code_reference}#{u.code_reference}"
+      uses      = Category.find_by_name("Uso-Chave")
+      classes   = Category.find_by_name("Classes")
+      cats      = self.categories.select { |s| s.code_reference != "" and s.parents.include?(uses) or s.parents.include?(classes) }
+      if cats
+        cls     = cats.select { |s| s.parents.include?(classes) and !s.parents.include?(uses) }.last
+        use     = cats.select { |s| s.parents.include?(uses) and !s.parents.include?(classes) }.last
+        if cls and use
+          self.code = "#{cls.code_reference}-#{use.code_reference}" 
+        end
+      end
     end
-
-
 end
 
 

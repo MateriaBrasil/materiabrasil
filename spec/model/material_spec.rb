@@ -33,7 +33,7 @@ describe Material do
   describe "#set_material_code" do
     before do
       @classes        = Category.make! name: "Classes"
-      @uses           = Category.make! name: "Usos"
+      @uses           = Category.make! name: "Uso-Chave"
       @child_classes  = Category.make! name: "SubClasses" , code_reference: "CLS", parent: @classes
       @child_uses     = Category.make! name: "SubUses"    , code_reference: "USS", parent: @uses
 
@@ -43,8 +43,8 @@ describe Material do
     subject { @material.sku }
       
 
-    it "Should setup a code that is a result of a concatenation of Classes + Uses + ID" do
-      subject.should == "CLSUSS#{@material.id.to_s.rjust(5,'0')}"
+    it "Should setup a code that is a result of a concatenation of Classes + Key Uses + ID" do
+      subject.should == "CLS-USS-#{@material.id.to_s.rjust(5,'0')}"
     end
   end
 end

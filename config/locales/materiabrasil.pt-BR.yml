@@ -67,6 +67,8 @@ pt-BR:
         ncm: "NCM (código de class. fiscal)"
         certifications: "Normas e Certificações"
         awards: "Prêmios"
+        sku: "SKU"
+        code: "Código"
       manufacturer:
         name: "Nome"
         razao_social: "Razão Social"

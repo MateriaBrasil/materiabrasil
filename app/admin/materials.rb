@@ -4,14 +4,15 @@ ActiveAdmin.register Material do
   
   index do
     selectable_column
-    column :id
-    column :name, sortable: true
+    column :sku, sortable: false
+    column :name
     column :manufacturer
     default_actions
   end
 
   show :title => :name do |material|
     attributes_table do
+      row :sku
       row :id
       row :name
       row :manufacturer
@@ -19,7 +20,6 @@ ActiveAdmin.register Material do
       row :density
       row :dimensions
       row :packing
-
       row :resume
       row :technical_observation
     end
