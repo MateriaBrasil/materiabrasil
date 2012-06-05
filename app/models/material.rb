@@ -44,7 +44,7 @@ class Material < ActiveRecord::Base
         cls     = cats.select { |s| s.parents.include?(classes) and !s.parents.include?(uses) }.last
         use     = cats.select { |s| s.parents.include?(uses) and !s.parents.include?(classes) }.last
         if cls and use
-          self.code = "#{cls.code_reference}-#{use.code_reference}" 
+          self.code = "#{use.code_reference}-#{cls.code_reference}" 
         end
       end
     end
