@@ -35,7 +35,7 @@ ActiveAdmin.register Category do
 
 
     f.inputs "Visível para os usuários?" do
-      f.input :is_visible
+      f.input :is_visible, as: :boolean
     end
 
     f.buttons
