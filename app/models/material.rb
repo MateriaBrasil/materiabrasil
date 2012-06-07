@@ -3,8 +3,8 @@ class Material < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   belongs_to :manufacturer
-  has_many :images
-  has_many :attachments
+  has_many :images, dependent: :destroy
+  has_many :attachments, dependent: :destroy
   has_and_belongs_to_many :categories, before_add: :validates_category
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments

@@ -33,6 +33,11 @@ ActiveAdmin.register Category do
       f.input :code_reference, :label => false
     end
 
+
+    f.inputs "Visível para os usuários?" do
+      f.input :is_visible
+    end
+
     f.buttons
   end
 

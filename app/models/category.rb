@@ -9,10 +9,14 @@ class Category < ActiveRecord::Base
 
   acts_as_tree
 
-  scope :parent, where(parent_id: nil)
+  scope :parent_elements, where(parent_id: nil, is_visible: [true, nil])
 
   def siblings
     Category.where(parent_id: self.parent_id)
+  end
+
+  def visible_siblings
+    self.siblings.select { |s| s.is_visible != false}
   end
 
   def parents

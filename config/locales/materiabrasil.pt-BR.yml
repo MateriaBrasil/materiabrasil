@@ -54,6 +54,7 @@ pt-BR:
         code_reference: "Código de referência"
         slug: "Url"
         parent: "Categoria-pai"
+        is_visible: "Visível?"
       material:
         name: "Nome"
         manufacturer: "Fornecedor"
