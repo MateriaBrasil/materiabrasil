@@ -50,7 +50,7 @@
       <%= img.input :featured %>
       <%= img.input :use_case %>
       <%= img.input :render %>
-      <%= img.input :image, as: :file, hint: f.template.image_tag(img.object.image.flat.url, size: "120x100") unless img.object.image.nil?  %>
+      <%= img.input :image, as: :file %>
     <% end %>
   <% end %>
 
