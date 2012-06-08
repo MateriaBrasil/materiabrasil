@@ -38,7 +38,7 @@ class Material < ActiveRecord::Base
 
     def set_material_code
       uses      = Category.find_by_name("Uso-Chave")
-      classes   = Category.find_by_name("Classes")
+      classes   = Category.find_by_name("Classe-Chave")
       cats      = self.categories.select { |s| s.code_reference != "" and s.parents.include?(uses) or s.parents.include?(classes) }
       if cats
         cls     = cats.select { |s| s.parents.include?(classes) and !s.parents.include?(uses) }.last
