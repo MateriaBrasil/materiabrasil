@@ -69,7 +69,7 @@ pt-BR:
         certifications: "Normas e Certificações"
         awards: "Prêmios"
         sku: "SKU"
-        code: "Código"
+        code: "Código de Referência (Ex.: AAA-BBB)"
       manufacturer:
         name: "Nome"
         razao_social: "Razão Social"

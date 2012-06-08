@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   validates_presence_of :name
-  has_many :subcategories, :class_name => :Category, :foreign_key => :parent_id
+  has_many :subcategories, :class_name => :Category, :foreign_key => :parent_id, dependent: :destroy
   has_and_belongs_to_many :materials
   belongs_to :parent, :class_name => :Category
 
