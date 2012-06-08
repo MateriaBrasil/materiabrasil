@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528172644) do
+ActiveRecord::Schema.define(:version => 20120607194426) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer   "resource_id",   :null => false
@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(:version => 20120528172644) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "attachments", :force => true do |t|
-    t.string   "name"
-    t.string   "file"
-    t.integer  "material_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string    "name"
+    t.string    "file"
+    t.integer   "material_id"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20120528172644) do
     t.timestamp "updated_at",                  :null => false
     t.string    "code_reference", :limit => 3
     t.string    "slug"
+    t.boolean   "is_visible"
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
@@ -114,21 +115,21 @@ ActiveRecord::Schema.define(:version => 20120528172644) do
   end
 
   create_table "materials", :force => true do |t|
-    t.text      "resume"
-    t.integer   "manufacturer_id"
-    t.text      "technical_observation"
-    t.string    "density"
-    t.string    "dimensions"
-    t.string    "packing"
-    t.string    "average_price"
-    t.timestamp "created_at",            :null => false
-    t.timestamp "updated_at",            :null => false
-    t.string    "name"
-    t.string    "slug"
-    t.string    "ncm"
-    t.string    "certifications"
-    t.string    "awards"
-    t.string    "code"
+    t.text     "resume"
+    t.integer  "manufacturer_id"
+    t.text     "technical_observation"
+    t.string   "density"
+    t.string   "dimensions"
+    t.string   "packing"
+    t.string   "average_price"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "name"
+    t.string   "slug"
+    t.string   "ncm"
+    t.string   "certifications"
+    t.string   "awards"
+    t.string   "code"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
