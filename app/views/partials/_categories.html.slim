@@ -2,11 +2,11 @@
 
   - @category.parents.each do |parent|
     ol.twelvecol.category
-      - parent.visible_siblings.each do |c|
+      - parent.siblings.each do |c|
         li[class="#{c.parents.length.zero? ? 'parents' : 'children'} #{c == parent ? 'active' : ''}"]= link_to c.name, category_path(c)
 
   ol.twelvecol.category
-    - @category.visible_siblings.each do |brother|
+    - @category.siblings.each do |brother|
       li[class="#{brother.parents.length.zero? ? 'parents' : 'children'} #{brother == @category ? 'active' : ''}"]= link_to brother.name, category_path(brother)
 
   ol.twelvecol.last.category
@@ -15,6 +15,6 @@
 
 - else 
   ol.twelvecol.category
-    - Category.parent_elements.each do |s|
+    - Category.parent.each do |s|
       li[class=(s.parents.length.zero? ? 'parents' : 'children')]= link_to s.name, category_path(s)
 

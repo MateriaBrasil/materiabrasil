@@ -115,21 +115,21 @@ ActiveRecord::Schema.define(:version => 20120607194426) do
   end
 
   create_table "materials", :force => true do |t|
-    t.text     "resume"
-    t.integer  "manufacturer_id"
-    t.text     "technical_observation"
-    t.string   "density"
-    t.string   "dimensions"
-    t.string   "packing"
-    t.string   "average_price"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-    t.string   "name"
-    t.string   "slug"
-    t.string   "ncm"
-    t.string   "certifications"
-    t.string   "awards"
-    t.string   "code"
+    t.text      "resume"
+    t.integer   "manufacturer_id"
+    t.text      "technical_observation"
+    t.string    "density"
+    t.string    "dimensions"
+    t.string    "packing"
+    t.string    "average_price"
+    t.timestamp "created_at",            :null => false
+    t.timestamp "updated_at",            :null => false
+    t.string    "name"
+    t.string    "slug"
+    t.string    "ncm"
+    t.string    "certifications"
+    t.string    "awards"
+    t.string    "code"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
