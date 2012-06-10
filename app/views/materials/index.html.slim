@@ -3,9 +3,19 @@ section.breadcrumb.row
     h1= t "breadcrumb.index.head_html", material_count: Material.all.size, manufacturer_count: Manufacturer.all.size
 section.presentation.row
   section.fourcol.join
-    h3 
-      |Junte-se à matéria brasil 
-  iframe.eightcol.video.last src="http://player.vimeo.com/video/36976384?title=0&amp;byline=0&amp;portrait=0" allowFullScreen
+    article
+      h3 
+        |Junte-se a MateriaBrasil 
+      h4
+        p
+          |e tenha acesso ao melhor acervo 
+        p 
+          |de materiais responsáveis do Brasil
+      = form_for "new", remote: true do |f|
+        = f.text_field :email
+        = f.submit value: "cadastrar", class: "submit btn"
+
+  iframe.eightcol.video.last[src="http://player.vimeo.com/video/36976384?title=0&amp;byline=0&amp;portrait=0" allowFullScreen webkitAllowFullScreen mozallowfullscreen]
 
 section.recent.row
 section.list.row
