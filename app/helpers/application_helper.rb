@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def load_block(options = {})
-    block = options[:block] || rand(6) + 1
+    block = options[:block] || rand(4) + 1
     material = options[:materials]
     blocks = {
       1 => [ 
@@ -39,7 +39,7 @@ module ApplicationHelper
       counter = 0
       content = ""
       blocks[block].each do |k, v|
-        break if material[counter].nil? 
+        break if material[counter] == nil
         content += content_tag :li, class: "material #{v}" do
           content_tag(:div, class: "image") do
             link_to image_tag(material[counter].images.first.image.send("#{k}"), title: material[counter].name), material_path(material[counter])
