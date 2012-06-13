@@ -29,22 +29,4 @@ describe Material do
       end
     end
   end
-
-  describe "#set_material_code" do
-    before do
-      @classes        = Category.make! name: "Classes"
-      @uses           = Category.make! name: "Uso-Chave"
-      @child_classes  = Category.make! name: "SubClasses" , code_reference: "CLS", parent: @classes
-      @child_uses     = Category.make! name: "SubUses"    , code_reference: "USS", parent: @uses
-
-      @material       = Material.make! name: "Material"   , categories: [@child_uses, @child_classes] 
-    end
-  
-    subject { @material.sku }
-      
-
-    it "Should setup a code that is a result of a concatenation of Classes + Key Uses + ID" do
-      subject.should == "CLS-USS-#{@material.id.to_s.rjust(5,'0')}"
-    end
-  end
 end
