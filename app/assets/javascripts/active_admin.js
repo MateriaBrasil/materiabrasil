@@ -1,3 +1,3 @@
 //= require active_admin/base
-//= require admin/chosen
+//= require lib/chosen
 //= require admin/admin
