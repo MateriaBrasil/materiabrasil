@@ -1,5 +1,9 @@
 //= require jquery
 //= require jquery_ujs
-//= require chosen
-//= require ie
-//= require_tree ./frontend
+//= require lib/chosen
+//= require lib/ie
+//= require lib/underscore
+//= require lib/backbone
+//= require init
+//= require app/app
+//= require_tree ./app

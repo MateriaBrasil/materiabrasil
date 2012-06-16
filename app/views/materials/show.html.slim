@@ -40,18 +40,7 @@ section.material.row
       h3
         | Direcionadores de sustentabilidade
       ol
-        li.indicator.cycle[title="Ciclo"]
-          | Ciclo
-        li.indicator.safety[title="Segurança"] 
-          | Segurança
-        li.indicator.human[title="Social"]
-          | Social
-        li.indicator.energy[title="Energia"]
-          | Energia
-        li.indicator.water[title="Água"]
-          | Água
-        li.indicator.management[title="Gestão"]
-          | Gestão
+        = load_indicators(@material)
 
     .manufacturer
       h3 Informações comerciais
