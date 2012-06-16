@@ -71,21 +71,21 @@ module ApplicationHelper
 
     kinds.each_with_index do |k,v|
 
-      flag        =  categories.map(&:name).include?(k.first) ? true : false
-      content +=  content_tag :li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first do 
+      flag     =  categories.map(&:name).include?(k.first) ? true : false
+      content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do 
                     image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } )
                   end
 
       if flag
         children += 
-          content_tag :ul, class: "children #{k.second}", data: {type: k.second} do
-          Category.find_by_name(k.first).children.reduce('') do |c, m|
-            c << content_tag(:li, m.name, class: categories.map(&:id).include?(m.id) ? "active" : "inactive")
-          end.html_safe
+          content_tag(:ul, class: "children #{k.second}", data: {type: k.second}) do
+            Category.find_by_name(k.first).children.reduce('') do |c, m|
+              c.html_safe << content_tag(:li, m.name, class: categories.map(&:id).include?(m.id) ? "active" : "inactive")
+            end
         end
       end
     end
-    return  (content + children).html_safe
+    content_tag(:ol, class: "list") do; content.html_safe; end + children.html_safe
   end
 end
 
