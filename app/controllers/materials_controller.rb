@@ -14,8 +14,10 @@ class MaterialsController < ApplicationController
   def explore 
     if params[:category]
       @category ||= Category.find(params[:category])
-      @resource ||= @category.materials.limit(6)
+      @count = @category.materials.length
+      @resource ||= @category.materials.limit(6).offset(params[:offset].to_i)
     else
+      @count = Material.all.length
       @resource ||= collection
     end
 

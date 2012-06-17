@@ -50,7 +50,7 @@ App.Materials = {
       _.bindAll(this);
       var xhr = new App.Materials.Paginate({
         el: $('section.content')[0],
-        url: '/explore',
+        url: $('section.content').data('url'),
         limit: 65536,
         multiplier: 6
       });

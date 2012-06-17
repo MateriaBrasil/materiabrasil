@@ -27,7 +27,7 @@ html
   body(id=ctrl class=page data-controller-class=ctrl data-controller-name=ctrl data-action=page)
     .container
       = render partial: "partials/header"
-      section.content
+      section.content[data-url=request.url]
         = yield
 
 
