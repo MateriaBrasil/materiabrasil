@@ -20,7 +20,7 @@ App.Materials = {
       var self = this;
       if (this.currentScroll() == this.document.height() && this.counter < this.limit) {
         $.get(this.url + "?offset=" + (this.counter * this.multiplier), function(data){
-          self.$el.append(data);
+          self.$el.append(data).children(':last').hide().fadeIn(2000);
           self.counter += 1;
           self.postAction();
         });
