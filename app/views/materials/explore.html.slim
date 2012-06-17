@@ -2,6 +2,5 @@ section.details.explore.row
   = render partial: "partials/categories"
   span.twelvecol.materials_count
     | #{@resource.size} materiais encontrados
-- @resource.each_slice(3) do |material|
-  = content_tag(:ol, class: "row materials") do
-    = render partial: "material", collection: material
+= render partial: "materials"
+

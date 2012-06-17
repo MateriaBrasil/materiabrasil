@@ -1,0 +1,3 @@
+- @resource.each_slice(3) do |material|
+  = content_tag(:ol, class: "row materials") do
+    = render partial: "material", collection: material
