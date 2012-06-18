@@ -64,6 +64,7 @@ App.Materials = {
     },
 
     initialize: function(){
+      App.Common.initFacebook();
       this.indicators = this.$('li.indicator');
       this.showChildrenList(this.indicators.first());
 
