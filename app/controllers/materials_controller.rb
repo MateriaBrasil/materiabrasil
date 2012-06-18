@@ -2,7 +2,7 @@ class MaterialsController < ApplicationController
   inherit_resources
   has_scope :offset
   has_scope :limit, default: 5, only: [:index]
-  has_scope :limit, default: 6, only: [:explore]
+  has_scope :limit, default: 9, only: [:explore]
 
   include ApplicationHelper
 
@@ -15,7 +15,7 @@ class MaterialsController < ApplicationController
     if params[:category]
       @category ||= Category.find(params[:category])
       @count = @category.materials.length
-      @resource ||= @category.materials.limit(6).offset(params[:offset].to_i)
+      @resource ||= @category.materials.limit(9).offset(params[:offset].to_i)
     else
       @count = Material.all.length
       @resource ||= collection

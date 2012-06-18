@@ -22,8 +22,10 @@ App.Materials = {
         console.log(this.currentScroll());
         console.log(this.documentHeight());
         $.get(this.url + "?offset=" + (this.counter * this.multiplier), function(data){
-          self.$el.append(data).children(':last').hide().fadeIn(2000);
-          self.postAction();
+          if (data != "") {
+            self.$el.append(data).children(':last').hide().fadeIn(2000);
+            self.postAction();
+          }
         });
         this.counter = this.counter + 1;
       }
@@ -55,7 +57,7 @@ App.Materials = {
         el: $('section.content')[0],
         url: $('section.content').data('url'),
         limit: 65536,
-        multiplier: 6
+        multiplier: 9
       });
     },
   }),
