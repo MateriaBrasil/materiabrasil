@@ -13,32 +13,34 @@ App.Materials = {
       this.limit      = options.limit;
       this.url        = options.url;
       this.windowProp.scroll(this.paginate);
+
     },
 
     paginate: function(){
       // So, the user reached the bottom of the page
-      var self = this;
       if (this.currentScroll() > this.documentHeight() && this.counter < this.limit) {
-        console.log(this.currentScroll());
-        console.log(this.documentHeight());
-        $.get(this.url + "?offset=" + (this.counter * this.multiplier), function(data){
-          if (data != "") {
-            self.$el.append(data).children(':last').hide().fadeIn(2000);
-            self.postAction();
-          }
-        });
-        this.counter = this.counter + 1;
+        this.getListOfObjects();
       }
     },
-    postAction:     function() {},
-    documentHeight: function() { return this.document.height() - parseInt(this.document.height() * 0.1) },
-    currentScroll:  function() { return this.windowProp.scrollTop() + this.windowProp.height() }
+    postAction:       function() {},
+    getListOfObjects: function() {
+      var self = this;
+      $.get(this.url + "?offset=" + (this.counter * this.multiplier), function(data){
+        if (data != "") {
+          self.$el.append(data).children(':last').hide().fadeIn(2000);
+          self.postAction();
+        }
+      });
+      this.counter = this.counter + 1;
+    },
+    documentHeight:   function() { return this.document.height() - parseInt(this.document.height() * 0.1) },
+    currentScroll:    function() { return this.windowProp.scrollTop() + this.windowProp.height() }
 
-  
+
   }),
 
   Index: Backbone.View.extend({
-    
+
     initialize: function(){
       _.bindAll(this);
       var xhr = new App.Materials.Paginate({ 
@@ -74,7 +76,7 @@ App.Materials = {
       this.showChildrenList(this.indicators.first());
 
     },
-    
+
     activateIndicator: function(event){
       var klass = this.$(event.target);
       this.showChildrenList(klass);

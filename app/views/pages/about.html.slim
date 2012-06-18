@@ -5,6 +5,7 @@ section.breadcrumb.about.row
       = link_to "Ferramentas", "#/ferramentas"
       = link_to "Modelo de negócio", "#/modelo-de-negocio"
       = link_to "Equipe", "#/equipe"
+      = link_to "Contato", "#/contato"
 
   section#about.active.row
 
@@ -48,6 +49,67 @@ section.breadcrumb.about.row
           li.inactive.management
             p= t 'text.tools.indicator.management.about'
             h3= t 'text.tools.indicator.management.name'
+    article.twelvecol &nbsp;
+    article.sect.terms
+      h3 Termos, palavras e referências
+      small Alguns termos e conceitos que utilizamos no dia-a-dia
+      ol
+        li.twocol
+          = image_tag "site/indicators/cycle.png"
+          ul
+            li Certificação de origem 
+            li Materiais renováveis
+            li Logística reversa
+            li Reciclabilidade
+            li Biodegradabilidade
+            li Compostabilidade
+            li Economia circular
+        li.twocol
+          = image_tag "site/indicators/security.png"
+          ul
+            li Atoxicidade
+            li Tratamento de resíduos
+            li Qualidade do ar
+            li Baixa emissão de CO2
+            li Pegada ecológica
+            li Baixa emissão de COVs
+        li.twocol
+          = image_tag "site/indicators/human.png"
+          ul
+            li Cooperativas
+            li Comércio justo
+            li Responsabilidade
+            li Educação
+            li Culturas tradicionais
+        li.twocol
+          = image_tag "site/indicators/energy.png"
+          ul
+            li Eficiência energética
+            li Fontes limpas
+            li Reaproveitamento
+            li Processos manuais
+        li.twocol
+          = image_tag "site/indicators/water.png"
+          ul
+            li Reuso de água
+            li Sistema de tratamento
+            li Eficiência
+            li Qualidade da água
+        li.twocol.last
+          = image_tag "site/indicators/management.png"
+          ul
+            li Mecanismos de P + L
+            li ISO 14000
+            li ISO 26000
+            li LEED
+            li Aqua
+            li CasaAzul
+            li Metodologia
+            li Inovação
+
+
+
+
 
 
 
@@ -57,56 +119,111 @@ section.breadcrumb.about.row
       h4= t 'text.business.h4_1' 
       h3= t 'text.business.h2_1'
       p= t 'text.business.p_1'
+      = image_tag "site/about_business_1.jpg"
 
     article.fourcol
       h4= t 'text.business.h4_2' 
       h3= t 'text.business.h2_2'
       p= t 'text.business.p_2'
+      = image_tag "site/about_business_2.jpg"
 
     article.fourcol.last
       h4= t 'text.business.h4_3' 
       h3= t 'text.business.h2_3'
       p= t 'text.business.p_3'
-
-    article.fourcol
-      = image_tag "site/about_business_1.jpg"
-    article.fourcol
-      = image_tag "site/about_business_2.jpg"
-    article.fourcol.last
       = image_tag "site/about_business_3.jpg"
-
-    .clients
+    article.twelvecol 
+      | &nbsp;
+    article.sect.clients
       .twelvecol
-        h4 Alguns termos e conceitos que utilizamos no nosso dia-a-dia
+        h3 Clientes e projetos que realizamos 
+        small Alguns clientes e projetos da MateriaBrasil
       .twocol
-        = image_tag "site/clients/embraer.png", size: "104x19"
+        p.img= image_tag "site/clients/embraer.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
       .twocol
-        = image_tag "site/clients/jomo.png", size: "104x19"
+        p.img= image_tag "site/clients/jomo.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
       .twocol
-        = image_tag "site/clients/arthur.png", size: "122x14"
+        p.img= image_tag "site/clients/arthur.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
       .twocol
-        = image_tag "site/clients/governo.png", size: "84x42"
+        p.img= image_tag "site/clients/governo.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+
       .twocol
-        = image_tag "site/clients/cad.png", size: "76x43"
+        p.img= image_tag "site/clients/cad.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+
       .twocol.last
-        = image_tag "site/clients/JB.png", size: "45x62"
+        p.img= image_tag "site/clients/JB.png"
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+  section#team.row
+    ol
+      li.member
+        article.twocol
+        article.twocol
+          h3 Carol Piccin
+          small Pesquisa e Consultoria
+      li.member
+        article.twocol
+        article.twocol
+          h3 Bruno Temer
+          small Pesquisa e Consultoria
+      li.member
+        article.twocol
+        article.twocol.last
+          h3 Thiago Maia
+          small Design e Estratégia
+    ol
+      li.member
+        article.twocol
+        article.twocol
+          h3 Pedro Themoteo
+          small Design
+      li.member
+        article.twocol
+        article.twocol
+          h3 Anne Melo
+          small Pesquisa
+      li.member
+        article.twocol
+        article.twocol.last
+          h3 Luiz Fonseca
+          small Desenvolvimento e UX
+    ol
+      li.member
+        article.twocol
+        article.twocol
+          h3 Nara Giocondo
+          small Pesquisa
+      li.member
+        article.twocol
+        article.twocol
+          h3 Bernardo Ferracioli
+          small Negócios
+      li.member
+        article.twocol
+        article.twocol.last
+          h3 Cyndi Richa
+          small Comunicação
+    ol
+      li.member
+        article.twocol
+        article.twocol
+          h3 Cristiano Souza 
+          small Pesquisa
+      li.member
+        article.twocol
+        article.twocol
+          h3 Juliana Kiesewetter
+          small Negócios
+      li.member
+        article.twocol
+        article.twocol.last
+          h3 Fabio
+        small Comunicação
 
 
-      .twocol
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-      .twocol
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-      .twocol
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-      .twocol
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-      .twocol
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-      .twocol.last
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
 
-  section#team.row.inactive
-    article.threecol
-    article.threecol
-    article.threecol
-    article.threecol
+  section#contact.row.inactive

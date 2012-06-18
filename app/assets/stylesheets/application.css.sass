@@ -18,6 +18,8 @@ $gray: #f4f4f4
   height: 40px
 .inactive
   display: none
+small
+  font-size: .8em
 img
   width: 100%
   height: auto
@@ -231,7 +233,6 @@ section.material
       color: #333
       line-height: 1em
     small
-      font-size: .7em
       text-transform: uppercase
       color: darken($gray, 20%)
   .name, .resume, .indicators, .image, .manufacturer, .about 
@@ -384,18 +385,42 @@ section.about
       color: $cyan
     h3
       font-weight: 400
-      margin: .5em 0
     p
-      font-size: 1em
-      font-weight: 400
+      font-size: .9em
       color: lighten(#333, 8%)
       margin-top: 1.5em
     img
       margin-top: 10%
-    .clients
-      img
-        width: auto !important
-        height: auto !important
+  .terms
+    ul, ol
+      margin-top: 2em
+    ul
+      li
+        &:before
+          content: "- "
+    img
+      background: $orange
+      +border-radius(6px)
+  .sect
+    clear: both
+    margin-top: 4em 0
+    border-top: 1px solid darken($gray, 10%)
+    padding-top: 20px 0
+    h3
+      color: $cyan
+      margin: 0
+      font-size: 1.3em
+      padding-top: 1em
+    small
+      color: darken($gray, 60%)
+    p.img
+      text-align: center
+      margin: 10px auto
+      height: 5em
+    img
+      vertical-align: middle !important
+      width: auto !important
+      height: auto !important
   .arrow
     img
       margin-top: 8em
@@ -429,5 +454,6 @@ section.about
         h3
           color: $cyan
 
-
-    
+  #team
+    h3
+      margin: 0
