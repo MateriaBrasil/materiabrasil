@@ -11,7 +11,7 @@ section.presentation.row
           |e tenha acesso ao melhor acervo 
         p 
           |de materiais responsáveis do Brasil
-      = form_for "new", remote: true do |f|
+      /= form_for "new", remote: true do |f|
         = f.text_field :email, placeholder: "Digite seu e-mail e tecle Enter"
         = f.submit value: "cadastrar", class: "submit btn"
   iframe.eightcol.video.last[src="http://player.vimeo.com/video/44255542?title=0&amp;byline=0&amp;portrait=0" allowFullScreen webkitAllowFullScreen mozallowfullscreen]
