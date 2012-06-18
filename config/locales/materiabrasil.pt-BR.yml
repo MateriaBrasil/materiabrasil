@@ -6,6 +6,44 @@ pt-BR:
     connect_to_our_network: "Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil."
   text:
     want_more_informations_about_html: "<p>A <strong>MateriaBrasil</strong> está crescendo.</p><p> Estamos pensando e desenhando um modelo de disponibilizar as informações que temos a todos de modo que nossa equipe possa continuar pesquisando e atualizando nosso acervo dia após dia.</p><p> Hoje já dispomos de informações como características técnicas dos materiais e os contatos comerciais do fabricante, mas por enquanto preferimos não disponibilizar essas informações, até que a gente desenhe esse modelo.</p><p> Todo o trabalho de pesquisa e cadastramento visto nesta plataforma foi feito com recursos próprios, e os fabricantes e fornecedores não pagam nada para estar aqui. </p><p>Estão aqui pois achamos que eles tem de estar aqui e porque acreditamos na qualidade de seus trabalhos.</p>"
+    about:
+      h2: "A MateriaBrasil é um centro de informações em inovação e economia consciente. Reunimos o melhor acervo de materiais e produtos responsáveis do Brasil."
+      p: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    business:
+      h4_1: "Fornecedores"
+      h4_2: "Profissionais e Empresas"
+      h4_3: "Universidades"
+      h2_1: "Não somos um catálogo de anúncios e nem uma loja. Selecionamos fornecedores pois acreditamos que seus produtos são responsáveis."
+      h2_2: "Focamos em consultoria online e offline. Oferecemos algumas informações gratuitas e outras não."
+      h2_3: "Planos e projetos especiais para universidades e centros de ensino."
+      p_1: "Os fornecedores não pagam para estarem expostos no acervo MateriaBrasil. Eles também não pagam nenhuma comissão para nós caso alguém que tenha os conhecido através de nossas redes venha a efetuar uma compra com eles. Com isso acreditamos que podemos manter nossa autonomia e independência em selecionar materiais em que realmente acreditamos."
+      p_2: "Se você navegar no site, vai reparar que as informações comerciais dos materiais não estão disponíveis. Isso porque nosso negócio é baseado em um modelo freemium. Se você veio só buscar inspiração, fique à vontade! Não precisa pagar nada. Mas se você tem interesse em gerar negócios a partir do nosso acervo, oferecemos um plano de assinatura, onde você terá acesso ao nosso banco de dados online, bem como a desconto em nossa consultoria e na visitação ao nosso espaço físico, seja no Rio de Janeiro, seja em São Paulo."
+      p_3: "Os fornecedores não pagam para estarem expostos no acervo MateriaBrasil. Eles também não pagam nenhuma comissão para nós caso alguém que tenha os conhecido através de nossas redes venha a efetuar uma compra com eles. Com isso acreditamos que podemos manter nossa autonomia e independência em selecionar materiais em que realmente acreditamos."
+    tools:
+      h2: "Usamos o conceito de Análise de Ciclo de Vida para analisar materiais e produtos e dar opções responsáveis para que arquitetos, designers, cenógrafos, engenheiros e outros profissionais possam inovar em seus projetos."
+      p: "Nossa seleção começa a partir do contato com o fornecedor, quando enviamos a ele uma apresentação da MateriaBrasil e um formulário para preenchimento. Todas as informações que fornecemos no site são baseadas no que o fornecedor informa. Nossa equipe analisa também documentos e dados sobre o processo produtivo do fornecedor, mas em momento algum realizamos uma auditoria. Não somos uma certificadora, apesar de trabalharmos etc etc. "
+
+      indicator:
+        cycle: 
+          name: "Ciclo de Vida"
+          about: "Priorizar processos, materiais e componentes que se inserem de alguma forma em um ciclo de vida contínuo."
+        security:
+          about: "Valorizar materiais atóxicos, no uso e no descarte, priorizando processos que não gerem resíduos tóxicos ou a perturbação dos ecossistemas."
+          name: "Segurança"
+        human:
+          name: "Humano-Social"
+          about: "Promover o desenvolvimento humano sustentável, seja nas condições de trabalho e comércio, seja na disseminação de conceitos de sustentabilidade."
+        energy:
+          name: "Energia"
+          about: "Promover a eficiência, por meio da economia, uso racional e escolha de fontes limpas na geração de energia."
+        water:
+          name: "Água"
+          about: "Valorizar o uso racional e responsável da água."
+        management:
+          name: "Gestão"
+          about: "Buscar formas inovadoras e responsáveis de gestão, que valorizem a biodiversidade e a preservação dos recursos naturais."
+             
+
   pages:
     index:
       presentation:

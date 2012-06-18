@@ -1,37 +1,112 @@
 section.breadcrumb.about.row
   header.twelvecol.row
-    = link_to "Sobre", "#/"
-    = link_to "Ferramentas", "#/ferramentas"
-    = link_to "Modelo de negócio", "#/modelo-de-negocio"
-    = link_to "Equipe", "#/equipe"
+    nav
+      = link_to "Sobre", "#/", class: :active
+      = link_to "Ferramentas", "#/ferramentas"
+      = link_to "Modelo de negócio", "#/modelo-de-negocio"
+      = link_to "Equipe", "#/equipe"
 
-section#about.active.row
+  section#about.active.row
 
-  article.fourcol
-    h2 
-      | A MateriaBrasil é um centro de informações em inovação 
-      | e economia consciente. Reunimos o melhor acervo de materiais e 
-      | produtos responsáveis do Brasil. 
+    article.fivecol
+      h3= t 'text.about.h2' 
+      p= t 'text.about.p'
+    article.sevencol.last
+      = image_tag "site/about_about_image.jpg"
 
-    p
-      | Nossa seleção começa a partir do contato com o fornecedor, 
-      | quando enviamos a ele uma apresentação da MateriaBrasil e um 
-      | formulário para preenchimento. Todas as informações que fornecemos 
-      | no site são baseadas no que o fornecedor informa. Nossa equipe 
-      | analisa também documentos e dados sobre o processo produtivo do 
-      | fornecedor, mas em momento algum realizamos uma auditoria. 
-      | Não somos uma certificadora, apesar de trabalharmos etc etc. 
-  article.eightcol.last
-    = image_tag ""
+  section#tools.row
+    article.fivecol
+      h3= t 'text.tools.h2'
+      p= t 'text.tools.p'
+    article.arrow.onecol
+      = image_tag "site/about_tools_arrow.png"
+    article.sixcol.last
+      .lifecycle
+        ol
+          li.cycle.active= image_tag "site/indicators/cycle.png"
+          li.security= image_tag "site/indicators/security.png"
+          li.human= image_tag "site/indicators/human.png"
+          li.energy= image_tag "site/indicators/energy.png"
+          li.water= image_tag "site/indicators/water.png"
+          li.management.last= image_tag "site/indicators/management.png"
+        ul.children
+          li.active.cycle
+            p= t 'text.tools.indicator.cycle.about'
+            h3= t 'text.tools.indicator.cycle.name'
+          li.inactive.security
+            p= t 'text.tools.indicator.security.about'
+            h3= t 'text.tools.indicator.security.name'
+          li.inactive.human
+            p= t 'text.tools.indicator.human.about'
+            h3= t 'text.tools.indicator.human.name'
+          li.inactive.energy
+            p= t 'text.tools.indicator.energy.about'
+            h3= t 'text.tools.indicator.energy.name'
+          li.inactive.water
+            p= t 'text.tools.indicator.water.about'
+            h3= t 'text.tools.indicator.water.name'
+          li.inactive.management
+            p= t 'text.tools.indicator.management.about'
+            h3= t 'text.tools.indicator.management.name'
 
-section#tools.row.inactive
-  article.fourcol
-    h2
-      | Usamos o conceito de Análise de Ciclo de Vida 
-      | para analisar materiais e produtos e dar opções 
-      | responsáveis para que arquitetos, designers, cenógrafos, 
-      | engenheiros e outros profissionais possam inovar em seus projetos.
-  article.eightcol.last
-    
-section#business_model.row.inactive
-section#team.row.inactive
+
+
+      
+  section#business_model.row
+    article.fourcol
+      h4= t 'text.business.h4_1' 
+      h3= t 'text.business.h2_1'
+      p= t 'text.business.p_1'
+
+    article.fourcol
+      h4= t 'text.business.h4_2' 
+      h3= t 'text.business.h2_2'
+      p= t 'text.business.p_2'
+
+    article.fourcol.last
+      h4= t 'text.business.h4_3' 
+      h3= t 'text.business.h2_3'
+      p= t 'text.business.p_3'
+
+    article.fourcol
+      = image_tag "site/about_business_1.jpg"
+    article.fourcol
+      = image_tag "site/about_business_2.jpg"
+    article.fourcol.last
+      = image_tag "site/about_business_3.jpg"
+
+    .clients
+      .twelvecol
+        h4 Alguns termos e conceitos que utilizamos no nosso dia-a-dia
+      .twocol
+        = image_tag "site/clients/embraer.png", size: "104x19"
+      .twocol
+        = image_tag "site/clients/jomo.png", size: "104x19"
+      .twocol
+        = image_tag "site/clients/arthur.png", size: "122x14"
+      .twocol
+        = image_tag "site/clients/governo.png", size: "84x42"
+      .twocol
+        = image_tag "site/clients/cad.png", size: "76x43"
+      .twocol.last
+        = image_tag "site/clients/JB.png", size: "45x62"
+
+
+      .twocol
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+      .twocol
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+      .twocol
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+      .twocol
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+      .twocol
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+      .twocol.last
+        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+
+  section#team.row.inactive
+    article.threecol
+    article.threecol
+    article.threecol
+    article.threecol

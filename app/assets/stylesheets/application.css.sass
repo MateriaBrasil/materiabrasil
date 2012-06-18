@@ -46,6 +46,7 @@ body
   font-family: "Open Sans"
   font-weight: 300
   font-size: 0.9em
+  line-height: 1.6em
 
 body#materials[class="index"]
   h1
@@ -119,6 +120,7 @@ body#materials[class="index"]
     h3
       font-size: 3.6em
       font-weight: 200
+      line-height: 1em
     h4
       font-weight: 400
       font-size: 18px
@@ -226,8 +228,12 @@ section.material
     margin: 1px 1px 15px 1px
     padding: 15px
     h1
-      font-size: 1.8em
       color: #333
+      line-height: 1em
+    small
+      font-size: .7em
+      text-transform: uppercase
+      color: darken($gray, 20%)
   .name, .resume, .indicators, .image, .manufacturer, .about 
     background: white
     +border-radius(4px)
@@ -326,8 +332,11 @@ section.material
     .indicator
       display: inline-block
       margin: 2% 0
-      padding: 2% 1% 0 2%
       +border-radius(4px)
+      text-align: center
+      width: 12%
+      padding: 0 .4em
+      margin-right: 2%
       &:hover, &.highlighted
         +transition(1s)
         background: rgba(255,255,255, 0.3)
@@ -344,9 +353,81 @@ section.material
         text-indent: 2px
         padding: 2px 0
         padding-left: 5px
-        font-size: .9em
         &:before
           content: " - "
         &.inactive
           display: none
 
+section.about
+  section, nav
+    border-bottom: 1px solid darken($gray, 10%)
+  h3
+    margin:  0 0 1em 0
+    font-weight: 400
+  nav
+    margin-bottom: 3em
+    a
+      font-size: 1.4em
+      padding: 0 0.4em
+      margin-right: 1em
+      line-height: 1.6em
+      color: darken($gray, 40%)
+  a.active
+    background: $cyan
+    color: white
+    +border-radius(8px)
+  section
+    padding-bottom: 2em
+    margin-bottom: 2em
+  #business_model
+    h4
+      color: $cyan
+    h3
+      font-weight: 400
+      margin: .5em 0
+    p
+      font-size: 1em
+      font-weight: 400
+      color: lighten(#333, 8%)
+      margin-top: 1.5em
+    img
+      margin-top: 10%
+    .clients
+      img
+        width: auto !important
+        height: auto !important
+  .arrow
+    img
+      margin-top: 8em
+      width: 38%
+      height: 8%
+  .lifecycle
+    +box-shadow(0 0 4px darken($gray, 30%))
+    background: white
+    padding: 5%
+    ol
+      li
+        width: 13.5% 
+        height: auto
+        display: inline-block
+        background: darken($gray, 20%)
+        margin-right: 3% 
+        +border-radius(6px)
+        +transition(0.35s)
+        &.last
+          margin-right: 0
+        &:hover, &.active
+          background: $cyan
+          cursor: pointer
+    ul.children
+      li
+        p
+          margin: 1em 0
+          font-size: 1.7em
+          font-weight: 200
+          line-height: 1.3em
+        h3
+          color: $cyan
+
+
+    
