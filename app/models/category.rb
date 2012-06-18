@@ -8,7 +8,7 @@ class Category < ActiveRecord::Base
   belongs_to :parent, :class_name => :Category
 
   acts_as_tree
-
+  default_scope order('name ASC')
   scope :parent, where(parent_id: nil)
 
   def siblings
