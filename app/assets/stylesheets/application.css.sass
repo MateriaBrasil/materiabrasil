@@ -454,6 +454,32 @@ section.about
         h3
           color: $cyan
 
-  #team
+  section#team
+    margin-top: .4em
     h3
       margin: 0
+    ol
+      clear: both
+      overflow: hidden
+      padding-top: .2em
+      margin: 1em 0 2em 0
+      li
+      article
+        &:last-child
+          +box-shadow(0 0 4px darken($gray, 30%))
+          background: white
+          padding: 1em 0
+    h3
+      padding: .4em 0 0 .5em
+    small
+      padding: 0 1em
+  section#contact
+    h2
+      color: $orange
+      font-weight: 400
+      margin: 1em 0
+    article
+      background: white
+      +border-radius(6px)
+      .content
+        padding: 1em
