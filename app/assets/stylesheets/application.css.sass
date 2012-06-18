@@ -11,6 +11,7 @@ $brightcyan: #46CEFF
 $orange: #ea6740
 $red: #CB323E
 $yellow: #EACC4F
+$gray: #f4f4f4 
 
 .debug
   background: red
@@ -41,7 +42,7 @@ h3
   font-size: 1.4em
 
 body
-  background: #f4f4f4 image-url("site/bg_body.png") repeat-x
+  background: $gray image-url("site/bg_body.png") repeat-x
   font-family: "Open Sans"
   font-weight: 300
   font-size: 0.9em
@@ -244,7 +245,7 @@ section.material
       margin-bottom: .7em
   .resume
     p
-      background: lighten(#f4f4f4, 2%)
+      background: lighten($gray, 2%)
       padding: 10px
       +border-radius(4px)
   .image, .about
@@ -285,7 +286,7 @@ section.material
             color: white    
     .data 
       font-weight: 300
-      //background: #F4F4F4
+      //background: $gray
       margin: 10px auto
       table
         width: 100%

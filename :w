@@ -18,19 +18,17 @@ App.Materials = {
     paginate: function(){
       // So, the user reached the bottom of the page
       var self = this;
-      if (this.currentScroll() > this.documentHeight() && this.counter < this.limit) {
-        console.log(this.currentScroll());
-        console.log(this.documentHeight());
+      if (this.currentScroll() == this.documentHeight() && this.counter < this.limit) {
         $.get(this.url + "?offset=" + (this.counter * this.multiplier), function(data){
           self.$el.append(data).children(':last').hide().fadeIn(2000);
+          self.counter += 1;
           self.postAction();
         });
-        this.counter = this.counter + 1;
       }
     },
-    postAction:     function() {},
-    documentHeight: function() { return this.document.height() - parseInt(this.document.height() * 0.1) },
-    currentScroll:  function() { return this.windowProp.scrollTop() + this.windowProp.height() }
+    postAction: function(){},
+    documentHeight: function() { return this.document.height() - 300 },
+    currentScroll: function(){ return this.windowProp.scrollTop() + this.windowProp.height() }
 
   
   }),
