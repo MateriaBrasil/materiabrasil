@@ -5,7 +5,7 @@ pt-BR:
   social:
     connect_to_our_network: "Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil."
   text:
-    want_more_informations_about: "A MateriaBrasil está crescendo. Estamos pensando e desenhando um modelo de disponibilizar as informações que temos a todos de modo que nossa equipe possa continuar pesquisando e atualizando nosso acervo dia após dia. Hoje já dispomos de informações como características técnicas dos materiais e os contatos comerciais do fabricante, mas por enquanto preferimos não disponibilizar essas informações, até que a gente desenhe esse modelo. Todo o trabalho de pesquisa e cadastramento visto nesta plataforma foi feito com recursos próprios, e os fabricantes e fornecedores não pagam nada para estar aqui. Estão aqui pois achamos que eles tem de estar aqui e porque acreditamos na qualidade de seus trabalhos."
+    want_more_informations_about_html: "<p>A <strong>MateriaBrasil</strong> está crescendo.</p><p> Estamos pensando e desenhando um modelo de disponibilizar as informações que temos a todos de modo que nossa equipe possa continuar pesquisando e atualizando nosso acervo dia após dia.</p><p> Hoje já dispomos de informações como características técnicas dos materiais e os contatos comerciais do fabricante, mas por enquanto preferimos não disponibilizar essas informações, até que a gente desenhe esse modelo.</p><p> Todo o trabalho de pesquisa e cadastramento visto nesta plataforma foi feito com recursos próprios, e os fabricantes e fornecedores não pagam nada para estar aqui. </p><p>Estão aqui pois achamos que eles tem de estar aqui e porque acreditamos na qualidade de seus trabalhos.</p>"
   pages:
     index:
       presentation:
