@@ -48,6 +48,7 @@ App.Pages = {
       _.bindAll(this);
       new Router();
       Backbone.history.start();
+      Backbone.history.navigate('i/sobre', true);
       App.Common.initFacebook();
     },
 

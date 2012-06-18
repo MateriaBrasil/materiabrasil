@@ -18,3 +18,8 @@ section.presentation.row
 section.home.list.row
   = load_block materials: @materials if @materials
 
+section.row.explorer
+  .fourcol &nbsp;
+  .fourcol.exp=link_to image_tag("site/explore_button.png", title: "Clique e explore"), explore_path
+  .fourcol &nbsp; 
+

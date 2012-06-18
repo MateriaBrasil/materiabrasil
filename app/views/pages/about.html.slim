@@ -5,7 +5,7 @@ section.breadcrumb.about.row
       = link_to "Ferramentas", "#/i/ferramentas"
       = link_to "Modelo de negócio", "#/i/modelo-de-negocio"
       = link_to "Equipe", "#/i/equipe"
-      = link_to "Contato", "#/i/contato"
+      /= link_to "Contato", "#/i/contato"
 
   section#about.inactive.row
 
@@ -123,13 +123,13 @@ section.breadcrumb.about.row
     article.fourcol
       h4= t 'text.business.h4_1' 
       h3= t 'text.business.h2_1'
-      p= t 'text.business.p_1'
+      p= t 'text.business.p_1_html'
       = image_tag "site/about_business_1.jpg"
 
     article.fourcol
       h4= t 'text.business.h4_2' 
       h3= t 'text.business.h2_2'
-      p= t 'text.business.p_2'
+      p= t 'text.business.p_2_html'
       = image_tag "site/about_business_2.jpg"
 
     article.fourcol.last
@@ -143,24 +143,31 @@ section.breadcrumb.about.row
         small Alguns clientes e projetos da MateriaBrasil
       .twocol
         p.img= image_tag "site/clients/embraer.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves executivas. Construção de uma biblioteca física de materiais na Embraer.
       .twocol
         p.img= image_tag "site/clients/jomo.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Projeto de análise do ciclo de vida de materiais para compor o memorial descritivo (escolha de componentes) de uma bolsa de laptop. 
       .twocol
         p.img= image_tag "site/clients/arthur.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Pesquisa de matérias-primas e tecnologias nacionais passíveis de serem 
+          |utilizadas num complexo de construções em Angola. Mapeamento de materiais para serem utilizados num projeto no interior de São Paulo. 
       .twocol
         p.img= image_tag "site/clients/governo.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Consultoria para seleção de materiais utilizados no espaço do Governo do Estado na Rio+20
 
       .twocol
         p.img= image_tag "site/clients/cad.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Consultoria para seleção de materiais utilizados na mostra de arquitetura que reuniu 45 escritórios e lançou o desafio para a sustentabilidade na decoração. 
 
       .twocol.last
         p.img= image_tag "site/clients/JB.png"
-        p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
+        p
+          |Consultoria para seleção de materiais do Museu do Meio Ambiente, inaugurado durante a Rio+20.
   section#team.row.inactive
     ol
       li.member
@@ -235,10 +242,10 @@ section.breadcrumb.about.row
         article.twocol.last
           h3 Fabio
           small Comunicação
-  section#contact.row.inactive
+  /section#contact.row.inactive
     h2 Adoraríamos ouvir seu feedback, tomar um café, marcar uma reunião ou simplesmente conversar...
 
-    article.threecol
+   / article.threecol
       .content
         .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="260" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"]  
     article.threecol
@@ -246,12 +253,12 @@ section.breadcrumb.about.row
         | Entre em contato conosco
         | contato@materiabrasil.net
 
-    article.threecol
+    /article.threecol
       .content
         | Telefones
 
 
-    article.threecol.last
+    /article.threecol.last
       .content
         | Endereços
 
