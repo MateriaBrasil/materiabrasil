@@ -240,12 +240,18 @@ section.material
     font-size: 1em
     color: #333
     margin-bottom: 20px
+    h3
+      margin-bottom: .7em
+  .resume
+    p
+      background: lighten(#f4f4f4, 2%)
+      padding: 10px
+      +border-radius(4px)
   .image, .about
     z-index: 2
     position: relative
   .about
     h3
-      margin: 1em 0
       line-height: 1.2em
       font-weight: 600
       text-indent: 35px
@@ -293,9 +299,6 @@ section.material
           color: lighten(#333, 50%)
           padding: 20px 0
 
-  .indicators, .manufacturer
-    h3
-      margin-bottom: 20px
   .manufacturer
     margin-bottom: 100px
     td 
