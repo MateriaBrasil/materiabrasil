@@ -1,35 +1,41 @@
 section.breadcrumb.about.row
   header.twelvecol.row
     nav
-      = link_to "Sobre", "#/", class: :active
-      = link_to "Ferramentas", "#/ferramentas"
-      = link_to "Modelo de negócio", "#/modelo-de-negocio"
-      = link_to "Equipe", "#/equipe"
-      = link_to "Contato", "#/contato"
+      = link_to "Sobre", "#/i/sobre", class: :active
+      = link_to "Ferramentas", "#/i/ferramentas"
+      = link_to "Modelo de negócio", "#/i/modelo-de-negocio"
+      = link_to "Equipe", "#/i/equipe"
+      = link_to "Contato", "#/i/contato"
 
-  section#about.active.row
+  section#about.inactive.row
 
     article.fivecol
       h3= t 'text.about.h2' 
-      p= t 'text.about.p'
+      p= t 'text.about.p_html'
     article.sevencol.last
       = image_tag "site/about_about_image.jpg"
 
-  section#tools.row
+  section#tools.row.inactive
     article.fivecol
       h3= t 'text.tools.h2'
-      p= t 'text.tools.p'
+      p= t 'text.tools.p_html'
     article.arrow.onecol
       = image_tag "site/about_tools_arrow.png"
     article.sixcol.last
       .lifecycle
         ol
-          li.cycle.active= image_tag "site/indicators/cycle.png"
-          li.security= image_tag "site/indicators/security.png"
-          li.human= image_tag "site/indicators/human.png"
-          li.energy= image_tag "site/indicators/energy.png"
-          li.water= image_tag "site/indicators/water.png"
-          li.management.last= image_tag "site/indicators/management.png"
+          li.cycle.active
+            = image_tag "site/indicators/cycle.png", data: {type: "cycle"}
+          li.security
+            = image_tag "site/indicators/security.png", data: {type: "security"}
+          li.human
+            = image_tag "site/indicators/human.png", data: {type: "human"}
+          li.energy
+            = image_tag "site/indicators/energy.png", data: {type: "energy"}
+          li.water
+            = image_tag "site/indicators/water.png", data: {type: "water"}
+          li.management.last
+            = image_tag "site/indicators/management.png", data: {type: "management"}
         ul.children
           li.active.cycle
             p= t 'text.tools.indicator.cycle.about'
@@ -49,7 +55,6 @@ section.breadcrumb.about.row
           li.inactive.management
             p= t 'text.tools.indicator.management.about'
             h3= t 'text.tools.indicator.management.name'
-    article.twelvecol &nbsp;
     article.sect.terms
       h3 Termos, palavras e referências
       small Alguns termos e conceitos que utilizamos no dia-a-dia
@@ -114,7 +119,7 @@ section.breadcrumb.about.row
 
 
       
-  section#business_model.row
+  section#business_model.row.inactive
     article.fourcol
       h4= t 'text.business.h4_1' 
       h3= t 'text.business.h2_1'
@@ -132,8 +137,6 @@ section.breadcrumb.about.row
       h3= t 'text.business.h2_3'
       p= t 'text.business.p_3'
       = image_tag "site/about_business_3.jpg"
-    article.twelvecol 
-      | &nbsp;
     article.sect.clients
       .twelvecol
         h3 Clientes e projetos que realizamos 
@@ -158,7 +161,7 @@ section.breadcrumb.about.row
       .twocol.last
         p.img= image_tag "site/clients/JB.png"
         p Projeto de mapeamento de matérias-primas nacionais passíveis de serem utilizadas em interior de aeronaves.
-  section#team.row
+  section#team.row.inactive
     ol
       li.member
         article.twocol
@@ -210,13 +213,10 @@ section.breadcrumb.about.row
         article.twocol
           h3 Bernardo Ferracioli
           small Negócios
-      li.member
+      /li.member
         article.twocol
-          = image_tag "site/team/1.jpg"
         article.twocol.last
-          h3 Cyndi Richa
-          small Comunicação
-    ol
+    /ol
       li.member
         article.twocol
           = image_tag "site/team/1.jpg"
@@ -235,10 +235,7 @@ section.breadcrumb.about.row
         article.twocol.last
           h3 Fabio
           small Comunicação
-
-
-
-  section#contact.row
+  section#contact.row.inactive
     h2 Adoraríamos ouvir seu feedback, tomar um café, marcar uma reunião ou simplesmente conversar...
 
     article.threecol
