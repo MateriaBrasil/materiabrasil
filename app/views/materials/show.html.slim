@@ -5,14 +5,21 @@ section.material.row
     .image
       = image_tag @material.images.first.image.main.url, alt: @material.name
     .about
-      ul.options
+      section.data
+        h3 Você quer saber mais informações deste material, certo?
+
+        = image_tag ""
+        = image_tag ""
+
+        p= t 'text.want_more_informations_about'
+      /ul.options
         li.active= link_to "Caracteristicas"
         li= link_to "Propriedades"
         li= link_to "Quantidades"
         li= link_to "Usos"
         li= link_to "Anexos"
-      section.data
-        table
+      //section.data
+        /table
           tr 
             td.title Forma 
             td
@@ -41,7 +48,7 @@ section.material.row
         | Direcionadores de sustentabilidade
       = load_indicators(@material)
 
-    .manufacturer
+    /.manufacturer
       h3 Informações comerciais
       table
         tr 

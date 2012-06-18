@@ -4,23 +4,13 @@ pt-BR:
       head_html: "Explore <span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"
   social:
     connect_to_our_network: "Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil."
+  text:
+    want_more_informations_about: "A MateriaBrasil está crescendo. Estamos pensando e desenhando um modelo de disponibilizar as informações que temos a todos de modo que nossa equipe possa continuar pesquisando e atualizando nosso acervo dia após dia. Hoje já dispomos de informações como características técnicas dos materiais e os contatos comerciais do fabricante, mas por enquanto preferimos não disponibilizar essas informações, até que a gente desenhe esse modelo. Todo o trabalho de pesquisa e cadastramento visto nesta plataforma foi feito com recursos próprios, e os fabricantes e fornecedores não pagam nada para estar aqui. Estão aqui pois achamos que eles tem de estar aqui e porque acreditamos na qualidade de seus trabalhos."
   pages:
     index:
       presentation:
         h1: "Descubra um universo de produtos e serviços orientados para a sustentabilidade."
         about_html: "A <strong> MateriaBrasil </strong> é um centro de referência em modelos de produção e consumo conscientes. Nossos consultores estão prontos para encontrar as soluções mais coerentes com o seu negócio rumo à sustentabilidade."
-    splash:
-      details:
-        who_text_1_html: "A MateriaBrasil é fruto da união entre a %{link_sistema} e a %{link_fibra}. Aliando conhecimento e técnica, o projeto nasceu do sonho coletivo de empreendedores que acreditam que é possível fazer negócios e impactar positivamente a sociedade."
-        who_text_2_html: "Reunimos o maior acervo de materiais de baixo impacto ambiental e alta contribuição social do Brasil, com o objetivo de fornecer informação qualificada sobre materiais e seus fornecedores e fomentar projetos com pegadas mais leves."
-        how_text_1_html: "Usamos o conceito de %{link_life_cycling} para analisar materiais e produtos e dar opções resposáveis para que arquitetos, designers, cenógrafos, engenheiros e outros profissionais possam inovar em seus projetos."
-        how_text_2_html: "Prestamos consultorias, ministramos workshops e realizamos pesquisas para ajudar você a encontrar os materiais e tecnologias ideais para seus negócios."
-
-        why_text_1_html: "Vemos na <strong>troca</strong> e <strong>disseminação do conhecimento</strong> uma forma de estimular e acelerar a inovação e a transformação da cultura de produção e consumo."
-        why_text_2_html: "Através do uso responsável dos recursos naturais, com respeito a Biodiversidade, queremos que os profissionais tenham conhecimento e boas opções para escolher e comprar."
-
-        where_text_1_html: "Em breve nosso acervo estará disponível na internet."
-        where_text_2_html: "Nossa <strong>biblioteca de materiais</strong> está disponível para visitação em São Paulo, no %{link_map_sistema} e na sede da Fibra Design, no %{link_map_fibra}."
   activerecord: 
     models:
       attachment:

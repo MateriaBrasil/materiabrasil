@@ -8,5 +8,6 @@ MateriaBrasil::Application.routes.draw do
   get 'explore/:category',  to: "materials#explore",  as: :category
   get 'explore/',           to: "materials#explore",  as: :explore    
   get 'materials',          to: "materials#index",    as: :materials
+  get 'sobre/',             to: "pages#about",        as: :about
   root                      to: "materials#index"
 end

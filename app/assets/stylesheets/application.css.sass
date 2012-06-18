@@ -15,6 +15,8 @@ $yellow: #EACC4F
 .debug
   background: red
   height: 40px
+.inactive
+  display: none
 img
   width: 100%
   height: auto
@@ -22,10 +24,7 @@ img
 a
   color: $cyan
   text-decoration: none
-  transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out 
-  -moz-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
-  -o-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
-  -webkit-transition: opacity 0.35s ease-in-out, color 0.25s ease-in-out
+  +transition(opacity, 0.25s)
   &:hover
     color: $orange
     text-shadow: 0px 0px 2px $orange 
@@ -87,7 +86,7 @@ body#materials[class="index"]
       width: 100%
 
 
-.list
+.home
   img
     width: 100%
     height: 100%
@@ -147,6 +146,7 @@ ol.materials
   margin-bottom: 10px
   li
     margin-bottom: 8px
+    +transition(box-shadow, 0.35s)
     &:last-child
       margin-right: 0px !important
     &:hover
@@ -305,7 +305,6 @@ section.material
       &:hover
         cursor: default !important
     .indicator
-      background: image-url("site/bg_indicators_sprite.png") no-repeat -9px -5px
       display: inline-block
       margin: 2% 0
       padding: 2% 1% 0 2%

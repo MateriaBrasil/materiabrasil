@@ -4,4 +4,6 @@ class PagesController < ApplicationController
   def splash
     render :layout => "splashpage"
   end
+
+  def about; end
 end
