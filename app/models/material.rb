@@ -8,7 +8,7 @@ class Material < ActiveRecord::Base
   has_and_belongs_to_many :categories, before_add: :validates_category
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments
-  validates :manufacturer, :name, :resume, :technical_observation, :density, :packing, :average_price, :images_attributes, presence: true
+  validates :manufacturer, :name, :resume, :technical_observation, :density, :packing, :average_price, presence: true
 
   default_scope order('created_at DESC')
   
