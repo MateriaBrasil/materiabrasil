@@ -1,13 +1,13 @@
 section.breadcrumb.about.row
   header.twelvecol.row
     nav
-      = link_to "Sobre", "#/i/sobre", class: :active
+      = link_to "Sobre", "#/i/sobre"
       = link_to "Ferramentas", "#/i/ferramentas"
       = link_to "Modelo de negócio", "#/i/modelo-de-negocio"
       = link_to "Equipe", "#/i/equipe"
-      /= link_to "Contato", "#/i/contato"
+      = link_to "Contato", "#/i/contato"
 
-  section#about.inactive.row
+  section#about.inactive.row.sobre
 
     article.fivecol
       h3= t 'text.about.h2' 
@@ -15,7 +15,7 @@ section.breadcrumb.about.row
     article.sevencol.last
       = image_tag "site/about_about_image.jpg"
 
-  section#tools.row.inactive
+  section#tools.row.inactive.ferramentas
     article.fivecol
       h3= t 'text.tools.h2'
       p= t 'text.tools.p_html'
@@ -119,7 +119,7 @@ section.breadcrumb.about.row
 
 
       
-  section#business_model.row.inactive
+  section#business_model.row.inactive.modelo-de-negocio
     article.fourcol
       h4= t 'text.business.h4_1' 
       h3= t 'text.business.h2_1'
@@ -168,7 +168,7 @@ section.breadcrumb.about.row
         p.img= image_tag "site/clients/JB.png"
         p
           |Consultoria para seleção de materiais do Museu do Meio Ambiente, inaugurado durante a Rio+20.
-  section#team.row.inactive
+  section#team.row.inactive.equipe
     ol
       li.member
         article.twocol
@@ -242,23 +242,56 @@ section.breadcrumb.about.row
         article.twocol.last
           h3 Fabio
           small Comunicação
-  /section#contact.row.inactive
+  section#contact.row.inactive.contato
     h2 Adoraríamos ouvir seu feedback, tomar um café, marcar uma reunião ou simplesmente conversar...
 
-   / article.threecol
+    article.threecol
       .content
+        h3.fb Facebook
         .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="260" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"]  
     article.threecol
       .content
-        | Entre em contato conosco
-        | contato@materiabrasil.net
+        h3.em Email
+        p Entre em contato conosco
+        = mail_to "contato@materiabrasil.net"
 
-    /article.threecol
+    article.threecol
       .content
-        | Telefones
+        h3.tel Telefones
+        p
+         = link_to "São Paulo", "#"
+        p 
+          | Escritório da Sistema Ambiental
+        p
+          | (011) 3263-0834
+        br
+        p
+          = link_to "Rio de Janeiro", "#"
+        p 
+          | Escritório da Fibra Design
+        p
+          | (021) 2233-3126
 
 
-    /article.threecol.last
+    article.threecol.last
       .content
-        | Endereços
+        h3.addr Endereços
+        p
+         = link_to "São Paulo", "#"
+        p 
+          | Escritório da Sistema Ambiental
+        p
+          | Av. Paulista 1159 CJ 1315
+        p
+          | CEP 01311-200 SP
+        br
+        p
+          = link_to "Rio de Janeiro", "#"
+        p 
+          | Escritório da Fibra Design
+        p
+          | Rua Senador Pompeu, 82 - Centro
+        p
+          | CEP 20080-102 - RJ
+
 

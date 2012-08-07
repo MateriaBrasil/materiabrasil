@@ -4,33 +4,12 @@ var Router = Backbone.Router.extend({
   },
 
   showPageBlock: function(param){
-    var call = "";
-    switch(param) {
-      case "sobre": 
-        call = "about";
-      break;
-      case "ferramentas":
-        call = "tools";
-      break;
-      case "modelo-de-negocio":
-        call = "business_model";
-      break;
-      case "equipe":
-        call = "team";
-      break;
-      case "contato":
-        call = "contact";
-      break;
-      default:
-        call = "about";
-      break;
-
-    }
-    this.showChosenBlock(call);
+    this.showChosenBlock(param);
   },
+
   showChosenBlock: function(block){
     $('.about section.row').hide().addClass('inactive');
-    $('section.row[id='+ block +']').fadeIn().removeClass('inactive').addClass('active');
+    $('section.'+ block).fadeIn().removeClass('inactive').addClass('active');
   }
 
 });
@@ -48,7 +27,6 @@ App.Pages = {
       _.bindAll(this);
       new Router();
       Backbone.history.start();
-      Backbone.history.navigate('i/sobre', true);
       App.Common.initFacebook();
     },
 

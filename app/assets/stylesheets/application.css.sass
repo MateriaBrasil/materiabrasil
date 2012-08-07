@@ -485,9 +485,21 @@ section.about
   section#contact
     h2
       color: $orange
-      font-weight: 400
+      font-weight: 300
       margin-bottom: 1em
+      letter-spacing: 0.2px
     article
+      h3
+        background: image-url('site/about_contact_sprite.png') no-repeat -4px -4px
+        text-indent: 2.2em
+        font-size: 1.2em
+        color: darken(gray, 10%) 
+        &.fb
+          background-position: -4px -166px
+        &.tel
+          background-position: -4px -247px
+        &.addr
+          background-position: -8px -85px
       background: white
       +border-radius(6px)
       .content
