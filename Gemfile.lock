@@ -301,7 +301,6 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
-  devise (= 1.5.3)
   fog
   friendly_id (~> 4.0.1)
   has_scope

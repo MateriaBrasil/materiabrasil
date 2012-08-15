@@ -2,7 +2,6 @@ MateriaBrasil::Application.routes.draw do
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
-  devise_for :users
   
 
   match "auth/:provider/callback",      to: "sessions#create"

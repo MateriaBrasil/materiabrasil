@@ -29,7 +29,6 @@ gem "mini_magick"
 # Utilities
 gem 'simple_form'
 gem 'activeadmin', :git => "git@github.com:MateriaBrasil/active_admin.git"
-gem 'devise', '1.5.3'
 gem 'compass-rails'
 gem 'compass-960-plugin'
 gem 'sass-rails'
@@ -48,7 +47,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'shoulda-matchers'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
