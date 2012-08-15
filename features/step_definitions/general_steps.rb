@@ -3,6 +3,10 @@ Given /^I visit the "([^"]*)"$/ do |arg1|
   visit eval(arg1)
 end
 
+Given /^I'm in the home page$/ do
+  visit root_path
+end
+
 When /^I visit the "([^"]*)" category path$/ do |arg1|
   category = Category.find_by_name(arg1)
   visit category_path(category)
