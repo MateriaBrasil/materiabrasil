@@ -315,7 +315,9 @@ DEPENDENCIES
   omniauth-facebook
   pg
   rails (~> 3.2.6)
-  rspec-rails
+  rspec
+  rspec-mocks
+  rspec-rails (~> 2.0)
   sass-rails
   shoulda-matchers
   simple_form

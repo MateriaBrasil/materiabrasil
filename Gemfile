@@ -42,7 +42,8 @@ gem 'acts_as_tree_rails3'
 gem 'dalli'
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem "rspec"
+  gem "rspec-rails", "~> 2.0"
 end
 
 group :test do
@@ -52,6 +53,7 @@ group :test do
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
   gem 'jasmine'
+  gem 'rspec-mocks'
 end
 
 # Gems used only for assets and not required
