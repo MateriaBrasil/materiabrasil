@@ -9,4 +9,9 @@
   .threecol.child.last
     form.search
       input type="text" name="q" value="" placeholder=""
-    /= link_to "Conecte-se", facebook_auth_path
+    - if current_user 
+      | Olá
+      = current_user.name
+      = link_to "Sair", session_path(current_user), method: :delete
+    - else
+      = link_to "Conecte-se", new_session_path

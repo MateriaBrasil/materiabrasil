@@ -36,3 +36,7 @@ Image.blueprint do
   featured { true }
   image { File.open("#{Rails.root}/spec/support/fixtures/image1.png") }
 end
+
+Authorization.blueprint do
+  # Attributes here
+end

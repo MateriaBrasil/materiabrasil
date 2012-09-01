@@ -2,9 +2,11 @@ MateriaBrasil::Application.routes.draw do
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
-  
+
 
   match "auth/:provider/callback",      to: "sessions#create"
+  resources :sessions, only: [:new, :destroy]
+
   get 'auth/facebook',                  as: :facebook_auth
   get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
