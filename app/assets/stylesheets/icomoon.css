@@ -1,69 +1,64 @@
 @font-face {
-	font-family: 'IcoMoon';
-	src: url('/assets/IcoMoon.eot');
-	src: url('/assets/IcoMoon.eot?#iefix') format('embedded-opentype'),
-		url('/assets/IcoMoon.woff') format('woff'),
-		url('/assets/IcoMoon.svg#IcoMoon') format('svg'),
-		url('/assets/IcoMoon.ttf') format('truetype');
+	font-family: 'icomoon';
+	src: font-url('icomoon.eot');
+	src: font-url('icomoon.eot?#iefix') format('embedded-opentype'),
+		   font-url('icomoon.svg#icomoon') format('svg'),
+		   font-url('icomoon.woff') format('woff'),
+		   font-url('icomoon.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'IcoMoon';
+	font-family: 'icomoon';
 	content: attr(data-icon);
 	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Use the following CSS code if you want to have a class per icon */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-	font-family: 'IcoMoon';
+	font-family: 'icomoon';
 	font-style: normal;
 	speak: none;
+	font-weight: normal;
   padding-right: 4px;
-  position: relative;
-  top: 1px;
+  top: 2px;
+	-webkit-font-smoothing: antialiased;
 }
 .icon-facebook:before {
-	content: "\21";
-}
-.icon-twitter:before {
-	content: "\22";
-}
-.icon-email:before {
 	content: "\23";
 }
-.icon-home:before {
+.icon-twitter:before {
 	content: "\24";
 }
-.icon-pencil:before {
+.icon-mail:before {
 	content: "\25";
 }
-.icon-user:before {
+.icon-home:before {
 	content: "\26";
 }
-.icon-comments:before {
+.icon-pencil:before {
 	content: "\27";
 }
-.icon-exit:before {
+.icon-user:before {
 	content: "\28";
 }
-.icon-triangle:before {
+.icon-comments:before {
 	content: "\29";
 }
-.icon-checkmark:before {
-	content: "\2a";
+.icon-exit:before {
+	content: "\21";
 }
 .icon-warning:before {
-	content: "\2b";
-}
-.icon-file-excel:before {
-	content: "\2c";
-}
-.icon-contact:before {
-	content: "\2d";
+	content: "\2a";
 }
 .icon-trophy:before {
-	content: "\2e";
+	content: "\2b";
 }
+.icon-star:before {
+	content: "\22";
+}
+

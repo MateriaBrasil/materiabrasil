@@ -365,6 +365,67 @@ section.material
           content: " - "
         &.inactive
           display: none
+section.user
+  padding: .2em 0
+  color: white
+  +transition(.2s)
+  +border-radius(6px 6px 0 0)
+  img
+    width: 35px
+    margin-top: -2px
+    +border-radius(18px)
+    &::after
+  &:hover
+    cursor: pointer
+    background: white
+    color: black
+    .options
+      display: block
+  .options
+    font-size: .9em
+    display: none
+    position: absolute
+    padding: .2em 1em
+    width: auto 
+    background: white
+    +box-shadow(0 1px 2px #999)
+    +border-radius(0 0 4px 4px)
+    a
+      color: black
+      &:hover
+        background: $cyan
+        color: white
+        padding: .1em 1em
+        text-shadow: none
+
+  span.arrow
+    display: block
+    margin-right: 15px
+    float: right
+section.session
+  width: 70%
+  margin: .4em auto
+  background: white
+  .info
+    line-height: 1.4em
+  img
+    +transition(.2s)
+    &:hover
+      opacity: .9
+  .box
+    padding: 1em
+  hr
+    background: lighten(gray, 15%)
+  .detail
+    font-size: .8em
+    color: lighten(gray, 5%)
+  .how_to
+    font-weight: 600 
+    font-size: 1.2em
+    overflow: hidden
+.row.header
+  h1
+    text-align: center
 
 section.about
   section, nav

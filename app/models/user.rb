@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
     )
   end
 
+  def picture
+    @image ||= "https://graph.facebook.com/#{self.authorizations.first.uid}/picture?type=square"
+  end
 end

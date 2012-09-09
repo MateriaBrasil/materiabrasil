@@ -11,8 +11,12 @@
       input type="text" name="q" value="" placeholder=""
   .onecol.child.last
     - if current_user 
-      | Olá
-      = current_user.name
-      = link_to "Sair", session_path(current_user), method: :delete
+      section.user
+        = image_tag current_user.picture
+        span.arrow 
+          |&#x25BE 
+        ol.options
+          /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
+          li.logout= link_to "Desconectar", session_path(current_user), method: :delete, class: 'icon-exit'
     - else
       = link_to "Conecte", new_session_path, class: 'icon-facebook'
