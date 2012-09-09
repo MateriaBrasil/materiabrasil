@@ -2,16 +2,17 @@
   .threecol
     h2[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
   nav
-    .sixcol.child
+    .fivecol.child
       = link_to "Explore", explore_path
       = link_to "Sobre", about_path(anchor: '/i/sobre')
       = link_to "Contato", about_path(anchor: '/i/contato')
-  .threecol.child.last
+  .threecol.child
     form.search
       input type="text" name="q" value="" placeholder=""
+  .onecol.child.last
     - if current_user 
       | Olá
       = current_user.name
       = link_to "Sair", session_path(current_user), method: :delete
     - else
-      = link_to "Conecte-se", new_session_path
+      = link_to "Conecte", new_session_path, class: 'icon-facebook'
