@@ -4,5 +4,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   else
     key, secret     = ENV['KEY_FACEBOOK'], ENV['SECRET_FACEBOOK']
   end
-  provider :facebook, key, secret, scope: "email, user_about_me, user_location, offline_access"
+  provider :facebook, key, secret, scope: "email, user_about_me, user_location"
 end

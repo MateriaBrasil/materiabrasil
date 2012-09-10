@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   validates :email, :name, :city, presence: true 
 
-  has_many :authorizations
+  has_many :authorizations, dependent: :destroy
  
   def self.create_from_auth_hash(hash)
     create!(
