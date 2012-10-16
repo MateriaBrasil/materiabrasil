@@ -2,14 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.8'
 
-group :development, :test do
-  gem 'taps'
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
+gem 'taps'
+gem 'pg'
+gem 'pg_search'
 
 # Authentication
 gem 'omniauth'

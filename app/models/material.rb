@@ -1,4 +1,5 @@
 class Material < ActiveRecord::Base
+  include PgSearch
   extend FriendlyId
   friendly_id :name, use: :slugged
 
@@ -6,14 +7,20 @@ class Material < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :attachments, dependent: :destroy
   has_and_belongs_to_many :categories, before_add: :validates_category
+  validates :manufacturer, :name, :resume, :technical_observation, :density, :packing, :average_price, presence: true
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments
-  validates :manufacturer, :name, :resume, :technical_observation, :density, :packing, :average_price, presence: true
 
   default_scope order('created_at DESC')
   
   after_save :check_tree
-    
+  
+
+  pg_search_scope :search_by_name_and_category, against: [:name, :code, :resume], associated_against: {
+    categories: [:name, :code_reference]
+  }
+
+
   def should_generate_new_friendly_id?
     new_record?
   end
