@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(:version => 20120901205630) do
 
   create_table "active_admin_comments", :force => true do |t|
-    t.integer   "resource_id",   :null => false
-    t.string    "resource_type", :null => false
-    t.integer   "author_id"
-    t.string    "author_type"
-    t.text      "body"
-    t.timestamp "created_at",    :null => false
-    t.timestamp "updated_at",    :null => false
-    t.string    "namespace"
+    t.integer  "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "namespace"
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
@@ -29,27 +29,27 @@ ActiveRecord::Schema.define(:version => 20120901205630) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string    "email",                                 :default => "", :null => false
-    t.string    "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string    "reset_password_token"
-    t.timestamp "reset_password_sent_at"
-    t.timestamp "remember_created_at"
-    t.integer   "sign_in_count",                         :default => 0
-    t.timestamp "current_sign_in_at"
-    t.timestamp "last_sign_in_at"
-    t.string    "current_sign_in_ip"
-    t.string    "last_sign_in_ip"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "attachments", :force => true do |t|
-    t.string    "name"
-    t.string    "file"
-    t.integer   "material_id"
-    t.timestamp "created_at",  :null => false
-    t.timestamp "updated_at",  :null => false
+    t.string   "name"
+    t.string   "file"
+    t.integer  "material_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "authorizations", :force => true do |t|
@@ -61,13 +61,13 @@ ActiveRecord::Schema.define(:version => 20120901205630) do
   end
 
   create_table "categories", :force => true do |t|
-    t.string    "name"
-    t.integer   "parent_id"
-    t.timestamp "created_at",                  :null => false
-    t.timestamp "updated_at",                  :null => false
-    t.string    "code_reference", :limit => 3
-    t.string    "slug"
-    t.boolean   "is_visible"
+    t.string   "name"
+    t.integer  "parent_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.string   "code_reference", :limit => 3
+    t.string   "slug"
+    t.boolean  "is_visible"
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
@@ -80,64 +80,64 @@ ActiveRecord::Schema.define(:version => 20120901205630) do
   add_index "categories_materials", ["category_id", "material_id"], :name => "by_category_and_material", :unique => true
 
   create_table "contacts", :force => true do |t|
-    t.string    "name"
-    t.string    "definition"
-    t.string    "email"
-    t.string    "phone_first"
-    t.string    "phone_second"
-    t.integer   "manufacturer_id"
-    t.timestamp "created_at",      :null => false
-    t.timestamp "updated_at",      :null => false
-    t.string    "address"
+    t.string   "name"
+    t.string   "definition"
+    t.string   "email"
+    t.string   "phone_first"
+    t.string   "phone_second"
+    t.integer  "manufacturer_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "address"
   end
 
   create_table "images", :force => true do |t|
-    t.string    "title"
-    t.string    "description"
-    t.string    "image"
-    t.integer   "material_id"
-    t.boolean   "featured"
-    t.boolean   "use_case"
-    t.timestamp "created_at",  :null => false
-    t.timestamp "updated_at",  :null => false
-    t.boolean   "render"
+    t.string   "title"
+    t.string   "description"
+    t.string   "image"
+    t.integer  "material_id"
+    t.boolean  "featured"
+    t.boolean  "use_case"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.boolean  "render"
   end
 
   create_table "manufacturers", :force => true do |t|
-    t.string    "name"
-    t.string    "site"
-    t.timestamp "created_at",     :null => false
-    t.timestamp "updated_at",     :null => false
-    t.string    "address"
-    t.string    "email"
-    t.string    "cnpj"
-    t.string    "razao_social"
-    t.string    "insc_estadual"
-    t.string    "insc_municipal"
-    t.string    "city"
-    t.string    "state"
-    t.string    "cep"
-    t.string    "country"
-    t.string    "mail_address"
-    t.string    "certifications"
+    t.string   "name"
+    t.string   "site"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "address"
+    t.string   "email"
+    t.string   "cnpj"
+    t.string   "razao_social"
+    t.string   "insc_estadual"
+    t.string   "insc_municipal"
+    t.string   "city"
+    t.string   "state"
+    t.string   "cep"
+    t.string   "country"
+    t.string   "mail_address"
+    t.string   "certifications"
   end
 
   create_table "materials", :force => true do |t|
-    t.text      "resume"
-    t.integer   "manufacturer_id"
-    t.text      "technical_observation"
-    t.string    "density"
-    t.string    "dimensions"
-    t.string    "packing"
-    t.string    "average_price"
-    t.timestamp "created_at",            :null => false
-    t.timestamp "updated_at",            :null => false
-    t.string    "name"
-    t.string    "slug"
-    t.string    "ncm"
-    t.string    "certifications"
-    t.string    "awards"
-    t.string    "code"
+    t.text     "resume"
+    t.integer  "manufacturer_id"
+    t.text     "technical_observation"
+    t.string   "density"
+    t.string   "dimensions"
+    t.string   "packing"
+    t.string   "average_price"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "name"
+    t.string   "slug"
+    t.string   "ncm"
+    t.string   "certifications"
+    t.string   "awards"
+    t.string   "code"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
