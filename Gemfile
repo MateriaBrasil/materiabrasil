@@ -23,7 +23,7 @@ gem "mini_magick"
 
 # Utilities
 gem 'simple_form'
-gem 'activeadmin', :git => "git@github.com:MateriaBrasil/active_admin.git"
+gem 'activeadmin', :git => "git://github.com/MateriaBrasil/active_admin.git"
 gem 'compass-rails'
 gem 'compass-960-plugin'
 gem 'sass-rails'

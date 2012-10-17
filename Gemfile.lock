@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:MateriaBrasil/active_admin.git
+  remote: git://github.com/MateriaBrasil/active_admin.git
   revision: ed346e99c78a5816ce3219e7f2194fd5b62f6b34
   specs:
     activeadmin (0.4.4)
@@ -150,10 +150,9 @@ GEM
     json (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
-    kaminari (0.13.0)
+    kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-      railties (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
     libwebsocket (0.1.5)
