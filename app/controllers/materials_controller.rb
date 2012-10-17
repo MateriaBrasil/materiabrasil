@@ -2,7 +2,7 @@ class MaterialsController < ApplicationController
   inherit_resources
   has_scope :offset
   has_scope :limit, default: 5, only: [:index]
-  has_scope :limit, default: 9, only: [:explore, :search]
+  has_scope :limit, default: 9, only: [:explore]
 
   include ApplicationHelper
 
@@ -27,7 +27,7 @@ class MaterialsController < ApplicationController
 
   def search
     if params[:q]
-      @resource = Material.search_by_name_and_category(params[:q]).limit(9).offset(params[:offset].to_i)
+      @resource = Material.search_by_name_and_category(params[:q])
       @count = @resource.count
       return render action: "explore" unless request.xhr?
       return render partial: "materials" if request.xhr?
