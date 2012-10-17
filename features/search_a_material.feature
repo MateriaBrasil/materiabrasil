@@ -10,7 +10,7 @@ Feature: Search Materials
     And a children category of "Composito" called "Com Fibra Natural" exists
     And a material named "Fibra de Coco" with category "Com Fibra Natural", "Composito", "Classes" exists
     And I'm in the home page
-    When I fill in "Busca" with "coco"
+    When I fill in the search field with "coco"
     And I submit the search form
     Then I should see "Fibra de Coco"
     Then I should see "1 material encontrado"

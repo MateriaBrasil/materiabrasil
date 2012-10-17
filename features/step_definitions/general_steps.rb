@@ -47,10 +47,10 @@ When /^I click on the link "([^"]*)"$/ do |arg1|
 end
 
 
-When /^I fill in "(.*?)" with "(.*?)"$/ do |arg1, arg2|
-  page.execute_script("$('form#search .field').attr('value',#{arg2});")
+When /^I fill in the search field with "(.*?)"$/ do |arg1|
+  page.execute_script("$('form#search .field').attr('value','#{arg1}');")
 end
 
 When /^I submit the search form$/ do
-  page.execute_script("$('form#search .field').submit();")
+  page.execute_script("$('form#search').submit();")
 end

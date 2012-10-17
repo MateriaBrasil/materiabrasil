@@ -1,6 +1,7 @@
 section.details.explore.row
   = render partial: "partials/categories"
   span.twelvecol.materials_count
-    | #{@count} materiais encontrados
+    = pluralize(@count, 'material ', 'materiais ')
+    | encontrados
 = render partial: "materials"
 

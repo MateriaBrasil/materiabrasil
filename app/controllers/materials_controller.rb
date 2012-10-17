@@ -17,10 +17,20 @@ class MaterialsController < ApplicationController
       @count = @category.materials.length
       @resource ||= @category.materials.limit(9).offset(params[:offset].to_i)
     else
-      @count = Material.all.length
+      @count = collection.length
       @resource ||= collection
     end
 
     return render partial: "materials" if request.xhr?
+  end
+
+
+  def search
+    if params[:q]
+      @resource = Material.search_by_name_and_category(params[:q])
+      @count = @resource.count
+      return render action: "explore" unless request.xhr?
+      return render partial: "materials" if request.xhr?
+    end
   end
 end
