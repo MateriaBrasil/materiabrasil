@@ -63,6 +63,7 @@ App.Materials = {
       });
     },
   }),
+  
 
   Show: Backbone.View.extend({
     el: 'body',
@@ -90,4 +91,6 @@ App.Materials = {
       this.$('ul.children[data-type="'+att+'"]').fadeIn();
     }
   })
-}
+};
+
+App.Materials.Search = App.Materials.Explore.extend();
