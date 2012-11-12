@@ -7,40 +7,18 @@ section.material.row
       = image_tag @material.images.first.image.main.url, alt: @material.name
     .about
       section.data
-        h3 Você quer saber mais informações deste material, certo?
-        = image_tag "site/material_about.jpg"
-
-        p= t 'text.want_more_informations_about_html', link: about_path
-
-        p &nbsp;
-        .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="292" data-show-faces="false" data-border-color="#fff" data-stream="false" data-header="false"]
-      /ul.options
-        li.active= link_to "Caracteristicas"
-        li= link_to "Propriedades"
-        li= link_to "Quantidades"
-        li= link_to "Usos"
-        li= link_to "Anexos"
-      //section.data
-        /table
-          tr 
-            td.title Forma 
-            td
-              div Bobinas
-              div Tecido
-          tr
-            td.title Tato
-            td
-              div Liso
-              div Macio
-          tr
-            td.title Acabamento
-            td Sem acabamento
-          tr
-            td.title Cores
-            td
-              div Diversas cores
-              div Multicolor
-
+        - unless current_user
+          h3 Você quer saber mais informações deste material, certo?
+          = render partial: 'sessions/new'
+        - else
+          h3 As informações comerciais estão ali do lado ;)
+          p &nbsp;
+          p
+            | Em breve vamos liberar outros dados como <strong>dimensão</strong>, <strong>peso</strong>, entre outros.
+          p
+            | Curte aí pra se manter atualizado!
+          p &nbsp;
+          .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="292" data-show-faces="false" data-border-color="#fff" data-stream="false" data-header="false"]
   .fourcol.last
     .resume
       h3 Descrição
@@ -50,15 +28,15 @@ section.material.row
       h3
         | Direcionadores de sustentabilidade
       = load_indicators(@material)
-
-    .manufacturer
-      h3 Informações comerciais
-      table
-        tr 
-          td.title Fabricante
-          td= @material.manufacturer.name
-        tr
-          td.title Site
-          td= link_to @material.manufacturer.site
-      = simple_form_for "/contact/get/1", remote: true, format: :json do |f|
-        = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
+    - if current_user
+      .manufacturer
+        h3 Informações comerciais
+        table
+          tr 
+            td.title Fabricante
+            td= @material.manufacturer.name
+          tr
+            td.title Site
+            td= link_to @material.manufacturer.site
+        //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
+          = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"

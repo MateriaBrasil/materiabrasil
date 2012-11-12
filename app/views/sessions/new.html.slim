@@ -1,22 +1,4 @@
 .row.header
   h1 Seja bem-vindo ;)
    
-  section.session.explore
-    .box
-      p.how_to.twelvecol
-        | Você quer acesso a todo o conteúdo da 
-        strong 
-          | MateriaBrasil? 
-        | É bem simples...
-      p &nbsp;
-      .facebook
-        .login.fourcol
-          = link_to image_tag('site/bg_facebook.png'), facebook_auth_path
-        .info.eigthcol.last
-          | Entre com sua conta do facebook e tenha acesso às informações técnicas dos produtos e aos contatos comerciais dos fornecedores.
-      p &nbsp;
-      hr size="1" color="#dedede"
-      p.detail
-        | Nós nunca iremos saber sua senha ou qualquer outro dado sigiloso de sua conta do Facebook. 
-      p.detail
-        | Só teremos acesso a informações básicas, como <u>nome</u>, <u>foto</u> e <u>email</u>.
+  = render partial: 'new'  

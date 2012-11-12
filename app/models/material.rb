@@ -17,7 +17,8 @@ class Material < ActiveRecord::Base
   
 
   pg_search_scope :search_by_name_and_category, against: [:name, :code, :resume], associated_against: {
-    categories: [:name, :code_reference]
+    categories: [:name, :code_reference],
+    manufacturer: [:name]
   }
 
 

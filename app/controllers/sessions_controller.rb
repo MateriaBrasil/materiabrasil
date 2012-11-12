@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       @auth = Authorization.create_from_auth_hash(auth_hash)
     end
     self.current_user= @auth.user
-    redirect_to root_path
+    redirect_to :back and return
   end
 
   def new;end
