@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     redirect_to :back and return
   end
 
-  def new;end
+  def new
+    redirect_to explore_path if current_user
+  end
 
   def destroy
     reset_session

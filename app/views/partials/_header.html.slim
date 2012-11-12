@@ -19,4 +19,4 @@
           /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
           li.logout= link_to "Desconectar", session_path(current_user), method: :delete, class: 'icon-exit'
     - else
-      = link_to "Conecte", new_session_path, class: 'icon-facebook'
+      = link_to "Conecte", new_session_path(redir: true), class: 'icon-facebook'
