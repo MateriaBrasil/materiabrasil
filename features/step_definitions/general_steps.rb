@@ -1,10 +1,13 @@
-# Categories
 Given /^I visit the "([^"]*)"$/ do |arg1|
   visit eval(arg1)
 end
 
 Given /^I'm in the home page$/ do
   visit root_path
+end
+
+Given /^I'm logged in$/ do
+  visit facebook_auth_path
 end
 
 When /^I visit the "([^"]*)" category path$/ do |arg1|
