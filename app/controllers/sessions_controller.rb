@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
       @auth = Authorization.create_from_auth_hash(auth_hash)
     end
     self.current_user= @auth.user
-    if params[:redir] then redirect_to explore_path else redirect_to :back and return end
+
+    return redirect_to explore_path
   end
+  
+  def new; end
 
   def destroy
     reset_session
