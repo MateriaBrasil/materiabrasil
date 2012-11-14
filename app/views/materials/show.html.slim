@@ -37,6 +37,6 @@ section.material.row
             td= @material.manufacturer.name
           tr
             td.title Site
-            td= link_to @material.manufacturer.site
+            td= link_to @material.manufacturer.site, @material.manufacturer.site
         //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
           = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
