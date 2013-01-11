@@ -3,7 +3,7 @@ Feature: Login via Facebook
   as an user
   I want to be able to login via facebook
 
-  @javascript @omniauth
+  @omniauth
   Scenario: I'm in the homepage
     Given I'm in the home page
     When I click on the link "Conecte"

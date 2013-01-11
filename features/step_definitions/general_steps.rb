@@ -46,7 +46,7 @@ Then /^I should see the "([^"]*)" ([^"]*)/ do |arg1, arg2|
 end
 
 When /^I click on the link "([^"]*)"$/ do |arg1|
-  click_link(arg1) 
+  first(:link, arg1).click
 end
 
 

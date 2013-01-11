@@ -8,7 +8,7 @@ describe SessionsController do
       post :create, provider: :facebook
     end
 
-   it { expect(response).to redirect_to(root_path) }
+   it { expect(response).to redirect_to(explore_path) }
   end
 
 end

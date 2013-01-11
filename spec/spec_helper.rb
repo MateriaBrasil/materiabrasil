@@ -7,6 +7,7 @@ require 'rspec/autorun'
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+require "#{Rails.root.join('features/support/omniauth.rb')}"
 
 RSpec.configure do |config|
   # ## Mock Framework
