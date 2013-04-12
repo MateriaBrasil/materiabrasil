@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
+
 ruby '1.9.3'
 
-
-gem 'rails', '~> 3.2.8'
+gem 'rails', '~> 3.2.13'
 
 gem 'taps'
 gem 'pg'
@@ -15,7 +15,6 @@ gem 'omniauth-facebook'
 # Tools
 gem 'inherited_resources'
 gem 'has_scope'
-gem 'heroku'
 gem "friendly_id", "~> 4.0.1"
 
 # File updloadin

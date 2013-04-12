@@ -4,17 +4,11 @@ section.breadcrumb.row
 section.presentation.row
   section.fourcol.join
     article
-      h3 
-        |Junte-se a MateriaBrasil 
-      h4
-        p
-          |e tenha acesso ao melhor acervo 
-        p 
-          |de materiais responsáveis do Brasil
-      /= form_for "new", remote: true do |f|
-        = f.text_field :email, placeholder: "Digite seu e-mail e tecle Enter"
-        = f.submit value: "cadastrar", class: "submit btn"
-  iframe.eightcol.video.last[src="http://player.vimeo.com/video/44255542?title=0&amp;byline=0&amp;portrait=0" allowFullScreen webkitAllowFullScreen mozallowfullscreen]
+      h3 Nos ajude a construir a MateriaBrasil 
+      h4 
+        | acesse #{link_to "catarse.me/mb2013", "http://catarse.me/mb2013"} e contribua para o financiamento dos próximos passos de nossa plataforma
+
+  iframe.eightcol.video.last[src="http://player.vimeo.com/video/63851624?title=0&amp;byline=0&amp;portrait=0" allowFullScreen webkitAllowFullScreen mozallowfullscreen]
 section.home.list.row
   = load_block materials: @materials if @materials
 
