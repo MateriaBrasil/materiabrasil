@@ -15,7 +15,7 @@ window.Admin = {
   },
 
   watchCategoryChange: function(){
-    $('.category h4').live('click', function(){
+    $('.category h4').on('click', function(){
       var self = $(this);
 
       if (!self.hasClass('active')) {
