@@ -1,14 +1,25 @@
 class User < ActiveRecord::Base
-  validates :email, :name, presence: true 
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :name, :city, :email, :password, :password_confirmation, :remember_me
+  validates :email, :name, presence: true
 
   has_many :authorizations, dependent: :destroy
- 
-  def self.create_from_auth_hash(hash)
-    create!(
-      :email => hash['info']['email'],
-      :name  => hash['info']['name'],
-      :city  => hash['info']['location']
-    )
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if auth = session[:omniauth]
+        user.email = auth.info.email if auth.info.email.present?
+        user.name = auth.info.name
+        user.city = auth.info.location
+        user.authorizations.build(provider: auth.provider, uid: auth.uid)
+      end
+    end
   end
 
   def picture
