@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: materials
+#
+#  id                    :integer          not null, primary key
+#  resume                :text
+#  manufacturer_id       :integer
+#  technical_observation :text
+#  density               :string(255)
+#  dimensions            :string(255)
+#  packing               :string(255)
+#  average_price         :string(255)
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  name                  :string(255)
+#  slug                  :string(255)
+#  ncm                   :string(255)
+#  certifications        :string(255)
+#  awards                :string(255)
+#  code                  :string(255)
+#
+
 class Material < ActiveRecord::Base
   include PgSearch
   extend FriendlyId

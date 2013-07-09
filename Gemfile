@@ -29,6 +29,9 @@ gem 'compass-rails'
 gem 'compass-960-plugin'
 gem 'slim'
 gem 'meta_search',    '>= 1.1.0.pre'
+gem "high_voltage"
+gem 'google-analytics-rails'
+
 
 # Database
 gem 'acts_as_tree_rails3'
@@ -39,6 +42,16 @@ gem 'dalli'
 group :test, :development do
   gem "rspec"
   gem "rspec-rails", "~> 2.0"
+end
+
+group :development do
+  gem 'awesome_print'
+  gem 'annotate'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'letter_opener'
+  gem 'rack-mini-profiler'
 end
 
 group :test do

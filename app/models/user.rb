@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  email      :string(255)      default(""), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  name       :string(255)
+#  city       :string(255)
+#  state      :string(255)
+#
+
 class User < ActiveRecord::Base
   validates :email, :name, presence: true 
 
