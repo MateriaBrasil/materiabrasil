@@ -27,7 +27,6 @@ gem 'simple_form'
 gem 'activeadmin', :git => "git://github.com/MateriaBrasil/active_admin.git"
 gem 'compass-rails'
 gem 'compass-960-plugin'
-gem 'sass-rails'
 gem 'slim'
 gem 'meta_search',    '>= 1.1.0.pre'
 
@@ -55,8 +54,11 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
   gem 'coffee-rails'
+  gem 'compass-rails'
+  gem 'semantic-mixins', '~> 0.2'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'

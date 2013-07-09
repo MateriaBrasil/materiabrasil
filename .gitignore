@@ -15,6 +15,8 @@
 /log/*.log
 /tmp
 /public/uploads
+/config/database.yml
+latest.dump
 
 # Ignoring sass cache
 /.sass-cache
@@ -22,6 +24,9 @@
 # ignoring vim files
 *.swp
 *.swo
+
+*.sublime-project
+*.sublime-workspace
 
 # Ignoring jasmine.rake file
 /lib/tasks/jasmine.rake
