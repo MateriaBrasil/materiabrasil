@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  parent_id      :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  code_reference :string(3)
+#  slug           :string(255)
+#  is_visible     :boolean
+#
+
 class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
