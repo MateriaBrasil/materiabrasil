@@ -11,6 +11,19 @@ class User < ActiveRecord::Base
 
   has_many :authorizations, dependent: :destroy
 
+  def self.create_with_omniauth(auth)
+    u = create! do |user|
+      user.name = auth["info"]["name"]
+      user.email = auth["info"]["email"]
+      pass = Devise.friendly_token[0,20]
+      user.password = pass
+      user.password_confirmation = pass
+      user.city = auth['info']['location']
+    end
+    u.authorizations.create! uid: auth['uid'], provider: 'facebook', user: u
+    u
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if auth = session[:omniauth]
@@ -23,6 +36,6 @@ class User < ActiveRecord::Base
   end
 
   def picture
-    @image ||= "https://graph.facebook.com/#{self.authorizations.first.uid}/picture?type=square"
+    @image ||= "https://graph.facebook.com/#{self.authorizations.first.uid}/picture?type=square" if authorizations.size > 0
   end
 end
