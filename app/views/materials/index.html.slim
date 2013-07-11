@@ -20,7 +20,8 @@ section.our_partners.medium_container
   h3= t "pages.index.our_partners.small"
   aside.partners_container
     - @partners.each do |partner|
-      = image_tag "partners/#{partner[:img]}", title: partner[:name], size: "200x120"
+      = link_to partner[:url], target: "_blank" do
+        = image_tag "partners/#{partner[:img]}", title: partner[:name], size: "200x120"
 
 section.download_portfolio
   .narrow_container
