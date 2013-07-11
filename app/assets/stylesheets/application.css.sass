@@ -15,6 +15,7 @@ $orange: #ea6740
 $red: #CB323E
 $yellow: #EACC4F
 $gray: #f4f4f4 
+$mediumgray: #b4b4b4
 
 
 .explorer .esp 
@@ -41,9 +42,11 @@ a
     text-shadow: 0px 0px 2px $orange 
     
 h1
-  font-size: 2.4em
-  line-height: 1.8em
+  font-size: 2.9em
+  line-height: 1.2em
   letter-spacing: -1px
+  font-weight: 500
+  margin-bottom: .8em
 h2
   font-size: 1.8em
   font-weight: 600
@@ -52,7 +55,7 @@ h3
   font-size: 1.4em
 
 body
-  background: $gray image-url("site/bg_body.png") repeat-x
+  background: $gray
   font-family: "Open Sans"
   font-weight: 300
   font-size: 0.9em
@@ -73,38 +76,131 @@ body#Materials
         margin-top: .6em
 .number
   color: $cyan
+
+#header
+  +vertical-gradient(lighten(black, 25%), black)
+  padding-bottom: 6px
+  box-shadow: 0 2px 3px rgba(black,.4)
+  h2#logo
+    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
+    text-indent: 38px
+    font-weight: normal
+    letter-spacing: -1px
+    a:hover
+      color: white
+      text-shadow: 0 0 5px $cyan 
+
 .header
   a
     color: white 
     &:hover
-      color: $cyan
-  margin-bottom: 2.5%
+      color: $orange
+      text-shadow: none
   *
     line-height: 2.1em
-  h2
-    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
-    text-indent: 38px
-    a:hover
-      color: white
-      text-shadow: 0 0 15px $cyan 
 
   .child
     a
       margin-right: 20px
-      font-weight: 300
+      font-weight: 600
     margin-top: 15px
   #search
     input
-      border-radius: 14px
-      box-shadow: inset 0 1px 2px #666
+      border-radius: 10px
       background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
       border: none 
       text-indent: 25px
       color: #666
-      font-size: .8em
+      font-size: .75em
       outline: none
-      width: 100%
+      width: 90%
+      float: right
+      @media screen and (max-width: 767px)
+        width: 100%
+        float: none
 
+a.bt
+  background: $orange
+  color: white
+  font-size: 1.4em
+  font-weight: 600
+  padding: 7px 20px
+  border-radius: 6px
+  white-space: nowrap
+  &:hover
+    +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
+    box-shadow: 0 1px 3px rgba(black, .4)
+  &:active
+    background: $orange
+    box-shadow: 0 2px 3px rgba(black, .3) inset
+  @media handheld, only screen and (max-width: 767px)
+    font-size: 1em
+
+.narrow_container
+  max-width: 860px
+
+.medium_container
+  max-width: 1080px
+
+.narrow_container, .medium_container
+  width: 90%
+  margin: 0 auto
+  text-align: center
+  padding: 5em 0
+  @media screen and (max-width: 767px)
+    width: 97%
+
+// .home_info
+
+.materials_wrapper
+  background: #111
+  color: white
+  // padding: 50px 0
+  border: 2px groove
+  border-left: none
+  border-right: none
+  small
+    font-size: 0.7em
+    color: $cyan
+
+.materials_preview
+  padding-bottom: 5em
+  text-align: center
+  .image_link
+    display: inline-block
+    width: 170px
+    margin: 10px
+    height: 120px
+    overflow: hidden
+    border-radius: 10px
+    border: 3px solid transparent
+    +transition(.3s)
+    &:hover
+      border-radius: 4px
+      border-color: $cyan
+      +transform(scale(1.05))
+    &:active
+      +transform(scale(1))
+
+.download_portfolio
+  background: white
+  border-top: 1px solid lighten($mediumgray, 15%)
+  border-bottom: 1px solid lighten($mediumgray, 15%)
+
+.our_partners
+  h3
+    font-weight: 500
+.partners_container
+  margin-top: 2em
+  img
+    width: auto
+    margin: 10px
+    +saturate(0)
+    +opacity(.6)
+    +transition(.3s)
+    &:hover
+      +saturate(1)
+      +opacity(1)
 
 .home
   img
@@ -568,11 +664,23 @@ section.about
       .content
         padding: 1em
 footer
-  width: 60%
-  margin: 1em auto
+  width: 100%
+  color: $mediumgray
+  margin: 3em auto 5em
   padding-top: 1em
-  border-top: 1px solid lighten(gray, 40%)
   text-align: center
+  font-size: .8em
+  font-weight: 500
+  position: relative
+  .code_by
+    position: absolute
+    right: 2em
+    top: 0
+    img
+      margin-left: 1em
+    @media screen and (max-width: 980px)
+      position: static
+      margin-top: 2em
   img
     width: auto
     opacity: .7

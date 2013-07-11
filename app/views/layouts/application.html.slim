@@ -2,8 +2,8 @@ doctype html
 html
   head
     title MateriaBrasil
-    meta name="description" content="A MateriaBrasil é um centro de referência em modelos de produção e consumo conscientes. Encontramos as soluções mais coerentes para o seu negócio rumo à sustentabilidade."
-    meta name="keywords" content="materia brasil, materiabrasil, sustentabilidade, ambiental, consciencia, solucoes"
+    meta name="description" content="#{t "meta.description"}"
+    meta name="keywords" content="#{t "meta.keywords"}"
     meta property="og:image" content="http://i.imgur.com/gMNUB.png"
     meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     = stylesheet_link_tag :application
@@ -16,15 +16,19 @@ html
   - page = controller.action_name.capitalize
 
   body(id=ctrl class=page data-controller-class=ctrl data-controller-name=ctrl data-action=page)
-    .container
-      = render partial: "partials/header"
-      section.content[data-url=request.url]
-        = yield
+    header#header
+      .container
+        = render partial: "partials/header"
+    / .container
+    section.content[data-url=request.url]
+      = yield
 
-      footer
-        = link_to image_tag("site/partners/fibra.png", size: "109x44"), "http://fibradesign.net"
-        = link_to image_tag("site/partners/sistema.png", size: "109x44"), "http://www.sistemambiental.com.br"
-        = link_to image_tag("site/partners/engage.png", size: "109x44"), "http://engage.is"
+    footer
+      = image_tag "logo_materia.png", size: "404x26"
+      section.code_by
+        p
+          = t "footer.code_by"
+          = link_to image_tag("logo_engage.png", size: "109x44"), "http://engage.is"
 
     #fb-root
     = javascript_include_tag :application

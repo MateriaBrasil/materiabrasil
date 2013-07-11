@@ -43,12 +43,12 @@ App.Materials = {
 
     initialize: function(){
       _.bindAll(this);
-      var xhr = new App.Materials.Paginate({ 
-        el: $('section.list')[0],
-        url: '/materials',
-        limit: 5,
-        multiplier: 6
-      });
+      // var xhr = new App.Materials.Paginate({ 
+      //   el: $('section.list')[0],
+      //   url: '/materials',
+      //   limit: 5,
+      //   multiplier: 6
+      // });
     }
   }),
 

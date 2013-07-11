@@ -1,7 +1,14 @@
 pt-BR:
+  common:
+    about: "Sobre"
+    contact: "Contato"
+    explore: "Explore"
+    login: "Login"
+    logout: "Desconectar"
+    search_the_site: "Pesquise por materiais ou fornecedores..."
   breadcrumb:
     index:
-      head_html: "Explore <span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"
+      head_html: "<span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"
   social:
     connect_to_our_network: "Conecte-se em nossas redes e acompanhe o crescimento da rede MateriaBrasil."
   text:
@@ -48,9 +55,20 @@ pt-BR:
 
   pages:
     index:
+      main_call: "Desenvolvemos soluções inovadoras em consumo consciente e economia colaborativa"
+      materials_call: "Compartilhamos conhecimento de materiais, processos e tecnologias responsáveis."
+      our_partners:
+        call: "Usamos o design, arquitetura, engenharia e comunicação para criar, analisar e gerenciar negócios responsáveis"
+        small: "Veja algumas empresas e organizações que já trabalharam conosco"
+      want_to_know_portfolio: "Quer conhecer o nosso portfolio?"
       presentation:
         h1: "Descubra um universo de produtos e serviços orientados para a sustentabilidade."
         about_html: "A <strong> MateriaBrasil </strong> é um centro de referência em modelos de produção e consumo conscientes. Nossos consultores estão prontos para encontrar as soluções mais coerentes com o seu negócio rumo à sustentabilidade."
+
+  call_to_action:
+    download_portfolio: "Baixe a nossa apresentação completa >"
+    explore_now: "Explore agora >"
+
   activerecord: 
     models:
       attachment:
@@ -129,4 +147,10 @@ pt-BR:
         image: "Imagem"
         render: "Render?"
 
+  footer:
+    code_by: "código opensource por: "
 
+
+  meta:
+    description: "A MateriaBrasil é um centro de referência em modelos de produção e consumo conscientes. Encontramos as soluções mais coerentes para o seu negócio rumo à sustentabilidade."
+    keywords: "materia brasil, materiabrasil, sustentabilidade, ambiental, consciencia, solucoes"
