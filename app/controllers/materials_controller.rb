@@ -11,7 +11,7 @@ class MaterialsController < ApplicationController
     @materials  ||= Material.limit(12)
     @partners = [
       {name: "Embraer", img: "embraer.png", url: "http://www.embraer.com/"},
-      {name: "Siemens", img: "siemens.png", url: "http://www.siemens.com/"},
+      {name: "Siemens", img: "siemens.png", url: "http://www.respostassustentaveis.com.br/"},
       {name: "Jomo", img: "jomo.png", url: "http://www.jomo-online.com.br/"},
       {name: "GoodYear", img: "goodyear.png", url: "http://www.goodyear.com/"},
       {name: "Santander", img: "santander.png", url: "http://www.santander.com/"},
