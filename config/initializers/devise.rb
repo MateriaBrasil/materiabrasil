@@ -238,10 +238,10 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
   if Rails.env.development?
-    #key     = "372042392867868"
-    #secret  = "2e40d72fde9afa2ae45096fc5bab517c"
-    key     = "143298045807277"
-    secret  = "8922faec9e9e604e890a6f04cb718e8c"
+    key     = "372042392867868"
+    secret  = "2e40d72fde9afa2ae45096fc5bab517c"
+    #key     = "143298045807277"
+    #secret  = "8922faec9e9e604e890a6f04cb718e8c"
   else
     key     = ENV['FACEBOOK_KEY']
     secret  = ENV['FACEBOOK_SECRET']
