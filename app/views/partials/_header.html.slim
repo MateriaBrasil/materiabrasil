@@ -17,12 +17,6 @@
           |&#x25BE
         ol.options
           /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
-<<<<<<< HEAD
-          li.logout= link_to t("common.logout"), session_path(current_user), method: :delete, class: 'icon-exit'
-    - else
-      = link_to t("common.login"), new_session_path(redir: true)
-=======
           li.logout= link_to "Desconectar", destroy_user_session_path, method: :delete, class: 'icon-exit'
     - else
       = link_to "Conecte", new_user_session_path(), class: 'icon-facebook'
->>>>>>> devise3
