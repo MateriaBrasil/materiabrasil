@@ -8,6 +8,8 @@
 /.bundle
 .DS_Store
 
+/config/database.yml
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
