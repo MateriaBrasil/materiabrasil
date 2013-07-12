@@ -1,14 +1,14 @@
 .row.header
   .threecol
-    h2[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
+    h2#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
   nav
     .fivecol.child
-      = link_to "Explore", explore_path
-      = link_to "Sobre", about_path(anchor: '/i/sobre')
-      = link_to "Contato", about_path(anchor: '/i/contato')
+      = link_to t("common.explore"), explore_path
+      = link_to t("common.about"), about_path(anchor: '/i/sobre')
+      = link_to t("common.contact"), about_path(anchor: '/i/contato')
   .threecol.child
     form#search action=search_path
-      input[type="text" name="q" value="" placeholder='Pesquise por materiais ou fornecedores...' class='field']
+      input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']
   .onecol.child.last
     - if current_user 
       section.user
@@ -17,6 +17,6 @@
           |&#x25BE 
         ol.options
           /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
-          li.logout= link_to "Desconectar", session_path(current_user), method: :delete, class: 'icon-exit'
+          li.logout= link_to t("common.logout"), session_path(current_user), method: :delete, class: 'icon-exit'
     - else
-      = link_to "Conecte", new_session_path(redir: true), class: 'icon-facebook'
+      = link_to t("common.login"), new_session_path(redir: true)

@@ -1,3 +1,4 @@
+# coding: utf-8
 class MaterialsController < ApplicationController
   inherit_resources
   has_scope :offset
@@ -7,8 +8,26 @@ class MaterialsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @materials  ||= Material.offset(params[:offset].to_i).all
-    return render partial: "blocks" if request.xhr?
+    @materials  ||= Material.limit(12)
+    @partners = [
+      {name: "Embraer", img: "embraer.png", url: "http://www.embraer.com/"},
+      {name: "Siemens", img: "siemens.png", url: "http://www.respostassustentaveis.com.br/"},
+      {name: "Jomo", img: "jomo.png", url: "http://www.jomo-online.com.br/"},
+      {name: "GoodYear", img: "goodyear.png", url: "http://www.goodyear.com/"},
+      {name: "Santander", img: "santander.png", url: "http://www.santander.com/"},
+      {name: "Alstom", img: "alstom.png", url: "http://www.alstom.com/"},
+      {name: "Ministério do Desenvolvimento Agrário", img: "mda.png", url: "http://portal.mda.gov.br/portal/"},
+      {name: "Bunge", img: "bunge.png", url: "http://www.bunge.com.br/"},
+      {name: "GNT", img: "gnt.png", url: "http://gnt.globo.com/"},
+      {name: "Jardim Botânico do Rio de Janeiro", img: "jardim_botanico.png", url: "http://www.jbrj.gov.br/"},
+      {name: "Studio Arthur Casas", img: "sac.png", url: "http://www.arthurcasas.com/"},
+      {name: "Casa Arte & Design", img: "cad.png", url: "http://www.casaartedesign.com.br/index2.php"},
+      {name: "Sebrae", img: "sebrae.png", url: "http://www.sebrae.com.br/"},
+      {name: "Governo do Rio de Janeiro", img: "gov_rj.png", url: "http://www.rj.gov.br/"},
+      {name: "Marin's", img: "marins.png", url: "http://www.marins.net/"},
+      {name: "FAPERJ", img: "faperj.png", url: "http://www.faperj.br/"}
+    ]
+    # return render partial: "blocks" if request.xhr?
   end
 
   def explore 

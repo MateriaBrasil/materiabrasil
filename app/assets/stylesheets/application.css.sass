@@ -15,7 +15,12 @@ $orange: #ea6740
 $red: #CB323E
 $yellow: #EACC4F
 $gray: #f4f4f4 
+$mediumgray: #b4b4b4
 
+html
+  +selection
+    background: $orange
+    color: white
 
 .explorer .esp 
   a
@@ -41,9 +46,11 @@ a
     text-shadow: 0px 0px 2px $orange 
     
 h1
-  font-size: 2.4em
-  line-height: 1.8em
+  font-size: 2.9em
+  line-height: 1.2em
   letter-spacing: -1px
+  font-weight: 500
+  margin-bottom: .8em
 h2
   font-size: 1.8em
   font-weight: 600
@@ -52,7 +59,7 @@ h3
   font-size: 1.4em
 
 body
-  background: $gray image-url("site/bg_body.png") repeat-x
+  background: $gray
   font-family: "Open Sans"
   font-weight: 300
   font-size: 0.9em
@@ -65,7 +72,7 @@ body#materials[class="index"]
 body#Materials
   &.Show
     #session
-      +box-shadow(none)
+      box-shadow: none
       width: 100%
       .how_to
         display: none
@@ -73,38 +80,269 @@ body#Materials
         margin-top: .6em
 .number
   color: $cyan
+
+#header
+  +vertical-gradient(lighten(black, 25%), black)
+  padding-bottom: 6px
+  box-shadow: 0 2px 3px rgba(black,.4)
+  h2#logo
+    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
+    text-indent: 38px
+    font-weight: normal
+    letter-spacing: -1px
+    a:hover
+      color: white
+      text-shadow: 0 0 5px $cyan 
+
 .header
   a
     color: white 
     &:hover
-      color: $cyan
-  margin-bottom: 2.5%
+      color: $orange
+      text-shadow: none
   *
     line-height: 2.1em
-  h2
-    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
-    text-indent: 38px
-    a:hover
-      color: white
-      text-shadow: 0 0 15px $cyan 
 
   .child
     a
       margin-right: 20px
-      font-weight: 300
+      font-weight: 600
     margin-top: 15px
   #search
     input
-      +border-radius(14px)
-      +box-shadow(inset 0 1px 2px #666)
+      border-radius: 10px
       background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
       border: none 
       text-indent: 25px
       color: #666
-      font-size: .8em
+      font-size: .75em
       outline: none
-      width: 100%
+      width: 90%
+      float: right
+      @media screen and (max-width: 767px)
+        width: 100%
+        float: none
 
+a.bt
+  background: $orange
+  color: white
+  font-size: 1.4em
+  font-weight: 600
+  padding: 7px 20px
+  border-radius: 6px
+  white-space: nowrap
+  &:hover
+    +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
+    box-shadow: 0 1px 3px rgba(black, .4)
+  &:active
+    background: $orange
+    box-shadow: 0 2px 3px rgba(black, .3) inset
+  @media handheld, only screen and (max-width: 767px)
+    font-size: 1em
+
+.narrow_container
+  max-width: 860px
+
+.medium_container
+  max-width: 1080px
+
+.narrow_container, .medium_container
+  width: 90%
+  margin: 0 auto
+  text-align: center
+  padding: 5em 0
+  @media screen and (max-width: 767px)
+    width: 97%
+
+.home_info
+  $magenta_color: #CB323E
+  $cyan_color: #239EB1
+  $orange_color: #EA6740
+  $yellow_color: #DBBD45
+  $circle_width: 250px
+  $ul_width: 200px
+  $ul_width_min: 160px
+  .infographic
+    position: relative
+    height: 400px
+    section
+      width: $circle_width
+      height: $circle_width
+      border-radius: 50%
+      position: absolute
+      left: 45%
+      +transition(.2s)
+      ul
+        position: absolute
+        text-align: left
+        width: $ul_width
+        margin-top: 2em
+        +transition(.7s)
+        +opacity(0)
+      figcaption
+        color: white
+        font-size: 1.3em
+        font-weight: 500
+        +transition(.2s)
+      &:hover
+        +transform(scale(1.05))
+        figcaption
+          font-size: 1.5em
+        ul
+          margin-top: 0
+          +opacity(1)
+    .top_circle
+      figcaption
+        margin-top: 35%
+      ul
+        top: 0
+    .bottom_circle
+      bottom: 0
+      figcaption
+        margin-top: 60%
+      ul
+        top: 4em
+    .left_circle
+      margin-left: - $circle_width/1.6
+      figcaption
+        text-align: left
+        text-indent: 1em
+      ul
+        left: - $ul_width - 10px
+    .right_circle
+      margin-right: - $circle_width/2
+      figcaption
+        text-align: right
+        margin-right: 1em
+      ul
+        right: - $ul_width - 10px
+    .magenta_circle
+      background: rgba($magenta_color, .75)
+      z-index: 1
+      ul
+        color: darken($magenta_color, 10%)
+    .cyan_circle
+      z-index: 2
+      background: rgba($cyan_color, .75)
+      ul
+        color: darken($cyan_color, 10%)
+    .orange_circle
+      z-index: 4
+      background: rgba($orange_color, .75)
+      ul
+        color: darken($orange_color, 10%)
+    .yellow_circle
+      z-index: 3
+      background: rgba($yellow_color, .75)
+      ul
+        color: darken($yellow_color, 15%)
+    
+    @media handheld, only screen and (max-width: 940px)
+      section
+        ul
+          width: $ul_width_min
+        &.right_circle
+          ul
+            right: - $ul_width_min - 5px
+        &.left_circle
+          ul
+            left: - $ul_width_min - 5px
+  @media handheld, only screen and (max-width: 776px)
+    .infographic
+      height: auto
+      overflow: hidden
+      section
+        float: left
+        position: static
+        margin: 5% !important
+        width: 40%
+        height: auto
+        background: none !important
+        &:hover
+          +transform(none !important)
+        +decorative-content(before, false)
+          position: absolute
+          width: 150px
+          height: 150px
+          border-radius: 50%
+          z-index: -1
+        &.magenta_circle
+          &:before
+            background: rgba($magenta_color, .75)
+        &.cyan_circle
+          &:before
+            background: rgba($cyan_color, .75)
+        &.orange_circle
+          clear: both
+          &:before
+            background: rgba($orange_color, .75)
+        &.yellow_circle
+          &:before
+            background: rgba($yellow_color, .75)
+        &.bottom_circle
+          margin-top: 4em !important
+        ul
+          display: block
+          width: auto
+          +opacity(1)
+          position: static
+          top: 0 !important
+          margin-top: 80px !important
+        figcaption
+          text-align: left !important
+          text-indent: .5em !important
+          font-size: 1.2em !important
+          margin-top: 70px !important
+
+.materials_wrapper
+  background: #111
+  color: white
+  // padding: 50px 0
+  border: 2px groove
+  border-left: none
+  border-right: none
+  small
+    font-size: 0.7em
+    color: $cyan
+
+.materials_preview
+  padding-bottom: 5em
+  text-align: center
+  .image_link
+    display: inline-block
+    width: 170px
+    margin: 10px
+    height: 120px
+    overflow: hidden
+    border-radius: 10px
+    border: 3px solid transparent
+    +transition(.3s)
+    &:hover
+      border-radius: 4px
+      border-color: $cyan
+      +transform(scale(1.05))
+    &:active
+      +transform(scale(1))
+
+.download_portfolio
+  background: white
+  border-top: 1px solid lighten($mediumgray, 15%)
+  border-bottom: 1px solid lighten($mediumgray, 15%)
+
+.our_partners
+  h3
+    font-weight: 500
+.partners_container
+  margin-top: 2em
+  img
+    width: auto
+    margin: 10px
+    +saturate(0)
+    +opacity(.6)
+    +transition(.3s)
+    &:hover
+      +saturate(1)
+      +opacity(1)
 
 .home
   img
@@ -157,19 +395,19 @@ ol.materials
     &:last-child
       margin-right: 0px !important
     &:hover
-      +box-shadow(0 1px 8px lighten($red, 30%))
+      box-shadow: 0 1px 8px lighten($red, 30%)
   .material
-    +border-radius(8px)
+    border-radius: 8px
   .image
     img
-      +border-radius(4px 4px 0 0)
+      border-radius: 4px 4px 0 0
   .name
     background: white 
     width: 100%
     padding: 10px 0
     text-indent: 8px
-    +box-shadow(0 1px 1px #bebebe)
-    +border-radius(0 0 4px 4px)
+    box-shadow: 0 1px 1px #bebebe
+    border-radius: 0 0 4px 4px
     a
       color: black
       font-size: .9em
@@ -188,8 +426,8 @@ section.explore, header.explore
   margin-top: 10px
   margin-bottom: 20px
   background: white
-  +border-radius(4px)
-  +box-shadow(0 1px 2px #bebebe)
+  border-radius: 4px
+  box-shadow: 0 1px 2px #bebebe
   ol.category, span.materials_count
     width: 96% !important
     margin-left: 17px
@@ -238,8 +476,8 @@ section.material
       color: darken($gray, 20%)
   .name, .resume, .indicators, .image, .manufacturer, .about 
     background: white
-    +border-radius(4px)
-    +box-shadow(0 1px 2px #bebebe)
+    border-radius: 4px
+    box-shadow: 0 1px 2px #bebebe
   .resume, .indicators, .manufacturer
     width: 89%
     margin: 0 auto
@@ -257,7 +495,7 @@ section.material
     p
       background: lighten($gray, 2%)
       padding: 10px
-      +border-radius(4px)
+      border-radius: 4px
   .image, .about
     z-index: 2
     position: relative
@@ -276,7 +514,7 @@ section.material
       font-weight: bold
     img
       margin: 1em 0
-      +box-shadow(0 0 6px #999)
+      box-shadow: 0 0 6px #999
     padding: 10px 0
     margin-bottom: 40px
     z-index: 1
@@ -292,7 +530,7 @@ section.material
           color: #333
         &:hover, &.active
           background: $cyan
-          +border-radius(6px)
+          border-radius: 6px
           a
             color: white    
     .data 
@@ -340,7 +578,7 @@ section.material
     .indicator
       display: inline-block
       margin: 2% 0
-      +border-radius(4px)
+      border-radius: 4px
       text-align: center
       width: 11%
       padding: 0 .4em
@@ -355,7 +593,7 @@ section.material
     ul.children
       display: none
       background: rgba(255,255,255, 0.1)
-      +border-radius(6px)
+      border-radius: 6px
       li
         color: white
         text-indent: 2px
@@ -369,12 +607,12 @@ section.user
   padding: .2em 0
   color: white
   +transition(.2s)
-  +border-radius(6px 6px 0 0)
+  border-radius: 6px 6px 0 0
   img
     width: 35px
     margin-top: -2px
-    +box-shadow(0 0 1px white)
-    +border-radius(18px)
+    box-shadow: 0 0 1px white
+    border-radius: 18px
     &::after
   &:hover
     cursor: pointer
@@ -389,8 +627,8 @@ section.user
     padding: .2em 1em
     width: auto 
     background: white
-    +box-shadow(0 1px 2px #999)
-    +border-radius(0 0 4px 4px)
+    box-shadow: 0 1px 2px #999
+    border-radius: 0 0 4px 4px
     a
       color: black
       &:hover
@@ -445,7 +683,7 @@ section.about
   a.active
     background: $cyan
     color: white
-    +border-radius(8px)
+    border-radius: 8px
   section
     padding-bottom: 2em
     margin-bottom: 2em
@@ -469,7 +707,7 @@ section.about
           content: "- "
     img
       background: $orange
-      +border-radius(6px)
+      border-radius: 6px
   .sect
     clear: both
     margin-top: 4em 0
@@ -496,7 +734,7 @@ section.about
       width: 38%
       height: 8%
   .lifecycle
-    +box-shadow(0 0 4px darken($gray, 30%))
+    box-shadow: 0 0 4px darken($gray, 30%)
     background: white
     padding: 5%
     ol
@@ -506,7 +744,7 @@ section.about
         display: inline-block
         background: darken($gray, 20%)
         margin-right: 3% 
-        +border-radius(6px)
+        border-radius: 6px
         +transition(0.35s)
         &.last
           margin-right: 0
@@ -538,7 +776,7 @@ section.about
       li
       article
         &:last-child
-          +box-shadow(0 0 4px darken($gray, 30%))
+          box-shadow: 0 0 4px darken($gray, 30%)
           background: white
           padding: 1em 0
     h3
@@ -564,15 +802,27 @@ section.about
         &.addr
           background-position: -8px -85px
       background: white
-      +border-radius(6px)
+      border-radius: 6px
       .content
         padding: 1em
 footer
-  width: 60%
-  margin: 1em auto
+  width: 100%
+  color: $mediumgray
+  margin: 3em auto 5em
   padding-top: 1em
-  border-top: 1px solid lighten(gray, 40%)
   text-align: center
+  font-size: .8em
+  font-weight: 500
+  position: relative
+  .code_by
+    position: absolute
+    right: 2em
+    top: 0
+    img
+      margin-left: 1em
+    @media screen and (max-width: 980px)
+      position: static
+      margin-top: 2em
   img
     width: auto
     opacity: .7

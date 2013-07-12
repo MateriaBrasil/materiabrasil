@@ -1,19 +1,64 @@
-section.breadcrumb.row
-  header.twelvecol.explore.row
-    h1= t "breadcrumb.index.head_html", material_count: Material.all.size, manufacturer_count: Manufacturer.all.size
-section.presentation.row
-  section.fourcol.join
-    article
-      h3 Nos ajude a construir a MateriaBrasil 
-      h4 
-        | acesse #{link_to "catarse.me/mb2013", "http://catarse.me/mb2013"} e contribua para o financiamento dos próximos passos de nossa plataforma
+section.narrow_container.home_info
+  h1= t "pages.index.main_call"
+  / = image_tag "home_info.png"
+  figure.infographic
+    section.magenta_circle.top_circle.left_circle
+      figcaption Saber
+      ul
+        li Workshops
+        li Cursos
+        li Palestras
+        li Exposições
+        li P&D
+        li Geração de conteúdo
+        li Materioteca
+    section.cyan_circle.top_circle.right_circle
+      figcaption Design
+      ul
+        li Design de produto
+        li Design de espaços / cenografia
+        li Mídias sustentáveis
+        li Arquitetura
+        li Consultoria criativa
+    section.orange_circle.bottom_circle.left_circle
+      figcaption Sustentabilidade
+      ul
+        li Sistema de gestão ambiental
+        li Análise de Ciclo de Vida
+        li Pegada de carbono
+        li Rotulagem ambiental
+        li Especificação de materiais e processos
+        li Consultoria técnica
+    section.yellow_circle.bottom_circle.right_circle
+      figcaption Lab
+      ul
+        li Aceleração de negócios
+        li Co-working
+        li Fab lab
 
-  iframe.eightcol.video.last[src="http://player.vimeo.com/video/63851624?title=0&amp;byline=0&amp;portrait=0" allowFullScreen webkitAllowFullScreen mozallowfullscreen]
-section.home.list.row
-  = load_block materials: @materials if @materials
+section.materials_wrapper
+  .narrow_container
+    h1
+      = t "pages.index.materials_call"
+      br/
+      small= t "breadcrumb.index.head_html", material_count: Material.all.size, manufacturer_count: Manufacturer.all.size
+    p
+      = link_to t("call_to_action.explore_now"), explore_path, class: "bt"
+  .materials_preview.row
+    - @materials.each do |material|
+      = link_to material_path(material), class: "image_link" do
+        = image_tag material.images.first.image.url(:flat), title: material.name
 
-section.row.explorer
-  .fourcol &nbsp;
-  .fourcol.exp=link_to image_tag("site/explore_button.png", title: "Clique e explore"), explore_path
-  .fourcol &nbsp; 
+section.our_partners.medium_container
+  h1= t "pages.index.our_partners.call"
+  h3= t "pages.index.our_partners.small"
+  aside.partners_container
+    - @partners.each do |partner|
+      = link_to partner[:url], target: "_blank" do
+        = image_tag "partners/#{partner[:img]}", title: partner[:name], size: "200x120"
 
+section.download_portfolio
+  .narrow_container
+    h1= t "pages.index.want_to_know_portfolio"
+    p
+      = link_to t("call_to_action.download_portfolio"), "http://www.fibradesign.net/ap_mb.pdf", class: "bt"
