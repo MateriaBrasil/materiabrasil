@@ -198,3 +198,11 @@ pt-BR:
       long: ! '%A, %d de %B de %Y, %H:%M h'
       short: ! '%d/%m, %H:%M h'
     pm: ''
+  activerecord:
+    attributes:
+      user:
+        password: 'Senha'
+        name: 'Nome'
+        city: 'Cidade'
+        password_confirmation: 'Confirmação de senha'
+        remember_me: 'Lembre-se de mim e mantenha-me conectado.'

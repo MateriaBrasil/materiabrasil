@@ -10,13 +10,19 @@
     form#search action=search_path
       input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']
   .onecol.child.last
-    - if current_user 
+    - if current_user
       section.user
-        = image_tag current_user.picture
-        span.arrow 
-          |&#x25BE 
+        = image_tag current_user.picture if current_user.picture
+        span.arrow
+          |&#x25BE
         ol.options
           /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
+<<<<<<< HEAD
           li.logout= link_to t("common.logout"), session_path(current_user), method: :delete, class: 'icon-exit'
     - else
       = link_to t("common.login"), new_session_path(redir: true)
+=======
+          li.logout= link_to "Desconectar", destroy_user_session_path, method: :delete, class: 'icon-exit'
+    - else
+      = link_to "Conecte", new_user_session_path(), class: 'icon-facebook'
+>>>>>>> devise3
