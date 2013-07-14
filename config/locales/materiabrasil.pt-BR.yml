@@ -5,6 +5,7 @@ pt-BR:
     explore: "Explore"
     login: "Login"
     logout: "Desconectar"
+    my_account: "Minha conta"
     search_the_site: "Pesquise por materiais ou fornecedores..."
   breadcrumb:
     index:
@@ -64,6 +65,40 @@ pt-BR:
       presentation:
         h1: "Descubra um universo de produtos e serviços orientados para a sustentabilidade."
         about_html: "A <strong> MateriaBrasil </strong> é um centro de referência em modelos de produção e consumo conscientes. Nossos consultores estão prontos para encontrar as soluções mais coerentes com o seu negócio rumo à sustentabilidade."
+      infographic:
+        magenta:
+          title: "Saber"
+          list:
+            workshops: "Workshops"
+            courses: "Cursos"
+            lectures: "Palestras"
+            expositions: "Exposições"
+            research: "P&D"
+            content_creation: "Geração de conteúdo"
+            material_library: "Materioteca"
+        cyan:
+          title: "Design"
+          list:
+            product_design: "Design de produto"
+            cenography: "Design de espaços / cenografia"
+            sustabable_medias: "Mídias sustentáveis"
+            architecture: "Arquitetura"
+            creative_consulting: "Consultoria criativa"
+        orange:
+          title: "Sustentabilidade"
+          list:
+            env_management_system: "Sistema de gestão ambiental"
+            lifecicle_analysis: "Análise de Ciclo de Vida"
+            carbon_footprint: "Pegada de carbono"
+            environmental_labeling: "Rotulagem ambiental"
+            materials_specifications: "Especificação de materiais e processos"
+            technical_consulting: "Consultoria técnica"
+        yellow:
+          title: "Lab"
+          list:
+            business_aceleration: "Aceleração de negócios"
+            coworking: "Co-working"
+            fablab: "Fab lab"
 
   call_to_action:
     download_portfolio: "Baixe a nossa apresentação completa >"
