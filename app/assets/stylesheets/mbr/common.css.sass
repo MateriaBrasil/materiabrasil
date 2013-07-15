@@ -46,6 +46,8 @@ body
   font-weight: 300
   font-size: 0.9em
   line-height: 1.6em
+  input
+    font-family: "Open Sans"
 
 .number
   color: $cyan
@@ -54,11 +56,14 @@ body
   +vertical-gradient(lighten(black, 25%), black)
   padding-bottom: 6px
   box-shadow: 0 2px 3px rgba(black,.4)
-  h2#logo
+  h1#logo
     background: image-url("site/bg_header_h2.png") no-repeat 0 45%
     text-indent: 38px
     font-weight: normal
     letter-spacing: -1px
+    font-size: 1.8em
+    text-align: left
+    margin-bottom: 0
     a:hover
       color: white
       text-shadow: 0 0 5px $cyan 
@@ -93,7 +98,7 @@ body
         width: 100%
         float: none
 
-a.bt
+a.bt, input.bt
   background: $orange
   color: white
   font-size: 1.4em
@@ -101,6 +106,7 @@ a.bt
   padding: 7px 20px
   border-radius: 6px
   white-space: nowrap
+  border: none
   +transition(.3s)
   &:hover
     +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
@@ -112,6 +118,18 @@ a.bt
     text-shadow: 0 1px 1px rgba(black, .4)
   @media handheld, only screen and (max-width: 767px)
     font-size: 1em
+
+input.bt
+  font-weight: 500
+  font-size: 1.2em
+
+.form-actions
+  a.bt, input.bt
+    background: $cyan
+    &:hover
+      +vertical-gradient(lighten($cyan, 4%), darken($cyan, 4%))
+    &:active
+      background: $cyan
 
 .narrow_container
   max-width: 860px
@@ -131,3 +149,4 @@ a.bt
   background: white
   border-radius: 4px
   box-shadow: 0 1px 2px #bebebe
+  padding: 1.2em

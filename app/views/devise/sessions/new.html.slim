@@ -6,13 +6,40 @@
     | Se você é um fornecedor e quer mostrar o seu produto aqui, a casa também é sua.
 
 section.email_login.row
-  .eightcol.white_box
-    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      .form-inputs
-        = f.input :email, :required => false, :autofocus => true
-        = f.input :password, :required => false
-        = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-      .form-actions
-        = f.button :submit, t('devise.links.sign_in')
+  .white_box.large-8.columns
+    .row
+      .well.large-6.columns
+        h4 Login
+        h5 Caso já possua sua conta
+        = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+          .form-inputs
+            = f.input :email, :required => false, :autofocus => true
+            = f.input :password, :required => false
+            = link_to t('devise.links.forgot_password'), new_password_path(resource_name)
+            = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+          .form-actions
+            = f.button :submit, t('devise.links.sign_in'), class: "bt"
+      
+      .large-6.columns
+        h4 Novo no MateriaBrasil?
+        h5 Cadastre-se e siga em frente
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+          = f.error_notification
 
-    = render "devise/shared/links"
+          .form-inputs
+            = f.input :name, :required => true, :autofocus => true
+            = f.input :email, :required => true
+            = f.input :password, :required => true
+            = f.input :password_confirmation, :required => true
+            input type="checkbox" value="1" name="newsletter" id="newsletter" checked="checked"
+            label.boolean.optional for="newsletter" Quero receber por email novidades da MateriaBrasil, como eventos e produtos
+
+          .form-actions
+            = f.button :submit, t("devise.links.sign_up"), class: "bt"
+  .large-4.columns
+    h3 Entre utilizando o facebook
+    h4 Uma maneira muito rápida de acessar
+    = link_to image_tag('site/bg_facebook.png'), omniauth_authorize_path(resource_name, :facebook), class: "fb_login"
+    p
+      span.important Importante:
+      |  Se você é um fornecedor e quer mostrar seu material aqui, recomendamos que se cadastre com o email ao lado, e não com o facebook. Dê preferência a um email corporativo, que você possa distribuir o acesso a outros da sua empresa.

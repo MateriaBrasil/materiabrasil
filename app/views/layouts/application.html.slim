@@ -5,8 +5,9 @@ html
     meta name="description" content="#{t "meta.description"}"
     meta name="keywords" content="#{t "meta.keywords"}"
     meta property="og:image" content="http://i.imgur.com/gMNUB.png"
-    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag :application
+    = javascript_include_tag "vendor/custom.modernizr"
 
     = favicon_link_tag asset_path('favicon.png'), :type => "image/png"
     = csrf_meta_tags

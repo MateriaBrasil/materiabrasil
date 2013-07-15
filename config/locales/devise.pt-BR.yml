@@ -8,8 +8,8 @@ pt-BR:
   devise:
     links:
       forgot_password: 'Esqueci minha senha'
-      sign_in: 'Entrar'
-      sign_up: 'Cadastrar-se'
+      sign_in: 'Efetuar login!'
+      sign_up: 'Efetuar cadastro!'
       sign_in_with: 'Fazer login com %{provider}'
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Seja bem-vindo(a)!"

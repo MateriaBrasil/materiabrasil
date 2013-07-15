@@ -72,6 +72,7 @@ group :assets do
   gem 'compass-rails'
   gem 'semantic-mixins', '~> 0.2'
   gem 'uglifier'
+  gem 'zurb-foundation', '~> 4.0.0'
 end
 
 gem 'jquery-rails'
