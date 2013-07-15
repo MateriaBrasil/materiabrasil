@@ -12,21 +12,36 @@ form
   .label_link
     font-size: .85em
 
-  input[type=text], input[type=email], input[type=number], input[type=password]
-    border: 1px solid darken($gray, 10%)
-    padding: 8px
-    margin-left: -2px
-    border-radius: 8px
-    font-size: 1em
-    width: 90%
-    margin-bottom: 1em
-    &:focus
-      border: 1px solid $cyan
-      outline: none
-      box-shadow: 0 1px 2px rgba(black,.3)
-
-    input[type=checkbox]
-      margin-bottom: 1em
-
   .form-actions
     margin-top: 1em
+
+  span.error
+    position: absolute
+    margin: 10px 0 0 5px
+    color: $red
+
+  .error_notification
+    color: $red
+    font-weight: 500
+    font-size: 1.2em
+    margin-bottom: 1em
+
+input[type=text], input[type=email], input[type=number], input[type=password]
+  border: 1px solid darken($gray, 10%)
+  padding: 8px
+  margin-left: -2px
+  border-radius: 8px
+  font-size: 1em
+  width: 90%
+  margin-bottom: 1em
+  &:focus
+    border: 1px solid $cyan
+    outline: none
+    box-shadow: 0 1px 2px rgba(black,.3)
+
+  input[type=checkbox]
+    margin-bottom: 1em
+
+  +context(".field_with_errors")
+    border-color: $red
+    background: lighten($red, 47%)
