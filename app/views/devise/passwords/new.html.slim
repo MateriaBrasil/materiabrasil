@@ -1,14 +1,12 @@
 section.email_login.row
-  .white_box.large-centered
-    .narrow_container
-      h2 Forgot your password?
-      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-        = f.error_notification
+  .white_box.large-centered.small-8.columns
+    h2= t "devise.passwords.new.forgot_password"
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = f.error_notification
 
-        .form-inputs
-          = f.input :email, required: true, autofocus: true, label: false, placeholder: "email@email.com"
+      .form-inputs
+        = f.input :email, required: true, autofocus: true, label: false, placeholder: "email@email.com"
 
-        .form-actions
-          = f.button :submit, "Send me reset password instructions", class: "bt"
-
-      / = render "devise/shared/links"
+      .form-actions
+        = f.button :submit, t("devise.passwords.new.send_password_instructions"), class: "bt"
+        = link_to image_tag('site/bg_facebook.png'), omniauth_authorize_path(resource_name, :facebook), class: "fb_login"

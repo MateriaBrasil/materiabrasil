@@ -83,7 +83,7 @@ pt-BR:
       edit:
         change_password: "Mudar minha senha"
       new:
-        forgot_password: "Esqueceu sua senha?"
+        forgot_password: "Confirme seu email e solicite a mudança de senha"
         no_account: "Não há nenhuma conta com este email. Se você aguarda por um convite, seja paciente: estamos trabalhando para enviá-lo o quanto antes."
         send_password_instructions: "Me envie instruções para redefinir minha senha."
       send_instructions: "Você receberá em breve um email com instruções sobre como redefinir sua senha."

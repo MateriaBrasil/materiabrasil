@@ -3,7 +3,8 @@ pt-BR:
     about: "Sobre"
     contact: "Contato"
     explore: "Explore"
-    login: "Login / Sign in"
+    login_signin: "Login / Sign in"
+    login: "Login"
     logout: "Desconectar"
     my_account: "Minha conta"
     search_the_site: "Pesquise por materiais ou fornecedores..."
@@ -102,6 +103,14 @@ pt-BR:
 
     login:
       title: "Bem Vindo!"
+      subtitle_html: "Se você está procurando informações detalhadas de produtos responsáveis, a casa é sua.<br/>Se você é um fornecedor e quer mostrar o seu produto aqui, a casa também é sua."
+      have_account: "Caso já possua sua conta"
+      important_html: "<span class='important'>Importante:</span> Se você é um fornecedor e quer mostrar seu material aqui, recomendamos que se cadastre com o email ao lado, e não com o facebook. Dê preferência a um email corporativo, que você possa distribuir o acesso a outros da sua empresa."
+      quick_access: "Uma maneira muito rápida de acessar"
+      new_at_materia: "Novo no MateriaBrasil?"
+      register: "Cadastre-se e siga em frente"
+      sign_with_fb: "Entre utilizando o facebook"
+      wanna_get_newsletter: "Quero receber por email novidades da MateriaBrasil, como eventos e produtos"
 
   call_to_action:
     download_portfolio: "Baixe a nossa apresentação completa >"
