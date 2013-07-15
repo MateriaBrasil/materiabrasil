@@ -1,0 +1,133 @@
+html
+  +selection
+    background: $orange
+    color: white
+
+.explorer .esp 
+  a
+    &:hover
+      opacity: .7
+.debug
+  background: red
+  height: 40px
+.inactive
+  display: none
+small
+  font-size: .8em
+img
+  width: 100%
+  height: auto
+
+a
+  color: $cyan
+  text-decoration: none
+  +transition(opacity, 0.25s)
+  &:hover
+    color: $orange
+    text-shadow: 0px 0px 2px $orange 
+    
+h1
+  font-size: 2.9em
+  line-height: 1.2em
+  letter-spacing: -1px
+  font-weight: 500
+  margin-bottom: .8em
+h2
+  font-size: 1.8em
+  font-weight: 600
+  letter-spacing: -0.1em
+  margin-bottom: .8em
+h3
+  font-size: 1.4em
+
+body
+  background: $gray
+  font-family: "Open Sans"
+  font-weight: 300
+  font-size: 0.9em
+  line-height: 1.6em
+
+.number
+  color: $cyan
+
+#header
+  +vertical-gradient(lighten(black, 25%), black)
+  padding-bottom: 6px
+  box-shadow: 0 2px 3px rgba(black,.4)
+  h2#logo
+    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
+    text-indent: 38px
+    font-weight: normal
+    letter-spacing: -1px
+    a:hover
+      color: white
+      text-shadow: 0 0 5px $cyan 
+
+.header
+  a
+    color: white 
+    &:hover
+      color: $orange
+      text-shadow: none
+  *
+    line-height: 2.1em
+
+  .child
+    a
+      margin-right: 20px
+      font-weight: 600
+      white-space: nowrap
+    margin-top: 15px
+  #search
+    input
+      border-radius: 10px
+      background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
+      border: none 
+      text-indent: 25px
+      color: #666
+      font-size: .75em
+      outline: none
+      width: 90%
+      float: right
+      @media screen and (max-width: 767px)
+        width: 100%
+        float: none
+
+a.bt
+  background: $orange
+  color: white
+  font-size: 1.4em
+  font-weight: 600
+  padding: 7px 20px
+  border-radius: 6px
+  white-space: nowrap
+  +transition(.3s)
+  &:hover
+    +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
+    box-shadow: 0 1px 3px rgba(black, .4)
+    text-shadow: 0 -1px 1px rgba(black, .4)
+  &:active
+    background: $orange
+    box-shadow: 0 2px 3px rgba(black, .3) inset
+    text-shadow: 0 1px 1px rgba(black, .4)
+  @media handheld, only screen and (max-width: 767px)
+    font-size: 1em
+
+.narrow_container
+  max-width: 860px
+
+.medium_container
+  max-width: 1080px
+
+.narrow_container, .medium_container
+  width: 90%
+  margin: 0 auto
+  text-align: center
+  padding: 5em 0
+  @media screen and (max-width: 767px)
+    width: 97%
+
+.white_box
+  background: white
+  border-radius: 4px
+  box-shadow: 0 1px 2px #bebebe

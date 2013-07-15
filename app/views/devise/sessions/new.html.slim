@@ -1,0 +1,18 @@
+.narrow_container
+  h2.number= t('pages.login.title')
+  h3
+    | Se você está procurando informações detalhadas de produtos responsáveis, a casa é sua.
+    br/
+    | Se você é um fornecedor e quer mostrar o seu produto aqui, a casa também é sua.
+
+section.email_login.row
+  .eightcol.white_box
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, :required => false, :autofocus => true
+        = f.input :password, :required => false
+        = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+      .form-actions
+        = f.button :submit, t('devise.links.sign_in')
+
+    = render "devise/shared/links"

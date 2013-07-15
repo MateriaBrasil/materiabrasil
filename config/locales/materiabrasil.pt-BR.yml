@@ -3,7 +3,7 @@ pt-BR:
     about: "Sobre"
     contact: "Contato"
     explore: "Explore"
-    login: "Login"
+    login: "Login / Sign in"
     logout: "Desconectar"
     my_account: "Minha conta"
     search_the_site: "Pesquise por materiais ou fornecedores..."
@@ -99,6 +99,9 @@ pt-BR:
             business_aceleration: "Aceleração de negócios"
             coworking: "Co-working"
             fablab: "Fab lab"
+
+    login:
+      title: "Bem Vindo!"
 
   call_to_action:
     download_portfolio: "Baixe a nossa apresentação completa >"

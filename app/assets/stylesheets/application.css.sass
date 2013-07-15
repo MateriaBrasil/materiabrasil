@@ -9,61 +9,9 @@
 @import icomoon
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,600,400")
 
-$cyan: #239EB1
-$brightcyan: #46CEFF
-$orange: #ea6740
-$red: #CB323E
-$yellow: #EACC4F
-$gray: #f4f4f4 
-$mediumgray: #b4b4b4
-
-html
-  +selection
-    background: $orange
-    color: white
-
-.explorer .esp 
-  a
-    &:hover
-      opacity: .7
-.debug
-  background: red
-  height: 40px
-.inactive
-  display: none
-small
-  font-size: .8em
-img
-  width: 100%
-  height: auto
-
-a
-  color: $cyan
-  text-decoration: none
-  +transition(opacity, 0.25s)
-  &:hover
-    color: $orange
-    text-shadow: 0px 0px 2px $orange 
-    
-h1
-  font-size: 2.9em
-  line-height: 1.2em
-  letter-spacing: -1px
-  font-weight: 500
-  margin-bottom: .8em
-h2
-  font-size: 1.8em
-  font-weight: 600
-  letter-spacing: -0.1em
-h3
-  font-size: 1.4em
-
-body
-  background: $gray
-  font-family: "Open Sans"
-  font-weight: 300
-  font-size: 0.9em
-  line-height: 1.6em
+@import mbr/colors
+@import mbr/common
+@import mbr/home
 
 body#materials[class="index"]
   h1
@@ -78,286 +26,6 @@ body#Materials
         display: none
       .info
         margin-top: .6em
-.number
-  color: $cyan
-
-#header
-  +vertical-gradient(lighten(black, 25%), black)
-  padding-bottom: 6px
-  box-shadow: 0 2px 3px rgba(black,.4)
-  h2#logo
-    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
-    text-indent: 38px
-    font-weight: normal
-    letter-spacing: -1px
-    a:hover
-      color: white
-      text-shadow: 0 0 5px $cyan 
-
-.header
-  a
-    color: white 
-    &:hover
-      color: $orange
-      text-shadow: none
-  *
-    line-height: 2.1em
-
-  .child
-    a
-      margin-right: 20px
-      font-weight: 600
-    margin-top: 15px
-  #search
-    input
-      border-radius: 10px
-      background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
-      border: none 
-      text-indent: 25px
-      color: #666
-      font-size: .75em
-      outline: none
-      width: 90%
-      float: right
-      @media screen and (max-width: 767px)
-        width: 100%
-        float: none
-
-a.bt
-  background: $orange
-  color: white
-  font-size: 1.4em
-  font-weight: 600
-  padding: 7px 20px
-  border-radius: 6px
-  white-space: nowrap
-  &:hover
-    +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
-    box-shadow: 0 1px 3px rgba(black, .4)
-  &:active
-    background: $orange
-    box-shadow: 0 2px 3px rgba(black, .3) inset
-  @media handheld, only screen and (max-width: 767px)
-    font-size: 1em
-
-.narrow_container
-  max-width: 860px
-
-.medium_container
-  max-width: 1080px
-
-.narrow_container, .medium_container
-  width: 90%
-  margin: 0 auto
-  text-align: center
-  padding: 5em 0
-  @media screen and (max-width: 767px)
-    width: 97%
-
-.home_info
-  $magenta_color: #CB323E
-  $cyan_color: #239EB1
-  $orange_color: #EA6740
-  $yellow_color: #DBBD45
-  $circle_width: 250px
-  $ul_width: 200px
-  $ul_width_min: 160px
-  .infographic
-    position: relative
-    height: 400px
-    section
-      width: $circle_width
-      height: $circle_width
-      border-radius: 50%
-      position: absolute
-      left: 45%
-      +transition(.2s)
-      ul
-        position: absolute
-        text-align: left
-        width: $ul_width
-        margin-top: 2em
-        +transition(.7s)
-        +opacity(0)
-      figcaption
-        color: white
-        font-size: 1.3em
-        font-weight: 500
-        +transition(.2s)
-      &:hover
-        +transform(scale(1.05))
-        figcaption
-          font-size: 1.5em
-        ul
-          margin-top: 0
-          +opacity(1)
-    .top_circle
-      figcaption
-        margin-top: 35%
-      ul
-        top: 0
-    .bottom_circle
-      bottom: 0
-      figcaption
-        margin-top: 60%
-      ul
-        top: 4em
-    .left_circle
-      margin-left: - $circle_width/1.6
-      figcaption
-        text-align: left
-        text-indent: 1em
-      ul
-        left: - $ul_width - 10px
-    .right_circle
-      margin-right: - $circle_width/2
-      figcaption
-        text-align: right
-        margin-right: 1em
-      ul
-        right: - $ul_width - 10px
-    .magenta_circle
-      background: rgba($magenta_color, .75)
-      z-index: 1
-      ul
-        color: darken($magenta_color, 10%)
-    .cyan_circle
-      z-index: 2
-      background: rgba($cyan_color, .75)
-      ul
-        color: darken($cyan_color, 10%)
-    .orange_circle
-      z-index: 4
-      background: rgba($orange_color, .75)
-      ul
-        color: darken($orange_color, 10%)
-    .yellow_circle
-      z-index: 3
-      background: rgba($yellow_color, .75)
-      ul
-        color: darken($yellow_color, 15%)
-    
-    @media handheld, only screen and (max-width: 940px)
-      section
-        ul
-          width: $ul_width_min
-        &.right_circle
-          ul
-            right: - $ul_width_min - 5px
-        &.left_circle
-          ul
-            left: - $ul_width_min - 5px
-  @media handheld, only screen and (max-width: 776px)
-    .infographic
-      height: auto
-      overflow: hidden
-      section
-        float: left
-        position: static
-        margin: 5% !important
-        width: 40%
-        height: auto
-        background: none !important
-        &:hover
-          +transform(none !important)
-        +decorative-content(before, false)
-          position: absolute
-          width: 150px
-          height: 150px
-          border-radius: 50%
-          z-index: -1
-        &.magenta_circle
-          &:before
-            background: rgba($magenta_color, .75)
-        &.cyan_circle
-          &:before
-            background: rgba($cyan_color, .75)
-        &.orange_circle
-          clear: both
-          &:before
-            background: rgba($orange_color, .75)
-        &.yellow_circle
-          &:before
-            background: rgba($yellow_color, .75)
-        &.bottom_circle
-          margin-top: 4em !important
-        ul
-          display: block
-          width: auto
-          +opacity(1)
-          position: static
-          top: 0 !important
-          margin-top: 80px !important
-        figcaption
-          text-align: left !important
-          text-indent: .5em !important
-          font-size: 1.2em !important
-          margin-top: 70px !important
-
-.materials_wrapper
-  background: #111
-  color: white
-  // padding: 50px 0
-  border: 2px groove
-  border-left: none
-  border-right: none
-  small
-    font-size: 0.7em
-    color: $cyan
-
-.materials_preview
-  padding-bottom: 5em
-  text-align: center
-  .image_link
-    display: inline-block
-    width: 170px
-    margin: 10px
-    height: 120px
-    overflow: hidden
-    border-radius: 10px
-    border: 3px solid transparent
-    +transition(.3s)
-    &:hover
-      border-radius: 4px
-      border-color: $cyan
-      +transform(scale(1.05))
-    &:active
-      +transform(scale(1))
-
-.download_portfolio
-  background: white
-  border-top: 1px solid lighten($mediumgray, 15%)
-  border-bottom: 1px solid lighten($mediumgray, 15%)
-
-.our_partners
-  h3
-    font-weight: 500
-.partners_container
-  margin-top: 2em
-  img
-    width: auto
-    margin: 10px
-    +saturate(0)
-    +opacity(.6)
-    +transition(.3s)
-    &:hover
-      +saturate(1)
-      +opacity(1)
-
-.home
-  img
-    width: 100%
-    height: 100%
-  .special
-    float: right
-  .tall, .flat
-    margin-bottom: 20px
-  .tall
-    height: 515px
-  .flat
-    height: 230px
-
-
 
 .presentation
   height: 440px
@@ -604,8 +272,9 @@ section.material
         &.inactive
           display: none
 section.user
-  padding: .2em 0
+  padding: 0 .4em
   color: white
+  font-weight: 500
   +transition(.2s)
   border-radius: 6px 6px 0 0
   img
@@ -625,10 +294,11 @@ section.user
     display: none
     position: absolute
     padding: .2em 1em
-    width: auto 
+    width: auto
     background: white
     box-shadow: 0 1px 2px #999
     border-radius: 0 0 4px 4px
+    margin-left: -6px
     a
       color: black
       &:hover
