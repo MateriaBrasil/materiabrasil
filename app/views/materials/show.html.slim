@@ -9,7 +9,7 @@ section.material.row
       section.data
         - unless current_user
           h3 Você quer saber mais informações deste material, certo?
-          = render partial: 'sessions/new'
+          = render partial: 'partials/login'
         - else
           h3 As informações comerciais estão ali do lado ;)
           p &nbsp;

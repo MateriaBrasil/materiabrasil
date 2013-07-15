@@ -186,7 +186,7 @@ pt-BR:
         render: "Render?"
 
   footer:
-    code_by: "código opensource por: "
+    code_by_html: "<a href='https://github.com/MateriaBrasil/materiabrasil' target='_blank'>código opensource</a> por: "
 
 
   meta:
