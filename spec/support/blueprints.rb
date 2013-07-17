@@ -18,7 +18,7 @@ Manufacturer.blueprint do
 end
 
 Material.blueprint do
-  name { "Name #{sn}" } 
+  name { "Name #{sn}" }
   resume { "This is a resume #{sn}" }
   manufacturer
   technical_observation { "Some technical observation" }
@@ -39,4 +39,12 @@ end
 
 Authorization.blueprint do
   # Attributes here
+end
+
+User.blueprint do
+  name { "Test User#{sn}" }
+  email { "test#{sn}@user.com" }
+  password { 'password' }
+  password_confirmation { 'password' }
+  newsletter { true }
 end
