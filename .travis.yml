@@ -1,0 +1,14 @@
+rvm:
+  - 1.9.3
+
+before_script:
+  - "cp config/database.sample.yml config/database.yml"
+  - "bundle exec rake db:create db:migrate"
+
+script:
+  - "bundle exec rspec spec"
+
+branches:
+  only:
+    - master
+
