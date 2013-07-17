@@ -17,13 +17,15 @@ pt-BR:
         resend_confirmation: "Reenviar as instruções de confirmação."
       send_instructions: "Em poucos minutos, você receberá um email com as instruções sobre como confirmar a sua conta."
     failure:
-      inactive: "Sua conta ainda não foi ativada."
-      invalid: "Nome de usuário ou senha inválidos."
-      invalid_token: "Token de autenticação inválido."
-      locked: "Sua conta está bloqueada."
-      timeout: "Sua sessão expirou; por favor, entre novamente para continuar."
-      unauthenticated: "Você precisa entrar ou se cadastrar antes de continuar."
-      unconfirmed: "Você deve confirmar a sua conta antes de continuar."
+      already_authenticated: Você já está autenticado.
+      inactive: A sua conta ainda não foi ativada.
+      invalid: Email ou senha inválidos.
+      invalid_token: O token de autenticação não é válido.
+      locked: A sua conta está bloqueada.
+      not_found_in_database: e-mail ou senha invalida.
+      timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
+      unauthenticated: Para continuar, faça login ou registre-se.
+      unconfirmed: Antes de continuar, confirme a sua conta.
     invitations:
       invitation_token_invalid: "Seu convite é inválido!"
       send_instructions: "Seu convite foi enviado."
