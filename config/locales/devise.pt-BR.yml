@@ -6,6 +6,8 @@
 
 pt-BR:
   devise:
+    omniauth_callbacks:
+      success: "Você entrou com sucesso."
     links:
       forgot_password: 'Esqueci minha senha'
       sign_in: 'Efetuar login!'

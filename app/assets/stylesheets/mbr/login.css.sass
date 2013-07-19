@@ -6,7 +6,7 @@ a.fb_login
   img
     width: auto
 
-#Sessions, #Passwords
+#Sessions, #Passwords, #Registrations
   h2
     color: $cyan
   h4
@@ -32,8 +32,36 @@ a.fb_login
       line-height: 1.4em
       font-weight: 400
     .important
-      text-decoration: underline
       color: $red
 
   .email_login
     padding: 1em
+
+
+.flash
+  +experimental(animation, alert-in .3s linear)
+  display: block
+  background: rgb(247, 192, 109)
+  border: 1px solid white
+  border-radius: 4px
+  box-shadow: 0 2px 3px rgba(black,.2)
+  color: #555
+  font-weight: bold
+  padding: 10px 25px
+  position: absolute
+  text-shadow: 0 1px 1px white
+  z-index: 100
+  top: 5px
+  left: 7px
+  &.success
+    background-color: rgb(186, 226, 149)
+  &.error
+    background-color: rgb(236, 145, 145)
+
++keyframes(alert-in)
+  0%
+    +opacity(0)
+    margin-top: -40px
+  100%
+    +opacity(1)
+    margin-top: 0
