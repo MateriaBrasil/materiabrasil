@@ -1,0 +1,513 @@
+@charset "UTF-8"
+@import semantic-mixins/main
++face("EntypoRegular", "entypo")
+
+.icon
+  font-size: 1.5em
+  line-height: 1em
+  margin-right: 6px
+  line-height: inherit
+  font-weight: normal
+  font-family: "EntypoRegular"
+  font-style: normal
+  display: inline-block
+  color: inherit
+  -webkit-font-smoothing: antialiased
+  &.big
+    font-size: 40px
+  &.tiny
+    line-height: 0
+    font-size: 9px
+  &.medium
+    line-height: 0
+    font-size: 22px
+  
+  &.phone:before
+    content: '📞'
+  &.mobile:before
+    content: '📱'
+  &.mouse:before
+    content: '\e789'
+  &.address:before
+    content: '\e723'
+  &.mail:before
+    content: '\2709'
+  &.paper-plane:before
+    content: '\e79b'
+  &.pencil:before
+    content: '\270e'
+  &.feather:before
+    content: '\2712'
+  &.attach:before
+    content: '📎'
+  &.inbox:before
+    content: '\e777'
+  &.reply:before
+    content: '\e712'
+  &.reply-all:before
+    content: '\e713'
+  &.forward:before
+    content: '\27a6'
+  &.user:before
+    content: '\1f464'
+  &.users:before
+    content: '\1f465'
+  &.add-user:before
+    content: '\e700'
+  &.vcard:before
+    content: '\e722'
+  &.export:before
+    content: '\e715'
+  &.location:before
+    content: '\e724'
+  &.map:before
+    content: '\e727'
+  &.compass:before
+    content: '\e728'
+  &.direction:before
+    content: '\27a2'
+  &.share:before
+    content: '\e73c'
+  &.shareable:before
+    content: '\e73e'
+  &.heart:before
+    content: '\2665'
+  &.heart-empty:before
+    content: '\2661'
+  &.star:before
+    content: '\2605'
+  &.star-empty:before
+    content: '\2606'
+  &.thumbs-up:before
+    content: '\1f44d'
+  &.thumbs-down:before
+    content: '👎'
+  &.chat:before
+    content: '\e720'
+  &.comment:before
+    content: '\e718'
+  &.quote:before
+    content: '\275e'
+  &.home:before
+    content: '\2302'
+  &.popup:before
+    content: '\e74c'
+  &.search:before
+    content: '\1f50d'
+  &.flashlight:before
+    content: '🔦'
+  &.print:before
+    content: '\e716'
+  &.bell:before
+    content: '🔔'
+  &.link:before
+    content: '\1f517'
+  &.flag:before
+    content: '\2691'
+  &.cog:before
+    content: '\2699'
+  &.tools:before
+    content: '\2692'
+  &.trophy:before
+    content: '🏆'
+  &.tag:before
+    content: '\e70c'
+  &.camera:before
+    content: '📷'
+  &.megaphone:before
+    content: '\1f4e3'
+  &.moon:before
+    content: '\263d'
+  &.palette:before
+    content: '🎨'
+  &.leaf:before
+    content: '🍂'
+  &.note:before
+    content: '\266a'
+  &.beamed-note:before
+    content: '\266b'
+  &.graduation-cap:before
+    content: '🎓'
+  &.book:before
+    content: '📕'
+  &.newspaper:before
+    content: '\1f4f0'
+  &.bag:before
+    content: '👜'
+  &.lifebuoy:before
+    content: '\e788'
+  &.eye:before
+    content: '\e70a'
+  &.clock:before
+    content: '\1f554'
+  &.mic:before
+    content: '🎤'
+  &.calendar:before
+    content: '\1f4c5'
+  &.flash:before
+    content: '\26a1'
+  &.thunder-cloud:before
+    content: '\26c8'
+  &.droplet:before
+    content: '💧'
+  &.cd:before
+    content: '💿'
+  &.briefcase:before
+    content: '\1f4bc'
+  &.air:before
+    content: '\e753'
+  &.hourglass:before
+    content: '\23f3'
+  &.gauge:before
+    content: '\e7a2'
+  &.language:before
+    content: '\e752'
+  &.network:before
+    content: '\e776'
+  &.key:before
+    content: '\1f511'
+  &.battery:before
+    content: '🔋'
+  &.bucket:before
+    content: '\e756'
+  &.magnet:before
+    content: '\e7a1'
+  &.drive:before
+    content: '\e755'
+  &.cup:before
+    content: '\2615'
+  &.rocket:before
+    content: '🚀'
+  &.brush:before
+    content: '\e79a'
+  &.suitcase:before
+    content: '\e78e'
+  &.traffic-cone:before
+    content: '\e7a3'
+  &.globe:before
+    content: '\1f30e'
+  &.keyboard:before
+    content: '\2328'
+  &.publish:before
+    content: '\e74d'
+  &.progress-3:before
+    content: '\e76b'
+  &.progress-2:before
+    content: '\e76a'
+  &.progress-1:before
+    content: '\e769'
+  &.progress-0:before
+    content: '\e768'
+  &.light-down:before
+    content: '🔅'
+  &.light-up:before
+    content: '🔆'
+  &.adjust:before
+    content: '\25d1'
+  &.code:before
+    content: '\e714'
+  &.monitor:before
+    content: '💻'
+  &.infinity:before
+    content: '\221e'
+  &.credit-card:before
+    content: '\1f4b3'
+  &.database:before
+    content: '\e754'
+  &.clipboard:before
+    content: '\1f4cb'
+  &.box:before
+    content: '📦'
+  &.ticket:before
+    content: '\1F3AB'
+  &.rss:before
+    content: '\e73a'
+  &.signal:before
+    content: '📶'
+  &.thermometer:before
+    content: '\e757'
+  &.water:before
+    content: '💦'
+  &.sweden:before
+    content: '\f601'
+  &.lock:before
+    content: '🔒'
+  &.lock-open:before
+    content: '🔓'
+  &.logout:before
+    content: '\e741'
+  &.login:before
+    content: '\e740'
+  &.check:before
+    content: '\2713'
+  &.x:before
+    content: '\274C'
+  &.squared-plus:before
+    content: '\229e'
+  &.squared-minus:before
+    content: '\229f'
+  &.circled-plus:before
+    content: '\2795'
+  &.circled-minus:before
+    content: '\2796'
+  &.plus:before
+    content: '\2b'
+  &.plus-inverse:before
+    content: '\2795'
+
+  &.minus:before
+    content: '\2d'
+  &.erase:before
+    content: '\232b'
+  &.block:before
+    content: '\1f6ab'
+  &.info:before
+    content: '\2139'
+  &.circled-info:before
+    content: '\e705'
+  &.help:before
+    content: '\2753'
+  &.circled-help:before
+    content: '\e704'
+  &.ccw:before
+    content: '\27f2'
+  &.cw:before
+    content: '\27f3'
+  &.shuffle:before
+    content: '🔀'
+  &.back:before
+    content: '🔙'
+  &.level-up:before
+    content: '\21b0'
+  &.level-down:before
+    content: '\21b3'
+  &.retweet:before
+    content: '\e717'
+  &.loop:before
+    content: '🔁'
+  &.back-in-time:before
+    content: '\e771'
+  &.switch:before
+    content: '\21c6'
+  &.layout:before
+    content: '\268f'
+  &.list:before
+    content: '\e005'
+  &.doc:before
+    content: '\e730'
+  &.docs:before
+    content: '\e736'
+  &.text-doc-inverted:before
+    content: '\e731'
+  &.landscape-doc:before
+    content: '\e737'
+  &.picture:before
+    content: '\1f304'
+  &.video:before
+    content: '🎬'
+  &.music:before
+    content: '🎵'
+  &.folder:before
+    content: '\1f4c1'
+  &.archive:before
+    content: '\e738'
+  &.trash:before
+    content: '\e729'
+  &.upload:before
+    content: '\1f4e4'
+  &.download:before
+    content: '\1f4e5'
+  &.install:before
+    content: '\e778'
+  &.cloud:before
+    content: '\2601'
+  &.upload-cloud:before
+    content: '\e711'
+  &.bookmark:before
+    content: '🔖'
+  &.bookmarks:before
+    content: '📑'
+  &.play:before
+    content: '\25b6'
+  &.paus:before
+    content: '\2389'
+  &.record:before
+    content: '\26ab'
+  &.stop:before
+    content: '\25a0'
+  &.to-end:before
+    content: '\23ed'
+  &.to-start:before
+    content: '\23ee'
+  &.resize-full:before
+    content: '\e744'
+  &.resize-small:before
+    content: '\e746'
+  &.volume:before
+    content: '\e742'
+  &.sound:before
+    content: '🔊'
+  &.mute:before
+    content: '🔇'
+  &.flow-cascade:before
+    content: '\e790'
+  &.flow-branch:before
+    content: '\e791'
+  &.flow-tree:before
+    content: '\e792'
+  &.flow-line:before
+    content: '\e793'
+  &.flow-parallel:before
+    content: '\e794'
+  &.left-bold:before
+    content: '\e4ad'
+  &.right-bold:before
+    content: '\e4ae'
+  &.up-bold:before
+    content: '\e4af'
+  &.down-bold:before
+    content: '\e4b0'
+  &.left:before
+    content: '\261c'
+  &.up:before
+    content: '\261d'
+  &.right:before
+    content: '\261e'
+  &.down:before
+    content: '\261f'
+  &.circled-down:before
+    content: '\e758'
+  &.circled-left:before
+    content: '\e759'
+  &.circled-right:before
+    content: '\e75a'
+  &.circled-up:before
+    content: '\e75b'
+  &.left-thin:before
+    content: '\2190'
+  &.up-thin:before
+    content: '\2191'
+  &.right-thin:before
+    content: '\2192'
+  &.down-thin:before
+    content: '\2193'
+  &.arrow-combo:before
+    content: '\e74f'
+  &.dot:before
+    content: '\e78b'
+  &.two-dots:before
+    content: '\e78c'
+  &.three-dots:before
+    content: '\e78d'
+  &.cc:before
+    content: '\e7a5'
+  &.cc-by:before
+    content: '\e7a6'
+  &.cc-nc:before
+    content: '\e7a7'
+  &.cc-nc-eu:before
+    content: '\e7a8'
+  &.cc-nc-jp:before
+    content: '\e7a9'
+  &.cc-sa:before
+    content: '\e7aa'
+  &.cc-nd:before
+    content: '\e7ab'
+  &.cc-pd:before
+    content: '\e7ac'
+  &.cc-zero:before
+    content: '\e7ad'
+  &.cc-share:before
+    content: '\e7ae'
+  &.cc-remix:before
+    content: '\e7af'
+  &.db-logo:before
+    content: '\f603'
+  &.db-shape:before
+    content: '\f600'
+  &.save:before
+    content: '\1f4be'
+  &.ff:before
+    content: '\23e9'
+  &.fb:before
+    content: '\23ea'
+  &.pie-chart:before
+    content: '\e751'
+  &.line-graph:before
+    content: '\1f4c8'
+  &.bar-graph:before
+    content: '\1f4ca'
+  &.area-graph:before
+    content: '\1f53e🔾'
+  &.chevron-down:before
+    content: '\e75c'
+  &.chevron-left:before
+    content: '\e75d'
+  &.chevron-right:before
+    content: '\e75e'
+  &.chevron-up:before
+    content: '\e75f'
+  &.chevron-small-down:before
+    content: '\e760'
+  &.chevron-small-left:before
+    content: '\e761'
+  &.chevron-small-right:before
+    content: '\e762'
+  &.chevron-small-up:before
+    content: '\e763'
+  &.chevron-thin-down:before
+    content: '\e764'
+  &.chevron-thin-left:before
+    content: '\e765'
+  &.chevron-thin-right:before
+    content: '\e766'
+  &.chevron-thin-up:before
+    content: '\e767'
+  &.text-doc:before
+    content: '\1f4c4'
+  &.open-book:before
+    content: '📖'
+  &.voicemail:before
+    content: '\2707'
+  &.triangle-right:before
+    content: '\25b8'
+  &.triangle-up:before
+    content: '\25b4'
+  &.triangle-down:before
+    content: '\25be'
+  &.triangle-left:before
+    content: '\25c2'
+  &.airplane:before
+    content: '\2708'
+  &.light-bulb:before
+    content: '💡'
+  &.add-to-list:before
+    content: '\e003'
+  &.browser:before
+    content: '\e74e'
+  &.cart:before
+    content: '\e73d'
+  &.cross-hair:before
+    content: '🎯'
+  &.squared-cross:before
+    content: '\274e'
+  &.circled-cross:before
+    content: '\2716'
+  &.warning:before
+    content: '\26a0'
+  &.cross:before
+    content: '\2715'
+  &.new:before
+    content: '\1f4a5'
+  &.cycle:before
+    content: '\1f504'
+  &.numbered-list:before
+    content: '\2630'
+  &.right-1:before
+    content: '\27a1'
+  &.left-1:before
+    content: '\2b05'
+  &.up-1:before
+    content: '\2b06'
+  &.down-1:before
+    content: '\2b07'

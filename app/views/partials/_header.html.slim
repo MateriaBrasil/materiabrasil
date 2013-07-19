@@ -2,8 +2,13 @@
   .threecol
     h1#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
   nav
-    .fourcol.child
-      = link_to t("common.explore"), explore_path
+    .fourcol.child.main_nav
+      = link_to explore_path do
+        span.icon.globe
+        = t("common.explore")
+      = link_to "#" do
+        span.icon.upload-cloud
+        | Cadastre
       = link_to t("common.about"), about_path(anchor: '/i/sobre')
       = link_to t("common.contact"), about_path(anchor: '/i/contato')
   .threecol.child
@@ -12,11 +17,14 @@
   .twocol.child.last
     - if current_user
       section.user
+        span.icon.user
         = t "common.my_account"
         span.arrow
           |&#x25BE
         ol.options
           /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
-          li.logout= link_to t('common.logout'), destroy_user_session_path, method: :delete, class: 'icon-exit'
+          li.logout= link_to destroy_user_session_path, method: :delete do
+            span.icon.forward
+            = t('common.logout')
     - else
       = link_to t('common.login_signin'), new_user_session_path()
