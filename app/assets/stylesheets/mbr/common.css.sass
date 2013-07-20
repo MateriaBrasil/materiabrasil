@@ -27,7 +27,6 @@ a
     
 h1
   font-size: 2.9em
-  line-height: 1.2em
   letter-spacing: -1px
   font-weight: 500
   margin-bottom: .8em
@@ -38,6 +37,19 @@ h2
   margin-bottom: .8em
 h3
   font-size: 1.4em
+
+h1, h2, h3
+  line-height: 1.2em
+
+p
+  font-weight: 500
+  text-align: left
+  line-height: 1.4em
+  margin-bottom: 1.4em
+  &.big_paragraph
+    font-size: 1.2em
+  strong
+    font-weight: 700
 
 body
   background: $gray
@@ -109,3 +121,31 @@ a.bt.bt_secondary, input.bt.bt_secondary
   background: $gray
   border: 1px solid darken($gray, 10%)
   border-radius: 6px
+
+.flash
+  +experimental(animation, alert-in .3s linear)
+  display: block
+  background: rgb(247, 192, 109)
+  border: 1px solid white
+  border-radius: 4px
+  box-shadow: 0 2px 3px rgba(black,.2)
+  color: #555
+  font-weight: bold
+  padding: 10px 25px
+  position: absolute
+  text-shadow: 0 1px 1px white
+  z-index: 100
+  top: 5px
+  left: 7px
+  &.success
+    background-color: rgb(186, 226, 149)
+  &.error
+    background-color: rgb(236, 145, 145)
+
++keyframes(alert-in)
+  0%
+    +opacity(0)
+    margin-top: -40px
+  100%
+    +opacity(1)
+    margin-top: 0

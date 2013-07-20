@@ -135,7 +135,6 @@ GEM
     google-analytics-rails (0.0.4)
     has_scope (0.5.1)
     hashie (2.0.3)
-    high_voltage (1.2.3)
     hike (1.2.2)
     httpauth (0.2.0)
     i18n (0.6.1)
@@ -331,7 +330,6 @@ DEPENDENCIES
   friendly_id (~> 4.0.1)
   google-analytics-rails
   has_scope
-  high_voltage
   inherited_resources
   jasmine
   jquery-rails

@@ -1,12 +1,12 @@
 .narrow_container
-  h2= t('pages.login.title')
+  h2.primary_title= t('pages.login.title')
   h3= t('pages.login.subtitle_html')
 
 
 section.email_login.row
   .white_box.large-8.small-12.columns
     section.well.large-6.columns
-      h4
+      h4.login_title
         = t "common.login"
         small= t "pages.login.have_account"
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -19,7 +19,7 @@ section.email_login.row
           = f.submit t('devise.links.sign_in'), class: "bt bt_secondary", id: 'user_submit'
 
     section.large-6.columns.email_login
-      h4
+      h4.login_title
         = t "pages.login.new_at_materia"
         small= t "pages.login.register"
       = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -33,7 +33,7 @@ section.email_login.row
           = f.submit t('devise.links.sign_up'), class: "bt bt_secondary", id: 'user_submit'
 
   .large-4.columns.facebook_login
-    h4
+    h4.login_title
       = t "pages.login.sign_with_fb"
       small= t "pages.login.quick_access"
     = link_to image_tag('site/bg_facebook.png'), omniauth_authorize_path(resource_name, :facebook), class: "fb_login"
