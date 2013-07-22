@@ -3,10 +3,10 @@ header.header_menu
     h1#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
     nav.main_nav
       = link_to explore_path, class: "main_action" do
-        span.icon.globe
+        /span.icon.globe
         = t("common.explore_html")
       = link_to submit_path, class: "main_action" do
-        span.icon.upload-cloud
+        /span.icon.upload-cloud
         = t("common.submit_html")
       = link_to t("common.about"), about_path(anchor: '/i/sobre')
       = link_to t("common.contact"), about_path(anchor: '/i/contato')

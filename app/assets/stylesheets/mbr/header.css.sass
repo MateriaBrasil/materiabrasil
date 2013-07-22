@@ -21,10 +21,10 @@
     text-shadow: 0 0 5px $cyan 
 
 .main_nav
-  min-width: 340px
+  min-width: 310px
   float: left
-  padding: .7em 1em 0 0
-  @media screen and (max-width: 1019px)
+  padding-top: .7em
+  @media screen and (max-width: 980px)
     clear: left
   .icon
     font-size: 2em
@@ -45,11 +45,12 @@
       &:hover
         color: $orange
       small
-        padding-left: 2.2em
+        // padding-left: 2.2em
         font-size: .75em
         font-weight: 600
-      small, .icon
         color: white
+      // small, .icon
+      //   color: white
 
 .search_account
   float: right
