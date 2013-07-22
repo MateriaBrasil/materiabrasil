@@ -3,12 +3,14 @@ pt-BR:
     about: "Sobre"
     contact: "Contato"
     explore: "Explore"
+    explore_html: "Explore </br><small>produtos</small>"
     login_signin: "Login / Sign in"
     login: "Login"
     logout: "Desconectar"
     my_account: "Minha conta"
     search_the_site: "Pesquise por materiais ou fornecedores..."
     submit: "Cadastre"
+    submit_html: "Cadastre </br><small>seu produto</small>"
   breadcrumb:
     index:
       head_html: "<span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"

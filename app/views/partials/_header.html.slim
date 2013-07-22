@@ -1,18 +1,18 @@
-header#header
+header.header_menu
   .row
     h1#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
-    nav.child.main_nav
-      = link_to explore_path do
+    nav.main_nav
+      = link_to explore_path, class: "main_action" do
         span.icon.globe
-        = t("common.explore")
-      = link_to submit_path do
+        = t("common.explore_html")
+      = link_to submit_path, class: "main_action" do
         span.icon.upload-cloud
-        = t("common.submit")
+        = t("common.submit_html")
       = link_to t("common.about"), about_path(anchor: '/i/sobre')
       = link_to t("common.contact"), about_path(anchor: '/i/contato')
     aside.search_account
       section.search_area
-        form#search action=search_path
+        form.search_form action=search_path
           input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']
       section.account_nav
         - if current_user

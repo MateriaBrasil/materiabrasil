@@ -1,108 +1,122 @@
-#header
+.header_menu
   +vertical-gradient(lighten(black, 25%), black)
-  padding: .8em 1em .5em
+  padding: 0 1em
   box-shadow: 0 2px 3px rgba(black,.4)
-  #logo
-    background: image-url("site/bg_header_h2.png") no-repeat 0 45%
-    text-indent: 38px
-    font-weight: normal
-    letter-spacing: -1px
-    font-size: 1.8em
-    text-align: left
-    margin-bottom: 0
-    float: left
-    padding-right: 2em
-    a:hover
-      color: white
-      text-shadow: 0 0 5px $cyan 
-
-  .main_nav
-    min-width: 340px
-    float: left
-    padding-right: 1em
-    @media screen and (max-width: 1009px)
-      clear: left
-    .icon
-      font-size: 2em
-      position: relative
-      bottom: -2px
-  
-  .search_account
-    float: right
-    section
-      float: left
-      margin-top: .3em
-      padding-right: 1.5em
-  
   a
     color: white 
     font-weight: 600
+
+#logo
+  background: image-url("site/bg_header_h2.png") no-repeat 0 80%
+  text-indent: 38px
+  font-weight: normal
+  letter-spacing: -1px
+  font-size: 1.8em
+  text-align: left
+  margin-bottom: 0
+  float: left
+  padding: .5em 2em 0 0
+  a:hover
+    color: white
+    text-shadow: 0 0 5px $cyan 
+
+.main_nav
+  min-width: 340px
+  float: left
+  padding: .7em 1em 0 0
+  @media screen and (max-width: 1019px)
+    clear: left
+  .icon
+    font-size: 2em
+    position: relative
+    bottom: -8px
+  a
+    line-height: 2.1em
+    margin-right: 20px
+    white-space: nowrap
     &:hover
       color: $orange
       text-shadow: none
+    &.main_action
+      float: left
+      color: $cyan
+      line-height: 1.1em
+      font-weight: 700
+      &:hover
+        color: $orange
+      small
+        padding-left: 2.2em
+        font-size: .75em
+        font-weight: 600
+      small, .icon
+        color: white
 
-  .child
-    line-height: 2.1em
-    a
-      margin-right: 20px
-      white-space: nowrap
-  #search
-    padding: 0
-    min-width: 17em
-    input[type=text]
-      border-radius: 10px
-      background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
-      border: none 
-      margin-top: 0
-      text-indent: 25px
-      padding: 6px 3px
-      color: #666
-      font-size: .75em
-      outline: none
+.search_account
+  float: right
+  padding: .5em 0
+  section
+    float: left
+
+.account_nav
+  margin-top: .2em
+
+.search_area
+  padding-right: 1.5em
+
+.search_form
+  padding: 0
+  min-width: 17em
+  margin-top: .3em
+  input[type=text]
+    border-radius: 10px
+    background: white image-url("site/bg_search_input.gif") no-repeat 8px 6px
+    border: none 
+    margin-top: 0
+    text-indent: 25px
+    padding: 6px 3px
+    color: #666
+    font-size: .75em
+    outline: none
+    width: 100%
+    @media screen and (max-width: 767px)
       width: 100%
-      @media screen and (max-width: 767px)
-        width: 100%
-        float: none
+      float: none
 
-  .user_section
-    padding: 0 .4em
-    color: white
-    font-weight: 500
-    line-height: 2.1em
-    +transition(.2s)
-    border-radius: 6px 6px 0 0
-    &:hover
-      cursor: pointer
-      background: white
-      color: black
-      .options
-        display: block
+.user_section
+  color: white
+  font-weight: 500
+  line-height: 2.1em
+  +transition(.2s)
+  &:hover
+    cursor: pointer
     .options
-      font-size: .9em
-      display: none
-      position: absolute
-      padding: .2em 1em
-      width: auto
-      background: white
-      box-shadow: 0 1px 2px #999
-      border-radius: 0 0 4px 4px
-      margin-left: -6px
-      a
-        color: black
-        &:hover
-          background: $cyan
-          color: white
-          padding: .1em 1em
-          text-shadow: none
-
-    span.arrow
       display: block
-      margin-right: 15px
-      float: right
+  .options
+    font-size: .9em
+    display: none
+    position: absolute
+    padding: .2em 1em
+    width: auto
+    background: white
+    box-shadow: 0 1px 2px #999
+    border-radius: 4px
+    margin-left: -6px
+    a
+      color: black
+      &:hover
+        background: $cyan
+        color: white
+        padding: .1em 1em
+        text-shadow: none
 
-  @media screen and (max-width: 779px)
-    #logo, .main_nav, .search_account section
-      float: none
-      width: 100%
-    .search_account
-      float: none
+  span.arrow
+    display: block
+    margin-left: 15px
+    float: right
+
+@media screen and (max-width: 779px)
+  #logo, .main_nav, .search_account section
+    float: none
+    width: 100%
+  .search_account
+    float: none
