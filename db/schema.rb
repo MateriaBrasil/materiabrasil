@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717183900) do
+ActiveRecord::Schema.define(:version => 20130731021600) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -97,10 +97,8 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.string   "image"
     t.integer  "material_id"
     t.boolean  "featured"
-    t.boolean  "use_case"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.boolean  "render"
   end
 
   create_table "manufacturers", :force => true do |t|
@@ -128,7 +126,6 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.text     "technical_observation"
     t.string   "density"
     t.string   "dimensions"
-    t.string   "packing"
     t.string   "average_price"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
