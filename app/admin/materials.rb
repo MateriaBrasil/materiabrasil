@@ -1,7 +1,7 @@
 # coding: utf-8
 ActiveAdmin.register Material do
   form :partial => "form"
-  
+
   index do
     selectable_column
     column :sku, sortable: false
@@ -19,7 +19,6 @@ ActiveAdmin.register Material do
       row :average_price
       row :density
       row :dimensions
-      row :packing
       row :resume
       row :technical_observation
     end
