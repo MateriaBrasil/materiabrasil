@@ -33,7 +33,6 @@
   <%= f.inputs "Detalhes técnicos" do %>
     <%= f.input :density %>
     <%= f.input :dimensions %>
-    <%= f.input :packing %>
     <%= f.input :average_price %>
     <%= f.input :code %>
   <% end %>
@@ -49,8 +48,6 @@
       <%= img.input :title %>
       <%= img.input :description %>
       <%= img.input :featured %>
-      <%= img.input :use_case %>
-      <%= img.input :render %>
       <%= img.input :image, as: :file %>
     <% end %>
   <% end %>
