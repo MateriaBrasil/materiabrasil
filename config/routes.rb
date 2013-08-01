@@ -15,6 +15,7 @@ MateriaBrasil::Application.routes.draw do
   get 'explore/',                       to: "materials#explore",  as: :explore
   get 'materials',                      to: "materials#index",    as: :materials
   get 'sobre/',                         to: "pages#about",        as: :about
-  get 'busca/',                         to: "materials#search",    as: :search
+  get 'busca/',                         to: "materials#search",   as: :search
   root                                  to: "materials#index"
+  get 'materials/new',                   to: 'materials#new',      as: :new_material
 end
