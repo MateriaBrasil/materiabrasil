@@ -25,7 +25,7 @@ class Manufacturer < ActiveRecord::Base
 
   validates_presence_of :name
 
-  belongs_to :users
+  belongs_to :user
   has_many :contacts
   has_many :materials
 
