@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   validates :email, :name, presence: true
 
   has_many :authorizations, dependent: :destroy
+  has_one :manufacturer
 
   def self.create_with_omniauth(auth)
     u = create! do |user|
