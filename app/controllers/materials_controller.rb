@@ -30,7 +30,7 @@ class MaterialsController < ApplicationController
     # return render partial: "blocks" if request.xhr?
   end
 
-  def explore 
+  def explore
     if params[:category]
       @category ||= Category.find(params[:category])
       @count = @category.materials.count
@@ -51,5 +51,10 @@ class MaterialsController < ApplicationController
       return render action: "explore" unless request.xhr?
       return render partial: "materials" if request.xhr?
     end
+  end
+
+  def new
+    @material = Material.new
+    return render action: 'new'
   end
 end
