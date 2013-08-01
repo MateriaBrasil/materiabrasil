@@ -76,5 +76,9 @@ class MaterialsController < ApplicationController
 
   def update_attachments
     update! { edit_manufacturer_path(current_user.manufacturer) }
+
+  def new
+    @material = Material.new
+    return render action: 'new'
   end
 end
