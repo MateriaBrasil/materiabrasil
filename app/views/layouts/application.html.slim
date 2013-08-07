@@ -17,9 +17,8 @@ html
   - page = controller.action_name.capitalize
 
   body(id=ctrl class=page data-controller-class=ctrl data-controller-name=ctrl data-action=page)
-    header#header
-      .container
-        = render partial: "partials/header"
+    = render partial: "partials/flash", locals: { flash: flash } unless flash.empty?
+    = render partial: "partials/header"
     / .container
     section.content[data-url=request.url]
       = yield

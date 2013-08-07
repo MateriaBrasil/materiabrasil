@@ -29,7 +29,6 @@ gem 'compass-rails'
 gem 'compass-960-plugin'
 gem 'slim'
 gem 'meta_search',    '>= 1.1.0.pre'
-gem "high_voltage"
 gem 'google-analytics-rails'
 
 

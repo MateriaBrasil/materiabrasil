@@ -1,6 +1,6 @@
 MateriaBrasil::Application.routes.draw do
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -9,13 +9,12 @@ MateriaBrasil::Application.routes.draw do
   #match "auth/:provider/callback",      to: "sessions#create"
   #resources :sessions, only: [:new, :destroy]
 
-  #get 'auth/facebook',                  as: :facebook_auth
   get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
   get 'explore/',                       to: "materials#explore",  as: :explore
   get 'materials',                      to: "materials#index",    as: :materials
   get 'sobre/',                         to: "pages#about",        as: :about
-  get 'busca/',                         to: "materials#search",   as: :search
-  root                                  to: "materials#index"
   get 'materials/new',                   to: 'materials#new',      as: :new_material
+  get 'submit/',                        to: "pages#submit",       as: :submit
+  root                                  to: "materials#index"
 end

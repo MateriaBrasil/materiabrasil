@@ -1,6 +1,6 @@
 section.email_login.row
   .white_box.large-centered.small-8.columns
-    h2= t "devise.passwords.new.forgot_password"
+    h2.primary_title= t "devise.passwords.new.forgot_password"
     = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = f.error_notification
 

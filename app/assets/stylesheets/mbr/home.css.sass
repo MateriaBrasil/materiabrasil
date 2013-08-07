@@ -5,13 +5,13 @@
   border: 2px groove
   border-left: none
   border-right: none
+  text-align: center
   small
     font-size: 0.7em
     color: $cyan
 
 .materials_preview
   padding-bottom: 5em
-  text-align: center
   .image_link
     display: inline-block
     width: 170px
@@ -28,7 +28,11 @@
     &:active
       +transform(scale(1))
 
-.download_portfolio
+.download_portfolio, .materials_wrapper
+  p
+    text-align: center
+
+.white_section
   background: white
   border-top: 1px solid lighten($mediumgray, 15%)
   border-bottom: 1px solid lighten($mediumgray, 15%)

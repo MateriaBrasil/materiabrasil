@@ -1,0 +1,30 @@
+.page.submit_page
+  section.white_section
+    .narrow_container
+      h2.primary_title= t 'pages.submit.title'
+      p.big_paragraph
+        strong A MateriaBrasil é o maior diretório aberto de fornecedores responsáveis do Brasil.
+        br/
+        | Todo mês, milhares de pessoas visitam nosso diretório em busca de produtos criados com foco na sustentabilidade e inovação. Se você é um fornecedor e quer se juntar a nós, seja bem-vindo! Você não paga nada para estar aqui. A única coisa que pedimos em troca são amostras do seu item para compôr nosso acervo físico, além de disponibilidade de sua equipe para atender dúvidas da comunidade.
+      p.big_paragraph
+        | Antes de pedirmos todos os dados de sua empresa e de seu produto, nos conte um pouco sobre seu trabalho. Se ele estiver de acordo com os critérios que prezamos, continuamos nossa conversa por email para dar sequência ao seu cadastro.
+  section.narrow_container
+    #wufoo-z7x4m1
+      |Fill out my 
+      = link_to "online form", "http://materiabrasil.wufoo.com/forms/z7x4m1"
+      |.
+    javascript:
+      var z7x4m1;(function(d, t) {
+        var s = d.createElement(t), options = {
+          'userName':'materiabrasil', 
+          'formHash':'z7x4m1', 
+          'autoResize':true,
+          'height':'855',
+          'async':true,
+          'header':'show'};
+        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+          var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+          try { z7x4m1 = new WufooForm();z7x4m1.initialize(options);z7x4m1.display(); } catch (e) {}};
+          var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+        })(document, 'script');

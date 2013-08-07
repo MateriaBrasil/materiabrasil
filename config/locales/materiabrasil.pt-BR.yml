@@ -3,11 +3,14 @@ pt-BR:
     about: "Sobre"
     contact: "Contato"
     explore: "Explore"
+    explore_html: "Explore </br><small>produtos</small>"
     login_signin: "Login / Sign in"
     login: "Login"
     logout: "Desconectar"
     my_account: "Minha conta"
     search_the_site: "Pesquise por materiais ou fornecedores..."
+    submit: "Cadastre"
+    submit_html: "Cadastre </br><small>seu produto</small>"
   breadcrumb:
     index:
       head_html: "<span class='number'>%{material_count}</span> materiais de <span class='number'>%{manufacturer_count}</span> fornecedores responsáveis"
@@ -17,7 +20,7 @@ pt-BR:
     want_more_informations_about_html: "<p>A <strong>MateriaBrasil</strong> está crescendo.</p><p>Estamos pensando e desenhando um modelo para disponibilizar as informações que temos a todos. </p><p>Hoje já dispomos de informações como características técnicas dos materiais e os contatos comerciais do fabricante, mas por enquanto preferimos não disponibilizar essas informações, até que a gente desenhe esse modelo.</p><p>Todo o trabalho de pesquisa e cadastramento visto nesta plataforma foi feito com recursos próprios, e os fabricantes e fornecedores não pagam nada para estar aqui. </p><p>Saiba mais sobre <a href='%{link}'>nosso trabalho</a> e acompanhe nosso crescimento.</p>"
     about:
       h2: "Nós somos um centro de informações em inovação e economia consciente. Reunimos um acervo de materiais e produtos responsáveis fabricados prioritariamente no Brasil."
-      p_html: "<p>Divulgamos informações preciosas para encantar quem está desenhando uma ideia, fomentando a construção de valores para uma economia mais sustentável. Queremos mostrar que existe a possibilidade de projetar algo pensando nos limites biofísicos do planeta e na contribuição social.</p><p>&nbsp;</p>
+      p_html: "<p>Divulgamos informações preciosas para encantar quem está desenhando uma ideia, fomentando a construção de valores para uma economia mais sustentável. Queremos mostrar que existe a possibilidade de projetar algo pensando nos limites biofísicos do planeta e na contribuição social.</p>
 <p>Somos uma ponte entre materiais menos impactantes e a pesquisa e desenvolvimento, com foco em inovação.  Nascemos de um sonho coletivo da Fibra e da Sistema Ambiental: mostrar que é possível acolher novas maneiras de produção, criando espaço para protagonizarmos a mudança que queremos no mundo.</p>"
     business:
       h4_1: "Fornecedores"
@@ -31,8 +34,8 @@ pt-BR:
       p_3: "Vemos na troca e disseminação do conhecimento uma forma de estimular e acelerar a inovação e a transformação da cultura de produção e consumo. Realizamos workshops, encontros, desafios e exposições (fixas ou temporárias). Se você é representante de um Centro de Ensino ou de uma Instituição, entre em contato conosco para saber como podemos colaborar."
     tools:
       h2: "Usamos o conceito de Análise de Ciclo de Vida para analisar materiais e produtos e dar opções responsáveis para que arquitetos, designers, cenógrafos, engenheiros e outros profissionais possam inovar em seus projetos."
-      p_html: "<p>A partir da pesquisa, nossa seleção começa no relacionamento com o fornecedor que nos ajuda no encontro das informações sobre o universo do material. De onde vem, para onde vai, como é esse trajeto, quais benefícios, como aplicar, entre outras informações que servem para que o profissional tenha uma escolha mais próxima dos seus ideais. </p><p>&nbsp;</p><p>Não somos uma certificadora ou uma empresa de auditoria. Todas as informações que apresentamos no site são baseadas no que o fornecedor nos informa.</p><p>Nosso ciclo: Pesquisa de materiais - contato com fornecedor - entendimento do material - arquitetura da informação - fotografia - inovação fornecedor- relacionamento consumidor</p>
-<p>&nbsp;</p><p>Nossos indicadores: Criamos indicadores para nortear o olhar do consumidor sobre os benefícios ou diferenciais do material ou produto.</p><p&nbsp;</p>"
+      p_html: "<p>A partir da pesquisa, nossa seleção começa no relacionamento com o fornecedor que nos ajuda no encontro das informações sobre o universo do material. De onde vem, para onde vai, como é esse trajeto, quais benefícios, como aplicar, entre outras informações que servem para que o profissional tenha uma escolha mais próxima dos seus ideais. </p><p>Não somos uma certificadora ou uma empresa de auditoria. Todas as informações que apresentamos no site são baseadas no que o fornecedor nos informa.</p><p>Nosso ciclo: Pesquisa de materiais - contato com fornecedor - entendimento do material - arquitetura da informação - fotografia - inovação fornecedor- relacionamento consumidor</p>
+<p>Nossos indicadores: Criamos indicadores para nortear o olhar do consumidor sobre os benefícios ou diferenciais do material ou produto.</p><p&nbsp;</p>"
 
       indicator:
         cycle: 
@@ -100,6 +103,8 @@ pt-BR:
             business_aceleration: "Aceleração de negócios"
             coworking: "Co-working"
             fablab: "Fab lab"
+    submit:
+      title: "Ajudamos pessoas a se conectarem com fornecedores de materiais, produtos e sistemas responsáveis."
 
     login:
       title: "Bem Vindo!"

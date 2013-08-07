@@ -1,22 +1,30 @@
-.row.header
-  .threecol
+header.header_menu
+  .row
     h1#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
-  nav
-    .fourcol.child
-      = link_to t("common.explore"), explore_path
+    nav.main_nav
+      = link_to explore_path, class: "main_action" do
+        /span.icon.globe
+        = t("common.explore_html")
+      = link_to submit_path, class: "main_action" do
+        /span.icon.upload-cloud
+        = t("common.submit_html")
       = link_to t("common.about"), about_path(anchor: '/i/sobre')
       = link_to t("common.contact"), about_path(anchor: '/i/contato')
-  .threecol.child
-    form#search action=search_path
-      input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']
-  .twocol.child.last
-    - if current_user
-      section.user
-        = t "common.my_account"
-        span.arrow
-          |&#x25BE
-        ol.options
-          /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
-          li.logout= link_to t('common.logout'), destroy_user_session_path, method: :delete, class: 'icon-exit'
-    - else
-      = link_to t('common.login_signin'), new_user_session_path()
+    aside.search_account
+      section.search_area
+        form.search_form action=search_path
+          input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']
+      section.account_nav
+        - if current_user
+          section.user_section
+            span.icon.user
+            = t "common.my_account"
+            span.arrow
+              |&#x25BE
+            ol.options
+              /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
+              li.logout= link_to destroy_user_session_path, method: :delete do
+                span.icon.forward
+                = t('common.logout')
+        - else
+          = link_to t('common.login_signin'), new_user_session_path()

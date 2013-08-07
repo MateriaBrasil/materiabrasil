@@ -1,70 +1,40 @@
 .narrow_container
-  h2= t('pages.login.title')
+  h2.primary_title= t('pages.login.title')
   h3= t('pages.login.subtitle_html')
 
 
 section.email_login.row
   .white_box.large-8.small-12.columns
     section.well.large-6.columns
-      h4
+      h4.login_title
         = t "common.login"
         small= t "pages.login.have_account"
-      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'login_with_email_form'}) do |f|
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-inputs
-          p.input
-            = f.label :email
-            = f.text_field :email
-          p.input
-            = f.label :password
-            = f.password_field :password
-          p.forgot_link
-            = link_to t('devise.links.forgot_password'), new_password_path(resource_name)
-          p.input.check
-            = f.check_box :remember_me
-            = f.label :remember_me
-
-          p.action
-            .bootstrap-twitter
-              = f.submit t('devise.links.sign_in'), class: "bt bt_secondary", id: 'user_submit'
+          = f.input :email, required: false, autofocus: true
+          = f.input :password, required: true
+          = link_to t('devise.links.forgot_password'), new_password_path(resource_name), class: "label_link"
+          = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        .form-actions
+          = f.submit t('devise.links.sign_in'), class: "bt bt_secondary", id: 'user_submit'
 
     section.large-6.columns.email_login
-      h4
+      h4.login_title
         = t "pages.login.new_at_materia"
         small= t "pages.login.register"
-      - resource.newsletter = true
-      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'login_with_email_form'}) do |f|
-        = devise_error_messages!
-
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .form-inputs
-          p.input
-            = f.label :name
-            = f.text_field :name
-          p.input
-            = f.label :email
-            = f.text_field :email
-          p.input
-            = f.label :password
-            = f.password_field :password, required: true
-          p.input
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, required: true
-          p.input.check
-            = f.check_box :newsletter
-            = f.label :newsletter, t('activerecord.attributes.user.newsletter')
+          = f.input :name, required: true
+          = f.input :email, required: true
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
+          = f.input :newsletter, as: :boolean, input_html: {checked: true}
+        .form-actions
+          = f.submit t('devise.links.sign_up'), class: "bt bt_secondary", id: 'user_submit'
 
-          p.action
-            .bootstrap-twitter
-              = f.submit t('devise.links.sign_up'), class: "bt bt_secondary", id: 'user_submit'
   .large-4.columns.facebook_login
-    h4
+    h4.login_title
       = t "pages.login.sign_with_fb"
       small= t "pages.login.quick_access"
     = link_to image_tag('site/bg_facebook.png'), omniauth_authorize_path(resource_name, :facebook), class: "fb_login"
     p= t "pages.login.important_html"
-
-
-.flash
-  - for key, msg in flash
-    div class="#{key} wrapper"
-      div class=key
-        == msg
