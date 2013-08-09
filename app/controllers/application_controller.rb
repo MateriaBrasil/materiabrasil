@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :set_locale
   after_filter :store_location
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def store_location
     # store last url as long as it isn't a /users path

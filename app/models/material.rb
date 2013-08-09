@@ -67,6 +67,3 @@ class Material < ActiveRecord::Base
        self.categories.delete(category) if self.categories.include? category
     end
 end
-
-
-
