@@ -1,0 +1,19 @@
+table.char_table
+  - val = @material.categories_string(nil, "Forma")
+  = print_row_if_present(val, "Forma")
+  - val = @material.categories_string(nil, "Resistência a")
+  = print_row_if_present(val, "Resistência a")
+  - val = @material.categories_string(nil, "Transparência")
+  = print_row_if_present(val, "Transparência")
+  - val = @material.density
+  = print_row_if_present(val, "Densidade/gramatura")
+  - val = @material.dimensions
+  = print_row_if_present(val, "Dimensões")
+  - val = @material.packing
+  = print_row_if_present(val, "Forma")
+  - val = @material.certifications
+  = print_row_if_present(val, "Normas e certificações")
+  - val = @material.awards
+  = print_row_if_present(val, "Prêmios")
+  - @material.attachments.each_with_index do | attc, i |
+    = print_row_if_present(link_to(attc.name, attc.file.url), "Anexo #{i+1}")

@@ -1,4 +1,4 @@
-.product_header.white_section
+.material_header.white_section
   h1= @material.name
   small.faded
     strong ID: 
@@ -11,15 +11,20 @@ section.material.row
       h3
         | Direcionadores de sustentabilidade
       = load_indicators(@material)
+
+    .characteristics.white_box
+      h3 Características
+      = render partial: "materials/characteristics", locals: { material: @material }
+
   .large-4.small-12.columns
-    .resume
+    .resume.white_box
       p
         span.faded= t("pages.show.class")
-        = @material.categories_string(2)
+        = @material.categories_string(nil, "Classes")
       p= @material.resume
   .large-4.small-12.columns
 
-    .share_section
+    .share_section.white_box
       / Facebook Button
       .fb-like data-href="#{request.original_url}" data-width="250" data-layout="box_count" data-show-faces="false" data-send="false"
 
@@ -33,7 +38,7 @@ section.material.row
       <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: 'pt-BR'}</script>
 
     - if current_user
-      .manufacturer
+      .manufacturer.white_box
         h3 Informações comerciais
         table
           tr 
@@ -45,7 +50,7 @@ section.material.row
         //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
           = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
     - else
-      .about
+      .about.white_box
         section.data
           h3 Você quer o contato do fornecedor deste material?
           = render partial: 'partials/login'
