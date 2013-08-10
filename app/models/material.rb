@@ -52,8 +52,12 @@ class Material < ActiveRecord::Base
     "#{self.code}-#{self.id.to_s.rjust(5,'0')}"
   end
 
-  def categories_string(pid)
-    categories.map{|c| c.name if c.parent_id == pid}.reject{|c| c.nil?}.join(', ')
+  def categories_string(pid, name = nil)
+    if name
+      categories.map{|c| c.name if c.parent && c.parent.name == name}.reject{|c| c.nil?}.join(', ')
+    elsif pid
+      categories.map{|c| c.name if c.parent_id == pid}.reject{|c| c.nil?}.join(', ')
+    end
   end
 
   private 
