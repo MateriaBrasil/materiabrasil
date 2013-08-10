@@ -1,33 +1,37 @@
+.product_header.white_section
+  h1= @material.name
+  small.faded
+    strong ID: 
+    = @material.sku
 section.material.row
-  .twelvecol.name
-    small= @material.sku
-    h1= @material.name
-  .eightcol
+  .large-8.small-12.columns
     .image
       = image_tag @material.images.first.image.main.url, alt: @material.name
-    .about
-      section.data
-        - unless current_user
-          h3 Você quer saber mais informações deste material, certo?
-          = render partial: 'partials/login'
-        - else
-          h3 As informações comerciais estão ali do lado ;)
-          p &nbsp;
-          p
-            | Em breve vamos liberar outros dados como <strong>dimensão</strong>, <strong>peso</strong>, entre outros.
-          p
-            | Curte aí pra se manter atualizado!
-          p &nbsp;
-          .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="292" data-show-faces="false" data-border-color="#fff" data-stream="false" data-header="false"]
-  .fourcol.last
-    .resume
-      h3 Descrição
-      p= @material.resume
-  .fourcol.last
     .indicators
       h3
         | Direcionadores de sustentabilidade
       = load_indicators(@material)
+  .large-4.small-12.columns
+    .resume
+      p
+        span.faded= t("pages.show.class")
+        = @material.categories_string(2)
+      p= @material.resume
+  .large-4.small-12.columns
+
+    .share_section
+      / Facebook Button
+      .fb-like data-href="#{request.original_url}" data-width="250" data-layout="box_count" data-show-faces="false" data-send="false"
+
+      / Twitter Button
+      a.twitter-share-button href="https://twitter.com/share" data-url="#{request.original_url}" data-via="MateriaBrasil" data-lang="pt-BR" data-related="anywhereTheJavascriptAPI" data-count="vertical" Tweet
+      javascript:
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+      / Google Button
+      .g-plusone data-size="tall" data-href="#{request.original_url}"
+      <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: 'pt-BR'}</script>
+
     - if current_user
       .manufacturer
         h3 Informações comerciais
@@ -40,3 +44,15 @@ section.material.row
             td= link_to @material.manufacturer.site, @material.manufacturer.site, target: '_blank'
         //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
           = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
+    - else
+      .about
+        section.data
+          h3 Você quer o contato do fornecedor deste material?
+          = render partial: 'partials/login'
+  .large-12.columns
+    .warning
+      p
+        | As informações exibidas nessa página são fruto de um questionário respondido pelo fabricante.
+        br/
+        | A MateriaBrasil confia nas respostas que nos são fornecidas. Caso você descubra alguma incoerência, colabore conosco, avisando pelo email 
+        = link_to "cadastro@materiabrasil.net", "mailto:cadastro@materiabrasil.net"

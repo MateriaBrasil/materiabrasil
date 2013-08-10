@@ -105,6 +105,8 @@ pt-BR:
             fablab: "Fab lab"
     submit:
       title: "Ajudamos pessoas a se conectarem com fornecedores de materiais, produtos e sistemas responsáveis."
+    show:
+      class: "Classe: "
 
     login:
       title: "Bem Vindo!"

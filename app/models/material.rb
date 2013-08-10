@@ -54,16 +54,20 @@ class Material < ActiveRecord::Base
     "#{self.code}-#{self.id.to_s.rjust(5,'0')}"
   end
 
-  private
-    def check_tree
-      tree = []
-      self.categories.each do |cat|
-        tree << cat.parents
-      end
-      self.categories << tree
-    end
+private
+  def categories_string(pid)
+    categories.map{|c| c.name if c.parent_id == pid}.reject{|c| c.nil?}.join(', ')
+  end
 
-    def validates_category(category)
-       self.categories.delete(category) if self.categories.include? category
+  def check_tree
+    tree = []
+    self.categories.each do |cat|
+      tree << cat.parents
     end
+    self.categories << tree
+  end
+
+  def validates_category(category)
+     self.categories.delete(category) if self.categories.include? category
+  end
 end
