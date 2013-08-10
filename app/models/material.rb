@@ -52,6 +52,10 @@ class Material < ActiveRecord::Base
     "#{self.code}-#{self.id.to_s.rjust(5,'0')}"
   end
 
+  def categories_string(pid)
+    categories.map{|c| c.name if c.parent_id == pid}.reject{|c| c.nil?}.join(', ')
+  end
+
   private 
     def check_tree
       tree = []
