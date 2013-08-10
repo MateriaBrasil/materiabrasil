@@ -62,10 +62,10 @@ module ApplicationHelper
     kinds = {
       "Ciclos"        => "cycle",
       "Segurança"     => "security",
-      "Humano-social" => "human",
+      "Humano"        => "human",
       "Energia"       => "energy",
       "Água"          => "water",
-      "Gestão empresarial"        => "management"
+      "Gestão"        => "management"
     }
     categories  ||=  obj.categories
 
@@ -73,7 +73,7 @@ module ApplicationHelper
 
       flag     =  categories.map(&:name).include?(k.first) ? true : false
       content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do 
-                    image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } )
+                    image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + content_tag(:span, k.first)
                   end
 
       if flag
