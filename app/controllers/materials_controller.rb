@@ -78,7 +78,8 @@ class MaterialsController < ApplicationController
     update! { edit_manufacturer_path(current_user.manufacturer) }
 
   def new
-    @material = Material.new
+    manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name)
+    @material = Material.new manufacturer: manufacturer
     return render action: 'new'
   end
 end
