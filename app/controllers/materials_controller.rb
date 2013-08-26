@@ -54,7 +54,8 @@ class MaterialsController < ApplicationController
   end
 
   def new
-    @material = Material.new
+    manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name)
+    @material = Material.new manufacturer: manufacturer
     return render action: 'new'
   end
 end
