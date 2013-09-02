@@ -9,11 +9,18 @@ MateriaBrasil::Application.routes.draw do
   #match "auth/:provider/callback",      to: "sessions#create"
   #resources :sessions, only: [:new, :destroy]
 
-  get 'material/:id',                   to: "materials#show",     as: :material
+  resources :materials, only: [:index, :show, :new, :update, :create] do
+    resources :categories, only: [:new]
+  end
+
+
+  #get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
   get 'explore/',                       to: "materials#explore",  as: :explore
-  get 'materials',                      to: "materials#index",    as: :materials
+  #get 'materials',                      to: "materials#index",    as: :materials
   get 'sobre/',                         to: "pages#about",        as: :about
+  #get 'materials/new',                  to: 'materials#new',      as: :new_material
+  #get 'categories/new',                 to: 'categories#new',     as: :new_category
   get 'submit/',                        to: "pages#submit",       as: :submit
   get 'busca/',                         to: "materials#search",   as: :search
   root                                  to: "materials#index"
