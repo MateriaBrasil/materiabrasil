@@ -28,6 +28,7 @@ MateriaBrasil::Application.routes.draw do
   #get 'materials/new',                  to: 'materials#new',      as: :new_material
   #get 'categories/new',                 to: 'categories#new',     as: :new_category
   get 'submit/',                        to: "pages#submit",       as: :submit
+  get 'portfolio/',                     to: "pages#portfolio",    as: :portfolio
   get 'busca/',                         to: "materials#search",   as: :search
   root                                  to: "materials#index"
   get 'materials/new',                   to: 'materials#new',      as: :new_material

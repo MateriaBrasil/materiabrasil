@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def about; end
   def submit; end
+  def portfolio
+    # 
+  end
 end
