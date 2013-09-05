@@ -6,9 +6,6 @@ var App = window.App = {
       var $flash = $('.flash');
       if( !$('a', $flash).length) setTimeout( function(){ $flash.slideUp() }, 5500);
       $(window).on('click', function(){ $flash.slideUp()});
-      $portfolio_link = $('#portfolio_link', '.main_nav');
-      href = $portfolio_link.attr('href').replace(/#.*/g, '');
-      $portfolio_link.attr('href', href);
     },
 
     initFacebook: function(){

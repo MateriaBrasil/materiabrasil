@@ -1,6 +1,19 @@
 var Router = Backbone.Router.extend({
   routes : {
-    'i/:param' : 'showPageBlock'
+    'i/:param' : 'showPageBlock',
+    ':name/:item' : 'showCurrentPortfolio'
+  },
+
+  initialize: function(options){
+    if(options && options.Portfolio){
+      this.Portfolio = options.Portfolio;
+    }
+  },
+
+  showCurrentPortfolio: function(name, item){
+    if(this.Portfolio){
+      this.Portfolio.activateFromURL(name, item);
+    }
   },
 
   showPageBlock: function(param){
@@ -25,34 +38,45 @@ App.Pages = {
 
     initialize: function(){
       _.bindAll(this);
-      new Router();
+      this.router = new Router({Portfolio: this});
       Backbone.history.start();
       this.$portfolio_section = $('.portfolio_section');
       this.$thumb_links = $('.thumb_links', this.$portfolio_section);
       this.initializeAllFirstItems();
     },
 
+    activateFromURL: function(name, item){
+      $('a', '.sub_menu').removeClass('active');
+      $('a[href="#' + name + '"]', '.sub_menu').addClass('active');
+      $('.thumb_image', '.thumb_links').removeClass('active');
+      $('.thumb_image[data-item="' + item + '"]', '.thumb_links').addClass('active');
+      this.showSelectedSection();
+      this.showSelectedItem();
+    },
+
     activateSection: function(e){
       e.preventDefault();
       $target = $(e.target);
-      $('a', $target.closest('.sub_menu')).removeClass('active');
-      $target.addClass('active');
-      this.showSelectedSection();
+      name = $target.attr('href').replace('#','');
+      item = $('.thumb_image:first', '#'+name).data('item');
+      this.router.navigate(name + "/" + item, true);
     },
 
     activateItem: function(e){
       $target = $(e.target);
-      id = $target.data('item');
+      item = $target.data('item');
       $('.thumb_image', $target.closest('.thumb_links')).removeClass('active');
       $target.addClass('active');
-      this.showSelectedItem();
+      name = $target.closest('.portfolio_section').attr('id');
+      this.router.navigate(name + "/" + item, true);
     },
 
     initializeAllFirstItems: function(){
-      $('.thumb_image:first', this.$thumb_links).addClass('active')
-      $('a:first', '.sub_menu').addClass('active');
-      this.showSelectedSection();
-      this.showSelectedItem();
+      if(Backbone.history.fragment.indexOf('/') == -1){
+        name = $('.portfolio_section:first').attr('id');
+        item = $('.thumb_image:first', this.$thumb_links).data('item');
+        this.router.navigate(name + "/" + item, true);
+      }
     },
 
     showSelectedSection: function(){
