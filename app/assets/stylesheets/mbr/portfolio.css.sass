@@ -9,3 +9,34 @@
     display: block
     & > *
       +opacity(1)
+
+  .thumb_links
+    text-align: center
+    padding: 1.5em .3em
+    .thumb_image
+      cursor: pointer
+      margin: .5em
+      width: 80px
+      box-shadow: 0 0 0 1px $fadedgray
+      +opacity(.7)
+      +transition(.5s)
+      &:hover, &.active
+        box-shadow: 0 0 0 2px $cyan
+        +opacity(1)
+
+.portfolio_item_art
+  padding: 2em 0
+  border-bottom: 1px solid $creamgray
+  margin-bottom: 2em
+  .item_title
+    small
+      display: block
+      font-size: .35em
+      font-weight: 700
+      line-height: 1.4em
+      padding: 2px
+
+  img
+    margin-bottom: .5em
+  .item_content
+    padding-right: 8%

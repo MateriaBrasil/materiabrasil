@@ -120,6 +120,233 @@ pt-BR:
       sign_with_fb: "Entre utilizando o facebook"
       wanna_get_newsletter: "Quero receber por email novidades da MateriaBrasil, como eventos e produtos"
 
+    portfolio:
+      design:
+        domo:
+          title: "Domo Asta"
+          subtitle_html: "Design: MateriaBrasil <br/> Produção: MateriaBrasil + PUMAR"
+          content_html: 
+            "<p>O Domo Asta foi produzido originalmente para a Rede Asta - a primeira rede de venda direta de produtos de economia solidária do Brasil. O produto, inspirado no domo geodésico, é um stand versátil e desmontável.
+            Sua estrutura é produzida com tubos de alumínio – um material com alto índice de reciclabilidade - e guarda-sóis adaptados produzidos pela Pumar (maior empresa deste segmento da América Latina).</p>"
+          images_length: 3
+        top:
+          title: "Prêmio TOP100 Artesanato"
+          subtitle_html: "Cliente: SEBRAE <br/> Co-design: Plano 3D <br/> Parceiro: Arqmidia"
+          content_html: 
+            "<p>Desenvolvemos toda a ambientação do Prêmio, realizado em 2012 na Marina da Glória do Rio de Janeiro.
+            Nossa entrega contemplou detalhamento dos mobiliários, sinalização, seleção de materiais e fornecedores e acompanhamento da produção.
+            Um dos destaques da mostra foram os Domo Astas, criados pela MateriaBrasil a partir de guarda-sóis adaptados.</p>"
+          images_length: 2
+        cw:
+          title: "Celebrate Wood"
+          subtitle_html: "Parceiros: Instituto e + Meu Móvel de Madeira"
+          content_html: 
+            "<p>Assinamos o design de uma linha de mobiliário fabricado com madeira teca certificada e tecidos de origem sustentável.
+            É inspirado em um estilo de vida despojado e seus produtos convidam o usuário a se acomodar mais próximo ao chão, a se reunir com amigos de maneira descontraída e a pensar e usufruir de suas versatilidades de usos e montagens.</p>"
+          images_length: 3
+        sebrae:
+          title: "Lounge Sebrae Fashion Rio"
+          subtitle_html: "Cliente: SEBRAE-RJ <br/> Design: MateriaBrasil + HABTO <br/> produção: DBX Produções"
+          content_html: 
+            "<p>Inspirado nas curvas do Rio, o Lounge VIP Sebrae-RJ no Fashion Rio 2008, um dos maiores eventos de moda do Brasil, procurou relacionar o design ao desenvolvimento de materiais sustentáveis.</p>
+            <p>Os convidades conferiram uma exposição de produtos com usos inovadores de materiais, além de uma mostra da MateriaBrasil.</p>"
+          images_length: 2
+        trofeu:
+          title: "Troféu Mega Rampa"
+          subtitle_html: "Cliente: Brasil 1 + Oi Mega Rampa"
+          content_html:
+            "<p>A MateriaBrasil conceituou e produziu uma série de troféus da edição de 2009 do Oi Mega Rampa, um dos eventos internacionais de esportes de ação mais aclamados.</p>
+            <p>Os materiais utilizados foram o Laminado de Bambu Orgânico e o Laminado de Pupunha, ambos criados pela equipe de pesquisa e desenvolvimento da MateriaBrasil.</p>"
+          images_length: 1
+        bike:
+          title: "Bicicleta Chico"
+          subtitle_html: ""
+          content_html:
+            "<p>Produto-conceito desenvolvido com base em conceitos de consumo consciente e desenvolvimento sustentável.
+            Fabricada em laminado de bambu orgânico, ela acompanha o desenvolvimento natural da criança, contribuindo para a redução no uso de materiais e estimulando a consciência ambiental nos pequenos.</p>
+            <p>Projeto premiado com troféu de prata na categoria Ecodesign do prêmio IDEA Brasil, em 2009.</p>"
+          images_length: 1
+      lab:
+        tvxta:
+          title: "Souvenirs Terravixta"
+          subtitle_html: 
+            "Design: Terravixta<br/>
+            Parceiros na produção: MateriaBrasil + Artes e Ofícios + Zebu Mídias Sustentáveis"
+          content_html:
+            "<p>Uma linha de souvenirs ecologicamente responsável, desenvolvidos pela marca carioca Terravixta com compensados de madeiras tropicais brasileiras de origem documentada, coladas com resina biodegradável de base vegetal (Mamona).
+            Cortadas a laser com aproveitamento máximo da chapa, as peças vem planificadas dentro da embalagem, para facilitar o transporte dentro das bagagens dos viajantes.
+            Destacáveis, o souvenir se torna um \"brinquedo\" de montar, gerando uma experiência interativa, onde o jogo trata de desvendar as curvas das paisagens cariocas, que encantam a todos no mundo todo a mais de quinhentos anos.</p>
+            <p><a href=\"http://www.terravixta.com/\" target=\"_blank\">Compre aqui</a></p>"
+          images_length: 3
+        zrzs:
+          title: "Óculos Zerezes"
+          subtitle_html:
+            "Design: Zerezes<br/>
+            Desenvolvimento e produção: Zerezes + MateriaBrasil"
+          content_html:
+            "<p>Aliando responsabilidade socioambiental e alta tecnologia a um processo manual criterioso, as peças são tratadas uma a uma a fim de garantir qualidade, durabilidade e um padrão estético singular.</p>
+            <p>Desenvolvidos pelo coletivo de design Zerezes, os óculos são feitos em parceria com a MateriaBrasil a partir da prensagem de nove lâminas de diferentes tipos de madeira, recebendo uma fina camada adesiva de base vegetal para impermeabilizá-los.</p>
+            <p>Ao se ater aos detalhes e à excelência no acabamento, a Zerezes mão da quantidade em prol da qualidade. Assim, eles são vistos como um coletivo situado entre o artesanato e o design, e o termo Artesania parece definir bem isso – “por ele entende-se um alto grau de atenção ao detalhe e de cuidado na execução, oriundos de um senso peculiar de orgulho no trabalho, do prazer em fazer bem feito”</p>
+            <p><a href=\"http://www.zerezes.com.br/\" target=\"_blank\">Compre aqui</a></p>"
+          images_length: 2
+        case:
+          title: "Boocase"
+          subtitle_html:
+            "Design: Casco<br/>
+            Desenvolvimento e produção: Casco + MateriaBrasil"
+          content_html:
+            "<p>O Boocase é um case para Iphone totalmente biodegradável, desenvolvido pela Casco, um ateliê de design sediado em São Paulo. Composto por materiais orgânicos, como lâminas de bambu, cola biodegradável à base de óleos e resinas vegetais, tudo no boocase é pensado para minimizar seus impactos ao longo da cadeia produtiva.</p>
+            <p>O processo de produção do Boocase é parte mecanizado, e parte feito à mão. São pessoas que colhem o bambu, que montam e colam as lâminas, que lixam as superfícies. Um processo humanizado, com a influência natural do que é artesanal e poeticamente humano, mas com o controle e a constância de qualidade garantidas pela parte do processo que é industrial.</p>
+            <p>Produto 100% plantado, colhido e fabricado no Brasil.</p>
+            <p><a href=\"http://cascocasco.com/\" target=\"_blank\">Compre aqui</a></p>"
+          images_length: 3
+        mineo:
+          title: "Mineo"
+          subtitle_html: "Plataforma de co-criação de produtos sustentáveis"
+          content_html:
+            "<p>A MateriaBrasil é co-fundadora do Mineo, uma plataforma voltada a co-criação de produtos. Ideias inseridas no Mineo passam por desenvolvimento livre e colaborativo dos usuários, prototipagem de produto final, e comercialização do produto resultante do processo.</p>
+            <p>Um dos principais objetivos do Mineo é apoiar o desenvolvimento de projetos que não tem a chance de entrar no mainstream do mercado brasileiro, e ainda por cima feitos a partir de matérias-primas nacionais responsáveis. Assim como articular e estimular uma rede de fornecedores desses materiais, e abrir o processo de produção são outras metas do projeto.</p>
+            <a href=\"http://mineo.co/\" target=\"_blank\">Saiba mais</a>"
+          images_length: 1
+        simp:
+          title: "Chamada Criativa #RJ"
+          subtitle_html: ""
+          content_html:
+            "<p>A MateriaBrasil, junto com o Catarse, ajudou o coletivo Simplicidades na concepção, estratégia de captação e divulgação da Chamada Criativa de Ideias Urbanas para o Rio de Janeiro.</p>
+            <p>O resultado final da chamada foi uma exposição realizada no Studio-X, na Praça Tiradentes (Rio de Janeiro), com 20 ideias para a cidade, escolhidas por meio de um júri multidisciplinar. A iniciativa só foi possível graças a captação de recursos por meio de financiamento coletivo.</p>
+            <p>Saiba mais <a href=\"http://vejario.abril.com.br/especial/exposicao-mostra-solucoes-criativas-para-o-rio-740133.shtml\" target=\"_blank\">aqui</a> e <a href=\"http://catarse.me/pt/simplicidades#about\" target=\"_blank\">aqui</a></p>"
+          images_length: 2
+        horta:
+          title: "Horta na caixa"
+          subtitle_html: "Parceiro: Agência digital Garagem"
+          content_html:
+            "A MateriaBrasil e a Agencia digital Garagem criaram o projeto \"Horta na Caixa\", que monta hortas urbanas construídas em pequenas caixas e módulos. As pequenas hortas urbanas devem parar em restaurantes, topos de prédios, escolas, ruas... A ideia é aproximar a produção destas hortas do consumidor, cada vez mais difícil nas cidades. A Garagem e a Materia Brasil confeccionam as caixas e plantam as mudas. O Obá Restaurante, nos Jardins. em São Paulo, recebeu as caixas piloto do projeto."
+          images_length: 2
+      sustentabilidade:
+        obra:
+          title: "Programa Obra Sustentável"
+          subtitle_html: "Cliente: Banco Real / Santander"
+          content_html:
+            "<p>Em 2006 o então Banco Real iniciou com o auxílio da MateriaBrasil a elaboração de um Guia de Boas Práticas na Construção Civil, dando início a um projeto piloto do Programa Obra Sustentável em São Paulo, a fim de avaliar e incentivar a melhoria dos aspectos sociais e ambientais nos empreendimentos imobiliários financiados pelo banco. Em 2009 o Santander, após aquisição do Banco Real, foi responsável pela revisão do programa e pela ampliação do mesmo a todo o país.</p>
+            <p>A Avaliação realizada pela MateriaBrasil gera um relatório de caráter orientativo e consultivo que permite que a empresa compare seu desempenho socioambiental com a média das demais empresas avaliadas e também fornece diretrizes para melhoria de suas ações.</p>
+            <p>Os empreendimentos que possuírem média final de relatório maior ou igual a 70 (com um mínimo de 50 em projeto) ganham o reconhecimento do Programa por meio de uma placa que indica que o empreendimento faz parte do Obra Sustentável – Santander.</p>"
+          images_length: 2
+        mcl:
+          title: "Embraer Material Concept Lab"
+          subtitle_html: "Cliente: Embraer"
+          content_html:
+            "<p>Desenvolvimento de um projeto-piloto com a Embraer, focado no mapeamento de matérias-primas nacionais passíveis de serem utilizadas no interior de aeronaves executivas.</p>
+            <p>O projeto contempla a construção de uma materioteca na Embraer, bem como testes, análises e melhorias de processos em materiais nacionais de origem sustentável.</p>"
+          images_length: 1
+        sist:
+          title: "Sistema de Gestão Ambiental"
+          subtitle_html: "Cliente: Condat"
+          content_html:
+            "<p>A MateriaBrasil auxilia a Condat desde 2006 na área de adequação legal, licenciamento, sistema de gestão ambiental e gerenciamento de resíduos.</p>
+            <p>Na área de licenciamento e adequação legal, representamos e trazemos soluções à Condat, tanto na área ambiental, quanto transporte e armazenamento de produtos químicos controlados, bem como registros e acompanhamento na ANP.</p>
+            <p>O Sistema de Gestão Ambiental (SGA) implantado permite uma maior credibilidade da empresa junto a seus clientes, um posicionamento ambiental proativo, além da segurança quanto ao cumprimento da legislação ambiental cabível. Todo o controle de licenças, ações e projetos relacionados ao sistema de gestão ambiental é realizado por nossa ferramenta online (SGA-LEG).</p>
+            <p>Atrelado ao SGA, o sistema de gerenciamento de resíduos permite que soluções ambientalmente desejáveis e legalmente corretas sejam aplicadas ao resíduo produtivo, sem que a Condat necessite despender todo o tempo necessário a elaboração de tais ações.</p>"
+          images_length: 1
+        marins:
+          title: "Análise de Ciclo de Vida de Produto"
+          subtitle_html:
+            "Cliente: Marins<br/>
+            Parceiro: Grupo de Prevenção a Poluição da Poli/USP"
+          content_html:
+            "<p>No desejo de inovar na sustentabilidade de seus produtos, a Marins encontrou, na metodologia do Ciclo de Vida de Produtos (\"Life Cycle Thinking\"), um meio de alcançar seu objetivo.</p>
+            <p>Através de uma parceira da MateriaBrasil com o Grupo de Prevenção da Poluição – GP2 - da Escola Politécnica da USP, realizou-se uma Avaliação do Desempenho dos dois processos de impressão utilizados pela empresa: offset e digital, avaliando os resultados para cada uma de suas linhas de produtos: offset simples e acoplado, digital Agfa e Roland.</p>
+            <p>Com esta avaliação dos processos produtivos, procurou-se definir os impactos ambientais causados por cada etapa de produção dos Lamàs, com ênfase nas emissões de Carbono, através do método IPCC 2007 e auxílio do Software Simapro.</p>"
+          images_length: 1
+        evento:
+          title: "Sustentabilidade em eventos"
+          subtitle_html: "Cliente: VIVO Open Air e SPFW"
+          content_html:
+            "Realizamos um diagnóstico do impacto ambiental do evento e propomos ações para sua minimização.<br/>
+            Estas ações englobam o evento como um todo, Desde os seus fornecedores, sinalização e sensibilização do público do evento, energia e água utilizada,  além de pensar em materiais de baixo impacto para a cenografia."
+          images_length: 1
+        cad:
+          title: "Evento de decoração CAD"
+          subtitle_html: "Cliente: Casa Arte & Design"
+          content_html:
+            "<p>A MateriaBrasil trabalhou com a organização do CAD 2008 em uma mansão de 2.500 metros quadrados de terreno no bairro de Alto de Pinheiros. A curadoria envolveu a conceituação da mostra, montagem e desmontagem, gerenciamento de resíduos, educação para os visitantes, dentre outros serviços. </p>
+            <p>A idéia foi proporcionar uma forma de viver baseada no conforto, na criatividade, na beleza e na tecnologia, com o máximo de arte e o mínimo de dívida com o futuro. A Casa Arte & Design passou a ser um meio de comunicação, uma ponte entre a forma atual de viver e uma mais sustentável. Sob o lema “Rumo à Sustentabilidade - Menos CO2”, foram apresentadas as últimas tendências de decoração e as possibilidades de ligação com um melhor e mais eficiente uso de energia, água e materiais.</p>
+            <p>Para a realização do evento, foi criado um hotsite específico para disponibilizar aos arquitetos participantes alguns dos materiais presentes em nosso banco de dados, com informações de produtos, tecnologias e serviços mais sustentáveis baseado nos conceitos de ACV – Análise do Ciclo de Vida, e acompanhamento da idoneidade dos fornecedores que fazem parte do catálogo.</p>
+            <p>Todos os arquitetos expositores receberam auxílio para seus projetos compartilharem dos princípios do CAD 2008. Foram utilizados: pisos drenantes, carpetes com fibras naturais ou de vidro, cerâmicas recicladas, pastilhados de vidro reciclado, iluminação com LEDs e lâmpadas fluorescentes, águas reutilizadas do chuveiro, duchas com jato economizador, materiais com fibras de bambu, materiais reciclados com trabalho social envolvido, móveis e objetos de designers que priorizam a reutilização de materiais, dentre outros.</p>"
+          images_length: 1
+        120:
+          title: "Consultoria de materiais"
+          subtitle_html: "Cliente: Projeto 120º"
+          content_html:
+            "<p>O Projeto 120º se trata de um Centro de Educação e Bem Estar, localizado na cidade de São Paulo, que promoverá educação ambiental e contará com aulas de yoga, pilates, sala de reuniões, espaço para computadores, etc.
+            Para construção de um projeto diferenciado, a Arq. Débora Laub buscou a consultoria da MateriaBrasil  para indicação de materiais com diferenciais sustentáveis.</p>
+            <p>Em busca de alternativas aos materiais convencionais, foram realizadas reuniões com a equipe de arquitetura para um brainstorming de novas possibilidades. Com estas idéias, consultamos nosso banco de dados para levantamento de materiais e tecnologias de baixo impacto ambiental.</p>
+            <p>Todos os materiais foram apresentados à arquiteta por meio de amostras e fichas técnicas descrevendo os diferenciais deste produto.</p>"
+          images_length: 3
+        mochila:
+          title: "Análise de Ciclo de Vida - Mochila"
+          subtitle_html:
+            "Cliente: Jomo<br/>
+            Parceiros: Questto | Nó  + Grupo de Prevenção a Poluição da Poli/USP"
+          content_html:
+            "<p>Criação de mochila para notebook, focando em design mais sustentável, objetivando a mudança de valores na Jomo Termomolding por meio de aplicação de ferramentas de gestão empresarial.</p>
+            <p>Uso da metodologia de Análise do Ciclo de Vida para escolha dos materiais componentes da mochila, por meio de análises comparativas no software SimaPro.</p>"
+          images_length: 2
+        eva:
+          title: "Estudo de Viabilidade Ambiental em propriedade rural"
+          subtitle_html: "Cliente: Fazenda Marafunda"
+          content_html:
+            "<p>Projeto realizado na Fazenda Marafunda visando verificar os possíveis passivos e ativos ambientais existentes, bem como as potencialidades e restrições de uso e ocupação do terreno, baseando- se na legislação ambiental vigente e nas melhores práticas socioambientais aplicáveis.</p>
+            <p>O resultado do trabalho vai além de um diagnóstico da área avaliada, possibilitando a definição de  diretrizes de gestão sustentável para a fazenda, e análise de risco das atividades com potencial de implantação.</p>"
+          images_length: 1
+      saber:
+        mb:
+          title: "Acervo online de materiais, produtos e sistemas"
+          subtitle_html: ""
+          content_html:
+            "<p>Criamos e mantemos no ar um acervo gratuito e de livre acesso a estudantes, profissionais e pessoas interessadas em conhecer alternativas e soluções de materiais, produtos e sistemas responsáveis para seus projetos.</p> 
+            <p>Para acessar o acervo, <a href=\"http://www.materiabrasil.com/explore\" target=\"_blank\">clique aqui</a>.</p>"
+          images_length: 2
+        expo:
+          title: "Expo MateriaBrasil na Rio+20"
+          subtitle_html: "Patrocínio: Prefeitura do Rio de Janeiro"
+          content_html: "<p>Em 2012 a MateriaBrasil realizou uma exposição durante 40 dias no Centro Carioca de Design (Praça Tiradentes, 48), financiada por meio do Edital Pró-Design da Prefeitura da Cidade do Rio de Janeiro - PCRJ, através da Subsecretaria de Patrimônio Cultural, Intervenção Urbana, Arquitetura e Design.</p>"
+          images_length: 3
+        siemens:
+          title: "Respostas Sustentáveis"
+          subtitle_html: "Cliente: Siemens<br/> Parceiro: Ogilvy"
+          content_html:
+            "<p>O Respostas Sustentáveis é um blog colaborativo em que presente e futuro são discutidos. O que já está sendo feito? Como está sendo feito? De que maneira o mundo pode ser melhorado? Nele você participa e compartilha esse movimento.</p>
+            <p>A MateriaBrasil é responsável pela editoria e gestão de conteúdo do blog, facebook e twitter da Siemens Brasil. Aliamos nosso conhecimento em processos inovadores à experiência global da Siemens em sustentabilidade à força de comunicação da Ogilvy para transmitir a um público de mais de 100.000 pessoas informação de qualidade relacionada a cases e ações de impactos positivos no Brasil e no mundo.</p>
+            <p><a href=\"http://www.respostassustentaveis.com.br\" target=\"_blank\">Acesse aqui o Blog Respostas Sustentáveis</a></p>"
+          images_length: 1
+        gnt:
+          title: "Um Mundo pra Chamar de Seu"
+          subtitle_html: "Cliente: GNT"
+          content_html:
+            "<p>A MateriaBrasil foi responsável pela curadoria de conteúdo para o programa \"Um mundo pra chamar de Seu\", da GNT, apresentado em 2008 e reprisado no ano seguinte.</p>
+            <p>Com 13 episódios, o programa abordou assuntos como a reciclagem, redução do uso da água, dicas de consumo consciente, qualidade do ar, economia de energia, dicas para obras mais sustentáveis, os benefícios de uma escola sustentável, procedência dos alimentos consumidos, confraternizações sustentáveis, sustentabilidade para animais, sustentabilidade da pequena indústria, alternativas de transportes, preocupação com as gerações futuras, moda ecológica, trabalhos voluntários, dentre outros.</p>
+            <p>Auxiliamos a produtora Mutante Filmes na escolha dos personagens, no roteiro, na pesquisa de locação, na edição, na elaboração de GCs e conteúdo para o blog do site da GNT.</p>"
+          images_length: 1
+        ws:
+          title: "Workshop Materializa"
+          subtitle_html: "Realização: Mineo + MateriaBrasil"
+          content_html:
+            "<p>Acreditamos que a troca de experiências, a disseminação de conhecimento e a formação de agentes de transformação são ferramentas eficazes na transição da sociedade rumo a um modo de vida mais sustentável, em equilíbrio com o meio ambiente, seus recursos naturais e sua biodiversidade. Por isso, organizamos e participamos frequentemente de encontros, cursos, workshops e palestras.</p>
+            <p>O Materializa é um workshop focado na experimentação de processos e na prática de desenvolvimento colaborativo de produtos a partir de materiais sustentáveis.</p>"
+          images_length: 1
+        educa:
+          title: "Responsabilidade Ambiental em Escola Pública"
+          subtitle_html: "Cliente: Alstom Foundation"
+          content_html:
+            "<p>Desenvolvimento para a Alstom Foundation de Projeto de Educação Ambiental e Intervenção, na Escola Pública Estadual Deputado Augusto do Amaral, que atende cerca de 1.000 estudantes entre 10 e 18 anos, dos ensinos fundamental e médio.</p>
+            <p>O projeto contou com atividades nos anos de 2009 e 2010, sendo realizados encontros teóricos e oficinas práticas com alunos, professores e funcionários, abordando o tema: \"2010 - Ano da Diversidade Biológica\".</p> 
+            <p>O canal de televisão <a href=\"http://mtv.uol.com.br/noticiasmtv/videos/noticias-mtv-sustentabilidade-nas-escolas\" target=\"_blank\">MTV fez um programa focado em sustentabilidade nas escolas e registrou</a> momentos do nosso projeto.</p> 
+            <p>As atividades teóricas, abordaram a construção de projetos pelos alunos e inserção dos temas nas disciplinas da própria escola, com engajamento dos professores.</p>
+            <p>Oficinas com tinta de terra retirada do próprio terreno, com tipos de terras e cores diferentes; Oficina de elaboração de jornal comunitário, visando entender os assuntos importantes para a comunidade, realização de entrevistas, etc.</p>
+            <p>Ocorreram oficinas de bioconstrução, com a construção pelos alunos de sala de aula ao ar livre, sendo a intervenção na área verde de 6mil m² completa pelo paisagismo e plantio de hortaliças e plantas medicinais.</p>
+            <p>O projeto foi finalizado com uma Feira Ambiental, na qual foram apresentados pelos os alunos todos os projetos desenvolvidos.</p>"
+          images_length: 2
+
   call_to_action:
     download_portfolio: "Baixe a nossa apresentação completa >"
     explore_now: "Explore agora >"
