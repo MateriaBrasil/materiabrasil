@@ -7,14 +7,21 @@
         li= link_to "Sustentabilidade", "#sustentabilidade"
         li= link_to "Saber", "#saber"
 
-  section#design.portfolio_section
-    h1 Hey
-
-  section#lab.portfolio_section
-    h1 Ho
-
-  section#sustentabilidade.portfolio_section
-    h1 Lets
-
-  section#saber.portfolio_section
-    h1 Go!
+  - %w(design lab sustentabilidade saber).each do |name|
+    - collection = instance_variable_get("@items_#{name}")
+    section.portfolio_section id="#{name}"
+      nav.thumb_links.hide
+        - collection.each do |item|
+          = item_port_thumbnail(item, name)
+      - collection.each do |item|
+        article.portfolio_item_art.row id="item_#{item}"
+          .large-5.small-12.columns.item_content
+            h1.item_title
+              = t("pages.portfolio.#{name}.#{item}.title")
+              small= t("pages.portfolio.#{name}.#{item}.subtitle_html")
+            = t("pages.portfolio.#{name}.#{item}.content_html")
+          .large-7.small-12.columns
+            - length = t("pages.portfolio.#{name}.#{item}.images_length")
+            - if length.is_a?(Integer) && length > 0
+              - length.times do |n|
+                = image_tag "portfolio/#{item}_#{"%02d" % (n+1)}.jpg"
