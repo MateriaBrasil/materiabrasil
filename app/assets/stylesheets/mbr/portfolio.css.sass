@@ -2,17 +2,17 @@
   
 .portfolio_section
   display: none
-  & > *
-    +opacity(0)
-    +transition(.5s)
-  &:target, &.active
+  +context('.no-js')
+    &:target
+      display: block
+  &.active
     display: block
-    & > *
-      +opacity(1)
-
+  
   .thumb_links
     text-align: center
     padding: 1.5em .3em
+    +context('.no-js')
+      display: none
     .thumb_image
       cursor: pointer
       margin: .5em
@@ -28,6 +28,9 @@
   padding: 2em 0
   border-bottom: 1px solid $creamgray
   margin-bottom: 2em
+  display: none
+  &.active, .no-js &
+    display: block
   .item_title
     small
       display: block

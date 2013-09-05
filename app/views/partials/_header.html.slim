@@ -9,7 +9,7 @@ header.header_menu
         /span.icon.upload-cloud
         = t("common.submit_html")
       = link_to t("common.about"), about_path(anchor: '/i/sobre')
-      = link_to t("common.portfolio"), portfolio_path(anchor: 'design')
+      = link_to t("common.portfolio"), portfolio_path(anchor: 'design'), id: 'portfolio_link'
       = link_to t("common.contact"), about_path(anchor: '/i/contato')
     aside.search_account
       section.search_area

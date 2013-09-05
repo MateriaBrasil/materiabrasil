@@ -10,9 +10,9 @@
   - %w(design lab sustentabilidade saber).each do |name|
     - collection = instance_variable_get("@items_#{name}")
     section.portfolio_section id="#{name}"
-      nav.thumb_links.hide
+      nav.thumb_links
         - collection.each do |item|
-          = item_port_thumbnail(item, name)
+          = image_tag "portfolio/thumbnails/th_#{item}.jpg", size: "80x80", class: "thumb_image", data: {item: item}, title: t("pages.portfolio.#{name}.#{item}.title")
       - collection.each do |item|
         article.portfolio_item_art.row id="item_#{item}"
           .large-5.small-12.columns.item_content

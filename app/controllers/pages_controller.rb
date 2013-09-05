@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   def portfolio
     @items_design = %w(domo top cw sebrae trofeu bike)
     @items_lab = %w(tvxta zrzs case mineo simp horta)
-    @items_sustentabilidade = %w(obra mcl sist marins evento cad 120 mochila eva)
+    @items_sustentabilidade = %w(obra mcl sist marins evento cad p120 mochila eva)
     @items_saber = %w(mb expo siemens gnt ws educa)
   end
 end
