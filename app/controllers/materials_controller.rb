@@ -76,15 +76,9 @@ class MaterialsController < ApplicationController
 
   def update_attachments
     update! { edit_manufacturer_path(current_user.manufacturer) }
+  end
 
   def new
     return render action: 'new'
-  end
-
-  def create
-    manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name)
-    @material = Material.new(params[:material])
-    @material.manufacturer = manufacturer
-    create! { new_material_category_path(@material.id) }
   end
 end
