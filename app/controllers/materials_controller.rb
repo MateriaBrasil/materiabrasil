@@ -43,7 +43,6 @@ class MaterialsController < ApplicationController
     return render partial: "materials" if request.xhr?
   end
 
-
   def search
     if params[:q]
       @resource = Material.search_by_name_and_category(params[:q])
@@ -53,14 +52,23 @@ class MaterialsController < ApplicationController
     end
   end
 
-  def new
-    return render action: 'new'
-  end
-
   def create
     manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name)
     @material = Material.new(params[:material])
     @material.manufacturer = manufacturer
     create! { new_material_category_path(@material.id) }
+  end
+
+  def update
+    update! {
+      raise @material.errors.inspect
+    }
+  end
+
+  def new_attachments
+    @material = Material.find(params[:material_id])
+    @material.images.build
+    @material.attachments.build
+    return render 'new_attachment'
   end
 end

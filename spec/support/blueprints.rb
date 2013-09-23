@@ -24,7 +24,6 @@ Material.blueprint do
   technical_observation { "Some technical observation" }
   density     { sn }
   dimensions  { sn }
-  packing     { sn }
   average_price { sn }
   images(3)
   categories(1)
