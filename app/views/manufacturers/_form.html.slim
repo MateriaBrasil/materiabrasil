@@ -1,0 +1,24 @@
+= simple_form_for @manufacturer do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :site
+  = f.input :certifications
+  = f.input :image
+  = f.input :razao_social
+  = f.input :cnpj
+  = f.input :insc_estadual
+  = f.input :insc_municipal
+  = f.input :address
+  = f.input :city
+  = f.input :state
+  = f.input :country
+  = f.input :cep
+  = f.input :phone
+  h3 Contatos:
+  = simple_fields_for :contacts do |c|
+    = c.input :name
+    = c.input :definition
+    = c.input :email
+    = c.input :phone_first
+    = c.input :address
+  = f.button :submit
