@@ -7,3 +7,4 @@ class AddFieldsToManufacturer < ActiveRecord::Migration
     add_column :manufacturers, :forum_mail, :string
   end
 end
+
