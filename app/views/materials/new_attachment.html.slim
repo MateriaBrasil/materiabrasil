@@ -1,0 +1,7 @@
+h1 New Attachment
+= simple_form_for @material, method: :put do |f|
+  = f.simple_fields_for :images do |i|
+    = i.input :image, as: :file
+  = f.simple_fields_for :attachments do |a|
+    = a.input :file, as: :file
+  = f.submit
