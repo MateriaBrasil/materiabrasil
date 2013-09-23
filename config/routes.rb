@@ -14,6 +14,8 @@ MateriaBrasil::Application.routes.draw do
     get 'attachments/new', to: 'materials#new_attachments', as: :new_attachments
   end
 
+  resources :manufacturers, only: [:edit, :update]
+
   #get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
   get 'explore/',                       to: "materials#explore",  as: :explore
