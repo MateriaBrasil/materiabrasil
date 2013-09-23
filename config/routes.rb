@@ -11,8 +11,8 @@ MateriaBrasil::Application.routes.draw do
 
   resources :materials, only: [:index, :show, :new, :update, :create] do
     resources :categories, only: [:new]
+    get 'attachments/new', to: 'materials#new_attachments', as: :new_attachments
   end
-
 
   #get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
