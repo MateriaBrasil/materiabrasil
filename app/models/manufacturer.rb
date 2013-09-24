@@ -36,4 +36,6 @@ class Manufacturer < ActiveRecord::Base
   has_many :materials
 
   accepts_nested_attributes_for :contacts
+
+  mount_uploader :image, ManufacturerImageUploader
 end
