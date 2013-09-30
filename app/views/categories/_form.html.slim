@@ -1,4 +1,4 @@
-= simple_form_for parent do |f|
+= simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
   - Category.parent.each do |parent_category|
     - parent_category.subcategories.each do |sub|
       h2=sub.name
