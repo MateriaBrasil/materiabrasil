@@ -81,4 +81,16 @@ class MaterialsController < ApplicationController
   def new
     return render action: 'new'
   end
+
+  def update
+    update! { new_material_category_path(@material) }
+  end
+
+  def update_categories
+    update! { material_new_attachments_path(@material) }
+  end
+
+  def update_attachments
+    update! { edit_manufacturer_path(current_user.manufacturer) }
+  end
 end
