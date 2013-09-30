@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production? || Rails.env.development?
+  if Rails.env.production?
     storage :fog
   else
     storage :file
@@ -20,8 +20,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   process :resize_to_fill => [800, 600]
- 
-  version :longflat, from: :main do 
+
+  version :longflat, from: :main do
     process :resize_to_fill => [580, 240]
   end
 
@@ -32,7 +32,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :tall, from: :main do
     process :resize_to_fill => [280, 480]
   end
-  
+
   version :largetall, from: :main do
     process :resize_to_fill => [490, 485]
   end
@@ -58,7 +58,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    if original_filename 
+    if original_filename
       @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
       "#{@name}.#{file.extension}"
     end

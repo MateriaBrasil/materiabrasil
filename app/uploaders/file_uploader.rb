@@ -3,7 +3,7 @@
 class FileUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production? || Rails.env.development?
+  if Rails.env.production?
     storage :fog
   else
     storage :file
@@ -22,7 +22,7 @@ class FileUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    if original_filename 
+    if original_filename
       @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
       "#{@name}.#{file.extension}"
     end
