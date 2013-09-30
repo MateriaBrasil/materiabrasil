@@ -9,7 +9,11 @@ MateriaBrasil::Application.routes.draw do
   #match "auth/:provider/callback",      to: "sessions#create"
   #resources :sessions, only: [:new, :destroy]
 
-  resources :materials, only: [:index, :show, :new, :update, :create] do
+  resources :materials, only: [:index, :show, :new, :update, :update, :create] do
+    member do
+      put :update_categories
+      put :update_attachments
+    end
     resources :categories, only: [:new]
     get 'attachments/new', to: 'materials#new_attachments', as: :new_attachments
   end
