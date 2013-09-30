@@ -32,7 +32,7 @@ class Material < ActiveRecord::Base
   validates :manufacturer, :name, :resume, presence: true
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments
-  attr_accessible :images_attributes, :attachments_attributes
+  attr_accessible :images_attributes, :attachments_attributes, :category_ids, :name, :resume, :dimensions, :density, :average_price, :certifications, :awards, :technical_observation
 
   default_scope order('created_at DESC')
 
