@@ -32,3 +32,4 @@ MateriaBrasil::Application.routes.draw do
   get 'busca/',                         to: "materials#search",   as: :search
   root                                  to: "materials#index"
 end
+
