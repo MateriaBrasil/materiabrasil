@@ -14,6 +14,14 @@
   = f.input :country
   = f.input :cep
   = f.input :phone
+  = f.input :has_postal_address
+  .postal_address
+    = f.input :postal_address
+    = f.input :postal_city
+    = f.input :postal_state
+    = f.input :postal_country
+    = f.input :postal_cep
+    = f.input :postal_phone
   h3 Contatos:
   = simple_fields_for :contacts do |c|
     = c.input :name
