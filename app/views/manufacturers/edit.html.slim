@@ -1,5 +1,6 @@
 = render partial: "partials/material_breadcrumb", locals: {position: :empresa}
-h2
-  | Editar Fornecedor
-  = @manufacturer.name
-= render 'form'
+.material_form
+  h2
+    | Editar Fornecedor
+    = @manufacturer.name
+  = render 'form'

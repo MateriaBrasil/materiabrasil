@@ -2,13 +2,23 @@
   / = f.select :category, Category.parent
   - Category.top_level.each do |parent_category|
     .checkboxes_container id="#{parent_category.name}_container"
-      - parent_category.subcategories.each do |sub|
-        h2=sub.name
+      - parent_category.subcategories.each_with_index do |sub, index|
         - if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0
-          .subcategorie_container
-            - sub.subcategories.each do |sub2|
-              h3=sub2.name
-              = f.association :categories, as: :check_boxes, collection: sub2.subcategories, label: ''
+          h2=sub.name
+          .row
+            .large-7.columns.checkbox_section
+              .subcategorie_container
+                - sub.subcategories.each_with_index do |sub2, index2|
+                  h4.white_box=sub2.name
+                  .white_box.checkbox_group
+                    = f.association :categories, as: :check_boxes, collection: sub2.subcategories
         - else
-          = f.association :categories, as: :check_boxes, collection: sub.subcategories, label: ''
-  = f.submit
+          .row
+            .large-7.columns.checkbox_section
+              h4.white_box=sub.name
+              .white_box.checkbox_group
+                = f.association :categories, as: :check_boxes, collection: sub.subcategories
+  hr/
+  .row
+    .large-12.columns
+      = f.button :submit, raw("Próximo passo &#62;"), class: "bt bt_secondary bt_large bt_next"
