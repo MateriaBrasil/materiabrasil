@@ -5,7 +5,7 @@
       - parent_category.subcategories.each do |sub|
         h2=sub.name
         - if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0
-          .subcategorie_container style="background: yellow;" 
+          .subcategorie_container
             - sub.subcategories.each do |sub2|
               h3=sub2.name
               = f.association :categories, as: :check_boxes, collection: sub2.subcategories, label: ''

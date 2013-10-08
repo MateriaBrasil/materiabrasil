@@ -1,0 +1,12 @@
+- if position
+  aside.white_section.material_breadcrumb
+    .list_wrapper
+      ol.breadcrumb_list
+        li class="#{"current" if position == :descricao}"
+          span 01. Descrição
+        li class="#{"current" if position == :caracteristicas}"
+          span 02. Características
+        li class="#{"current" if position == :imagens}"
+          span 03. Imagens e anexos
+        li class="#{"current" if position == :empresa}"
+          span 04. Empresa
