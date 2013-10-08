@@ -1,11 +1,14 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
-  - Category.parent.each do |parent_category|
-    - parent_category.subcategories.each do |sub|
-      h2=sub.name
-      - if sub.subcategories.first.subcategories.size > 0
-        - sub.subcategories.each do |sub2|
-          h3=sub2.name
-          = f.association :categories, as: :check_boxes, collection: sub2.subcategories, label: ''
-      - else
-        = f.association :categories, as: :check_boxes, collection: sub.subcategories, label: ''
+  / = f.select :category, Category.parent
+  - Category.top_level.each do |parent_category|
+    .checkboxes_container id="#{parent_category.name}_container"
+      - parent_category.subcategories.each do |sub|
+        h2=sub.name
+        - if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0
+          .subcategorie_container style="background: yellow;" 
+            - sub.subcategories.each do |sub2|
+              h3=sub2.name
+              = f.association :categories, as: :check_boxes, collection: sub2.subcategories, label: ''
+        - else
+          = f.association :categories, as: :check_boxes, collection: sub.subcategories, label: ''
   = f.submit

@@ -7,9 +7,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-AdminUser.create!(:email => "test@test.com", :password => "testuser")
+# AdminUser.create!(:email => "test@test.com", :password => "testuser")
 
-produto = Category.create(name: 'Produto')
+produto = Category.create(name: 'Material')
 classe = Category.create(name: 'Classe', parent: produto)
 Category.create!(name: 'Cerâmico/cimentício', parent: classe)
 Category.create!(name: 'Compósito', parent: classe)
@@ -46,4 +46,3 @@ Category.create!(name: 'Acre', parent: local)
 Category.create!(name: 'Alagoas', parent: local)
 Category.create!(name: 'Amapá', parent: local)
 Category.create!(name: 'Amazonas', parent: local)
-
