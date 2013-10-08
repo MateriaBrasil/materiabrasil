@@ -32,3 +32,4 @@ latest.dump
 
 # Ignoring jasmine.rake file
 /lib/tasks/jasmine.rake
+/db/schema.rb
