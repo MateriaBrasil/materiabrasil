@@ -9,13 +9,13 @@ MateriaBrasil::Application.routes.draw do
   #match "auth/:provider/callback",      to: "sessions#create"
   #resources :sessions, only: [:new, :destroy]
 
-  resources :materials, only: [:index, :show, :new, :update, :update, :create] do
+  resources :materials, only: [:index, :show, :new, :update, :edit, :create] do
     member do
       put :update_categories
       put :update_attachments
     end
-    resources :categories, only: [:new]
-    get 'attachments/new', to: 'materials#new_attachments', as: :new_attachments
+    resources :categories, only: [:index]
+    get 'attachments/edit', to: 'materials#edit_attachments', as: :edit_attachments
   end
 
   resources :manufacturers, only: [:edit, :update]
