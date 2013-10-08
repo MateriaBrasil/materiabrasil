@@ -1,8 +1,12 @@
 = render partial: "partials/material_breadcrumb", locals: {position: :imagens}
-h1 New Attachment
-= simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
-  = f.simple_fields_for :images do |i|
-    = i.input :image, as: :file
-  = f.simple_fields_for :attachments do |a|
-    = a.input :file, as: :file
-  = f.submit
+.material_form
+  = simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
+    = f.simple_fields_for :images do |i|
+      = i.input :image, as: :file
+    hr/
+    = f.simple_fields_for :attachments do |a|
+      = a.input :file, as: :file
+    hr/
+    .row
+      .large-12.columns
+        = f.button :submit, raw("Concluir meu cadastro &#62;"), class: "bt bt_secondary bt_large bt_next"
