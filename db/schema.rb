@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130922220047) do
+ActiveRecord::Schema.define(:version => 20131005213118) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20130922220047) do
   create_table "manufacturers", :force => true do |t|
     t.string   "name"
     t.string   "site"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "address"
     t.string   "email"
     t.string   "cnpj"
@@ -123,8 +123,15 @@ ActiveRecord::Schema.define(:version => 20130922220047) do
     t.string   "phone"
     t.string   "image"
     t.text     "description"
-    t.boolean  "forum"
     t.string   "forum_mail"
+    t.string   "postal_address"
+    t.string   "postal_city"
+    t.string   "postal_state"
+    t.string   "postal_cep"
+    t.string   "postal_country"
+    t.string   "postal_phone"
+    t.boolean  "has_postal_address", :default => false, :null => false
+    t.boolean  "forum",              :default => false, :null => false
   end
 
   add_index "manufacturers", ["user_id"], :name => "index_manufacturers_on_user_id"
@@ -136,14 +143,15 @@ ActiveRecord::Schema.define(:version => 20130922220047) do
     t.string   "density"
     t.string   "dimensions"
     t.string   "average_price"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "name"
     t.string   "slug"
     t.string   "ncm"
     t.string   "certifications"
     t.string   "awards"
     t.string   "code"
+    t.boolean  "draft",                 :default => true, :null => false
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
