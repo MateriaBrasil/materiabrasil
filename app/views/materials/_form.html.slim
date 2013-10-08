@@ -1,11 +1,58 @@
 = simple_form_for @material do |f|
   .form-inputs
-    = f.input :name
-    = f.input :resume
-    = f.input :dimensions
-    = f.input :density
-    = f.input :average_price
-    = f.input :certifications
-    = f.input :awards
-    = f.input :technical_observation
-    = f.button :submit
+    .row
+      .large-2.columns
+        = f.label :name, "Nome do produto *", class: "required"
+      .large-7.columns
+        = f.text_field :name, required: "required"
+      .large-3.columns.hint
+        p Procure usar um nome que explique a composição e uma característica de sustentabilidade relevante do seu produto. Evite nomes comerciais.
+    .row
+      .large-2.columns
+        = f.label :resume, "Descrição do produto *", class: "required"
+      .large-7.columns
+        = f.text_area :resume, size: "40x10", required: "required"
+      .large-3.columns.hint
+        p Esse texto será o descritivo. Procure falar das vantagens dele, seus diferenciais de sustentabilidade e outras informações que ajudem as pessoas a entenderem seu processo de fabricação. Procure falar em 2 parágrafos e evite parecer uma propaganda ou algo extremamente técnico. O meio termo é o melhor caminho!
+    .row
+      .large-2.columns
+        = f.label :dimensions, "Dimensões"
+      .large-7.columns
+        = f.text_field :dimensions
+      .large-3.columns.hint
+    .row
+      .large-2.columns
+        = f.label :density, "Peso ou Densidade ou Gramatura"
+      .large-7.columns
+        = f.text_field :density
+      .large-3.columns.hint
+    .row
+      .large-2.columns
+        = f.label :average_price, "Preço médio"
+      .large-7.columns
+        = f.text_field :average_price
+      .large-3.columns.hint
+        p Pode ser uma ordem de grandeza, ou uma faixa de preço. Ex: Aprox. R$ 45,00 o metro quadrado é uma boa frase ;) <br/>Ou A partir de R$ 50,00 o metro quadrado
+    .row
+      .large-2.columns
+        = f.label :certifications, "Normas e certificações"
+      .large-7.columns
+        = f.text_area :dimensions, size: "40x5"
+      .large-3.columns.hint
+    .row
+      .large-2.columns
+        = f.label :awards, "Prêmios"
+      .large-7.columns
+        = f.text_area :awards, size: "40x5"
+      .large-3.columns.hint
+    .row
+      .large-2.columns
+        = f.label :technical_observation, "Informações técnicas importantes"
+      .large-7.columns
+        = f.text_area :technical_observation, size: "40x10"
+      .large-3.columns.hint
+        p Aproveite este campo para falar sobre informações técnicas pertinentes ao seu produto, que não se encaixam na pergunta acima.
+    hr/
+    .row
+      .large-12.columns
+        = f.button :submit, raw("Próximo passo &#62;"), class: "bt bt_secondary bt_large bt_next"
