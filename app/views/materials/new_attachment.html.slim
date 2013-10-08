@@ -1,3 +1,4 @@
+= render partial: "partials/material_breadcrumb", locals: {position: :imagens}
 h1 New Attachment
 = simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
   = f.simple_fields_for :images do |i|
