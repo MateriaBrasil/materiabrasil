@@ -56,22 +56,22 @@ class MaterialsController < ApplicationController
     manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name, user: current_user)
     @material = Material.new(params[:material])
     @material.manufacturer = manufacturer
-    create! { new_material_category_path(@material.id) }
+    create! { material_categories_path(@material.id) }
   end
 
-  def new_attachments
+  def edit_attachments
     @material = Material.find(params[:material_id])
     @material.images.build
     @material.attachments.build
-    return render 'new_attachment'
+    return render 'edit_attachment'
   end
 
   def update
-    update! { new_material_category_path(@material) }
+    update! { material_categories_path(@material) }
   end
 
   def update_categories
-    update! { material_new_attachments_path(@material) }
+    update! { material_edit_attachments_path(@material) }
   end
 
   def update_attachments
