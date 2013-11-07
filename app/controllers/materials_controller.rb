@@ -8,7 +8,7 @@ class MaterialsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @materials  ||= Material.limit(12)
+    @materials  ||= Material.published.limit(12)
     @partners = [
       {name: "Embraer", img: "embraer.png", url: "http://www.embraer.com/"},
       {name: "Siemens", img: "siemens.png", url: "http://www.respostassustentaveis.com.br/"},

@@ -34,6 +34,9 @@ class Material < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
 
   default_scope order('created_at DESC')
+  scope :published, ->{
+    where(draft: false)
+  }
   
   after_save :check_tree
   
@@ -58,6 +61,10 @@ class Material < ActiveRecord::Base
     elsif pid
       categories.map{|c| c.name if c.parent_id == pid}.reject{|c| c.nil?}.join(', ')
     end
+  end
+
+  def has_images?
+    images.length > 0
   end
 
   private 
