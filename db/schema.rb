@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717183900) do
+ActiveRecord::Schema.define(:version => 20131005211739) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "address"
+    t.boolean  "rescrict"
   end
 
   create_table "images", :force => true do |t|
@@ -97,10 +98,8 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.string   "image"
     t.integer  "material_id"
     t.boolean  "featured"
-    t.boolean  "use_case"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.boolean  "render"
   end
 
   create_table "manufacturers", :force => true do |t|
@@ -120,7 +119,15 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.string   "country"
     t.string   "mail_address"
     t.string   "certifications"
+    t.integer  "user_id"
+    t.string   "phone"
+    t.string   "image"
+    t.text     "description"
+    t.boolean  "forum"
+    t.string   "forum_mail"
   end
+
+  add_index "manufacturers", ["user_id"], :name => "index_manufacturers_on_user_id"
 
   create_table "materials", :force => true do |t|
     t.text     "resume"
@@ -128,16 +135,16 @@ ActiveRecord::Schema.define(:version => 20130717183900) do
     t.text     "technical_observation"
     t.string   "density"
     t.string   "dimensions"
-    t.string   "packing"
     t.string   "average_price"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "name"
     t.string   "slug"
     t.string   "ncm"
     t.string   "certifications"
     t.string   "awards"
     t.string   "code"
+    t.boolean  "draft",                 :default => true, :null => false
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true

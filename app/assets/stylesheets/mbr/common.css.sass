@@ -68,10 +68,6 @@ body
 .number
   color: $cyan
 
-.white
-  background: white
-  overflow: hidden
-
 a.bt, input.bt
   background: $orange
   color: white
@@ -119,11 +115,25 @@ a.bt.bt_secondary, input.bt.bt_secondary
   @media screen and (max-width: 767px)
     width: 97%
 
+.white_box, .transparent_box
+  padding: 1.2em
+
 .white_box
-  background: white
   border-radius: 4px
   box-shadow: 0 1px 2px #bebebe
-  padding: 1.2em
+  background: white
+
+.orange_box
+  background: $orange
+  color: white !important
+  a
+    color: inherit
+    text-decoration: underline !important
+
+.white_header_section
+  background: white
+  overflow: hidden
+  padding: 1.6em 0
 
 .well
   padding: 1.2em
@@ -162,9 +172,6 @@ a.bt.bt_secondary, input.bt.bt_secondary
 .page
   .sub_menu
     font-size: 1.6em
-    overflow: hidden
-    background: white
-    padding: 1.6em 0 1em
     display: block
     li
       margin-right: 1em

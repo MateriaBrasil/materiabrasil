@@ -1,8 +1,12 @@
-.material_header.white_section
-  h1= @material.name
-  small.faded
-    strong ID: 
-    = @material.sku
+.material_header.white_header_section
+  .row
+    .large-12.column
+      h1= @material.name
+/- if @material.draft
+  .draft_advert.orange_box
+    .row
+      .large-12.column
+        = t "pages.show.draft_advert_html"
 section.material.row
   .large-8.small-12.columns
     .image
@@ -17,14 +21,32 @@ section.material.row
       = render partial: "materials/characteristics", locals: { material: @material }
 
   .large-4.small-12.columns
-    .resume.white_box
+    .resume.transparent_box
       p
-        span.faded= t("pages.show.class")
         = @material.categories_string(nil, "Classes")
+        br/
+        small.faded= @material.sku
       p= @material.resume
   .large-4.small-12.columns
-
-    .share_section.white_box
+    - if current_user
+      .manufacturer.transparent_box
+        h3 Contatos comerciais
+        table
+          tr 
+            td.title Fabricante
+            td= @material.manufacturer.name
+          tr
+            td.title Site
+            td= link_to @material.manufacturer.site, @material.manufacturer.site, target: '_blank'
+        //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
+          = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
+    - else
+      .about.transparent_box
+        section.data
+          h3 Você quer o contato do fornecedor deste material?
+          = render partial: 'partials/login'
+    
+    .share_section.transparent_box
       / Facebook Button
       .fb-like data-href="#{request.original_url}" data-width="250" data-layout="box_count" data-show-faces="false" data-send="false"
 
@@ -36,24 +58,7 @@ section.material.row
       / Google Button
       .g-plusone data-size="tall" data-href="#{request.original_url}"
       <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: 'pt-BR'}</script>
-
-    - if current_user
-      .manufacturer.white_box
-        h3 Informações comerciais
-        table
-          tr 
-            td.title Fabricante
-            td= @material.manufacturer.name
-          tr
-            td.title Site
-            td= link_to @material.manufacturer.site, @material.manufacturer.site, target: '_blank'
-        //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
-          = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
-    - else
-      .about.white_box
-        section.data
-          h3 Você quer o contato do fornecedor deste material?
-          = render partial: 'partials/login'
+  
   .large-12.columns
     .warning
       p

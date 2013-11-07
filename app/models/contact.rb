@@ -12,6 +12,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  address         :string(255)
+#  rescrict        :boolean
 #
 
 class Contact < ActiveRecord::Base

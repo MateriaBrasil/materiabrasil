@@ -8,7 +8,6 @@
 #  technical_observation :text
 #  density               :string(255)
 #  dimensions            :string(255)
-#  packing               :string(255)
 #  average_price         :string(255)
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
@@ -18,6 +17,7 @@
 #  certifications        :string(255)
 #  awards                :string(255)
 #  code                  :string(255)
+#  draft                 :boolean          default(TRUE), not null
 #
 
 class Material < ActiveRecord::Base

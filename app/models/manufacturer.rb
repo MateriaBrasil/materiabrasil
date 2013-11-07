@@ -19,6 +19,12 @@
 #  country        :string(255)
 #  mail_address   :string(255)
 #  certifications :string(255)
+#  user_id        :integer
+#  phone          :string(255)
+#  image          :string(255)
+#  description    :text
+#  forum          :boolean
+#  forum_mail     :string(255)
 #
 
 class Manufacturer < ActiveRecord::Base

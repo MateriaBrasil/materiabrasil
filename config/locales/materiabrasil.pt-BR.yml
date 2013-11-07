@@ -120,6 +120,13 @@ pt-BR:
       sign_with_fb: "Entre utilizando o facebook"
       wanna_get_newsletter: "Quero receber por email novidades da MateriaBrasil, como eventos e produtos"
 
+    show:
+      draft_advert_html:
+        "<p>Este item ainda não foi ao ar.<br/>
+        Nossa equipe entrará em contato com você em breve para prosseguir com seu cadastro.<br/>
+        Se tudo estiver OK, ele entrará no ar em poucos dias e estará disponível para todos os usuários.<br/>
+        Obrigado! Qualquer dúvida envie um email para <a href=\"mailto:cadastro@materiabrasil.net\">cadastro@materiabrasil.net</a></p>"
+
     portfolio:
       design:
         domo:
