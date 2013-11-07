@@ -1,11 +1,12 @@
 .page.portfolio_page
-  section.white_section
-    nav.sub_menu
-      ul
-        li= link_to "Design", "#design"
-        li= link_to "Lab", "#lab"
-        li= link_to "Sustentabilidade", "#sustentabilidade"
-        li= link_to "Saber", "#saber"
+  .white
+    .row
+      .large-12.columns
+        ul.sub_menu
+          li= link_to "Design", "#design"
+          li= link_to "Lab", "#lab"
+          li= link_to "Sustentabilidade", "#sustentabilidade"
+          li= link_to "Saber", "#saber"
 
   - %w(design lab sustentabilidade saber).each do |name|
     - collection = instance_variable_get("@items_#{name}")

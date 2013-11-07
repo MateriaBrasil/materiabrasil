@@ -33,7 +33,7 @@ App.Pages = {
     el: 'body',
     events: {
       'click .thumb_image' : 'activateItem',
-      'click nav.sub_menu a' : 'activateSection'
+      'click .sub_menu a' : 'activateSection'
     },
 
     initialize: function(){
