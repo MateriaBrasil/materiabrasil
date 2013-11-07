@@ -68,6 +68,10 @@ body
 .number
   color: $cyan
 
+.white
+  background: white
+  overflow: hidden
+
 a.bt, input.bt
   background: $orange
   color: white
@@ -163,21 +167,20 @@ a.bt.bt_secondary, input.bt.bt_secondary
 
 .page
   .sub_menu
-    +inline-list
-    text-align: center
-    font-size: 1.4em
-    ul
-      padding: 1.6em 0 1em
-      display: block
+    font-size: 1.6em
+    overflow: hidden
+    background: white
+    padding: 1.6em 0 1em
+    display: block
     li
-      padding: 1em
+      margin-right: 1em
+      display: inline
     a
-      color: inherit
+      color: $creamgray
+      font-weight: 600
       &:hover, &.active
-        font-weight: 600
-        color: $orange
-        text-decoration: underline
+        color: $cyan
     @media screen and (max-width: 700px)
-      font-size: 1em
+      font-size: 1.3em
       li
-        padding: .5em
+        margin-right: .5em
