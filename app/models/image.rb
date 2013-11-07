@@ -8,10 +8,8 @@
 #  image       :string(255)
 #  material_id :integer
 #  featured    :boolean
-#  use_case    :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  render      :boolean
 #
 
 class Image < ActiveRecord::Base
