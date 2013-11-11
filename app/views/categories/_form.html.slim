@@ -1,23 +1,253 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
   / = f.select :category, Category.parent
-  - Category.top_level.each do |parent_category|
-    .checkboxes_container id="#{parent_category.name}_container"
-      - parent_category.subcategories.each_with_index do |sub, index|
-        - if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0
-          h2=sub.name
-          .row
-            .large-7.columns.checkbox_section
-              .subcategorie_container
-                - sub.subcategories.each_with_index do |sub2, index2|
-                  h4.white_box=sub2.name
-                  .white_box.checkbox_group
-                    = f.association :categories, as: :check_boxes, collection: sub2.subcategories
-        - else
-          .row
-            .large-7.columns.checkbox_section
-              h4.white_box=sub.name
-              .white_box.checkbox_group
-                = f.association :categories, as: :check_boxes, collection: sub.subcategories
+  /*- Category.top_level.each do |parent_category|*/
+    /*.checkboxes_container id="#{parent_category.name}_container"*/
+      /*- parent_category.subcategories.each_with_index do |sub, index|*/
+        /*- if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0*/
+          /*h2=sub.name*/
+          /*.row*/
+            /*.large-7.columns.checkbox_section*/
+              /*.subcategorie_container*/
+                /*- sub.subcategories.each_with_index do |sub2, index2|*/
+                  /*h4.white_box=sub2.name*/
+                  /*.white_box.checkbox_group*/
+                    /*= f.association :categories, as: :check_boxes, collection: sub2.subcategories*/
+        /*- else*/
+          /*.row*/
+            /*.large-7.columns.checkbox_section*/
+              /*h4.white_box=sub.name*/
+              /*.white_box.checkbox_group*/
+                /*= f.association :categories, as: :check_boxes, collection: sub.subcategories*/
+
+  .checkboxes_container id="material_container"
+    - @material = Category.parent.where(name: 'Material').first
+    - @classe = @material.subcategories.where(name: 'Classe').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@classe.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @classe.subcategories
+    - @sustentabilidade = @material.subcategories.where(name: 'Sustentabilidade').first
+    - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
+    - @producao = @agua.subcategories.where(name: 'Produção').first
+    - @fonte = @agua.subcategories.where(name: 'Fonte').first
+    - @uso_agua = @agua.subcategories.where(name: 'Uso').first
+    - @ciclo = @sustentabilidade.subcategories.where(name: 'Ciclo').first
+    - @seguranca = @sustentabilidade.subcategories.where(name: 'Segurança').first
+    - @humano_social = @sustentabilidade.subcategories.where(name: 'Humano-social').first
+    - @energia = @sustentabilidade.subcategories.where(name: 'Energia').first
+    - @producao_energia = @energia.subcategories.where(name: 'Produção').first
+    - @fonte_energia = @energia.subcategories.where(name: 'Fonte').first
+    - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
+    - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
+    - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
+    h2=@sustentabilidade.name
+    .row
+      .large-7.columns.checkbox_section
+        .subcategorie_container
+          h4.white_box=@agua.name
+          .white_box.checkbox_group
+            h5=@producao.name
+            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            h5=@fonte.name
+            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            h5=@uso_agua.name
+            = f.association :categories, as: :check_boxes, collection: @uso_agua.subcategories
+          h4.white_box=@ciclo.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
+          h4.white_box=@seguranca.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
+          h4.white_box=@humano_social.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
+          h4.white_box=@energia.name
+          .white_box.checkbox_group
+            h5=@producao_energia.name
+            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            h5=@fonte_energia.name
+            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            h5=@uso_energia.name
+            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
+          h4.white_box=@gestao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+    - @uso = @material.subcategories.where(name: 'Uso').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@uso.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+    - @caracteristicas = @material.subcategories.where(slug: 'caracteristicas').first
+    - @visuais = @caracteristicas.subcategories.where(name: 'Visuais').first
+    - @tateis = @caracteristicas.subcategories.where(name: 'Táteis').first
+    - @resistente = @caracteristicas.subcategories.where(name: 'Resistente à').first
+    - @forma = @caracteristicas.subcategories.where(name: 'Forma').first
+    h2=@caracteristicas.name
+    .row
+      .large-7.columns.checkbox_section
+        .subcategorie_container
+          h4.white_box=@visuais.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @visuais.subcategories
+          h4.white_box=@tateis.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @tateis.subcategories
+          h4.white_box=@resistente.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @resistente.subcategories
+          h4.white_box=@forma.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @forma.subcategories
+    - @situacao = @material.subcategories.where(slug: 'situacao').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@situacao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
+    - @local = @material.subcategories.where(name: 'Local de produção').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@local.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+
+  .checkboxes_container id="produto_container"
+    - @produto = Category.parent.where(name: 'Produto').first
+    - @sustentabilidade = @material.subcategories.where(name: 'Sustentabilidade').first
+    - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
+    - @producao = @agua.subcategories.where(name: 'Produção').first
+    - @fonte = @agua.subcategories.where(name: 'Fonte').first
+    - @uso = @agua.subcategories.where(name: 'Uso').first
+    - @ciclo = @sustentabilidade.subcategories.where(name: 'Ciclo').first
+    - @seguranca = @sustentabilidade.subcategories.where(name: 'Segurança').first
+    - @humano_social = @sustentabilidade.subcategories.where(name: 'Humano-social').first
+    - @energia = @sustentabilidade.subcategories.where(name: 'Energia').first
+    - @producao_energia = @energia.subcategories.where(name: 'Produção').first
+    - @fonte_energia = @energia.subcategories.where(name: 'Fonte').first
+    - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
+    - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
+    - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
+    h2=@sustentabilidade.name
+    .row
+      .large-7.columns.checkbox_section
+        .subcategorie_container
+          h4.white_box=@agua.name
+          .white_box.checkbox_group
+            h5=@producao.name
+            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            h5=@fonte.name
+            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            h5=@uso.name
+            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+          h4.white_box=@ciclo.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
+          h4.white_box=@seguranca.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
+          h4.white_box=@humano_social.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
+          h4.white_box=@energia.name
+          .white_box.checkbox_group
+            h5=@producao_energia.name
+            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            h5=@fonte_energia.name
+            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            h5=@uso_energia.name
+            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
+          h4.white_box=@gestao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+    - @uso = @produto.subcategories.where(name: 'Uso').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@uso.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+    - @situacao = @produto.subcategories.where(name: 'Situação').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@situacao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
+    - @local = @produto.subcategories.where(name: 'Local de produção').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@local.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+
+  .checkboxes_container id="sistema_container"
+    - @sistema = Category.parent.where(name: 'Sistema').first
+    - @sustentabilidade = @sistema.subcategories.where(name: 'Sustentabilidade').first
+    - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
+    - @producao = @agua.subcategories.where(name: 'Produção').first
+    - @fonte = @agua.subcategories.where(name: 'Fonte').first
+    - @uso = @agua.subcategories.where(name: 'Uso').first
+    - @ciclo = @sustentabilidade.subcategories.where(name: 'Ciclo').first
+    - @seguranca = @sustentabilidade.subcategories.where(name: 'Segurança').first
+    - @humano_social = @sustentabilidade.subcategories.where(name: 'Humano/Social').first
+    - @energia = @sustentabilidade.subcategories.where(name: 'Energia').first
+    - @producao_energia = @energia.subcategories.where(name: 'Produção').first
+    - @fonte_energia = @energia.subcategories.where(name: 'Fonte').first
+    - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
+    - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
+    - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
+    h2=@sustentabilidade.name
+    .row
+      .large-7.columns.checkbox_section
+        .subcategorie_container
+          h4.white_box=@agua.name
+          .white_box.checkbox_group
+            h5=@producao.name
+            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            h5=@fonte.name
+            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            h5=@uso.name
+            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+          h4.white_box=@ciclo.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
+          h4.white_box=@seguranca.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
+          h4.white_box=@humano_social.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
+          h4.white_box=@energia.name
+          .white_box.checkbox_group
+            h5=@producao_energia.name
+            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            h5=@fonte_energia.name
+            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            h5=@uso_energia.name
+            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
+          h4.white_box=@gestao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+    - @setor = @sistema.subcategories.where(name: 'Setor').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@setor.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @setor.subcategories
+    - @situacao = @sistema.subcategories.where(name: 'Situação').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@situacao.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
+    - @local = @sistema.subcategories.where(name: 'Local de produção').first
+    .row
+      .large-7.columns.checkbox_section
+          h4.white_box=@local.name
+          .white_box.checkbox_group
+            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+
+
   hr/
   .row
     .large-12.columns
