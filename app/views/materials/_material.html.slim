@@ -1,3 +1,4 @@
 li.material.fourcol
-  .image= link_to image_tag(material.images.first.image.main.url, title: material.name, alt: material.name), material_path(material)
+  - if material.has_images?
+    .image= link_to image_tag(material.images.first.image.main.url, title: material.name, alt: material.name), material_path(material)
   .name= link_to material.name, material_path(material)
