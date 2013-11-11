@@ -8,7 +8,7 @@ class MaterialsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @materials  ||= Material.limit(12)
+    @materials  ||= Material.approved.limit(12)
     @partners = [
       {name: "Embraer", img: "embraer.png", url: "http://www.embraer.com/"},
       {name: "Siemens", img: "siemens.png", url: "http://www.respostassustentaveis.com.br/"},
@@ -33,11 +33,11 @@ class MaterialsController < ApplicationController
   def explore
     if params[:category]
       @category ||= Category.find(params[:category])
-      @count = @category.materials.count
-      @resource ||= @category.materials.limit(9).offset(params[:offset].to_i)
+      @count = @category.materials.approved.count
+      @resource ||= @category.materials.approved.limit(9).offset(params[:offset].to_i)
     else
-      @count = Material.count
-      @resource ||= collection
+      @count = Material.approved.count
+      @resource ||= Material.approved
     end
 
     return render partial: "materials" if request.xhr?
