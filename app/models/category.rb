@@ -24,6 +24,7 @@ class Category < ActiveRecord::Base
   acts_as_tree
   default_scope order('name ASC')
   scope :top_level, where(parent_id: nil)
+  scope :parent, where(parent_id: nil)
 
   def siblings
     Category.where(parent_id: self.parent_id)
