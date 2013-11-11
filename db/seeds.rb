@@ -116,7 +116,6 @@ Category.create!(name: 'Alagoas', parent: local)
 Category.create!(name: 'Amapá', parent: local)
 Category.create!(name: 'Amazonas', parent: local)
 
-
 sistema = Category.create(name: 'Sistema')
 sustentabilidade = Category.create(name: 'Sustentabilidade', parent: sistema)
 agua = Category.create(name: 'Água', parent: sustentabilidade)
