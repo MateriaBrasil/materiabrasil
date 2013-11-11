@@ -29,6 +29,17 @@ section.material.row
       p= @material.resume
   .large-4.small-12.columns
     - if current_user
+      - disponibilidade = @material.categories_string(nil, "Disponibilidade") rescue nil
+      - local = @material.categories_string(nil, "Local de Produção") rescue nil
+      - if disponibilidade.present? || local.present?
+        .transparent_box
+          - if disponibilidade.present?
+            h3 Disponibilidade
+            p= link_to @material.categories_string(nil, "Disponibilidade"), "#"
+          - if local.present? || local.present?
+            h3 Local de produção
+            p= link_to @material.categories_string(nil, "Local de Produção"), "#"
+
       .manufacturer.transparent_box
         h3 Contatos comerciais
         table
