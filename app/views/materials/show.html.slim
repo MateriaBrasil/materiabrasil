@@ -28,8 +28,8 @@ section.material.row
         small.faded= @material.sku
       p= @material.resume
   .large-4.small-12.columns
-    - disponibilidade = @material.categories_string(nil, "Disponibilidade") rescue nil
-    - local = @material.categories_string(nil, "Local de Produção") rescue nil
+    - disponibilidade = @material.categories_string(307) rescue nil
+    - local = @material.categories_string(304) rescue nil
     - if disponibilidade.present? || local.present?
       .transparent_box
         - if disponibilidade.present?
