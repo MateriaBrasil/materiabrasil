@@ -80,13 +80,12 @@ a.bt, input.bt
   cursor: pointer
   +transition(.3s)
   &:hover
-    +vertical-gradient(lighten($orange, 4%), darken($orange, 4%))
+    background-color: lighten($orange, 4%)
     box-shadow: 0 1px 3px rgba(black, .4)
-    text-shadow: 0 -1px 1px rgba(black, .4)
   &:active
-    background: $orange
-    box-shadow: 0 2px 3px rgba(black, .3) inset
-    text-shadow: 0 1px 1px rgba(black, .4)
+    background: darken($orange, 4%)
+    box-shadow: 0 2px 3px rgba(black, .2) inset
+    text-shadow: 0 1px 1px rgba(black, .2)
   @media handheld, only screen and (max-width: 767px)
     font-size: 1em
 
