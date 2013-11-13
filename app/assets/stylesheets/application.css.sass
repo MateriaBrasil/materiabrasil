@@ -163,142 +163,21 @@ section.explore, header.explore
   h1
     text-align: center
 
-section.about
-  section, nav
-    border-bottom: 1px solid darken($gray, 10%)
-  h3
-    margin:  0 0 1em 0
-    font-weight: 400
-  nav
-    margin-bottom: 2em
-    a
-      font-size: 1.4em
-      padding: 0 0.4em
-      margin-right: 1em
-      line-height: 1.6em
-      color: darken($gray, 40%)
-  a.active
-    background: $cyan
-    color: white
-    border-radius: 8px
-  section
-    padding-bottom: 2em
-    margin-bottom: 2em
-  #business_model
-    h4
-      color: $cyan
-    h3
-      font-weight: 400
-    p
-      font-size: .9em
-      color: lighten(#333, 8%)
-      margin-top: 1.5em
-    img
-      margin-top: 10%
-  .terms
-    ul, ol
-      margin-top: 2em
-    ul
-      li
-        &:before
-          content: "- "
-    img
-      background: $orange
-      border-radius: 6px
-  .sect
-    clear: both
-    margin-top: 4em 0
-    border-top: 1px solid darken($gray, 10%)
-    padding-top: 20px 0
-    h3
-      color: $cyan
-      margin: 0
-      font-size: 1.3em
-      padding-top: 1em
-    small
-      color: darken($gray, 60%)
-    p.img
-      text-align: center
-      margin: 10px auto
-      height: 5em
-    img
-      vertical-align: middle !important
-      width: auto !important
-      height: auto !important
-  .arrow
-    img
-      margin-top: 8em
-      width: 38%
-      height: 8%
-  .lifecycle
-    box-shadow: 0 0 4px darken($gray, 30%)
+.page.contact_page
+  .content
     background: white
-    padding: 5%
-    ol
-      li
-        width: 13.5% 
-        height: auto
-        display: inline-block
-        background: darken($gray, 20%)
-        margin-right: 3% 
-        border-radius: 6px
-        +transition(0.35s)
-        &.last
-          margin-right: 0
-        &:hover, &.active
-          background: $cyan
-          cursor: pointer
-    ul.children
-      li
-        p
-          margin: 1em 0
-          font-size: 1.7em
-          font-weight: 200
-          line-height: 1.3em
-        h3
-          color: $cyan
-  section#tools
-    article
-      p:last-child 
-        padding-bottom: 2em
-  section#team
-    margin-top: .4em
-    h3
-      margin: 0
-    ol
-      clear: both
-      overflow: hidden
-      padding-top: .2em
-      margin: 1em 0 2em 0
-      li
-      article
-        &:last-child
-          box-shadow: 0 0 4px darken($gray, 30%)
-          background: white
-          padding: 1em 0
-    h3
-      padding: .4em 0 0 .5em
-    small
-      padding: 0 1em
-  section#contact
-    h2
-      color: $orange
-      font-weight: 300
-      margin-bottom: 1em
-      letter-spacing: 0.2px
-    article
-      h3
-        background: image-url('site/about_contact_sprite.png') no-repeat -8px -4px
-        text-indent: 2.2em
-        font-size: 1.2em
-        color: darken(gray, 10%) 
-        &.fb
-          background-position: -8px -166px
-        &.tel
-          background-position: -8px -247px
-        &.addr
-          background-position: -8px -85px
-      background: white
-      border-radius: 6px
-      .content
-        padding: 1em
+    border-radius: 6px
+  h3
+    margin-bottom: 1em
+    background: image-url('site/about_contact_sprite.png') no-repeat -8px -4px
+    text-indent: 2.2em
+    font-size: 1.2em
+    color: darken(gray, 10%)
+    &.fb
+      background-position: -8px -166px
+    &.tel
+      background-position: -8px -247px
+    &.addr
+      background-position: -8px -85px
+  .content
+    padding: 1em

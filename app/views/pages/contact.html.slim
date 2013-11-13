@@ -1,0 +1,44 @@
+.page.contact_page
+  .narrow_container
+    h2.primary_title Adoraríamos ouvir seu feedback, tomar um café, marcar uma reunião ou simplesmente conversar...
+  .row
+    article.large-3.columns
+      .content
+        h3.fb Facebook
+        .fb-like-box[data-href="http://www.facebook.com/MateriaBrasil" data-width="245" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"]  
+    article.large-3.columns
+      .content
+        h3.em Email
+        p Entre em contato conosco
+        = mail_to "contato@materiabrasil.net"
+
+    article.large-3.columns
+      .content
+        h3.tel Telefones
+        p
+         = link_to "São Paulo", "#"
+        p
+          | (011) 3263-0834
+        br
+        p
+          = link_to "Rio de Janeiro", "#"
+        p
+          | (021) 2233-3126
+
+
+    article.large-3.columns
+      .content
+        h3.addr Endereços
+        p
+         = link_to "São Paulo", "#"
+        p
+          |Rua Madalena, 80 - Vila Madalena
+        p
+          | CEP: 05434-010 - SP
+        br
+        p
+          = link_to "Rio de Janeiro", "#"
+        p
+          | Rua Senador Pompeu, 82 - Centro
+        p
+          | CEP 20080-102 - RJ

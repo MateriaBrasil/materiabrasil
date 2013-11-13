@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def about; end
+  def contact; end
   def submit; end
   def portfolio
     @items_design = %w(domo top cw sebrae trofeu bike)

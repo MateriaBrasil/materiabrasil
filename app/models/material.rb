@@ -34,9 +34,6 @@ class Material < ActiveRecord::Base
   accepts_nested_attributes_for :attachments
 
   default_scope order('created_at DESC')
-  scope :published, ->{
-    where(draft: false)
-  }
   
   after_save :check_tree
   
