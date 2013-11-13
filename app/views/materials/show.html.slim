@@ -31,13 +31,13 @@ section.material.row
     - disponibilidade = @material.categories_string(307) rescue nil
     - local = @material.categories_string(304) rescue nil
     - if disponibilidade.present? || local.present?
-      .transparent_box
+      .transparent_box.availability
         - if disponibilidade.present?
           h3 Disponibilidade
-          p= link_to @material.categories_string(nil, "Disponibilidade"), "#"
+          p= @material.categories_string(nil, "Disponibilidade")
         - if local.present? || local.present?
           h3 Local de produção
-          p= link_to @material.categories_string(nil, "Local de Produção"), "#"
+          p= @material.categories_string(nil, "Local de Produção")
 
     - if current_user
       .manufacturer.transparent_box
