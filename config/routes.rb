@@ -23,10 +23,9 @@ MateriaBrasil::Application.routes.draw do
   #get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category
   get 'explore/',                       to: "materials#explore",  as: :explore
-  #get 'materials',                      to: "materials#index",    as: :materials
-  get 'sobre/',                         to: "pages#about",        as: :about
-  #get 'materials/new',                  to: 'materials#new',      as: :new_material
-  #get 'categories/new',                 to: 'categories#new',     as: :new_category
+  get 'materials',                      to: "materials#index",    as: :materials
+  get 'sobre',                          to: "pages#about",        as: :about
+  get 'contato',                        to: "pages#contact",      as: :contact
   get 'submit/',                        to: "pages#submit",       as: :submit
   get 'portfolio/',                     to: "pages#portfolio",    as: :portfolio
   get 'busca/',                         to: "materials#search",   as: :search

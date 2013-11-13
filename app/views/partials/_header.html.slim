@@ -3,9 +3,9 @@ header.header_menu
     .large-6.columns
       h1#logo[title="Voltar para a página inicial"]= link_to "MateriaBrasil", root_path
       nav.main_nav
-        = link_to t("common.about"), about_path(anchor: '/i/sobre')
+        = link_to t("common.about"), about_path
         = link_to t("common.portfolio"), portfolio_path(anchor: 'design'), id: 'portfolio_link'
-        = link_to t("common.contact"), about_path(anchor: '/i/contato')
+        = link_to t("common.contact"), contact_path
     .large-6.columns
       aside.search_account
         .main_actions_nav.left
