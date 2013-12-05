@@ -44,7 +44,7 @@ class Material < ActiveRecord::Base
     manufacturer: [:name]
   }
 
-  scope :approved, where(draft: false)
+  scope :approved, where(draft: true)
 
   def should_generate_new_friendly_id?
     new_record?

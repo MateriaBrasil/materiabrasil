@@ -7,6 +7,5 @@ class AddPostalAddressFieldsToManufacturers < ActiveRecord::Migration
     add_column :manufacturers, :postal_country, :string
     add_column :manufacturers, :postal_phone, :string
     add_column :manufacturers, :has_postal_address, :boolean, null: false, default: false
-    add_column :manufacturers, :forum, :boolean, null: false, default: false
   end
 end
