@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20131005213118) do
     t.string   "phone"
     t.string   "image"
     t.text     "description"
-    t.boolean  "forum",              :default => false, :null => false
+    t.boolean  "forum"
     t.string   "forum_mail"
     t.string   "postal_address"
     t.string   "postal_city"

@@ -30,4 +30,5 @@ MateriaBrasil::Application.routes.draw do
   get 'submit/',                        to: "pages#submit",       as: :submit
   get 'busca/',                         to: "materials#search",   as: :search
   root                                  to: "materials#index"
+  get 'materials/new',                   to: 'materials#new',      as: :new_material
 end
