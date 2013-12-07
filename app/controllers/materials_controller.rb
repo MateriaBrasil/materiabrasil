@@ -78,7 +78,4 @@ class MaterialsController < ApplicationController
     update! { edit_manufacturer_path(current_user.manufacturer) }
   end
 
-  def new
-    return render action: 'new'
-  end
 end
