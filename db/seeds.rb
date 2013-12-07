@@ -418,3 +418,8 @@ Category.create(name: 'Roraima', parent: local_sistema)
 Category.create(name: 'Santa Catarina', parent: local_sistema)
 Category.create(name: 'São Paulo', parent: local_sistema)
 Category.create(name: 'Sergipe', parent: local_sistema)
+
+Material.all.each do |m|
+  m.draft = false
+  m.save!
+end
