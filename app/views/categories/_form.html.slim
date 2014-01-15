@@ -1,4 +1,10 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
+  .row
+    .large-5.columns
+      input type="hidden" name="parent_category" id="parent_category" value="false"
+      = simple_form_for "material_type" do |f|
+        = f.input :selection , collection: Category.parent, label_method: :name, label: 'Tipo de cadastro', include_blank: false
+    .large-7.columns.hint
   .checkboxes_container id="material_container"
     - @material = Category.parent.where(name: 'Material').first
     - @classe = @material.subcategories.where(name: 'Classes').first
