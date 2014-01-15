@@ -68,15 +68,15 @@ class Material < ActiveRecord::Base
   end
 
   private
-    def check_tree
-      tree = []
-      self.categories.each do |cat|
-        tree << cat.parents
-      end
-      self.categories << tree
+  def check_tree
+    tree = []
+    self.categories.each do |cat|
+      tree << cat.parents
     end
+    self.categories << tree
+  end
 
-    def validates_category(category)
-       self.categories.delete(category) if self.categories.include? category
-    end
+  def validates_category(category)
+     self.categories.delete(category) if self.categories.include? category
+  end
 end

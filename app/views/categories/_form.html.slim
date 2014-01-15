@@ -21,7 +21,7 @@
 
   .checkboxes_container id="material_container"
     - @material = Category.parent.where(name: 'Material').first
-    - @classe = @material.subcategories.where(name: 'Classe').first
+    - @classe = @material.subcategories.where(name: 'Classes').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@classe.name
@@ -73,7 +73,7 @@
           h4.white_box=@gestao.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
-    - @uso = @material.subcategories.where(name: 'Uso').first
+    - @uso = @material.subcategories.where(name: 'Usos').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@uso.name
@@ -179,6 +179,7 @@
           h4.white_box=@local.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @local.subcategories
+
   .checkboxes_container id="sistema_container"
     - @sistema = Category.parent.where(name: 'Sistema').first
     - @sustentabilidade = @sistema.subcategories.where(name: 'Sustentabilidade').first

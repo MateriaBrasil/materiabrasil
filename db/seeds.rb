@@ -270,6 +270,8 @@ Category.create(name: 'Santa Catarina', parent: local_produto)
 Category.create(name: 'São Paulo', parent: local_produto)
 Category.create(name: 'Sergipe', parent: local_produto)
 
+
+
 sistema = Category.create(name: 'Sistema')
 sustentabilidade_sistema = Category.create(name: 'Sustentabilidade', parent: sistema)
 

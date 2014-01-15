@@ -77,5 +77,4 @@ class MaterialsController < ApplicationController
   def update_attachments
     update! { edit_manufacturer_path(current_user.manufacturer) }
   end
-
 end
