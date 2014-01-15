@@ -21,7 +21,7 @@
 
   .checkboxes_container id="material_container"
     - @material = Category.parent.where(name: 'Material').first
-    - @classe = @material.subcategories.where(name: 'Classe').first
+    - @classe = @material.subcategories.where(name: 'Classes').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@classe.name
@@ -73,7 +73,7 @@
           h4.white_box=@gestao.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
-    - @uso = @material.subcategories.where(name: 'Uso').first
+    - @uso = @material.subcategories.where(name: 'Usos').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@uso.name
@@ -100,15 +100,6 @@
           h4.white_box=@forma.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @forma.subcategories
-<<<<<<< HEAD
-    - @situacao = @material.subcategories.where(slug: 'situacao').first
-    .row
-      .large-7.columns.checkbox_section
-          h4.white_box=@situacao.name
-          .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
-    - @local = @material.subcategories.where(name: 'Local de produção').first
-=======
     - @disponibilidade = @material.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
@@ -116,7 +107,6 @@
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
     - @local = @material.subcategories.where(name: 'Local de Produção').first
->>>>>>> f6a844f944248e94b3cad0c62a883a2844fb6e51
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@local.name
@@ -177,31 +167,19 @@
           h4.white_box=@uso.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @uso.subcategories
-<<<<<<< HEAD
-    - @situacao = @produto.subcategories.where(name: 'Situação').first
-    .row
-      .large-7.columns.checkbox_section
-          h4.white_box=@situacao.name
-          .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
-=======
     - @disponibilidade = @produto.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@disponibilidade.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
->>>>>>> f6a844f944248e94b3cad0c62a883a2844fb6e51
     - @local = @produto.subcategories.where(name: 'Local de produção').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@local.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @local.subcategories
-<<<<<<< HEAD
 
-=======
->>>>>>> f6a844f944248e94b3cad0c62a883a2844fb6e51
   .checkboxes_container id="sistema_container"
     - @sistema = Category.parent.where(name: 'Sistema').first
     - @sustentabilidade = @sistema.subcategories.where(name: 'Sustentabilidade').first
@@ -211,11 +189,7 @@
     - @uso = @agua.subcategories.where(name: 'Uso').first
     - @ciclo = @sustentabilidade.subcategories.where(name: 'Ciclo').first
     - @seguranca = @sustentabilidade.subcategories.where(name: 'Segurança').first
-<<<<<<< HEAD
-    - @humano_social = @sustentabilidade.subcategories.where(name: 'Humano/Social').first
-=======
     - @humano_social = @sustentabilidade.subcategories.where(name: 'Humano-social').first
->>>>>>> f6a844f944248e94b3cad0c62a883a2844fb6e51
     - @energia = @sustentabilidade.subcategories.where(name: 'Energia').first
     - @producao_energia = @energia.subcategories.where(name: 'Produção').first
     - @fonte_energia = @energia.subcategories.where(name: 'Fonte').first
@@ -260,21 +234,12 @@
           h4.white_box=@setor.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @setor.subcategories
-<<<<<<< HEAD
-    - @situacao = @sistema.subcategories.where(name: 'Situação').first
-    .row
-      .large-7.columns.checkbox_section
-          h4.white_box=@situacao.name
-          .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @situacao.subcategories
-=======
     - @disponibilidade = @sistema.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
           h4.white_box=@disponibilidade.name
           .white_box.checkbox_group
             = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
->>>>>>> f6a844f944248e94b3cad0c62a883a2844fb6e51
     - @local = @sistema.subcategories.where(name: 'Local de produção').first
     .row
       .large-7.columns.checkbox_section
