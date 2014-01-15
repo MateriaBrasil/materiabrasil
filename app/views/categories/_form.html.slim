@@ -1,24 +1,4 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
-  / = f.select :category, Category.parent
-  /*- Category.top_level.each do |parent_category|*/
-    /*.checkboxes_container id="#{parent_category.name}_container"*/
-      /*- parent_category.subcategories.each_with_index do |sub, index|*/
-        /*- if sub.subcategories.first && sub.subcategories.first.subcategories.size > 0*/
-          /*h2=sub.name*/
-          /*.row*/
-            /*.large-7.columns.checkbox_section*/
-              /*.subcategorie_container*/
-                /*- sub.subcategories.each_with_index do |sub2, index2|*/
-                  /*h4.white_box=sub2.name*/
-                  /*.white_box.checkbox_group*/
-                    /*= f.association :categories, as: :check_boxes, collection: sub2.subcategories*/
-        /*- else*/
-          /*.row*/
-            /*.large-7.columns.checkbox_section*/
-              /*h4.white_box=sub.name*/
-              /*.white_box.checkbox_group*/
-                /*= f.association :categories, as: :check_boxes, collection: sub.subcategories*/
-
   .checkboxes_container id="material_container"
     - @material = Category.parent.where(name: 'Material').first
     - @classe = @material.subcategories.where(name: 'Classes').first
