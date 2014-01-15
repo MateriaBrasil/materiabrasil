@@ -23,4 +23,5 @@ class Contact < ActiveRecord::Base
 
   belongs_to :manufacturer
 
+  scope :publics, ->{ where(public: true) }
 end
