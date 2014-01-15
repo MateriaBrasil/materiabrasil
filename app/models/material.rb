@@ -35,6 +35,7 @@ class Material < ActiveRecord::Base
   attr_accessible :images_attributes, :attachments_attributes, :category_ids, :name, :resume, :dimensions, :density, :average_price, :certifications, :awards, :technical_observation
 
   default_scope order('created_at DESC')
+
   after_save :check_tree
 
 
