@@ -68,7 +68,8 @@ App.Materials = {
   Show: Backbone.View.extend({
     el: 'body',
     events: {
-      "click li.indicator" : "activateIndicator"
+      "click li.indicator" : "activateIndicator",
+      "change .manufacturer_contact" : "showManufacturerContact"
     },
 
     initialize: function(){
@@ -76,6 +77,11 @@ App.Materials = {
       this.indicators = this.$('li.indicator');
       this.showChildrenList(this.indicators.first());
 
+    },
+
+    showManufacturerContact: function(e){
+      $('.contact-info').hide();
+      $('.contact-info#contact_'+e.target.value).show();
     },
 
     activateIndicator: function(event){

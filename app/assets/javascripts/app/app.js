@@ -2,7 +2,7 @@ var App = window.App = {
   Common: { 
     
     init: function() {
-      jQuery("select").chosen({no_results_text: "Nenhum resultado encontrado para"});
+      // jQuery("select").chosen({no_results_text: "Nenhum resultado encontrado para"});
       var $flash = $('.flash');
       if( !$('a', $flash).length) setTimeout( function(){ $flash.slideUp() }, 5500);
       $(window).on('click', function(){ $flash.slideUp()});

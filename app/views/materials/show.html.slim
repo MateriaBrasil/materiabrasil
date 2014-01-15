@@ -2,7 +2,7 @@
   .row
     .large-12.column
       h1= @material.name
-/- if @material.draft
+- if @material.draft && current_user == @material.user
   .draft_advert.orange_box
     .row
       .large-12.column
@@ -49,8 +49,19 @@ section.material.row
           tr
             td.title Site
             td= link_to @material.manufacturer.site, @material.manufacturer.site, target: '_blank'
-        //= simple_form_for "/contact/get/1", remote: true, format: :json do |f|
-          = f.input :contact , collection: @material.manufacturer.contacts, label_method: :definition, label: false, prompt: "Selecione um representante"
+        = simple_form_for "manufacturer" do |f|
+          = f.input :contact , collection: @material.manufacturer.contacts.publics, label_method: :definition, label: false, prompt: "Selecione um representante"
+          - @material.manufacturer.contacts.publics.each do |contact|
+            table.contact-info id="contact_#{contact.id}" style="display:none"
+              tr 
+                td.title Nome
+                td= contact.name
+              tr 
+                td.title Email
+                td= contact.email
+              tr 
+                td.title Fone
+                td= contact.phone_first
     - else
       .about.transparent_box
         section.data
