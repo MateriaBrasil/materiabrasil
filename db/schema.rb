@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20131005213118) do
     t.string   "phone"
     t.string   "image"
     t.text     "description"
+<<<<<<< HEAD
     t.boolean  "forum",              :default => false, :null => false
     t.string   "forum_mail"
     t.string   "postal_address"
@@ -132,6 +133,10 @@ ActiveRecord::Schema.define(:version => 20131005213118) do
     t.string   "postal_country"
     t.string   "postal_phone"
     t.boolean  "has_postal_address", :default => false, :null => false
+=======
+    t.boolean  "forum"
+    t.string   "forum_mail"
+>>>>>>> 58e58c9f36c8af4053dc66a8abcf6b8cdc3748d1
   end
 
   add_index "manufacturers", ["user_id"], :name => "index_manufacturers_on_user_id"

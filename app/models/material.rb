@@ -65,7 +65,7 @@ class Material < ActiveRecord::Base
     images.length > 0
   end
 
-private
+  private
   def check_tree
     tree = []
     self.categories.each do |cat|
