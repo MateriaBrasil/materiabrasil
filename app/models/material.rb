@@ -30,6 +30,7 @@ class Material < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :attachments, dependent: :destroy
   has_and_belongs_to_many :categories, before_add: :validates_category
+  belongs_to :category
   validates :manufacturer, :name, :resume, presence: true
   accepts_nested_attributes_for :images
   accepts_nested_attributes_for :attachments

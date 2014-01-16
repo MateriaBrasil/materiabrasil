@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115024339) do
+ActiveRecord::Schema.define(:version => 20140116144543) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20140115024339) do
     t.string   "awards"
     t.string   "code"
     t.boolean  "draft",                 :default => true, :null => false
+    t.integer  "category_id"
   end
 
   add_index "materials", ["slug"], :name => "index_materials_on_slug", :unique => true
