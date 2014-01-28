@@ -1,4 +1,4 @@
-= simple_form_for parent, url: update_categories_material_path(parent.id), method: :put do |f|
+= simple_form_for parent, url: update_categories_material_path(parent.id), html: {class: "custom"}, method: :put do |f|
   .row
     .large-5.columns
       input type="hidden" name="parent_category" id="parent_category" value="false"
@@ -10,9 +10,14 @@
     - @classe = @material.subcategories.where(name: 'Classes').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@classe.name
+        .subcategorie_container.expanded
+          .white_box.box_title
+            h4=@classe.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @classe.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @classe.subcategories
+      .large-3.columns.hint
+        p Marque as opções que mais se enquadram no seu produto.
     - @sustentabilidade = @material.subcategories.where(name: 'Sustentabilidade').first
     - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
     - @producao = @agua.subcategories.where(name: 'Produção').first
@@ -27,77 +32,116 @@
     - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
     - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
     - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
-    h2=@sustentabilidade.name
     .row
       .large-7.columns.checkbox_section
+        h5 Direcionadores de Sustentabilidade
         .subcategorie_container
-          h4.white_box=@agua.name
+          .white_box.box_title
+            h4=@agua.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao.name
-            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao.subcategories
             h5=@fonte.name
-            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte.subcategories
             h5=@uso_agua.name
-            = f.association :categories, as: :check_boxes, collection: @uso_agua.subcategories
-          h4.white_box=@ciclo.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso_agua.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@ciclo.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
-          h4.white_box=@seguranca.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @ciclo.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@seguranca.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
-          h4.white_box=@humano_social.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @seguranca.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@humano_social.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
-          h4.white_box=@energia.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @humano_social.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@energia.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao_energia.name
-            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao_energia.subcategories
             h5=@fonte_energia.name
-            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte_energia.subcategories
             h5=@uso_energia.name
-            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
-          h4.white_box=@gestao.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso_energia.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@gestao.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @gestao.subcategories
+      .large-3.columns.hint
+        p Essas informações aparecem em destaque na sua página. Procure ser o mais transparente possível. A idéia dessa seção não é criar um ranking, mas sim ajudar o consumidor a entender de forma mais clara o que está por trás do seu processo de fabricação.
     - @uso = @material.subcategories.where(name: 'Usos').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@uso.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@uso.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso.subcategories
     - @caracteristicas = @material.subcategories.where(name: 'Características').first
     - @visuais = @caracteristicas.subcategories.where(name: 'Visuais').first
     - @tateis = @caracteristicas.subcategories.where(name: 'Táteis').first
     - @resistente = @caracteristicas.subcategories.where(name: 'Resistente a').first
     - @forma = @caracteristicas.subcategories.where(name: 'Forma').first
-    h2=@caracteristicas.name
     .row
       .large-7.columns.checkbox_section
+        h5=@caracteristicas.name
         .subcategorie_container
-          h4.white_box=@visuais.name
+          .white_box.box_title
+            h4=@visuais.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @visuais.subcategories
-          h4.white_box=@tateis.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @visuais.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@tateis.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @tateis.subcategories
-          h4.white_box=@resistente.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @tateis.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@resistente.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @resistente.subcategories
-          h4.white_box=@forma.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @resistente.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@forma.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @forma.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @forma.subcategories
     - @disponibilidade = @material.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@disponibilidade.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@disponibilidade.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @disponibilidade.subcategories
     - @local = @material.subcategories.where(name: 'Local de Produção').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@local.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@local.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @local.subcategories
 
   .checkboxes_container id="produto_container"
     - @produto = Category.parent.where(name: 'Produto').first
@@ -115,56 +159,84 @@
     - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
     - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
     - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
-    h2=@sustentabilidade.name
     .row
       .large-7.columns.checkbox_section
-        .subcategorie_container
-          h4.white_box=@agua.name
+        h5 Direcionadores de Sustentabilidade
+        .subcategorie_container.expanded
+          .white_box.box_title
+            h4=@agua.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao.name
-            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao.subcategories
             h5=@fonte.name
-            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte.subcategories
             h5=@uso.name
-            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
-          h4.white_box=@ciclo.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@ciclo.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
-          h4.white_box=@seguranca.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @ciclo.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@seguranca.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
-          h4.white_box=@humano_social.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @seguranca.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@humano_social.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
-          h4.white_box=@energia.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @humano_social.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@energia.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao_energia.name
-            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao_energia.subcategories
             h5=@fonte_energia.name
-            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte_energia.subcategories
             h5=@uso_energia.name
-            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
-          h4.white_box=@gestao.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso_energia.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@gestao.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @gestao.subcategories
+      .large-3.columns.hint
+        p Essas informações aparecem em destaque na sua página. Procure ser o mais transparente possível. A idéia dessa seção não é criar um ranking, mas sim ajudar o consumidor a entender de forma mais clara o que está por trás do seu processo de fabricação.
     - @uso = @produto.subcategories.where(name: 'Uso').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@uso.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@uso.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso.subcategories
     - @disponibilidade = @produto.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@disponibilidade.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@disponibilidade.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @disponibilidade.subcategories
     - @local = @produto.subcategories.where(name: 'Local de produção').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@local.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@local.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @local.subcategories
 
   .checkboxes_container id="sistema_container"
     - @sistema = Category.parent.where(name: 'Sistema').first
@@ -182,56 +254,84 @@
     - @uso_energia =  @energia.subcategories.where(name: 'Uso').first
     - @certificacao =  @energia.subcategories.where(name: 'Certificação').first
     - @gestao =  @sustentabilidade.subcategories.where(name: 'Gestão').first
-    h2=@sustentabilidade.name
     .row
       .large-7.columns.checkbox_section
-        .subcategorie_container
-          h4.white_box=@agua.name
+        h5 Direcionadores de Sustentabilidade
+        .subcategorie_container.expanded
+          .white_box.box_title
+            h4=@agua.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao.name
-            = f.association :categories, as: :check_boxes, collection: @producao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao.subcategories
             h5=@fonte.name
-            = f.association :categories, as: :check_boxes, collection: @fonte.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte.subcategories
             h5=@uso.name
-            = f.association :categories, as: :check_boxes, collection: @uso.subcategories
-          h4.white_box=@ciclo.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@ciclo.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @ciclo.subcategories
-          h4.white_box=@seguranca.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @ciclo.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@seguranca.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @seguranca.subcategories
-          h4.white_box=@humano_social.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @seguranca.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@humano_social.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @humano_social.subcategories
-          h4.white_box=@energia.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @humano_social.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@energia.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
             h5=@producao_energia.name
-            = f.association :categories, as: :check_boxes, collection: @producao_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @producao_energia.subcategories
             h5=@fonte_energia.name
-            = f.association :categories, as: :check_boxes, collection: @fonte_energia.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @fonte_energia.subcategories
             h5=@uso_energia.name
-            = f.association :categories, as: :check_boxes, collection: @uso_energia.subcategories
-          h4.white_box=@gestao.name
+            = f.association :categories, as: :check_boxes, label: false, collection: @uso_energia.subcategories
+        .subcategorie_container
+          .white_box.box_title
+            h4=@gestao.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @gestao.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @gestao.subcategories
+      .large-3.columns.hint
+        p Essas informações aparecem em destaque na sua página. Procure ser o mais transparente possível. A idéia dessa seção não é criar um ranking, mas sim ajudar o consumidor a entender de forma mais clara o que está por trás do seu processo de fabricação.
     - @setor = @sistema.subcategories.where(name: 'Setor').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@setor.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@setor.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @setor.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @setor.subcategories
     - @disponibilidade = @sistema.subcategories.where(name: 'Disponibilidade').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@disponibilidade.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@disponibilidade.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @disponibilidade.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @disponibilidade.subcategories
     - @local = @sistema.subcategories.where(name: 'Local de produção').first
     .row
       .large-7.columns.checkbox_section
-          h4.white_box=@local.name
+        .subcategorie_container
+          .white_box.box_title
+            h4=@local.name
+            = link_to "Expandir", "#", class: "white_box_expander", title: "Expandir"
           .white_box.checkbox_group
-            = f.association :categories, as: :check_boxes, collection: @local.subcategories
+            = f.association :categories, as: :check_boxes, label: false, collection: @local.subcategories
 
 
   hr/

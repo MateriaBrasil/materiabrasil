@@ -1,3 +1,16 @@
+form.custom
+  .custom.dropdown.select
+    background: white
+    box-shadow: 0 1px 2px #bebebe
+    border: none
+    border-radius: 4px
+    cursor: pointer
+    .selector, &:hover .selector, &.open .selector
+      border-left: 2px solid $gray
+      background: image-url("site/dropdown-arrow.png") no-repeat center
+      &:after
+        display: none !important
+
 .material_form
   padding: 2em 0
   input[type=text], input[type=email], input[type=number], input[type=password], textarea
@@ -46,9 +59,9 @@
       display: inline
 
 .checkbox_section
-  margin-bottom: .5em
   font-weight: 600
-  padding: 5px
+  h5
+    margin-bottom: 1em
   h4
     color: $cyan
     display: block
@@ -132,3 +145,40 @@
           display: block
           right: - $size
           background: $gray
+
+.subcategorie_container
+  margin-bottom: 1em
+
+.white_box.box_title
+  padding: 5px 1.2em
+  cursor: pointer
+  +decorative-content
+    width: 2px
+    top: 0
+    bottom: 0
+    right: 30px
+    background: $gray
+  .white_box_expander
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    width: 30px
+    background: image-url("site/dropdown-arrow.png") no-repeat center
+    +hide-text
+    +context(".expanded")
+      +transform(rotate(-180deg))
+
+.checkbox_group
+  position: relative
+  z-index: 2
+  overflow: hidden
+  max-height: 0
+  padding: 0 1.2em
+  +transition(.3s)
+  +context(".expanded")
+    max-height: 90em
+    padding: 1.2em
+    border-top: 1px solid $gray
+  h5
+    margin-top: 1em
