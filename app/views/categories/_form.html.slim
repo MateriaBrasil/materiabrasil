@@ -1,7 +1,7 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), html: {class: "custom"}, method: :put do |f|
   .row
     .large-5.columns
-      = f.association :category, collection: Category.parent
+      = f.association :category, collection: Category.parent, include_blank: false
       /*input type="hidden" name="parent_category" id="parent_category" value="false"*/
       /*= simple_form_for "material_type" do |f|*/
         /*= f.input :selection , collection: Category.parent, label_method: :name, label: 'Tipo de cadastro', include_blank: false*/

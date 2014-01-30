@@ -16,6 +16,9 @@ form.custom
   input[type=text], input[type=email], input[type=number], input[type=password], textarea
     width: 100%
 
+  textarea
+    height: 12em
+
   .bt.bt_secondary
     margin: 0 auto
     display: block
@@ -36,11 +39,12 @@ form.custom
     color: $mild-dark
     font-style: italic
     font-size: .9em
+    padding-left: 2em
     p:first-child:before
       content: "?"
       position: absolute
       top: 4px
-      left: -8px
+      left: 3px
       width: 14px
       height: 14px
       background: $cyan
@@ -55,8 +59,13 @@ form.custom
 
   .checkbox
     display: block
+  span.checkbox
     label
       display: inline
+      padding-left: 1.5em
+      margin-left: -1em
+      z-index: 3
+      position: relative
 
 .checkbox_section
   font-weight: 600
