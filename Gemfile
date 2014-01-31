@@ -72,6 +72,7 @@ group :assets do
   gem 'semantic-mixins', '~> 0.2'
   gem 'uglifier'
   gem 'zurb-foundation', '~> 4.0.0'
+  gem 'dropzonejs-rails', '~> 0.4.10'
 end
 
 gem 'jquery-rails'

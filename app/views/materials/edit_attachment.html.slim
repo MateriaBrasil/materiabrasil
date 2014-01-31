@@ -1,10 +1,12 @@
 = render partial: "partials/material_breadcrumb", locals: {position: :imagens}
 .material_form
   = simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
-    = f.simple_fields_for :images do |i|
+    = f.simple_fields_for :image do |i|
       = i.input :image, as: :file
+    - @material.images.each do |image_obj|
+      = image_tag image_obj.image.flat.url, size: "280x240", class: "thumb"
     hr/
-    = f.simple_fields_for :attachments do |a|
+    = f.simple_fields_for :attachment do |a|
       = a.input :file, as: :file
     hr/
     .row

@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require dropzone
 //= require lib/chosen
 //= require lib/ie
 //= require lib/underscore

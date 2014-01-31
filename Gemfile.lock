@@ -109,6 +109,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.2.3)
+    dropzonejs-rails (0.4.13)
+      rails (> 3.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.20.1)
@@ -332,6 +334,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  dropzonejs-rails (~> 0.4.10)
   fog
   friendly_id (~> 4.0.1)
   google-analytics-rails
