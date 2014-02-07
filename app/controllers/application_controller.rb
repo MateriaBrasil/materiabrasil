@@ -1,8 +1,14 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include Pundit
 
   before_filter :set_locale
   after_filter :store_location
+
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    redirect_to request.env["HTTP_REFERER"] || root_url, flash: { error: 'Você não está autorizado a realizar esta ação.' }
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
