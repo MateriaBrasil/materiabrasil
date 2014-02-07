@@ -35,3 +35,4 @@ latest.dump
 /db/schema.rb
 
 .ruby-version
+.rvmrc
