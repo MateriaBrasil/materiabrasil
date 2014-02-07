@@ -32,4 +32,8 @@ class MaterialPolicy < ApplicationPolicy
   def update_attachments?
     user == @material.manufacturer.user
   end
+
+  def show?
+    @material.published? || (@material.draft && @material.user == user)
+  end
 end

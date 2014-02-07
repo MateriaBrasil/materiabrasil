@@ -107,4 +107,9 @@ class MaterialsController < ApplicationController
     authorize resource
     edit!
   end
+
+  def show
+    authorize resource
+    show!
+  end
 end
