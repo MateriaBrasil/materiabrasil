@@ -102,4 +102,9 @@ class MaterialsController < ApplicationController
     @material = Material.new
     authorize @material
   end
+
+  def edit
+    authorize resource
+    edit!
+  end
 end

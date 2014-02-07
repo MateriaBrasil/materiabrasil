@@ -1,4 +1,10 @@
 class MaterialPolicy < ApplicationPolicy
+
+  def initialize(user, material)
+    @user = user
+    @material = material
+  end
+
   def new?
     user.present?
   end
@@ -7,19 +13,23 @@ class MaterialPolicy < ApplicationPolicy
     user.present?
   end
 
+  def edit?
+    user == @material.manufacturer.user
+  end
+
   def edit_attachments?
-    user.present?
+    user == @material.manufacturer.user
   end
 
   def update?
-    user.present?
+    user == @material.manufacturer.user
   end
 
   def update_categories?
-    user.present?
+    user == @material.manufacturer.user
   end
 
   def update_attachments?
-    user.present?
+    user == @material.manufacturer.user
   end
 end
