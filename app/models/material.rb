@@ -68,6 +68,10 @@ class Material < ActiveRecord::Base
     images.length > 0
   end
 
+  def published?
+    self.draft == false
+  end
+
   private
   def check_tree
     tree = []

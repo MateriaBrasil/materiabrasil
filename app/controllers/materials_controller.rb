@@ -55,26 +55,31 @@ class MaterialsController < ApplicationController
   def create
     manufacturer = current_user.manufacturer || Manufacturer.create(name: current_user.name, user: current_user)
     @material = Material.new(params[:material])
+    authorize @material
     @material.manufacturer = manufacturer
     create! { material_categories_path(@material.id) }
   end
 
   def edit_attachments
     @material = Material.find(params[:material_id])
+    authorize @material
     @material.images.build
     @material.attachments.build
     return render 'edit_attachment'
   end
 
   def update
+    authorize resource
     update! { material_categories_path(@material) }
   end
 
   def update_categories
+    authorize resource
     update! { material_edit_attachments_path(@material) }
   end
 
   def update_attachments
+    authorize resource
     update! do |success,failure|
       success.html do
         redirect_to edit_manufacturer_path(current_user.manufacturer)
@@ -89,5 +94,20 @@ class MaterialsController < ApplicationController
         return render json: { status: :error }
       end
     end
+  end
+
+  def new
+    @material = Material.new
+    authorize @material
+  end
+
+  def edit
+    authorize resource
+    edit!
+  end
+
+  def show
+    authorize resource
+    show!
   end
 end

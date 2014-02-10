@@ -31,6 +31,7 @@ gem 'slim'
 gem 'meta_search',    '>= 1.1.0.pre'
 gem 'google-analytics-rails'
 gem 'country_select'
+gem 'pundit'
 
 # Database
 gem 'acts_as_tree_rails3'
