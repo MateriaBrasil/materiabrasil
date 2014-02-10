@@ -1,14 +1,16 @@
 = render partial: "partials/material_breadcrumb", locals: {position: :imagens}
 .material_form
   = simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
-    = f.simple_fields_for :image do |i|
-      = i.input :image, as: :file
-    - @material.images.each do |image_obj|
-      = image_tag image_obj.image.flat.url, size: "280x240", class: "thumb"
-    hr/
-    = f.simple_fields_for :attachment do |a|
-      = a.input :file, as: :file
-    hr/
+    input type="hidden" name="sent_thru_javascript" id="sent_thru_javascript" value="false"
+    .row
+      .image_fields
+        = f.simple_fields_for :images do |img|
+          - if img.object.id.present?
+            .polaroid
+              = image_tag(img.object.image.flat.url, class: "uploaded-image") if img.object.image.file.exists?
+              = link_to "Remove", material_image_path(resource.id, img.object.id), data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            = img.input :image, input_html: { class: "fallback" }
     .row
       .large-12.columns
         = f.button :submit, raw("Concluir meu cadastro &#62;"), class: "bt bt_secondary bt_large bt_next"

@@ -79,17 +79,15 @@ class MaterialsController < ApplicationController
       success.html do
         redirect_to edit_manufacturer_path(current_user.manufacturer)
       end
-      # failure.html do
-      #   flash[:error] = @user.errors.full_messages.to_sentence
-      # end
+      failure.html do
+        flash[:error] = "Não conseguimos fazer o upload do arquivo por algum motivo, por favor, tente novamente."
+      end
       success.json do
-        return render json: { status: :success, image: Image.last.image.url }
+        return render json: { status: :success, image: @material.images.last.image.url }
       end
       failure.json do
         return render json: { status: :error }
       end
     end
-
-    # update! { edit_manufacturer_path(current_user.manufacturer) }
   end
 end

@@ -1,66 +1,75 @@
 App.Materials ?= {}
-App.Modules ?= {}
+# App.Modules ?= {}
 App.Materials.Edit_attachments = Backbone.View.extend
   el: 'body'
-  # events:
-  #   'change #material_category_id' : 'showMaterialTypeSection'
-  #   'click .white_box.box_title' : 'expandCheckboxes'
+  events:
+    'change input.file' : 'submitForm'
+#   #   'click .white_box.box_title' : 'expandCheckboxes'
 
   initialize: ->
     _.bindAll(@)
-    if window.File && window.FileReader && window.FileList && window.Blob
-      @prepareToDropzone()
-      @uploaders = []
-      for uploader in $('.upload-image')
-        @uploaders.push new App.Modules.DragDropUploader { el: uploader }
+    $input = $(".material_images_image")
+    @form = $input.closest('form')
+    @form.find('.image_fields').prepend($input)
 
-  prepareToDropzone: ->
-    @el.insertAdjacentHTML 'beforeend', '<div id="dropzone-preview-image"></div>'
-    @$('input.fallback[type=file]').closest('.input.file').remove()
+#     if window.File && window.FileReader && window.FileList && window.Blob
+#       @prepareToDropzone()
+#       @uploaders = []
+#       for uploader in $('.upload-image')
+#         @uploaders.push new App.Modules.DragDropUploader { el: uploader }
 
-App.Modules.DragDropUploader = Backbone.View.extend
-  # TODO: Uploader functionality
-  initialize: ->
-    _.bindAll this, 'onFileAdded', 'onUploadProgress', 'onUploadComplete', 'onUploadFail'
-    @action_url = @$el.closest('form')[0].getAttribute("action")
-    @param_name = @$el[0].dataset.param
-    @$image_previewer = @$('.uploaded-image')
-    @initializeDropzone()
-    @listenDropzoneEvents()
+  submitForm: (e)->
+    if e.target.value != ""
+      @form.find('#sent_thru_javascript').val true
+      @form.submit()
 
-  initializeDropzone: ->
-    @dropzone = new Dropzone(@el,
-      url: @action_url
-      acceptedFiles: "image/*"
-      headers: "X-CSRF-Token" : $('meta[name="csrf-token"]')[0].getAttribute 'content'
-      paramName: "user[#{@param_name}]"
-      method: 'PUT'
-      uploadMultiple: false
-      previewsContainer: '#dropzone-preview-image'
-    )
+#   prepareToDropzone: ->
+#     @el.insertAdjacentHTML 'beforeend', '<div id="dropzone-preview-image"></div>'
+#     # @$('input.fallback[type=file]').closest('.input.file').remove()
 
-  listenDropzoneEvents: ->
-    if @dropzone?
-      @dropzone.on "addedfile", @onFileAdded
-      @dropzone.on "uploadprogress", @onUploadProgress
-      @dropzone.on "success", @onUploadComplete
-      @dropzone.on "error", @onUploadFail
+# App.Modules.DragDropUploader = Backbone.View.extend
+#   # TODO: Uploader functionality
+#   initialize: ->
+#     _.bindAll this, 'onFileAdded', 'onUploadProgress', 'onUploadComplete', 'onUploadFail'
+#     @action_url = @$el.closest('form')[0].getAttribute("action")
+#     @param_name = @$el[0].dataset.param
+#     @$image_previewer = @$('.uploaded-image')
+#     @initializeDropzone()
+#     @listenDropzoneEvents()
 
-  onFileAdded: (file)->
-    @$('.info').text 'Drop an image here'
-    @$el.removeClass('upload-complete upload-fail').addClass 'upload-started'
+#   initializeDropzone: ->
+#     @dropzone = new Dropzone(@el,
+#       url: @action_url
+#       acceptedFiles: "image/*"
+#       headers: "X-CSRF-Token" : $('meta[name="csrf-token"]')[0].getAttribute 'content'
+#       paramName: "material[images_attributes][0][#{@param_name}]"
+#       method: 'PUT'
+#       uploadMultiple: false
+#       previewsContainer: '#dropzone-preview-image'
+#     )
 
-  onUploadProgress: (file, progress)->
-    @$('.info').text 'Drop an image here'
+#   listenDropzoneEvents: ->
+#     if @dropzone?
+#       @dropzone.on "addedfile", @onFileAdded
+#       @dropzone.on "uploadprogress", @onUploadProgress
+#       @dropzone.on "success", @onUploadComplete
+#       @dropzone.on "error", @onUploadFail
 
-  onUploadComplete: (file, response)->
-    @$('.info').text 'Drop an image here'
-    @$el.removeClass('upload-started').addClass 'upload-complete'
-    @$image_previewer.attr 'src', response[@param_name]
+#   onFileAdded: (file)->
+#     @$('.info').text 'Drop an image here'
+#     @$el.removeClass('upload-complete upload-fail').addClass 'upload-started'
 
-  onUploadFail: (file, error)->
-    @$('.info').text error
-    @$el.removeClass('upload-started').addClass 'upload-fail'
+#   onUploadProgress: (file, progress)->
+#     @$('.info').text 'Drop an image here'
 
-  # openFileChooser: (e)->
-  #   @$el.trigger 'click'
+#   onUploadComplete: (file, response)->
+#     @$('.info').text 'Drop an image here'
+#     @$el.removeClass('upload-started').addClass 'upload-complete'
+#     @$image_previewer.attr 'src', response[@param_name]
+
+#   onUploadFail: (file, error)->
+#     @$('.info').text error
+#     @$el.removeClass('upload-started').addClass 'upload-fail'
+
+#   # openFileChooser: (e)->
+#   #   @$el.trigger 'click'

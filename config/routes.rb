@@ -10,6 +10,8 @@ MateriaBrasil::Application.routes.draw do
   #resources :sessions, only: [:new, :destroy]
 
   resources :materials, only: [:index, :show, :new, :update, :edit, :create] do
+    resources :images
+    # resources :attachments
     member do
       put :update_categories
       put :update_attachments
