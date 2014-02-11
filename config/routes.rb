@@ -11,7 +11,7 @@ MateriaBrasil::Application.routes.draw do
 
   resources :materials, only: [:index, :show, :new, :update, :edit, :create] do
     resources :images
-    # resources :attachments
+    resources :attachments, only: [:edit, :update, :create, :destroy]
     member do
       put :update_categories
       put :update_attachments

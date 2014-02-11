@@ -1,75 +1,35 @@
 App.Materials ?= {}
-# App.Modules ?= {}
 App.Materials.Edit_attachments = Backbone.View.extend
   el: 'body'
   events:
     'change input.file' : 'submitForm'
-#   #   'click .white_box.box_title' : 'expandCheckboxes'
 
   initialize: ->
     _.bindAll(@)
-    $input = $(".material_images_image")
-    @form = $input.closest('form')
-    @form.find('.image_fields').prepend($input)
-
-#     if window.File && window.FileReader && window.FileList && window.Blob
-#       @prepareToDropzone()
-#       @uploaders = []
-#       for uploader in $('.upload-image')
-#         @uploaders.push new App.Modules.DragDropUploader { el: uploader }
+    $imageInput = $(".img-upload")
+    $fileInput = $(".attachment-upload")
+    @form = $imageInput.closest('form')
+    @form.find('.image-fields').prepend($imageInput)
+    @form.find('.attachment-fields').prepend($fileInput)
 
   submitForm: (e)->
-    if e.target.value != ""
+    pattern = null
+    if $(e.target).closest('.img-upload').length > 0
+      pattern = /\.(jpg|png|gif)$/
+    else if $(e.target).closest('.attachment-upload').length > 0
+      pattern = /\.(pdf|doc|docx|jpg|png|xls|xlsx)$/
+      @setBlankName(e.target)
+    if @validateFile(e.target.value, pattern)
       @form.find('#sent_thru_javascript').val true
       @form.submit()
 
-#   prepareToDropzone: ->
-#     @el.insertAdjacentHTML 'beforeend', '<div id="dropzone-preview-image"></div>'
-#     # @$('input.fallback[type=file]').closest('.input.file').remove()
+  validateFile: (value, pattern)->
+    valid = value.match pattern
+    if valid? then valid = true else valid = false
+    valid
 
-# App.Modules.DragDropUploader = Backbone.View.extend
-#   # TODO: Uploader functionality
-#   initialize: ->
-#     _.bindAll this, 'onFileAdded', 'onUploadProgress', 'onUploadComplete', 'onUploadFail'
-#     @action_url = @$el.closest('form')[0].getAttribute("action")
-#     @param_name = @$el[0].dataset.param
-#     @$image_previewer = @$('.uploaded-image')
-#     @initializeDropzone()
-#     @listenDropzoneEvents()
-
-#   initializeDropzone: ->
-#     @dropzone = new Dropzone(@el,
-#       url: @action_url
-#       acceptedFiles: "image/*"
-#       headers: "X-CSRF-Token" : $('meta[name="csrf-token"]')[0].getAttribute 'content'
-#       paramName: "material[images_attributes][0][#{@param_name}]"
-#       method: 'PUT'
-#       uploadMultiple: false
-#       previewsContainer: '#dropzone-preview-image'
-#     )
-
-#   listenDropzoneEvents: ->
-#     if @dropzone?
-#       @dropzone.on "addedfile", @onFileAdded
-#       @dropzone.on "uploadprogress", @onUploadProgress
-#       @dropzone.on "success", @onUploadComplete
-#       @dropzone.on "error", @onUploadFail
-
-#   onFileAdded: (file)->
-#     @$('.info').text 'Drop an image here'
-#     @$el.removeClass('upload-complete upload-fail').addClass 'upload-started'
-
-#   onUploadProgress: (file, progress)->
-#     @$('.info').text 'Drop an image here'
-
-#   onUploadComplete: (file, response)->
-#     @$('.info').text 'Drop an image here'
-#     @$el.removeClass('upload-started').addClass 'upload-complete'
-#     @$image_previewer.attr 'src', response[@param_name]
-
-#   onUploadFail: (file, error)->
-#     @$('.info').text error
-#     @$el.removeClass('upload-started').addClass 'upload-fail'
-
-#   # openFileChooser: (e)->
-#   #   @$el.trigger 'click'
+  setBlankName: (target)->
+    $wrapper = $(target).closest('.attachment-upload')
+    index = $wrapper.data 'index'
+    nameField = $wrapper.find "#material_attachments_attributes_#{index}_name"
+    nameField.val("Anexo #{index+1}") if nameField[0].value == ""

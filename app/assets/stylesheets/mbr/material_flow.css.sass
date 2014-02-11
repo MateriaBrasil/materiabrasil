@@ -191,3 +191,43 @@ form.custom
     border-top: 1px solid $gray
   h5
     margin-top: 1em
+
+.image-fields
+  margin-bottom: 2em
+
+.img-upload, .attachment-upload
+  input[type=file]
+    +opacity(0)
+    height: 70px
+    width: 310px
+    cursor: pointer
+  cursor: pointer
+  margin-bottom: 2em
+  width: 310px
+.img-upload
+  background: image-url("site/img-upload-bt.png") no-repeat bottom left
+.attachment-upload
+  background: image-url("site/attachment-upload-bt.png") no-repeat 0 25px
+
+.img-thumbnail
+  position: relative
+  .uploaded-image
+    border-radius: 10px
+  .delete-link, .favorite-link
+    position: absolute
+    top: 8px
+    +opacity(0)
+    +transition(.3s)
+    &:hover
+      +opacity(1)
+  .delete-link
+    +image-replace("site/trash-icon.png")
+    right: 13px
+  .favorite-link
+    +image-replace("site/star-icon.png")
+    left: 13px
+  &:hover
+    .delete-link, .favorite-link
+      +opacity(.5)
+      &:hover
+        +opacity(1)

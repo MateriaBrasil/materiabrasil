@@ -3,14 +3,33 @@
   = simple_form_for @material, method: :put, url: update_attachments_material_path(@material.id) do |f|
     input type="hidden" name="sent_thru_javascript" id="sent_thru_javascript" value="false"
     .row
-      .image_fields
-        = f.simple_fields_for :images do |img|
-          - if img.object.id.present?
-            .polaroid
-              = image_tag(img.object.image.flat.url, class: "uploaded-image") if img.object.image.file.exists?
-              = link_to "Remove", material_image_path(resource.id, img.object.id), data: { confirm: 'Are you sure?' }, method: :delete
+      .image-fields.large-12.columns
+        .row
+          = f.simple_fields_for :images do |img|
+            - if img.object.id.present?
+              .large-3.columns.img-thumbnail
+                = image_tag(img.object.image.flat.url, class: "uploaded-image") if img.object.image.file.exists?
+                = link_to "Remove", material_image_path(resource.id, img.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
+            - else
+              .img-upload
+                = img.input :image
+    hr/
+    .row
+      .attachment-fields.large-7.columns
+        - i = 0
+        = f.simple_fields_for :attachments do |attachment|
+          - if attachment.object.id.present?
+            = link_to attachment.object.name, attachment.object.file.url, class: "uploaded-file"
+            = attachment.input :name
+            = link_to "Remove", material_attachment_path(resource.id, attachment.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
           - else
-            = img.input :image, input_html: { class: "fallback" }
+            .attachment-upload data-index="#{i}"
+              = attachment.input :file, label: "Anexos"
+              = attachment.input :name, label: "Descrição do anexo", required: false
+          - i += 1
+      .large-3.columns.hint
+        p Use este espaço para anexar documentos que contenham informações sobre o seu produto, como por exemplo catálogos comerciais, resultados de testes...
+    hr/
     .row
       .large-12.columns
         = f.button :submit, raw("Concluir meu cadastro &#62;"), class: "bt bt_secondary bt_large bt_next"

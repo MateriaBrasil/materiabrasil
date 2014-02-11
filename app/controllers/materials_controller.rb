@@ -80,19 +80,10 @@ class MaterialsController < ApplicationController
 
   def update_attachments
     authorize resource
-    update! do |success,failure|
-      success.html do
-        redirect_to edit_manufacturer_path(current_user.manufacturer)
-      end
-      failure.html do
-        flash[:error] = "Não conseguimos fazer o upload do arquivo por algum motivo, por favor, tente novamente."
-      end
-      success.json do
-        return render json: { status: :success, image: @material.images.last.image.url }
-      end
-      failure.json do
-        return render json: { status: :error }
-      end
+    if params[:sent_thru_javascript] == "true"
+      update! { material_edit_attachments_path(@material) }
+    else
+      update! { edit_manufacturer_path(current_user.manufacturer) }
     end
   end
 
