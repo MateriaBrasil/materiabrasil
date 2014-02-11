@@ -13,10 +13,5 @@
 class Attachment < ActiveRecord::Base
   attr_accessible :file, :material_id, :name
   belongs_to :material
-  before_save :check_name
   mount_uploader :file, FileUploader
-
-  def check_name
-    return false if name.blank?
-  end
 end

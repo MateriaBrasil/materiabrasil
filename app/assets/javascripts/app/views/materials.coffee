@@ -3,6 +3,7 @@ App.Materials.Edit_attachments = Backbone.View.extend
   el: 'body'
   events:
     'change input.file' : 'submitForm'
+    'click .uploaded-attachment .edit-name-link' : 'toggleAttachmentInput'
 
   initialize: ->
     _.bindAll(@)
@@ -33,3 +34,7 @@ App.Materials.Edit_attachments = Backbone.View.extend
     index = $wrapper.data 'index'
     nameField = $wrapper.find "#material_attachments_attributes_#{index}_name"
     nameField.val("Anexo #{index+1}") if nameField[0].value == ""
+
+  toggleAttachmentInput: (e)->
+    e.preventDefault()
+    $(e.currentTarget).closest('.uploaded-attachment').toggleClass 'editing'

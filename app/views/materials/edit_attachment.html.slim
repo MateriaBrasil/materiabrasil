@@ -9,7 +9,7 @@
             - if img.object.id.present?
               .large-3.columns.img-thumbnail
                 = image_tag(img.object.image.flat.url, class: "uploaded-image") if img.object.image.file.exists?
-                = link_to "Remove", material_image_path(resource.id, img.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
+                = link_to "Remover", material_image_path(resource.id, img.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
             - else
               .img-upload
                 = img.input :image
@@ -19,13 +19,15 @@
         - i = 0
         = f.simple_fields_for :attachments do |attachment|
           - if attachment.object.id.present?
-            = link_to attachment.object.name, attachment.object.file.url, class: "uploaded-file"
-            = attachment.input :name
-            = link_to "Remove", material_attachment_path(resource.id, attachment.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
+            .uploaded-attachment
+              = link_to attachment.object.name, attachment.object.file.url, class: "uploaded-file-name"
+              = attachment.input :name
+              = link_to "Remover", material_attachment_path(resource.id, attachment.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
+              = link_to "alterar nome", "#", class: "edit-name-link"
           - else
             .attachment-upload data-index="#{i}"
               = attachment.input :file, label: "Anexos"
-              = attachment.input :name, label: "Descrição do anexo", required: false
+              = attachment.input :name, required: false, as: :hidden
           - i += 1
       .large-3.columns.hint
         p Use este espaço para anexar documentos que contenham informações sobre o seu produto, como por exemplo catálogos comerciais, resultados de testes...

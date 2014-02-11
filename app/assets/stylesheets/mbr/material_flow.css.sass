@@ -209,6 +209,36 @@ form.custom
 .attachment-upload
   background: image-url("site/attachment-upload-bt.png") no-repeat 0 25px
 
+.uploaded-attachment
+  background: darken($gray, 4%)
+  display: block
+  margin-bottom: 1em
+  padding: 1em
+  border-radius: 10px
+  position: relative
+  .uploaded-file-name
+    font-size: 1.3em
+    font-weight: 600
+    display: block
+    padding: 0 0 1em 1.5em
+    background: image-url("site/clip-icon.png") no-repeat left top
+  .delete-link
+    position: absolute
+    top: 1em
+    right: 1em
+    +image-replace("site/trash-gray-icon.png")
+  .material_attachments_name
+    display: none
+  .edit-name-link
+    text-indent: 1.5em
+    text-decoration: underline
+    display: block
+  &.editing
+    .material_attachments_name
+      display: block
+    .edit-name-link
+      display: none
+
 .img-thumbnail
   position: relative
   .uploaded-image
