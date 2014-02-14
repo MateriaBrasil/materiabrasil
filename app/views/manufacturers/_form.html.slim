@@ -1,35 +1,55 @@
 .material_form
   = simple_form_for @manufacturer do |f|
-    = f.input :name
-    = f.input :description
-    = f.input :site
-    = f.input :certifications
-    = f.input :image
-    = f.input :razao_social
-    = f.input :cnpj
-    = f.input :insc_estadual
-    = f.input :insc_municipal
-    = f.input :address
-    = f.input :city
-    = f.input :state
-    = f.input :country
-    = f.input :cep
-    = f.input :phone
-    = f.input :has_postal_address
-    .postal_address
-      = f.input :postal_address
-      = f.input :postal_city
-      = f.input :postal_state
-      = f.input :postal_country
-      = f.input :postal_cep
-      = f.input :postal_phone
-    h3 Contatos:
-    = simple_fields_for :contacts do |c|
-      = c.input :name
-      = c.input :definition
-      = c.input :email
-      = c.input :phone_first
-      = c.input :address
-      = c.input :public, as: :boolean
-      = f.input :forum
-    = f.button :submit
+    .form-inputs
+      .row
+        .large-7.columns
+          = f.input :name
+        .large-3.large-offset-2.columns.hint
+          p Procure usar um nome que explique a composição e uma característica de sustentabilidade relevante do seu produto. Evite nomes comerciais.
+        .large-7.columns
+          = f.input :description
+        .large-7.columns
+          = f.input :site
+        .large-7.columns
+          = f.input :certifications
+        .large-7.columns
+          = f.input :image
+        .large-7.columns
+          = f.input :razao_social
+        .large-7.columns
+          = f.input :cnpj
+        .large-7.columns
+          = f.input :insc_estadual
+        .large-7.columns
+          = f.input :insc_municipal
+        .large-7.columns
+          = f.input :address
+        .large-7.columns
+          = f.input :city
+        .large-7.columns
+          = f.input :state
+        .large-7.columns
+          = f.input :country
+        .large-7.columns
+          = f.input :cep
+        .large-7.columns
+          = f.input :phone
+        .large-7.columns
+          = f.input :has_postal_address
+        .postal_address
+          = f.input :postal_address
+          = f.input :postal_city
+          = f.input :postal_state
+          = f.input :postal_country
+          = f.input :postal_cep
+          = f.input :postal_phone
+        h3 Contatos:
+        = simple_fields_for :contacts do |c|
+          = c.input :name
+          = c.input :definition
+          = c.input :email
+          = c.input :phone_first
+          = c.input :address
+          = c.input :public, as: :boolean
+          = f.input :forum
+        = f.button :submit

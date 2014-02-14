@@ -261,3 +261,15 @@ form.custom
       +opacity(.5)
       &:hover
         +opacity(1)
+
+#loading
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(255,255,255,.8) image-url("site/loading.gif") no-repeat center
+  z-index: 1000
+  display: none
+  &.active
+    display: block

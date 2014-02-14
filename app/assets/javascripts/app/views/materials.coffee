@@ -7,6 +7,7 @@ App.Materials.Edit_attachments = Backbone.View.extend
 
   initialize: ->
     _.bindAll(@)
+    @$el.prepend("<div id='loading'/>")
     $imageInput = $(".img-upload")
     $fileInput = $(".attachment-upload")
     @form = $imageInput.closest('form')
@@ -21,6 +22,7 @@ App.Materials.Edit_attachments = Backbone.View.extend
       pattern = /\.(pdf|doc|docx|jpg|png|xls|xlsx)$/
       @setBlankName(e.target)
     if @validateFile(e.target.value, pattern)
+      $("#loading").addClass "active"
       @form.find('#sent_thru_javascript').val true
       @form.submit()
 

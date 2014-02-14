@@ -2,12 +2,13 @@
   .row
     .large-12.column
       h1= @material.name
+      br/
+      = link_to 'Editar material', edit_material_path(@material), class: "bt bt_primary" if current_user == @material.user
 - if @material.draft && current_user == @material.user
   .draft_advert.orange_box
     .row
       .large-12.column
         = t "pages.show.draft_advert_html"
-        = link_to 'Editar material', edit_material_path(@material)
 section.material.row
   .large-8.small-12.columns
     .image
