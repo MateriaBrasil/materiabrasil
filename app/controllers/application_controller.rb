@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-    redirect_to request.env["HTTP_REFERER"] || root_url, flash: { error: 'Você não está autorizado a realizar esta ação.' }
+    redirect_to new_user_session_url, flash: { error: 'Você precisa estar logado para acessar essa página.' }
   end
 
   def set_locale
