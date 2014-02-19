@@ -1,55 +1,97 @@
 .material_form
-  = simple_form_for @manufacturer do |f|
+  = simple_form_for @manufacturer, html: {class: "custom"} do |f|
     .form-inputs
       .row
         .large-7.columns
           = f.input :name
         .large-3.large-offset-2.columns.hint
-          p Procure usar um nome que explique a composição e uma característica de sustentabilidade relevante do seu produto. Evite nomes comerciais.
+          p Esse é o nome que vai aparecer para os usuários da plataforma. Use o nome pelo qual você é conhecido. Evite termos como "Ltda", "SA", etc.
         .large-7.columns
           = f.input :description
+        .large-3.large-offset-2.columns.hint
+          p Descreva em 01 parágrafo sua empresa.
         .large-7.columns
           = f.input :site
         .large-7.columns
           = f.input :certifications
-        .large-7.columns
-          = f.input :image
-        .large-7.columns
+        .large-3.large-offset-2.columns.hint
+          p Caso sua empresa seja certificada, conte para gente.
+      .row
+        hr/
+        .large-4.columns
+          .img-upload
+            = f.input :image
+        .large-8.columns.image-input-description
+          p.big_paragraph
+            | Você terá uma imagem do seu perfil. A recomendação é que essa imagem seja a sua marca!
+            br/
+            | Preferência: fundo branco com 100 x 100 px
+      .row
+        hr/
+        .large-6.columns
           = f.input :razao_social
-        .large-7.columns
+        .large-6.columns
           = f.input :cnpj
-        .large-7.columns
+        .large-6.columns
           = f.input :insc_estadual
-        .large-7.columns
+          small.form-hint Se não for o seu caso, deixe em branco
+        .large-6.columns
           = f.input :insc_municipal
-        .large-7.columns
+          small.form-hint Se não for o seu caso, deixe em branco
+        .large-10.columns
           = f.input :address
-        .large-7.columns
-          = f.input :city
-        .large-7.columns
-          = f.input :state
-        .large-7.columns
-          = f.input :country
-        .large-7.columns
+        .large-2.columns
           = f.input :cep
-        .large-7.columns
-          = f.input :phone
-        .large-7.columns
+      .row
+        .large-4.columns
+          = f.input :city
+        .large-2.columns
+          = f.input :state
+        .large-4.columns
+          = f.input :country
+        .large-2.columns
+          = f.input :phone, as: :string
+      .row
+        .large-12.columns
           = f.input :has_postal_address
-        .postal_address
-          = f.input :postal_address
-          = f.input :postal_city
-          = f.input :postal_state
-          = f.input :postal_country
-          = f.input :postal_cep
-          = f.input :postal_phone
-        h3 Contatos:
+        #postal_address
+          .large-10.columns
+            = f.input :postal_address
+          .large-2.columns
+            = f.input :postal_cep
+          .large-4.columns
+            = f.input :postal_city
+          .large-2.columns
+            = f.input :postal_state
+          .large-4.columns
+            = f.input :postal_country
+          .large-2.columns
+            = f.input :postal_phone, as: :string
+        .large-12.columns
+          hr/
+      .narrow_container
+        h2.primary_title Contatos
+        p.big_paragraph
+          | Você escolhe se quer compartilhar os contatos abaixo com todo mundo ou só com a equipe do MateriaBrasil.
+          br/
+          | Por exemplo, contatos de representantes comerciais e lojas são bons de serem abertos a todos. Já Responsáveis técnicos é melhor que sejam restritos, e que somente nossa equipe técnica tenha acesso.
+      .row
         = simple_fields_for :contacts do |c|
-          = c.input :name
-          = c.input :definition
-          = c.input :email
-          = c.input :phone_first
-          = c.input :address
-          = c.input :public, as: :boolean
-          = f.input :forum
-        = f.button :submit
+          .large-12.columns
+            h3 Contato 01
+          .large-6.columns
+            = c.input :name, label: "Nome"
+          .large-6.columns
+            = c.input :definition, label: "Descrição"
+            small.form-hint Exemplos: Representante Comercial RJ, Resp. Técnico, Atendimento, Loja XXX...
+          .large-6.columns
+            = c.input :email
+          .large-6.columns
+            = c.input :phone_first, as: :string, label: "Telefone"
+          .large-6.columns
+            = c.input :address, label: "Endereço"
+          .large-12.columns
+            = c.input :public, as: :boolean, label: "Você quer que esse contato seja público?"
+      .row
+        hr/
+        = f.button :submit, "Concluir cadastro!", class: "bt bt_secondary bt_large bt_next"
