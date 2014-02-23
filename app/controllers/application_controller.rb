@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
 
   rescue_from Pundit::NotAuthorizedError do |exception|
+    session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
     redirect_to new_user_session_url, flash: { error: 'Você precisa estar logado para acessar essa página.' }
   end
 
