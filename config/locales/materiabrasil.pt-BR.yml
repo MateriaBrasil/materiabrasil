@@ -424,7 +424,7 @@ pt-BR:
         site: "Website"
         certifications: "Normas e certificações"
         image: "Imagem do perfil"
-        has_postal_address: "Endereço para correspondência é o mesmo do endereço de cima?"
+        has_postal_address: "Meu endereço de correspondência é o mesmo do endereço acima"
         postal_address: "Endereço postal"
         postal_cep: "CEP"
         postal_city: "Cidade"
