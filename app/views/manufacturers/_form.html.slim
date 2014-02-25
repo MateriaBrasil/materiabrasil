@@ -19,12 +19,12 @@
       .row
         hr/
         .large-4.columns
-          - if @manufacturer.image.present?
-            = image_tag @manufacturer.image
           .img-upload
             = f.input :image, required: true
         .large-8.columns.image-input-description
           p.big_paragraph
+            - if @manufacturer.image.present?
+              = image_tag @manufacturer.image.main.url, class: "manufacturer_thumb"
             | Você terá uma imagem do seu perfil. A recomendação é que essa imagem seja a sua marca!
             br/
             | Preferência: fundo branco com 100 x 100 px
