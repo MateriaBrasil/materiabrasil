@@ -38,4 +38,13 @@ class Manufacturer < ActiveRecord::Base
   accepts_nested_attributes_for :contacts
 
   mount_uploader :image, ManufacturerImageUploader
+
+  before_validation :smart_add_url_protocol
+
+protected
+  def smart_add_url_protocol
+    unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
+      self.site = "http://#{self.site}"
+    end
+  end
 end
