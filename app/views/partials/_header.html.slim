@@ -25,7 +25,10 @@ header.header_menu
                 /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
                 - current_user.manufacturer.try(:materials).try(:each) do |m|
                   li
-                    = link_to m.name, m
+                    = link_to m, class: "material-item" do
+                      = image_tag m.images.first.image.flat.url
+                      br/
+                      span= m.name
                 li.logout= link_to destroy_user_session_path, method: :delete do
                   span.icon.forward
                   = t('common.logout')

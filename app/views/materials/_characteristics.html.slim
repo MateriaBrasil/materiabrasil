@@ -24,4 +24,4 @@ table.char_table
   - val = @material.awards rescue nil
   = print_row_if_present(val, "Prêmios")
   - @material.attachments.each_with_index do | attc, i |
-    = print_row_if_present(link_to(attc.name, attc.file.url), "Anexo #{i+1}")
+    = print_row_if_present(link_to(attc.name, attc.file.url, target: :blank), "Anexo #{i+1}")
