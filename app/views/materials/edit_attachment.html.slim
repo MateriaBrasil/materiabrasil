@@ -21,9 +21,8 @@
           - if attachment.object.id.present?
             .uploaded-attachment
               = link_to attachment.object.name, attachment.object.file.url, class: "uploaded-file-name"
-              = attachment.input :name
+              = attachment.input :name, label: "Alterar nome"
               = link_to "Remover", material_attachment_path(resource.id, attachment.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
-              = link_to "alterar nome", "#", class: "edit-name-link"
           - else
             .attachment-upload data-index="#{i}"
               = attachment.input :file, label: "Anexos"
