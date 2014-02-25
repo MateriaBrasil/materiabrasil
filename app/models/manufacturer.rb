@@ -29,7 +29,7 @@
 
 class Manufacturer < ActiveRecord::Base
 
-  validates_presence_of :name
+  validates_presence_of :name, :description, :site, :razao_social, :cnpj, :address, :cep, :state, :country, :phone, :city
 
   belongs_to :user
   has_many :contacts

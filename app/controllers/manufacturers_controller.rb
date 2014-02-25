@@ -8,7 +8,7 @@ class ManufacturersController < ApplicationController
 
   def update
     authorize resource
-    update!(notice: 'Material criado com sucesso!') { root_url }
+    update!(notice: 'Material criado com sucesso!') { material_path(@manufacturer.materials.order('created_at desc').first) }
   end
 end
 

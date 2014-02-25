@@ -19,8 +19,10 @@
       .row
         hr/
         .large-4.columns
+          - if @manufacturer.image.present?
+            = image_tag @manufacturer.image
           .img-upload
-            = f.input :image
+            = f.input :image, required: true
         .large-8.columns.image-input-description
           p.big_paragraph
             | Você terá uma imagem do seu perfil. A recomendação é que essa imagem seja a sua marca!
@@ -89,7 +91,7 @@
           .large-6.columns
             = c.input :phone_first, as: :string, label: "Telefone"
           .large-6.columns
-            = c.input :address, label: "Endereço"
+            = c.input :address, label: "Endereço", required: false
           .large-12.columns
             = c.input :public, as: :boolean, label: "Você quer que esse contato seja público?"
       .row
