@@ -29,7 +29,7 @@
 
 class Manufacturer < ActiveRecord::Base
 
-  validates_presence_of :name, :description, :site, :razao_social, :cnpj, :address, :cep, :state, :country, :phone, :city
+  validates_presence_of :name
 
   belongs_to :user
   has_many :contacts
@@ -47,5 +47,6 @@ protected
       unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
         self.site = "http://#{self.site}"
       end
+    end
   end
 end
