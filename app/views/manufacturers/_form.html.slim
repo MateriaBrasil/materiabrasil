@@ -7,11 +7,11 @@
         .large-3.large-offset-2.columns.hint
           p Esse é o nome que vai aparecer para os usuários da plataforma. Use o nome pelo qual você é conhecido. Evite termos como "Ltda", "SA", etc.
         .large-7.columns
-          = f.input :description
+          = f.input :description, required: true
         .large-3.large-offset-2.columns.hint
           p Descreva em 01 parágrafo sua empresa.
         .large-7.columns
-          = f.input :site
+          = f.input :site, required: true
         .large-7.columns
           = f.input :certifications
         .large-3.large-offset-2.columns.hint
@@ -31,9 +31,9 @@
       .row
         hr/
         .large-6.columns
-          = f.input :razao_social
+          = f.input :razao_social, required: true
         .large-6.columns
-          = f.input :cnpj
+          = f.input :cnpj, required: true
         .large-6.columns
           = f.input :insc_estadual
           small.form-hint Se não for o seu caso, deixe em branco
@@ -41,18 +41,18 @@
           = f.input :insc_municipal
           small.form-hint Se não for o seu caso, deixe em branco
         .large-10.columns
-          = f.input :address
+          = f.input :address, required: true
         .large-2.columns
-          = f.input :cep
+          = f.input :cep, required: true
       .row
         .large-4.columns
-          = f.input :city
+          = f.input :city, required: true
         .large-2.columns
-          = f.input :state
+          = f.input :state, required: true
         .large-4.columns
-          = f.input :country
+          = f.input :country, required: true
         .large-2.columns
-          = f.input :phone, as: :string
+          = f.input :phone, as: :string, required: true
       .row
         .large-12.columns
           = f.input :has_postal_address

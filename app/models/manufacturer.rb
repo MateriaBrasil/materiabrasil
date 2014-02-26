@@ -43,8 +43,9 @@ class Manufacturer < ActiveRecord::Base
 
 protected
   def smart_add_url_protocol
-    unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
-      self.site = "http://#{self.site}"
-    end
+    if self.site.present?
+      unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
+        self.site = "http://#{self.site}"
+      end
   end
 end
