@@ -26,8 +26,9 @@ header.header_menu
                 - current_user.manufacturer.try(:materials).try(:each) do |m|
                   li
                     = link_to m, class: "material-item" do
-                      = image_tag m.images.first.image.flat.url
-                      br/
+                      - if m.images.first.present?
+                        = image_tag m.images.first.image.flat.url
+                        br/
                       span= m.name
                 li.logout= link_to destroy_user_session_path, method: :delete do
                   span.icon.forward
