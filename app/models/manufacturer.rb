@@ -29,7 +29,7 @@
 
 class Manufacturer < ActiveRecord::Base
 
-  validates_presence_of :name, :description, :site, :razao_social, :cnpj, :address, :cep, :state, :country, :phone, :city
+  validates_presence_of :name
 
   belongs_to :user
   has_many :contacts
@@ -43,8 +43,10 @@ class Manufacturer < ActiveRecord::Base
 
 protected
   def smart_add_url_protocol
-    unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
-      self.site = "http://#{self.site}"
+    if self.site.present?
+      unless self.site[/\Ahttp:\/\//] || self.site[/\Ahttps:\/\//]
+        self.site = "http://#{self.site}"
+      end
     end
   end
 end
