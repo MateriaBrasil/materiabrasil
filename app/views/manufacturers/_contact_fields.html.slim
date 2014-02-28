@@ -1,0 +1,16 @@
+.contact_container
+  .large-12.columns
+    h3= "Contato #{if f.object.persisted? then "%.2d" % f.object.manufacturer.contacts.size else '01' end}"
+  .large-6.columns
+    = f.input :name, label: "Nome"
+  .large-6.columns
+    = f.input :definition, label: "Descrição"
+    small.form-hint Exemplos: Representante Comercial RJ, Resp. Técnico, Atendimento, Loja XXX...
+  .large-6.columns
+    = f.input :email
+  .large-6.columns
+    = f.input :phone_first, as: :string, label: "Telefone"
+  .large-6.columns
+    = f.input :address, label: "Endereço", required: false
+  .large-12.columns
+    = f.input :public, as: :boolean, label: "Quero que este contato seja público"

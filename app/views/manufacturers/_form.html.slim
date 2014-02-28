@@ -78,22 +78,8 @@
           br/
           | Por exemplo, contatos de representantes comerciais e lojas são bons de serem abertos a todos. Já Responsáveis técnicos é melhor que sejam restritos, e que somente nossa equipe técnica tenha acesso.
       .row
-        = simple_fields_for :contacts do |c|
-          .large-12.columns
-            h3 Contato 01
-          .large-6.columns
-            = c.input :name, label: "Nome"
-          .large-6.columns
-            = c.input :definition, label: "Descrição"
-            small.form-hint Exemplos: Representante Comercial RJ, Resp. Técnico, Atendimento, Loja XXX...
-          .large-6.columns
-            = c.input :email
-          .large-6.columns
-            = c.input :phone_first, as: :string, label: "Telefone"
-          .large-6.columns
-            = c.input :address, label: "Endereço", required: false
-          .large-12.columns
-            = c.input :public, as: :boolean, label: "Quero que este contato seja público"
+        = f.simple_fields_for :contacts do |builder|
+          = render 'contact_fields', f: builder
       .row
         hr/
         = f.button :submit, "Concluir cadastro!", class: "bt bt_secondary bt_large bt_next"
