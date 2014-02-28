@@ -282,3 +282,16 @@ form.custom
   +context(".big_paragraph")
     float: left
     margin: 0 10px 10px 0
+
+.contact_container
+  padding: 2em 0 2em
+  margin-bottom: 2em
+  overflow: hidden
+  border-radius: 6px
+  &:nth-child(odd)
+    background: lighten($gray, 3%)
+  .remove_fields
+    margin-top: 1.2em
+    float: left
+  .contact_title
+    margin-bottom: 1em

@@ -1,5 +1,5 @@
 .material_form
-  = simple_form_for @manufacturer, html: {class: "custom"} do |f|
+  = simple_form_for @manufacturer, html: {class: "_custom"} do |f|
     .form-inputs
       .row
         .large-7.columns
@@ -80,6 +80,8 @@
       .row
         = f.simple_fields_for :contacts do |builder|
           = render 'contact_fields', f: builder
+          .large-3.columns
+            = link_to_add_fields "Adicionar novo contato +", f, :contacts, "add_fields bt bt_secondary"
       .row
         hr/
         = f.button :submit, "Concluir cadastro!", class: "bt bt_secondary bt_large bt_next"

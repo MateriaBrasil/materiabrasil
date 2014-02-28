@@ -1,6 +1,6 @@
 .contact_container
   .large-12.columns
-    h3= "Contato #{if f.object.persisted? then "%.2d" % f.object.manufacturer.contacts.size else '01' end}"
+    h3.contact_title Detalhes do contato
   .large-6.columns
     = f.input :name, label: "Nome"
   .large-6.columns
@@ -12,5 +12,8 @@
     = f.input :phone_first, as: :string, label: "Telefone"
   .large-6.columns
     = f.input :address, label: "Endereço", required: false
+  .large-6.columns
+    = f.hidden_field :_destroy
+    = link_to "Remover contato", "#", class: "remove_fields bt tiny"
   .large-12.columns
     = f.input :public, as: :boolean, label: "Quero que este contato seja público"
