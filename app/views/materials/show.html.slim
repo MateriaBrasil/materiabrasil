@@ -11,8 +11,9 @@
         = t "pages.show.draft_advert_html"
 section.material.row
   .large-8.small-12.columns
-    .image
-      = image_tag @material.images.first.image.main.url, alt: @material.name
+    - unless @material.images.first.nil?
+      .image
+        = image_tag @material.images.first.image.main.url, alt: @material.name
     .indicators
       h3
         | Direcionadores de sustentabilidade
