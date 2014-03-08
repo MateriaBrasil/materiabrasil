@@ -28,7 +28,6 @@ header.header_menu
                     = link_to m, class: "material-item" do
                       - if m.images.first.present?
                         = image_tag m.images.first.image.flat.url
-                        br/
                       span= m.name
                 li.logout= link_to destroy_user_session_path, method: :delete do
                   span.icon.forward
