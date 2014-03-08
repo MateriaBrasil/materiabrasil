@@ -23,6 +23,12 @@ header.header_menu
                 |&#x25BE
               ol.options
                 /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
+                - if current_user.manufacturer
+                  li
+                    = link_to "Editar meu perfil", edit_manufacturer_path(current_user.manufacturer)
+                - if current_user.manufacturer.try(:materials)
+                  li
+                    | Meus materiais:
                 - current_user.manufacturer.try(:materials).try(:each) do |m|
                   li
                     = link_to m, class: "material-item" do
