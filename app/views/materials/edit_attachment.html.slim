@@ -12,7 +12,7 @@
                 = link_to "Remover", material_image_path(resource.id, img.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
             - else
               .img-upload
-                = img.input :image
+                = img.input :image, label: "<strong>Imagem *</strong>"
     hr/
     .row
       .attachment-fields.large-7.columns
