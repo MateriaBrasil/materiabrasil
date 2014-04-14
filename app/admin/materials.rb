@@ -12,6 +12,7 @@ ActiveAdmin.register Material do
 
   show :title => :name do |material|
     attributes_table do
+      row :draft
       row :sku
       row :id
       row :name

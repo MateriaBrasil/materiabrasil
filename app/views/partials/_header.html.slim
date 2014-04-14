@@ -10,7 +10,7 @@ header.header_menu
       aside.search_account
         .main_actions_nav.left
           = link_to t("common.explore"), explore_path, class: "main_action"
-          = link_to t("common.submit"), new_material_path, class: "main_action"
+          = link_to t("common.submit"), submit_path, class: "main_action"
         section.search_area
           form.search_form action=search_path
             input[type="text" name="q" value="" placeholder="#{t "common.search_the_site"}" class='field']

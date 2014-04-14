@@ -1,5 +1,9 @@
 <%= semantic_form_for [:admin, @material], builder: ActiveAdmin::FormBuilder do |f|%>
 
+  <%= f.inputs do %>
+    <%= f.input :draft, :label => 'Rascunho?'  %>
+  <% end %>
+
   <%= f.inputs "Nome do material" do %>
     <%= f.input :name, :label => false %>
   <% end %>
