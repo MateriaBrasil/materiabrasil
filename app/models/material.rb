@@ -47,6 +47,7 @@ class Material < ActiveRecord::Base
   }
 
   scope :approved, where(draft: false)
+  scope :pending,  where(draft: true)
 
   def should_generate_new_friendly_id?
     new_record?

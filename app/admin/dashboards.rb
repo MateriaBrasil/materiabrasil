@@ -7,14 +7,18 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  #   section "Recent Posts" do
-  #     ul do
-  #       Post.recent(5).collect do |post|
-  #         li link_to(post.title, admin_post_path(post))
-  #       end
-  #     end
-  #   end
-  
+  section "Materiais Pendentes" do
+    ul do
+      Material.pending.each do |material|
+        li do
+          link_to material.name, admin_material_path(material)
+          link_to "Visualizar", material_path(material)
+          link_to "Publicar", publish_material_path(material)
+        end
+      end
+    end
+  end
+
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
   # easily render a partial rather than build content in ruby.
