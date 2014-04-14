@@ -32,7 +32,7 @@ header.header_menu
                   li
                     = link_to m, class: "material-item" do
                       - if m.images.first.present?
-                        = image_tag m.images.first.image.flat.url
+                        = image_tag m.images.first.image.flat.url, size: "50x41"
                       span= m.name
                 li.logout= link_to destroy_user_session_path, method: :delete do
                   span.icon.forward
