@@ -11,7 +11,7 @@ ActiveAdmin::Dashboards.build do
     ul do
       Material.pending.each do |material|
         li do
-          link_to("#{material.name} - #{material.manufacturer.name}", admin_material_path(material)) + "  |  " + link_to("Visualizar", material_path(material))
+          link_to("#{material.name} - #{material.manufacturer.name}", edit_admin_material_path(material)) + "  |  " + link_to("Visualizar", material_path(material))
         end
       end
     end
