@@ -83,7 +83,11 @@ class MaterialsController < ApplicationController
     if params[:sent_thru_javascript] == "true"
       update! { material_edit_attachments_path(@material) }
     else
-      update! { edit_manufacturer_path(current_user.manufacturer) }
+      if @material.images.count > 0
+        update! { edit_manufacturer_path(current_user.manufacturer) }
+      else
+        redirect_to  material_edit_attachments_path(@material), alert: 'É necessário adicionar ao menos uma imagem ao produto'
+      end
     end
   end
 
