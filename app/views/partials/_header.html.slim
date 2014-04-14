@@ -22,7 +22,6 @@ header.header_menu
               span.arrow
                 |&#x25BE
               ol.options
-                /li.favorites= link_to "Favoritos", session_path(current_user), method: :delete, class: 'icon-star'
                 - if current_user.manufacturer
                   li
                     = link_to "Editar meu perfil", edit_manufacturer_path(current_user.manufacturer)

@@ -16,6 +16,13 @@
         p Esse texto será o descritivo. Procure falar das vantagens dele, seus diferenciais de sustentabilidade e outras informações que ajudem as pessoas a entenderem seu processo de fabricação. Procure falar em 2 parágrafos e evite parecer uma propaganda ou algo extremamente técnico. O meio termo é o melhor caminho!
     .row
       .large-2.columns
+        = f.label :ncm, "NCM"
+      .large-7.columns
+        = f.text_field :density
+      .large-3.columns.hint
+        p NCM significa "Nomenclatura Comum do Mercosul" e trata-se de um código estabelecido pelo Governo Brasileiro para identificar a natureza das mercadorias. A MateriaBrasil precisa desse código para o transporte de amostras e promoção do seu produto.
+    .row
+      .large-2.columns
         = f.label :dimensions, "Dimensões"
       .large-7.columns
         = f.text_field :dimensions
