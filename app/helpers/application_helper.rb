@@ -5,32 +5,32 @@ module ApplicationHelper
     block = options[:block] || rand(4) + 1
     material = options[:materials]
     blocks = {
-      1 => [ 
-        ["tall", "threecol tall"], 
-        ["flat", "threecol flat"], 
-        ["longflat", "sixcol last flat"],       
+      1 => [
+        ["tall", "threecol tall"],
+        ["flat", "threecol flat"],
+        ["longflat", "sixcol last flat"],
         ["longflat", "sixcol flat"],
         ["flat", "threecol flat last"]
       ],
-        2 => [ 
-          ["largetall", "fivecol tall"], 
+        2 => [
+          ["largetall", "fivecol tall"],
           ["main", "sevencol tall last"]
       ],
         3 => [
-          ["tall", "threecol tall"],       
+          ["tall", "threecol tall"],
           ["tall", "threecol tall"],
           ["longflat", "sixcol last flat"],
-          ["flat", "threecol flat"], 
-          ["flat", "threecol flat last"], 
+          ["flat", "threecol flat"],
+          ["flat", "threecol flat last"],
       ],
-      4 => [ 
-        ["main", "sixcol tall"],       
+      4 => [
+        ["main", "sixcol tall"],
         ["main", "sixcol last tall"]
       ],
         5 => [
-          ["flat", "threecol flat"], 
-          ["longflat", "sixcol flat"], 
-          ["tall", "threecol tall last special"],       
+          ["flat", "threecol flat"],
+          ["longflat", "sixcol flat"],
+          ["tall", "threecol tall last special"],
           ["flat", "threecol flat"],
           ["longflat", "sixcol flat"]
       ],
@@ -60,9 +60,9 @@ module ApplicationHelper
     content   = ""
     children  = ""
     kinds = {
-      "Ciclos"        => "cycle",
+      "Ciclo"        => "cycle",
       "Segurança"     => "security",
-      "Humano"        => "human",
+      "Humano-social"        => "human",
       "Energia"       => "energy",
       "Água"          => "water",
       "Gestão"        => "management"
@@ -72,15 +72,23 @@ module ApplicationHelper
     kinds.each_with_index do |k,v|
 
       flag     =  categories.map(&:name).include?(k.first) ? true : false
-      content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do 
+      content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do
                     image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + content_tag(:span, k.first)
                   end
 
       if flag
-        children += 
+        children +=
           content_tag(:ul, class: "children #{k.second}", data: {type: k.second}) do
             Category.find_by_name(k.first).children.reduce('') do |c, m|
-              c.html_safe << content_tag(:li, m.name, class: categories.map(&:id).include?(m.id) ? "active" : "inactive")
+              if ['Uso', 'Fonte', 'Produção'].include?(m.name)
+                @temp = ''
+                Category.find(m.id).children.each do |child|
+                  @temp += content_tag(:li, child.name, class: categories.map(&:id).include?(child.id) ? "active" : "inactive")
+                end
+                c << @temp.html_safe
+              else
+                c.html_safe << content_tag(:li, m.name, class: categories.map(&:id).include?(m.id) ? "active" : "inactive")
+              end
             end
         end
       end
