@@ -60,9 +60,9 @@ module ApplicationHelper
     content   = ""
     children  = ""
     kinds = {
-      "Ciclo"        => "cycle",
+      "Ciclo"         => "cycle",
       "Segurança"     => "security",
-      "Humano-social"        => "human",
+      "Humano-social" => "human",
       "Energia"       => "energy",
       "Água"          => "water",
       "Gestão"        => "management"
@@ -73,7 +73,7 @@ module ApplicationHelper
 
       flag     =  categories.map(&:name).include?(k.first) ? true : false
       content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do
-                    image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + content_tag(:span, k.first)
+        image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + content_tag(:span, (k.first == 'Humano-social' ? 'Humano' : k.first) )
                   end
 
       if flag
@@ -85,7 +85,7 @@ module ApplicationHelper
                 Category.find(m.id).children.each do |child|
                   @temp += content_tag(:li, child.name, class: categories.map(&:id).include?(child.id) ? "active" : "inactive")
                 end
-                c << @temp.html_safe
+                c.html_safe << @temp.html_safe
               else
                 c.html_safe << content_tag(:li, m.name, class: categories.map(&:id).include?(m.id) ? "active" : "inactive")
               end
