@@ -3,7 +3,7 @@
     .large-12.column
       h1= @material.name
       br/
-      = link_to 'Editar material', edit_material_path(@material), class: "bt bt_primary" if current_user == @material.user
+      = link_to 'Editar material', edit_material_path(@material), class: "bt bt_primary" if (@material.user != nil && current_user == @material.user) || current_user.try(:email) == 'contato@materiabrasil.net' 
 - if @material.draft && current_user == @material.user
   .draft_advert.orange_box
     .row
