@@ -14,26 +14,26 @@ class MaterialPolicy < ApplicationPolicy
   end
 
   def edit?
-    user == @material.manufacturer.user
+    user == @material.manufacturer.user || user.email = 'contato@materiabrasil.net'
   end
 
   def edit_attachments?
-    user == @material.manufacturer.user
+    user == @material.manufacturer.user || user.email = 'contato@materiabrasil.net'
   end
 
   def update?
-    user == @material.manufacturer.user
+    user == @material.manufacturer.user || user.email = 'contato@materiabrasil.net'
   end
 
   def update_categories?
-    user == @material.manufacturer.user
+    user == @material.manufacturer.user || user.email = 'contato@materiabrasil.net'
   end
 
   def update_attachments?
-    user == @material.manufacturer.user
+    user == @material.manufacturer.user || user.email = 'contato@materiabrasil.net'
   end
 
   def show?
-    @material.published? || (@material.draft && @material.user == user)
+    @material.published? || ((@material.draft && @material.user == user) || user.email = 'contato@materiabrasil.net')
   end
 end
