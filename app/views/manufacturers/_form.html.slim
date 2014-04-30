@@ -80,8 +80,8 @@
       .row
         = f.simple_fields_for :contacts do |builder|
           = render 'contact_fields', f: builder
-          .large-3.columns
-            = link_to_add_fields "Adicionar novo contato +", f, :contacts, "add_fields bt bt_secondary"
+        .large-3.columns
+          = link_to_add_fields "Adicionar novo contato +", f, :contacts, "add_fields bt bt_secondary"
       .row
         hr/
         = f.button :submit, "Concluir cadastro!", class: "bt bt_secondary bt_large bt_next"

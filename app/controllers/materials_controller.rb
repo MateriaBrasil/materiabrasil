@@ -84,7 +84,7 @@ class MaterialsController < ApplicationController
       update! { material_edit_attachments_path(@material) }
     else
       if @material.images.count > 0
-        update! { edit_manufacturer_path(current_user.manufacturer) }
+        update! { edit_manufacturer_path(@material.manufacturer) }
       else
         redirect_to  material_edit_attachments_path(@material), alert: 'É necessário adicionar ao menos uma imagem ao produto'
       end
