@@ -91,7 +91,7 @@ App.Materials =
         @gallery.model.keyPressed e.keyCode
 
     resizedWindow: (e)->
-      @gallery.model.setChildrenWidth @$('.image-slider .slide-image').width()
+      @gallery.model.setChildrenWidth @$('.image-slider .slide-image').outerWidth()
   )
 
 App.Materials.Search = App.Materials.Explore.extend()
@@ -110,7 +110,7 @@ App.GalleryView = Backbone.View.extend
     @render()
 
   render: ->
-    @$el.css 'text-indent', -(@model.get('current') * (@$('.slide-image').width()+4))
+    @$el.css 'text-indent', -(@model.get('current') * @model.get('childrenWidth'))
 
   setCurrentImage: (e)->
     @model.nextImage()
