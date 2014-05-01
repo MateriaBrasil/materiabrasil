@@ -119,7 +119,7 @@ App.GalleryModel = Backbone.Model.extend
   defaults:
     current: 0
     children: 1
-    gut: 4
+    gut: 0
 
   keyPressed: (keyCode)->
     @nextImage() if keyCode == 39
