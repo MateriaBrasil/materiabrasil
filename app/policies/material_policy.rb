@@ -34,6 +34,6 @@ class MaterialPolicy < ApplicationPolicy
   end
 
   def show?
-    @material.published? || ((@material.draft && (@material.user == user && user.present?) || user.email = ENV['ADMIN_EMAIL'])
+    @material.published? || ((@material.draft && (@material.user == user && user.present?)) || user.email = ENV['ADMIN_EMAIL'])
   end
 end
