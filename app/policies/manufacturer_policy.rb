@@ -5,10 +5,10 @@ class ManufacturerPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.present? && (user == @manufacturer.user || user.email = ENV['ADMIN_EMAIL'])
+    (user.present? && user == @manufacturer.user) || user.email == ENV['ADMIN_EMAIL']
   end
 
   def update?
-    user.present? && (user == @manufacturer.user || user.email = ENV['ADMIN_EMAIL'])
+    (user.present? && user == @manufacturer.user) || user.email == ENV['ADMIN_EMAIL']
   end
 end
