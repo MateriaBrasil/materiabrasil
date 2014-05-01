@@ -51,9 +51,13 @@ section.material
     border-bottom: none
     .fb-like, .twitter-share-button
       margin-right: 10%
-  .image
+  .image-slider
+    +transition(.5s)
     margin-bottom: 20px
     box-shadow: 0 2px 3px rgba(black, .2)
+    overflow: hidden
+    white-space: nowrap
+  .image
     img
       margin-bottom: -6px
   .image, .about

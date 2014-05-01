@@ -12,8 +12,10 @@
 section.material.row
   .large-8.small-12.columns
     - unless @material.images.first.nil?
-      .image
-        = image_tag @material.images.first.image.main.url, alt: @material.name
+      .image-slider
+        .image
+          - @material.images.each_with_index do | file, index |
+            = image_tag file.image.main.url, alt: @material.name, class: "slide-image", data: {number: index}
     .indicators
       h3
         | Direcionadores de sustentabilidade
