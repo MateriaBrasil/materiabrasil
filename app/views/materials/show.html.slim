@@ -13,7 +13,8 @@ section.material.row
   .large-8.small-12.columns
     - unless @material.images.first.nil?
       .image-slider
-        .image
+        = link_to "+ imagens", "#", class: "more-images-link" if @material.images.size > 1
+        .images
           - @material.images.each_with_index do | file, index |
             = image_tag file.image.main.url, alt: @material.name, class: "slide-image", data: {number: index}
     .indicators

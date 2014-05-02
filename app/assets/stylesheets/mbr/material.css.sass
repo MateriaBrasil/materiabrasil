@@ -52,15 +52,34 @@ section.material
     .fb-like, .twitter-share-button
       margin-right: 10%
   .image-slider
-    +transition(.5s)
+    position: relative
     margin-bottom: 20px
     box-shadow: 0 2px 3px rgba(black, .2)
     overflow: hidden
     white-space: nowrap
-  .image
-    img
-      margin-bottom: -6px
-  .image, .about
+    &.first-slide:hover .more-images-link
+      +opacity(1)
+    .more-images-link
+      +opacity(0)
+      position: absolute
+      top: 45%
+      z-index: 100
+      text-align: center
+      left: 50%
+      width: 90px
+      background: rgba(white, .8)
+      height: 40px
+      line-height: 40px
+      margin-left: -45px
+      color: $body-font-color
+      border-radius: 6px
+      box-shadow: 0 1px 4px rgba(0,0,0,.6)
+    &.gallery .images
+      +transition(.5s)
+      cursor: pointer
+  .images img
+    margin-bottom: -6px
+  .images, .about
     z-index: 2
     position: relative
   .about

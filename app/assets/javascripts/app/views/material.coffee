@@ -103,17 +103,25 @@ App.GalleryView = Backbone.View.extend
   el: '.image-slider'
   events:
     'click .slide-image': 'setCurrentImage'
+    'click .more-images-link': 'setCurrentImage'
 
   initialize: ->
     _.bindAll this, 'render'
     @model.on 'change:current change:childrenWidth', @render, @
+    @$el.addClass 'gallery'
+    @images = @$el.find('.images')
     @render()
 
   render: ->
-    @$el.css 'text-indent', -(@model.get('current') * @model.get('childrenWidth'))
+    if @model.get('current') == 0
+      @$el.addClass 'first-slide'
+    else
+      @$el.removeClass 'first-slide'
+    @images.css 'text-indent', -(@model.get('current') * @model.get('childrenWidth'))
 
   setCurrentImage: (e)->
     @model.nextImage()
+    false
 
 App.GalleryModel = Backbone.Model.extend
   defaults:
