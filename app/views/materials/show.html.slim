@@ -16,7 +16,10 @@ section.material.row
         = link_to "+ imagens", "#", class: "more-images-link" if @material.images.size > 1
         .images
           - @material.images.each_with_index do | file, index |
-            = image_tag file.image.main.url, alt: @material.name, class: "slide-image", data: {number: index}
+            - if file.image.main.url != nil
+              = image_tag file.image.main.url, alt: @material.name, class: "slide-image", data: {number: index}
+            /- if index > 13
+              /- raise file.inspect
     .indicators
       h3
         | Direcionadores de sustentabilidade
