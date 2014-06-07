@@ -26,14 +26,14 @@ section.material.row
       h3 Características
       = render partial: "materials/characteristics", locals: { material: @material }
 
-  .large-4.small-12.columns
+  .large-4.small-12.columns.material_sidebar
     .resume.transparent_box
       p
         = @material.categories_string(nil, "Classes")
         br/
         small.faded= @material.sku
       p= @material.resume
-  .large-4.small-12.columns
+  .large-4.small-12.columns.material_sidebar
     - disponibilidade = @material.categories_string(307) rescue nil
     - local = @material.categories_string(304) rescue nil
     - if disponibilidade.present? || local.present?

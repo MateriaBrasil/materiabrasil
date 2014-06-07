@@ -1,0 +1,60 @@
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+
+@import foundation_and_overrides
+
+@import semantic-mixins
+
+@import cssgrid
+@import chosen
+@import entypo
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,600,400")
+
+@import mbr/colors
+@import mbr/common
+@import mbr/header
+@import mbr/footer
+@import mbr/forms
+@import mbr/home
+@import mbr/material
+@import mbr/portfolio
+@import mbr/login
+@import mbr/material_flow
+
+body
+  background: white
+  padding-bottom: 2em
+
+section.material
+  .material_sidebar
+    background: #f4f4f4
+    .share_section, .about
+      display: none
+    .manufacturer
+      margin-bottom: 0 !important
+      border-bottom: none
+
+  .image-slider, .white_box
+    box-shadow: none !important
+
+  .warning
+    background: #f4f4f4
+    color: inherit
+
+  .indicators
+    background: white
+    color: inherit !important
+    li.indicator.inactive
+      display: none
+    img
+      +filter(brightness(20%))
+    ul.children
+      li
+        color: inherit
+
+a
+  color: inherit !important
+
+.main_nav, .search_account, #footer, .bt
+  display: none
