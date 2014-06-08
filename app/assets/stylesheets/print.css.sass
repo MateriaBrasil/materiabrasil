@@ -45,13 +45,35 @@ section.material
   .indicators
     background: white
     color: inherit !important
-    li.indicator.inactive
-      display: none
+    float: left
+    width: 100%
+    clear: left
+    margin-bottom: 30px
+    .indicator-title
+      float: left
+      width: 80px
+    li.indicator
+      width: 100%
+      float: left
+      clear: left
+      border-bottom: 1px solid #ddd
+      padding: 30px 10px
+      &:last-child
+        border-bottom: none
+      &.inactive
+        display: none
     img
       +filter(brightness(20%))
     ul.children
+      display: block
+      float: left
+      text-align: left
+      padding-left: 20px
       li
         color: inherit
+  #indicatorsDetails
+    ul.children
+      display: none
 
 a
   color: inherit !important

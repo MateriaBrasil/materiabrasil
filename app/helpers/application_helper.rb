@@ -90,7 +90,9 @@ module ApplicationHelper
       end
       
       content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do
-        image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + "\n" + content_tag(:span, (k.first == 'Humano-social' ? 'Humano' : k.first) ) + "\n" + children.html_safe
+        content_tag(:div, class: "indicator-title") do
+          image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + "\n" + content_tag(:span, (k.first == 'Humano-social' ? 'Humano' : k.first) )
+        end + "\n" + children.html_safe
       end + "\n"
 
     end
