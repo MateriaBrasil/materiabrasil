@@ -1,13 +1,13 @@
 = simple_form_for parent, url: update_categories_material_path(parent.id), html: {class: "custom"}, method: :put do |f|
   .row
     .large-5.columns
-      = f.association :category, collection: Category.parent, include_blank: false
+      = f.association :category, collection: Category.top_level, include_blank: false
       /*input type="hidden" name="parent_category" id="parent_category" value="false"*/
       /*= simple_form_for "material_type" do |f|*/
-        /*= f.input :selection , collection: Category.parent, label_method: :name, label: 'Tipo de cadastro', include_blank: false*/
+        /*= f.input :selection , collection: Category.top_level, label_method: :name, label: 'Tipo de cadastro', include_blank: false*/
     .large-7.columns.hint
   .checkboxes_container id="material_container"
-    - @material = Category.parent.where(name: 'Material').first
+    - @material = Category.top_level.where(name: 'Material').first
     - @classe = @material.subcategories.where(name: 'Classes').first
     .row
       .large-7.columns.checkbox_section
@@ -145,7 +145,7 @@
             = f.association :categories, as: :check_boxes, label: false, collection: @local.subcategories
 
   .checkboxes_container id="produto_container"
-    - @produto = Category.parent.where(name: 'Produto').first
+    - @produto = Category.top_level.where(name: 'Produto').first
     - @sustentabilidade = @material.subcategories.where(name: 'Sustentabilidade').first
     - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
     - @producao = @agua.subcategories.where(name: 'Produção').first
@@ -240,7 +240,7 @@
             = f.association :categories, as: :check_boxes, label: false, collection: @local.subcategories
 
   .checkboxes_container id="sistema_container"
-    - @sistema = Category.parent.where(name: 'Sistema').first
+    - @sistema = Category.top_level.where(name: 'Sistema').first
     - @sustentabilidade = @sistema.subcategories.where(name: 'Sustentabilidade').first
     - @agua = @sustentabilidade.subcategories.where(name: 'Água').first
     - @producao = @agua.subcategories.where(name: 'Produção').first
