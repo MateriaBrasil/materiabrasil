@@ -7,9 +7,10 @@
         .row
           = f.simple_fields_for :images do |img|
             - if img.object.id.present?
-              .large-3.columns.img-thumbnail
+              .large-3.columns.img-thumbnail[class="#{'favorite' if img.object == @material.featured_image}"]
                 = image_tag(img.object.image.flat.url, class: "uploaded-image") if img.object.image.file.exists?
                 = link_to "Remover", material_image_path(resource.id, img.object.id), class: "delete-link", data: { confirm: 'Are you sure?' }, method: :delete
+                = link_to "Favoritar", bookmark_material_attachment_path(resource.id, img.object.id), class: "favorite-link"
             - else
               .img-upload
                 = img.input :image, label: "<strong>Imagem *</strong>"

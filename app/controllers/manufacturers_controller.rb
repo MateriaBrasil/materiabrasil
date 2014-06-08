@@ -15,6 +15,6 @@ class ManufacturersController < ApplicationController
 
   def update
     authorize resource
-    update!(notice: 'Informações atualizadas com sucesso!') { material_path(@manufacturer.materials.order('created_at desc').first) }
+    update!(notice: 'Informações atualizadas com sucesso!') { manufacturer_path(@manufacturer) }
   end
 end

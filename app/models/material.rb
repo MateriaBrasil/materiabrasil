@@ -77,6 +77,13 @@ class Material < ActiveRecord::Base
     self.images.where(featured: true).first || self.images.first || nil
   end
 
+  def bookmark_image(image_id)
+    self.images.each do |img|
+      to_bookmark = (img.id == image_id) ? true : false
+      img.update_attributes featured: to_bookmark
+    end
+  end
+
   private
   def check_tree
     tree = []
