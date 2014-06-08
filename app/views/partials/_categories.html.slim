@@ -1,20 +1,32 @@
-- if @category.present?
+.white_box
+  h4.materials_count Você buscou por:      
+  - path = @category.top_category? ? explore_path : category_path(@category.parent)
+  p.filter_history
+    - @category.parents.each do | parent |
+      = link_to parent.name, category_path(parent)
+      br/
+    = link_to @category.name, path, class: "link_to_delete"
+  span="#{pluralize(@count, 'material ', 'materiais ')} encontrados"
 
-  - @category.parents.each do |parent|
-    ol.twelvecol.category
-      - parent.siblings.each do |c|
-        li[class="#{c.parents.length.zero? ? 'parents' : 'children'} #{c == parent ? 'active' : ''}"]= link_to c.name, category_path(c)
-
-  ol.twelvecol.category
-    - @category.siblings.each do |brother|
-      li[class="#{brother.parents.length.zero? ? 'parents' : 'children'} #{brother == @category ? 'active' : ''}"]= link_to brother.name, category_path(brother)
-
-  ol.twelvecol.last.category
-    - @category.children.each do |child|
-      li.children= link_to child.name, category_path(child)
-
-- else 
-  ol.twelvecol.category
-    - Category.parent.each do |s|
-      li[class=(s.parents.length.zero? ? 'parents' : 'children')]= link_to s.name, category_path(s)
-
+.transparent_box
+  h4 Filtrar por:
+ul.category
+  - @category.top_parent.children.each do |c|
+    li.children[class="#{@category.is_activating?(c) ? 'active' : ''}"]
+      = link_to c.name, category_path_toggle(@category, c), class: "direct_children"
+      - if c.children and @category.is_activating?(c)
+        .category_sub_lists
+          ul.category_children_list
+            - c.children.each do | child |
+              li.sub_list_item[class="#{@category.is_activating?(child) ? 'active' : ''}"]
+                = link_to child.name, category_path_toggle(@category, child)
+                - if child.children.length > 0 and @category.is_activating?(child)
+                  ul.category_children_list
+                    - child.children.each do | grandchild |
+                      li.sub_list_item[class="#{@category.is_activating?(grandchild) ? 'active' : ''}"]
+                        = link_to grandchild.name, category_path_toggle(@category, grandchild)
+                        - if grandchild.children.length > 0 and @category.is_activating?(grandchild)
+                          ul.category_children_list
+                            - grandchild.children.each do | grangrandchild |
+                              li.sub_list_item[class="#{@category.is_activating?(grangrandchild) ? 'active' : ''}"]
+                                = link_to grangrandchild.name, category_path_toggle(@category, grangrandchild)

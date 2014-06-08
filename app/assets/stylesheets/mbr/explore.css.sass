@@ -1,0 +1,72 @@
+.explore
+  .materials_exploring
+    padding-top: 2em
+
+  .explore_sidebar
+    h3, h4
+      font-weight: 600
+      margin-bottom: .5em
+    .filter_history
+      font-size: .9em
+      .link_to_delete:before
+        content: "x"
+        display: inline-block
+        border: 1px solid
+        line-height: 5px
+        padding-bottom: 2px
+        margin-right: 5px
+
+  .direct_children
+    display: block
+    background: white
+    padding: 3px 15px
+    margin-bottom: 4px
+    font-weight: 600
+    color: darken($mild-dark, 10%)
+    position: relative
+    &:after
+      content: "+"
+      position: absolute
+      top: 9px
+      right: 6px
+      font-weight: 300
+      font-size: 12px
+      border: 1px solid $mediumgray
+      line-height: 9px
+      padding: 0 1px
+  .active .direct_children, .direct_children:hover
+    background: $cyan
+    color: white
+    &:after
+      border-color: white
+  .active .direct_children:after
+    content: "-"
+    padding: 0 2px 0 3px
+    font-weight: 700
+  
+  .category_sub_lists
+    padding: .5em 1em 1em
+  .category_children_list
+    padding-left: 1.5em
+    font-size: 11px
+    font-weight: 700
+    .sub_list_item
+      line-height: 20px
+      a
+        color: $mild-dark
+        position: relative
+        &:before
+          content: ""
+          display: block
+          width: 8px
+          height: 8px
+          background: white
+          border: 1px solid lighten($mild-dark, 10%)
+          position: absolute
+          left: -13px
+          top: 4px
+      &.active > a, & a:hover
+        color: $body-font-color
+      &.active > a:before
+        background: $cyan
+        border-color: white

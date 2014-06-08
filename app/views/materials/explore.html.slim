@@ -1,7 +1,19 @@
-section.details.explore.row
-  = render partial: "partials/categories"
-  span.twelvecol.materials_count
-    = pluralize(@count, 'material ', 'materiais ')
-    | encontrados
-= render partial: "materials"
+.page.explore
+  .white_header_section
+    .row
+      .large-12.columns
+        ul.sub_menu
+          - Category.top_level.each do |s|
+            li.parents
+              = link_to s.name, category_path(s), class: "#{if @category.present? and @category.top_parent == s then 'active' end}"
+
+  .row.materials_exploring
+    - if @category.present?
+      .large-3.small-3.columns.explore_sidebar
+        = render partial: "partials/categories"
+      .paginated_materials.large-9.small-9.columns
+        = render partial: "materials"
+    - else
+      .paginated_materials.large-12.columns
+        = render partial: "materials"
 

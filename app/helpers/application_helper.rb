@@ -100,6 +100,10 @@ module ApplicationHelper
       content.html_safe
     end
   end
+
+  def category_path_toggle(category, c)
+    category.is_activating?(c) ? category_path(c.parent) : category_path(c)
+  end
 end
 
 

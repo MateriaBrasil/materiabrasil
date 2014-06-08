@@ -10,6 +10,7 @@ App.Materials =
       @limit = options.limit
       @url = options.url
       @windowProp.scroll @paginate
+      @paginatedContainer = @$('.paginated_materials')
 
     paginate: ->
       
@@ -22,7 +23,7 @@ App.Materials =
       self = this
       $.get @url + "?offset=" + (@counter * @multiplier), (data) ->
         unless data is ""
-          self.$el.append(data).children(":last").hide().fadeIn 2000
+          self.paginatedContainer.append(data).children(":last").hide().fadeIn 2000
           self.postAction()
 
       @counter = @counter + 1

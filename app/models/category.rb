@@ -25,7 +25,6 @@ class Category < ActiveRecord::Base
   acts_as_tree
   default_scope order('name ASC')
   scope :top_level, where(parent_id: nil)
-  scope :parent, where(parent_id: nil)
 
   def siblings
     Category.where(parent_id: self.parent_id)
@@ -33,6 +32,22 @@ class Category < ActiveRecord::Base
 
   def parents
     self.parent ? [].concat(self.parent.parents << self.parent) : []
+  end
+
+  def top_category?
+    self.parent ? false : true
+  end
+
+  def top_parent
+    self.parent ? [].concat(self.parent.parents << self.parent).select{|c|c.top_category?}[0] : self
+  end
+
+  def is_parent?(cat)
+    self.parents.include? cat
+  end
+
+  def is_activating?(cat)
+    is_parent?(cat) || self == cat
   end
 
   def should_generate_new_friendly_id?
