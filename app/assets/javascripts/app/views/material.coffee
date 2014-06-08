@@ -62,6 +62,8 @@ App.Materials =
       App.Common.initFacebook()
       _.bindAll this, 'showManufacturerContact', 'activateIndicator', 'showChildrenList', 'detectKeyUp', 'resizedWindow'
       
+      @$('.indicators').first().append('<div id="indicatorsDetails">')
+      @indicatorsDetails = @$('#indicatorsDetails')
       @indicators = @$("li.indicator")
       @showChildrenList @indicators.first()
       galleryChildren = $('.image-slider .slide-image').length
@@ -81,10 +83,12 @@ App.Materials =
 
     showChildrenList: (klass) ->
       att = klass.attr("data-type")
-      @$("ul.children").hide()
+      @indicatorsDetails.hide()
+      ulContent = @$("ul.children.#{att}").clone()
+      @indicatorsDetails.html(ulContent)
       @$("li.indicator").removeClass "highlighted"
       @$("li.indicator[data-type=\"" + att + "\"]").addClass "highlighted"
-      @$("ul.children[data-type=\"" + att + "\"]").fadeIn()
+      @indicatorsDetails.fadeIn()
 
     detectKeyUp: (e)->
       if e.keyCode == 39 or e.keyCode == 37

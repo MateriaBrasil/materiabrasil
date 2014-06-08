@@ -72,12 +72,8 @@ module ApplicationHelper
     kinds.each_with_index do |k,v|
 
       flag     =  categories.map(&:name).include?(k.first) ? true : false
-      content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do
-        image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + content_tag(:span, (k.first == 'Humano-social' ? 'Humano' : k.first) )
-                  end
-
       if flag
-        children +=
+        children =
           content_tag(:ul, class: "children #{k.second}", data: {type: k.second}) do
             Category.find_by_name(k.first).children.reduce('') do |c, m|
               if ['Uso', 'Fonte', 'Produção'].include?(m.name)
@@ -92,8 +88,15 @@ module ApplicationHelper
             end
         end
       end
+      
+      content +=  content_tag(:li, class: "indicator #{k.second} #{ flag ? "" : "inactive"}", data: {type: k.second}, title: k.first) do
+        image_tag(asset_path("site/indicators/#{k.second}.png"), data: { type: k.second } ) + "\n" + content_tag(:span, (k.first == 'Humano-social' ? 'Humano' : k.first) ) + "\n" + children.html_safe
+      end + "\n"
+
     end
-    content_tag(:ol, class: "list") do; content.html_safe; end + children.html_safe
+    content_tag(:ol, class: "list") do
+      content.html_safe
+    end
   end
 end
 
