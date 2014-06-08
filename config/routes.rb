@@ -19,7 +19,7 @@ MateriaBrasil::Application.routes.draw do
     get 'attachments/edit', to: 'materials#edit_attachments', as: :edit_attachments
   end
 
-  resources :manufacturers, only: [:edit, :update]
+  resources :manufacturers, only: [:show, :edit, :update]
 
   #get 'material/:id',                   to: "materials#show",     as: :material
   get 'explore/:category',              to: "materials#explore",  as: :category

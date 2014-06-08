@@ -41,6 +41,10 @@ class Manufacturer < ActiveRecord::Base
 
   before_validation :smart_add_url_protocol
 
+  def formated_address
+    [self.address, self.city, self.state, self.country, self.cep].join ', '
+  end
+
 protected
   def smart_add_url_protocol
     if self.site.present?

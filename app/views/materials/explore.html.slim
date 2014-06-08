@@ -12,8 +12,8 @@
       .large-3.small-3.columns.explore_sidebar
         = render partial: "partials/categories"
       .paginated_materials.large-9.small-9.columns
-        = render partial: "materials"
+        = render partial: "materials", locals: {materials: @resource}
     - else
       .paginated_materials.large-12.columns
-        = render partial: "materials"
+        = render partial: "materials", locals: {materials: @resource}
 

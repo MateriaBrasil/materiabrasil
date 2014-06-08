@@ -40,7 +40,7 @@ class MaterialsController < ApplicationController
       @resource ||= Material.approved
     end
 
-    return render partial: "materials" if request.xhr?
+    return render(partial: "materials", locals: {materials: @resource}) if request.xhr?
   end
 
   def search

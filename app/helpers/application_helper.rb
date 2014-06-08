@@ -43,7 +43,7 @@ module ApplicationHelper
           break if material[counter] == nil
           content += content_tag :li, class: "material #{v}" do
             content_tag(:div, class: "image") do
-              link_to image_tag(material[counter].images.first.image.send("#{k}"), title: material[counter].name), material_path(material[counter])
+              link_to image_tag(material[counter].featured_image.image.send("#{k}"), title: material[counter].name), material_path(material[counter])
             end +
             content_tag(:div, class: "name") do
               link_to material[counter].name, material_path(material[counter])

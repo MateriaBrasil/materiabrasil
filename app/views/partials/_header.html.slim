@@ -24,15 +24,15 @@ header.header_menu
               ol.options
                 - if current_user.manufacturer
                   li
-                    = link_to "Editar meu perfil", edit_manufacturer_path(current_user.manufacturer)
+                    = link_to "Meu perfil", manufacturer_path(current_user.manufacturer)
                 - if current_user.manufacturer.try(:materials)
                   li
                     | Meus materiais:
                 - current_user.manufacturer.try(:materials).try(:each) do |m|
                   li
                     = link_to m, class: "material-item" do
-                      - if m.images.first.present?
-                        = image_tag m.images.first.image.flat.url, size: "50x41"
+                      - if m.featured_image.present?
+                        = image_tag m.featured_image.image.flat.url, size: "50x41"
                       span= m.name
                 li.logout= link_to destroy_user_session_path, method: :delete do
                   span.icon.forward

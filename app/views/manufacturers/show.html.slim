@@ -1,0 +1,35 @@
+.manufacturer.page
+  .manufacturer_header.white_header_section
+    .row
+      .large-12.column
+        h1
+          = resource.name
+        = link_to 'Editar dados', edit_manufacturer_path(resource), class: "bt bt_primary" if (resource.user != nil && current_user == resource.user) || current_user.try(:email) == ENV['ADMIN_EMAIL'] 
+        hr/
+        dl
+          dt Site
+          dd= resource.site
+          dt Certificações
+          dd= resource.certifications
+          dt Endereço
+          dd= resource.formated_address
+          dt Telefone
+          dd= resource.phone
+        - if @contacts.length > 0
+          hr/
+          h4 Contatos Adicionais
+          - @contacts.each do | contact |
+            dl
+              dt Nome
+              dd= contact.name
+              dt Descrição
+              dd= contact.definition
+              dt Email
+              dd= contact.email
+              dt Telefone
+              dd= contact.phone_first
+              dt Endereço
+              dd= contact.address
+
+  .paginated_materials.large-12.columns
+    = render partial: "materials/materials", locals: {materials: @materials}

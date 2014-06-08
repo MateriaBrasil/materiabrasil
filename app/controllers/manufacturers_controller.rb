@@ -2,6 +2,11 @@
 class ManufacturersController < ApplicationController
   inherit_resources
 
+  def show
+    @contacts = (current_user and resource.user == current_user) ? resource.contacts : resource.contacts.publics
+    @materials = (current_user and resource.user == current_user) ? resource.materials : resource.materials.approved
+  end
+
   def edit
     authorize resource
     @manufacturer.contacts.build unless @manufacturer.contacts.any?
@@ -13,4 +18,3 @@ class ManufacturersController < ApplicationController
     update!(notice: 'Informações atualizadas com sucesso!') { material_path(@manufacturer.materials.order('created_at desc').first) }
   end
 end
-
