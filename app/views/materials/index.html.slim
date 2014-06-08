@@ -47,7 +47,7 @@ section.materials_wrapper
     - @materials.each do |material|
       - if material.has_images?
         = link_to material_path(material), class: "image_link" do
-          = image_tag material.images.first.image.url(:flat), title: material.name
+          = image_tag material.featured_image.image.url(:flat), title: material.name
 
 section.our_partners.medium_container
   h1= t "pages.index.our_partners.call"

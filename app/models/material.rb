@@ -73,6 +73,10 @@ class Material < ActiveRecord::Base
     self.draft == false
   end
 
+  def featured_image
+    self.images.where(featured: true).first || self.images.first || nil
+  end
+
   private
   def check_tree
     tree = []

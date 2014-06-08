@@ -18,4 +18,6 @@ class Image < ActiveRecord::Base
   #validates_presence_of :title, :image
 
   mount_uploader :image, ImageUploader
+
+  scope :featured_first, order("featured DESC")
 end

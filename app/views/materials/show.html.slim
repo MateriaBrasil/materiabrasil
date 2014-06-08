@@ -1,8 +1,8 @@
 .material_header.white_header_section
   .row
     .large-12.column
-      h1= @material.name
-      br/
+      h1
+        = @material.name
       = link_to 'Editar material', edit_material_path(@material), class: "bt bt_primary" if (@material.user != nil && current_user == @material.user) || current_user.try(:email) == ENV['ADMIN_EMAIL'] 
 - if !@material.published? && (@material.user != nil && current_user == @material.user)
   .draft_advert.orange_box
@@ -11,11 +11,11 @@
         = t "pages.show.draft_advert_html"
 section.material.row
   .large-8.small-12.columns
-    - unless @material.images.first.nil?
+    - unless @material.featured_image.nil?
       .image-slider
         = link_to "+ imagens", "#", class: "more-images-link" if @material.images.size > 1
         .images
-          - @material.images.each_with_index do | file, index |
+          - @material.images.featured_first.each_with_index do | file, index |
             - if file.image.main.url != nil
               = image_tag file.image.main.url, alt: @material.name, class: "slide-image", data: {number: index}
             /- if index > 13
