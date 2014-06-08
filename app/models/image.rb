@@ -15,9 +15,13 @@
 class Image < ActiveRecord::Base
 
   belongs_to :material
-  #validates_presence_of :title, :image
+  after_initialize :default_values
+  scope :featured_first, order("featured DESC")
 
   mount_uploader :image, ImageUploader
 
-  scope :featured_first, order("featured DESC")
+private
+  def default_values
+    self.featured ||= false
+  end
 end
