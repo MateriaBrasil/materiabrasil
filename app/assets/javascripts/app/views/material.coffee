@@ -85,7 +85,7 @@ App.Materials =
       att = klass.attr("data-type")
       @indicatorsDetails.hide()
       ulContent = @$("ul.children.#{att}").clone()
-      @indicatorsDetails.html(ulContent)
+      @indicatorsDetails.html(ulContent.removeClass('children'))
       @$("li.indicator").removeClass "highlighted"
       @$("li.indicator[data-type=\"" + att + "\"]").addClass "highlighted"
       @indicatorsDetails.fadeIn()
