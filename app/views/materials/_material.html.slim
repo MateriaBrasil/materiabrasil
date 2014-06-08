@@ -1,4 +1,6 @@
-li.material.fourcol
+li.material.fourcol[class="#{'draft' if material.draft}"]
   - if material.has_images?
     .image= link_to image_tag(material.featured_image.image.main.url, title: material.name, alt: material.name), material_path(material)
+  - if material.draft
+    span.draft_badge Aguardando aprovação
   .name= link_to material.name, material_path(material)

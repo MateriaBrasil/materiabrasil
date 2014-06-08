@@ -76,7 +76,23 @@ ol.materials
     &:hover
       box-shadow: 0 1px 8px lighten($red, 30%)
   .material
+    position: relative
     border-radius: 8px
+    .draft_badge
+      position: absolute
+      top: 10px
+      right: -3px
+      padding: 5px 10px
+      background: $orange
+      color: white
+      font-weight: 600
+      border-radius: 3px
+    &.draft
+      .name
+        background: $orange
+        a
+          color: white
+          font-weight: 600
   .image
     img
       border-radius: 4px 4px 0 0
