@@ -3,8 +3,8 @@ class ManufacturersController < ApplicationController
   inherit_resources
 
   def show
-    @contacts = (current_user and resource.user == current_user) ? resource.contacts : resource.contacts.publics
-    @materials = (current_user and resource.user == current_user) ? resource.materials : resource.materials.approved
+    @contacts = (current_user and (resource.user == current_user || current_user.email == ENV['ADMIN_EMAIL'])) ? resource.contacts : resource.contacts.publics
+    @materials = (current_user and (resource.user == current_user || current_user.email == ENV['ADMIN_EMAIL'])) ? resource.materials : resource.materials.approved
   end
 
   def edit
