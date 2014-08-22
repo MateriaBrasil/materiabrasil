@@ -7,6 +7,7 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require init
+//= require inspectlet
 //= require app/app
 //= require_tree ./app
 
